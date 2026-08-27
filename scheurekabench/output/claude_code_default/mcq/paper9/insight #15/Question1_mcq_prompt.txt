@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper9/data/data.h5ad
+Description: A single-cell atlas of the aging mouse ovary
+
+Question:
+Which lymphoid cell types are found to increase significantly in the aged ovaries according to the dataset?
+
+Answer Choices:
+A) Type 2 cells
+B) Type 17 cells
+C) Regulatory T cells
+D) Type 1 cells
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

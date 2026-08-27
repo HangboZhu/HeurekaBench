@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper9/data/data.h5ad
+Description: A single-cell atlas of the aging mouse ovary
+
+Question:
+Based on the dataset analysis, which pathway is significantly upregulated in theca cells from aged ovaries?
+
+Answer Choices:
+A) Apoptosis-related pathways
+B) Fibrogenesis-related pathways
+C) Inflammatory response pathways
+D) Cell cycle regulation pathways
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

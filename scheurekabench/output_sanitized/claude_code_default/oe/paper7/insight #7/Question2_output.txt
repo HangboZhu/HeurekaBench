@@ -1,0 +1,24 @@
+Claude Code command: claude -p --output-format stream-json --verbose --permission-mode bypassPermissions --max-turns 40
+Model: claude default
+Workdir: /Users/zhuhangbo/Documents/Research_File/demo/HeurekaBench/scheurekabench
+
+===== System ===== init
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+

@@ -1,0 +1,21 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper8/data/mouse_data.h5ad
+Description: Epithelial cells collected from 30 segments across the proximal (1) to distal (30) ends of the mouse small intestine.
+
+Path: benchmark/scdata/paper8/data/domain_mapping.json
+Description: Domain names as keys mapped to segments available in the mouse dataset.
+
+Question:
+What transcriptional response does the dataset suggest domain C enterocytes have to a high-carbohydrate diet?
+
+Answer Choices:
+A) Domain C enterocytes decrease in number
+B) Domain C enterocytes show no change
+C) Domain C enterocytes expand
+D) Domain C enterocytes switch to lipid metabolism
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

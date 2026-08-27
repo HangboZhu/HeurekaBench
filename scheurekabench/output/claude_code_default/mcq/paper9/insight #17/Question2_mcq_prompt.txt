@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper9/data/data.h5ad
+Description: A single-cell atlas of the aging mouse ovary
+
+Question:
+What cellular process is increased in vascular endothelial cells of aged ovaries according to the dataset?
+
+Answer Choices:
+A) Lipid metabolism
+B) Apoptosis regulation
+C) DNA damage regulation
+D) Protein synthesis
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

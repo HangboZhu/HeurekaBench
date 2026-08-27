@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper7/data/processed_MuSC_data.h5ad
+Description: Mouse muscle stem cells (MuSC) data
+
+Question:
+Based on the dataset, which subpopulation of muscle stem cells (MuSCs) shows a notable decrease in ribosome biogenesis gene expression with age?
+
+Answer Choices:
+A) POLR1D+ MuSCs
+B) TP53+ MuSCs
+C) TNFRSF12A+ (TNF+) MuSCs
+D) CDKN2A+ MuSCs
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

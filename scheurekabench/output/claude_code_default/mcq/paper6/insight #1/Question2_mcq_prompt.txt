@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper6/data/cxg_data.h5ad
+Description: scRNA-seq dataset of T cells isolated from the caecum, small‑intestine lamina propria, mesenteric lymph node, and Peyer’s patches
+
+Question:
+The dataset suggests that which cell type primarily expresses Il10 in the lamina propria (LP)?
+
+Answer Choices:
+A) CD103+SIRPα+ dendritic cells
+B) eTreg cells
+C) IL-1β+ macrophage subsets
+D) CD206+ macrophages
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

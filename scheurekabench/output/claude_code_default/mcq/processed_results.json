@@ -1,0 +1,62 @@
+{
+  "paper12": {
+    "insight #27": {
+      "Question1": "B,D"
+    }
+  },
+  "paper2": {
+    "insight #4": {
+      "Question2": "B"
+    }
+  },
+  "paper3": {
+    "insight #5": {
+      "Question1": "B,D"
+    }
+  },
+  "paper6": {
+    "insight #2": {
+      "Question2": "A"
+    },
+    "insight #1": {
+      "Question2": "B"
+    }
+  },
+  "paper7": {
+    "insight #3": {
+      "Question1": "C"
+    },
+    "insight #5": {
+      "Question1": "D",
+      "Question2": "B,C"
+    },
+    "insight #7": {
+      "Question1": "B"
+    },
+    "insight #6": {
+      "Question1": "B",
+      "Question2": "C"
+    }
+  },
+  "paper8": {
+    "insight #12": {
+      "Question1": "C",
+      "Question2": "A"
+    }
+  },
+  "paper9": {
+    "insight #15": {
+      "Question1": "B,D"
+    },
+    "insight #14": {
+      "Question1": "D"
+    },
+    "insight #16": {
+      "Question1": "B"
+    },
+    "insight #17": {
+      "Question1": "B",
+      "Question2": "C"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper2/data/my_dataset.h5ad
+Description: Myeloid cells from human cardiac tissue with myocarditis and healthy controls
+
+Question:
+The dataset indicates that myeloid cell expansion in myocarditis is characterized by what change in resident macrophages?
+
+Answer Choices:
+A) Increased numbers
+B) Decreased numbers
+C) No change in numbers
+D) Complete elimination of all resident macrophages
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

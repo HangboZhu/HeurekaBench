@@ -1,0 +1,36 @@
+Claude Code command: claude -p --output-format stream-json --verbose --permission-mode bypassPermissions --max-turns 40
+Model: claude default
+Workdir: /Users/zhuhangbo/Documents/Research_File/demo/HeurekaBench/scheurekabench
+
+===== System ===== init
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== System ===== api_retry
+
+===== Ai Message =====
+API Error: 502 <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>. This is a server-side issue, usually temporary — try again in a moment. If it persists, check your inference gateway (127.0.0.1:15721).
+
+===== Ai Message =====
+API Error: 502 <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>. This is a server-side issue, usually temporary — try again in a moment. If it persists, check your inference gateway (127.0.0.1:15721).
+
+===== Error ===== claude returned an error result
+
+
+===== Error ===== claude exited with code 1

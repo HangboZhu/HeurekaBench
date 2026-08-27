@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper9/data/data.h5ad
+Description: A single-cell atlas of the aging mouse ovary
+
+Question:
+Which markers of cellular senescence are increased in vascular endothelial cells of aged ovaries?
+
+Answer Choices:
+A) NF-kB and RELA
+B) TP53 and CDKN2A
+C) AKT1 and MTOR
+D) MYC and BCL2
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

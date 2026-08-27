@@ -1,0 +1,21 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper8/data/mouse_data.h5ad
+Description: Epithelial cells collected from 30 segments across the proximal (1) to distal (30) ends of the mouse small intestine.
+
+Path: benchmark/scdata/paper8/data/domain_mapping.json
+Description: Domain names as keys mapped to segments available in the mouse dataset.
+
+Question:
+According to the dataset, which domains are associated with lipid metabolism when mice are fed a standard chow diet?
+
+Answer Choices:
+A) Domains A/B and D
+B) Domain C only
+C) Domain E only
+D) All domains equally
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

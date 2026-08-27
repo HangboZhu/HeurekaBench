@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./benchmark/*.json)",
+      "Read(./output/**)",
+      "Read(./evaluate_agent_answer.py)",
+      "Read(./extract_agent_answer.py)"
+    ]
+  }
+}

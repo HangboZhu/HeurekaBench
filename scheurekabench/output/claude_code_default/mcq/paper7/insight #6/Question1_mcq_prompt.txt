@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper7/data/processed_myonucleicells_data.h5ad
+Description: Muscle nuclei and cells data
+
+Question:
+What does the dataset suggest about the shift in myonuclear composition in aged muscle?
+
+Answer Choices:
+A) Myonuclear composition remains unchanged with age
+B) Slow-twitch myofibers acquire fast-twitch characteristics
+C) Fast-twitch myofibers acquire slow-twitch characteristics
+D) Slow-twitch myofibers lose their characteristics entirely
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

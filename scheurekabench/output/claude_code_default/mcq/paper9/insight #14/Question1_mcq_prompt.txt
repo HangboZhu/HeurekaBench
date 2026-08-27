@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper9/data/data.h5ad
+Description: A single-cell atlas of the aging mouse ovary
+
+Question:
+Based on the dataset, which cell type shows a significant increase in the aged ovaries?
+
+Answer Choices:
+A) Myeloid cells (CD11b+)
+B) Epithelial cells
+C) Granulosa cells
+D) CD90+ cells (T cells and innate lymphoid cells)
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

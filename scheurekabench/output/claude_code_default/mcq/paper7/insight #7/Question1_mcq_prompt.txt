@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper7/data/processed_myonucleicells_data.h5ad
+Description: Muscle nuclei and cells data
+
+Question:
+What role do MYH8+ myocytes play in aged muscle, according to the dataset?
+
+Answer Choices:
+A) They primarily contribute to slow-twitch myofiber regeneration
+B) They act as an intermediate state contributing to fast-twitch myofiber regeneration
+C) They remain an immature myocyte population with no clear regenerative role
+D) They predominantly differentiate into fibro-adipogenic progenitors rather than myofibers.
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

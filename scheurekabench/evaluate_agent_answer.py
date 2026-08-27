@@ -109,6 +109,28 @@ def load_evaluation_dataset(dataset_json_path, q_type):
     
     return eval_dataset_dict
 
+def _make_judge_client():
+    dotenv.load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_KEY")
+    base_url = os.getenv("BASE_URL")
+    if base_url:
+        # OpenAI SDK expects the /v1 root, strip a trailing /chat/completions
+        base_url = re.sub(r"/chat/completions/?$", "", base_url.rstrip("/"))
+        # custom gateway: bypass (possibly dead) system http_proxy env vars
+        import httpx
+        return OpenAI(api_key=api_key, base_url=base_url,
+                      http_client=httpx.Client(trust_env=False, timeout=600))
+    return OpenAI(api_key=api_key, base_url=base_url)
+
+def _judge_model_name(fallback):
+    dotenv.load_dotenv()
+    return os.getenv("MODEL_NAME") or fallback
+
+def _judge_top_logprobs(fallback):
+    dotenv.load_dotenv()
+    v = os.getenv("OE_TOP_LOGPROBS")
+    return int(v) if v is not None else fallback
+
 def main(dataset_json_path, results_json_path, q_type, batch_oe_judge=False, oe_specs={"model_name": "gpt-4o", "top_logprobs": 3}):
     if q_type == 'oe' and not batch_oe_judge:
         return main_non_batch(dataset_json_path, results_json_path, q_type, oe_specs)
@@ -124,8 +146,8 @@ def main(dataset_json_path, results_json_path, q_type, batch_oe_judge=False, oe_
     if q_type == "oe":
         requests = []
         custom_id_map = {}
-        model_name = oe_specs["model_name"]
-        top_logprobs = oe_specs["top_logprobs"]
+        model_name = _judge_model_name(oe_specs["model_name"])
+        top_logprobs = _judge_top_logprobs(oe_specs["top_logprobs"])
         counter = 0 
     else:
         p2i2q_correct = defaultdict(lambda: defaultdict(list))
@@ -220,10 +242,8 @@ def main(dataset_json_path, results_json_path, q_type, batch_oe_judge=False, oe_
             for req in requests:
                 f.write(json.dumps(req) + "\n")
 
-        dotenv.load_dotenv()
-        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-        client = OpenAI(api_key=OPENAI_API_KEY)
-        
+        client = _make_judge_client()
+
         batch_file = client.files.create(
             file=open(batch_file_path, "rb"),
             purpose="batch"
@@ -311,15 +331,13 @@ def main_non_batch(dataset_json_path, results_json_path, q_type, oe_specs={"mode
     correct = 0
     total = 0
 
-    dotenv.load_dotenv()
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    client = OpenAI(api_key=OPENAI_API_KEY)
+    client = _make_judge_client()
 
     if q_type == "oe":
         results = []
         all_scores = []
-        model_name = oe_specs["model_name"]
-        top_logprobs = oe_specs["top_logprobs"]
+        model_name = _judge_model_name(oe_specs["model_name"])
+        top_logprobs = _judge_top_logprobs(oe_specs["top_logprobs"])
 
     for p_id, p_dict in eval_dataset_dict.items():
         for i_id, i_dict in p_dict.items():

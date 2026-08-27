@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper7/data/processed_myonuclei_data.h5ad
+Description: Muscle nuclei data
+
+Question:
+What does the dataset suggest about the role of the novel neuromuscular junction (NMJ) accessory population identified in the study?
+
+Answer Choices:
+A) It is unrelated to NMJ re-innervation
+B) It decreases with age and inhibits NMJ re-innervation
+C) It decreases with age and promotes NMJ re-innervation
+D) It increases with age and may aid in NMJ re-innervation
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

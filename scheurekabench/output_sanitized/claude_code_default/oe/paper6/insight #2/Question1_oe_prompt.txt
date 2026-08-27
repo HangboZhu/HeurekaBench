@@ -1,0 +1,20 @@
+Task: Analyze the provided single-cell dataset and answer the biology question.
+
+Input Data:
+Path: benchmark/scdata/paper6/data/cxg_data.h5ad
+Description: scRNA-seq dataset of T cells isolated from the caecum, small‑intestine lamina propria, mesenteric lymph node, and Peyer’s patches
+
+Path: benchmark/scdata/paper6/data/Mouse_Rb_proteins_geneList_ribosome.med.miyazaki-u.ac.jp.txt
+Description: curated gene list of mouse ribosomal protein genes (both small subunit Rps and large subunit Rpl genes)
+
+Question:
+What transcriptional characteristics can be used to distinguish eTreg cells (tissue resident Treg cells) in the lamina propria (LP) from other Treg cell populations?
+
+Output Format:
+Return the summary of an answer wrapped inside XML-style tags <solution> and </solution>.
+
+Guidelines for the output format:
+- Base the answer strictly on the results derived from the dataset.  
+- Provide a fact-based summary (not a narrative or manuscript-style report).  
+- Do not use extra formatting such as bullet points or section headers.  
+- Include all key findings that directly address the question, emphasizing those most relevant to the answer.  

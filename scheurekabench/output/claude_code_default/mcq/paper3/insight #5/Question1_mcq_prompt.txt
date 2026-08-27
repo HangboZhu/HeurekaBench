@@ -1,0 +1,21 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper3/data/dataset2.h5ad
+Description: snRNA-seq of human visceral adipose tissue - all cells
+
+Path: benchmark/scdata/paper3/data/VA_adipocytes.h5ad
+Description: snRNA-seq of human visceral adipose tissue - adipocytes
+
+Question:
+What gene expression characteristics define the VA6 adipocyte subtype in human visceral adipose tissue (hVAT)?
+
+Answer Choices:
+A) High expression of lipid metabolism genes
+B) High expression of mitochondrial genes
+C) High expression of immune response genes
+D) High expression of ribosomal genes
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

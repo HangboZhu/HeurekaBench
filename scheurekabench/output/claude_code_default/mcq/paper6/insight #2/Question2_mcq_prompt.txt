@@ -1,0 +1,21 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper6/data/cxg_data.h5ad
+Description: scRNA-seq dataset of T cells isolated from the caecum, small‑intestine lamina propria, mesenteric lymph node, and Peyer’s patches
+
+Path: benchmark/scdata/paper6/data/Mouse_Rb_proteins_geneList_ribosome.med.miyazaki-u.ac.jp.txt
+Description: curated gene list of mouse ribosomal protein genes (both small subunit Rps and large subunit Rpl genes)
+
+Question:
+Analysis of the dataset suggests that effector eTreg cells in the lamina propria (LP) are distinct from central cTreg cells based on the high expression of which gene?
+
+Answer Choices:
+A) Ctla4
+B) Ccr7
+C) Tcf7
+D) Histone genes
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

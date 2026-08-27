@@ -1,0 +1,18 @@
+Task: Analyze the provided single-cell dataset and answer the biology question by selecting all correct options.
+
+Input Data:
+Path: benchmark/scdata/paper7/data/processed_myonucleicells_data.h5ad
+Description: Muscle nuclei and cells data
+
+Question:
+Which type of myofiber shows an increase in fast-type mRNA expression in aged muscle according to the dataset?
+
+Answer Choices:
+A) Type IIB myofibers
+B) Type IIX myofibers
+C) Type I myofibers
+D) Type IIA myofibers
+
+Output Format:
+Return the selected options as a comma-separated list of letters wrapped inside XML-style tags <solution> and </solution>.
+For example: <solution>A,C</solution>

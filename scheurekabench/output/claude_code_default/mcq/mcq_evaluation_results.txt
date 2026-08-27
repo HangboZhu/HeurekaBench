@@ -1,0 +1,7 @@
+Accuracy: 18/18 = 100.00%
+Macro Recall: 100.00%
+Macro Precision: 100.00%
+Macro F1: 100.00%
+Micro Recall: 100.00%
+Micro Precision: 100.00%
+Micro F1: 100.00%

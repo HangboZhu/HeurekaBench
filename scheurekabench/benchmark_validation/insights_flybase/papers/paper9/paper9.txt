@@ -1,0 +1,1195 @@
+Mechanisms of Development 107 (2001) 39±53
+
+www.elsevier.com/locate/modo
+
+The nuclear receptor Ftz-F1 and homeodomain protein Ftz interact
+through evolutionarily conserved protein domains
+Miyuki Yussa 1, Ulrike LoÈhr, Kai Su 2, Leslie Pick*
+Department of Biochemistry and Molecular Biology, Mount Sinai School of Medicine, One Gustave L. Levy Place, New York, NY 10029, USA
+Received 11 May 2001; accepted 29 May 2001
+
+Abstract
+The Drosophila homeodomain protein Fushi Tarazu (Ftz) and its partner, the orphan receptor Ftz-F1, are members of two distinct families
+of DNA binding transcriptional regulators. Ftz and Ftz-F1 form a novel partnership in vivo as a Hox/orphan receptor heterodimer. Here we
+show that the murine Ftz-F1 ortholog SF-1 functionally substitutes for Ftz-F1 in vivo, rescuing the defects of ftz-f1 mutants. This ®nding
+identi®ed evolutionarily conserved domains of Ftz-F1 as critical for activity of this receptor in vivo. These domains function, at least in part,
+by mediating direct protein interactions with Ftz. The Ftz-F1 DNA binding domain interacts strongly with Ftz and dramatically facilitates the
+binding of Ftz to target DNA. This interaction is augmented by a second interaction between the AF-2 domain of Ftz-F1 and the N-terminus
+of Ftz via an LRALL sequence in Ftz that is reminiscent of LXXLL motifs in nuclear receptor coactivators. We propose that Ftz-F1 serves as
+a cofactor for Ftz by facilitating the selection of target sites in the genome that contain Ftz/Ftz-F1 composite binding sites. Ftz, on the other
+hand, in¯uences Ftz-F1 activity by interacting with its AF-2 domain in a manner that mimics a nuclear receptor coactivator. q 2001 Elsevier
+Science Ireland Ltd. All rights reserved.
+Keywords: Transcription regulation; Nuclear hormone receptor; Homeodomain; Ftz; SF-1
+
+1. Introduction
+Hox genes determine cell fate and specify regional identity during animal development. These genes are found in
+evolutionarily conserved clusters throughout the animal
+kingdom (reviewed in McGinnis and Krumlauf, 1992). In
+Drosophila, Hox genes are clustered in the Antennapedia
+and Bithorax complexes, together comprising HOM-C. Hox
+genes encode transcriptional regulatory proteins that act as
+molecular switches to control the expression of sets of
+downstream target genes, most of which have not yet been
+identi®ed. Each Hox gene has a unique and speci®c function
+in vivo. However, all Hox proteins contain an `Antp-class'
+homeodomain (HD) and isolated Hox proteins bind to similar DNA sequences in vitro (Florence et al., 1991; Gehring
+et al., 1994; McGinnis et al., 1984; Scott and Weiner, 1984).
+The DNA target recognition sequence is small and ¯exible,
+such that Hox proteins have the potential to interact with an
+* Corresponding author. Tel.: 11-212-241-1966; fax: 11-212-860-9279.
+E-mail address: leslie.pick@mssm.edu (L. Pick).
+1
+Present address: Program of Molecular Neurobiology, Skirball Institute
+of Biomolecular Medicine, New York University School of Medicine, New
+York, NY, USA.
+2
+Present address: Biomedical Sciences Department, Veterinary Research
+Tower, Cornell University, Ithaca, NY 14853, USA.
+
+unusually large number of sites in the genome. This
+virtually ubiquitous DNA binding is at odds with the exquisitely circumscribed biological speci®city of Hox proteins.
+One explanation for this paradox is that HD proteins interact
+with speci®c cofactors to increase binding site selectivity or
+transcriptional activity, thereby conferring functional speci®city in vivo (reviewed in Biggin and McGinnis, 1997;
+Mann, 1995).
+The Drosophila homeobox gene fushi tarazu ( ftz) is
+located in HOM-C and Ftz protein has a canonical Antpclass HD (Kuroiwa et al., 1984; Weiner et al., 1984). Unlike
+the homeotic functions typical of most HOM-C members,
+ftz is a pair-rule segmentation gene, necessary for the establishment of even numbered parasegments (NussleinVolhard et al., 1984; Wakimoto and Kaufman, 1981). As
+such, Ftz should regulate a very different set of downstream
+target genes from other HOM-C proteins. To determine how
+the unique functions of Ftz are achieved in vivo, we set out
+several years ago to identify speci®c partner(s) of Ftz that
+modulate its DNA binding and/or transcriptional abilities in
+the embryo (Yu et al., 1997 , 1999). These studies identi®ed
+Ftz-F1, an orphan nuclear hormone receptor family
+member, as a novel partner of Ftz protein. ftz-f1 mutant
+embryos display ftz-like pair-rule phenotypes and lack
+Ftz-dependent engrailed stripes (Florence et al., 1997;
+
+0925-4773/01/$ - see front matter q 2001 Elsevier Science Ireland Ltd. All rights reserved.
+PII: S 0925-477 3(01)00448-8
+
+40
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+Guichet et al., 1997; Yu et al., 1997). This demonstrated that
+Ftz-F1 is absolutely required as a cofactor for Ftz function in
+vivo. Composite DNA binding sites for Ftz-F1 and Ftz were
+identi®ed in two bona ®de Ftz target regulatory elements:
+the ftz upstream autoregulatory element (Yu et al., 1997)
+and a Ftz-dependent engrailed regulatory element (Florence
+et al., 1997). Ftz and Ftz-F1 bind these elements cooperatively, with Ftz-F1 dramatically enhancing speci®c DNA
+binding by Ftz protein. This indicated that Ftz-F1 in¯uences
+Ftz function primarily at the level of DNA target site selection in vivo and further suggested that Ftz and Ftz-F1 would
+coordinately activate transcription of speci®c target genes
+via composite binding sites in vivo.
+Ftz is expressed in a tightly controlled seven stripe pattern
+in the embryo that correlates with the ftz mutant phenotype
+(Hafen et al., 1984; Yu and Pick, 1995). In contrast, Ftz-F1
+is found in the nuclei of all somatic cells of the blastoderm
+embryo (Yu et al., 1997 and see Fig. 6). The ftz-like pairrule phenotype displayed by ftz-f1 mutant embryos was
+rather surprising in light of its ubiquitous expression pattern,
+raising the possibility that localized Ftz expression in stripes
+is the limiting factor enabling activation of transcription by
+Ftz-F1. How is this activation of Ftz-F1 achieved? Ftz-F1 is
+an orphan nuclear receptor with orthologs found in a wide
+variety of animals including Drosophila (Lavorgna et al.,
+1991; Ueda et al., 1990), Bombyx mori (Ueda and Hirose,
+1991), C. elegans (Gissendanner and Sluder, 2000), zebra®sh (Chai and Chan, 2000; Liu et al., 2000), Xenopus (Ellinger-Ziegelbauer et al., 1994), mouse (Lala et al., 1992,
+reviewed in Hanley et al., 2000) and human (Taketo et al.,
+1995). Ftz-F1 proteins appear to be constitutively nuclear
+and bind DNA as monomers with a relatively stringent
+consensus sequence (Ellinger-Ziegelbauer et al., 1995;
+Han et al., 1993; Lala et al., 1992; Ueda et al., 1992). In
+Drosophila, two alternatively spliced forms of Ftz-F1
+(Lavorgna et al., 1993) are expressed at different developmental stages: aFtz-F1 (studied here) is maternally deposited and required for segmentation. bFtz-F1 is required in
+the larva as a competence factor for metamorphosis
+(Broadus et al., 1999). Ftz-F1 proteins have structures typical of nuclear receptors: a variable N-terminal A/B region,
+followed by a conserved zinc ®nger DNA binding domain
+(DBD) region C, a hinge region D, and ligand binding
+domain (LBD, region E) (reviewed in Mangelsdorf et al.
+(1995) and Fig. 2). The C-terminus of the nuclear receptor
+LBD contains the activation function 2 domain (AF-2) that
+is critical for ligand-dependent transcription activation:
+ligand binding activates nuclear receptors by causing a
+dramatic conformational change in the AF-2 domain, allowing it to interact with repeated LXXLL motifs in coactivators such as SRC or CBP/p300 (Barettino et al., 1994;
+Danielian et al., 1992; Darimont et al., 1998; Durand et
+al., 1994; Heery et al., 1997; McInerney et al., 1998;
+Nolte et al., 1998; Tone et al., 1994). For orphan receptors
+such as Ftz-F1, ligands have not been identi®ed and the
+mechanism of activation is less clear. This mechanism can
+
+be studied in Drosophila where the simple `on' versus `off'
+state of Ftz-F1 in Ftz expressing versus Ftz-non-expressing
+cells in the blastoderm provides a system to dissect the
+requirements for Ftz-F1 function in vivo.
+Here we show that evolutionarily conserved regions of
+Ftz-F1 are required for protein function in vivo and for
+physical interaction with Ftz protein in vitro. Ftz and FtzF1 form stable complexes on DNA and coordinately activate transcription. Murine SF-1, an ortholog of the late form
+of Drosophila Ftz-F1, substitutes for Drosophila Ftz-F1 in
+transgenic animals, rescuing the embryonic defects of ftz-f1
+mutants, and synergistically activates transcription with Ftz
+in vitro. The highly conserved DBD of Ftz-F1 interacts
+strongly with Ftz protein. In addition, Ftz-F1 utilizes its
+AF-2 domain to interact with Ftz via a coactivator-type
+LXXLL motif that Ftz has acquired. These ®ndings suggest
+a novel mechanism for Ftz-F1 activation via interaction
+with a Hox protein that has usurped one function of a
+nuclear receptor coactivator. A model for how Ftz and
+Ftz-F1 interact to coordinately regulate gene expression in
+vivo is presented.
+
+2. Results
+2.1. Murine SF-1 rescues the a ftz-f1 mutant phenotype
+As described above, loss of maternal a ftz-f1 results in
+defects indistinguishable from those seen for mutations in
+ftz itself (Yu et al., 1997; Guichet et al., 1997; Florence et
+al., 1997). These embryos fail to hatch and exhibit ftz-like
+pair-rule defects (see Fig. 1A). In addition, ftz-f1 mutant
+embryos express only seven engrailed stripes rather than
+the 14 stripes seen in wild type embryos, due to loss of
+the seven Ftz-dependent stripes (Fig. 1B). To test the ability
+of various natural isoforms of Ftz-F1 to rescue these phenotypes, we used the binary UAS/GAL4 system (Brand and
+Perrimon, 1993) with the NGT40 GAL4 driver that directs
+ubiquitous gene expression in blastoderm embryos (Tracey
+et al., 2000). This ubiquitous expression in blastoderm stage
+embryos is similar to the expression pattern of endogenous
+a ftz-f1. Accordingly, expression with this GAL4 driver in a
+wild type background did not lead to phenotypic alterations
+(not shown). Females homozygous for the maternal-speci®c
+allele ftz-f1 209 (Guichet et al., 1997) carrying the NGT40
+GAL4 driver were crossed with different UAS lines. The
+expression of a UAS-lacZ transgene had no effect on ftz-f1
+mutant phenotypes (Fig. 1A,B). However, expression of
+a ftz-f1 with the NGT40 GAL4 driver fully rescued the cuticle defects (Fig. 1C) associated with a ftz-f1 mutant
+embryos and restored expression of Engrailed in 14 stripes
+(Fig. 1D).
+The late, zygotically expressed form of Ftz-F1, bFtz-F1,
+is a variant that differs from aFtz-F1 only in the A/B region
+(see Fig. 2A). Nevertheless, as shown in Fig. 1E,F, expression of b ftz-f1 also fully rescued the maternal ftz-f1 pheno-
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+41
+
+nuclear receptor superfamily (Mangelsdorf et al., 1995). A
+`Ftz-F1' box at the C-terminus of the DBD distinguishes this
+sub-family of orphan receptors (black box) (Ueda et al.,
+1992). The LBDs of Ftz-F1 proteins throughout the animal
+kingdom also share a high degree of similarity with several
+short blocks of identical amino acids scattered throughout
+the LBD. Of particular note is the highly conserved region at
+the C-terminus of Ftz-F1 proteins, which includes an AF-2
+domain (Fig. 2A, reviewed in Glass and Rosenfeld, 2000).
+This suggests that the conservation within the DBD and
+LBD was responsible for the ability of bFtz-F1 and SF-1
+to rescue a ftz-f1 mutant phenotypes.
+2.2. Evolutionarily conserved regions of Ftz-F1 are
+necessary for optimal interaction with Ftz protein
+
+Fig. 1. b ftz-f1 and mouse SF-1 can rescue the a ftz-f1 embryonic phenotype.
+The UAS-GAL4 system was used to test the ability of b ftz-f1 and SF-1 to
+rescue embryonic ftz-f1 mutant phenotypes. ftz-f1 209 mutant females carrying the NGT40 Gal4 driver were crossed to different UAS lines, as indicated. The embryos were analyzed for rescue of cuticle defects (A,C,E,G)
+and expression of the Ftz-F1/Ftz target gene engrailed (B,D,F,H). The
+expression of the lacZ gene had no effect on the ftz-f1 mutant phenotype
+(A,B). The expression of a ftz-f1 fully restored a wild type cuticle pattern
+(C) and expression of Engrailed in 14 stripes (D). Both b ftz-f1 and SF-1
+restored wild type expression of Engrailed in 14 stripes (F,H) and a normal
+cuticle pattern (E,G).
+
+type. Even more striking was the ®nding that the mouse
+ortholog of late bFtz-F1, SF-1 (see Fig. 2A) also rescued
+both the Engrailed expression pattern (1H) and the cuticular
+phenotype associated with a ftz-f1 mutant embryos (1G).
+Thus, the molecular function of Ftz-F1 proteins has been
+conserved in animals as divergent as ¯y and mouse. These
+results demonstrate that evolutionary conserved regions of
+Ftz-F1 are critical for function of the Drosophila protein in
+vivo.
+The Ftz-F1 proteins tested here share two highly
+conserved regions: the DBD and putative LBD (Fig. 2A).
+The zinc ®nger DBD is highly conserved throughout the
+
+Ftz and Ftz-F1 bind cooperatively to DNA (Yu et al.,
+1997; Florence et al., 1997) and interact physically in Far
+Western assays (Guichet et al., 1997). In order to identify
+the regions of Ftz-F1 that directly interact with Ftz, the yeast
+two hybrid system was employed (Fields and Song, 1989;
+Chien et al., 1991). Sequential 5 0 and 3 0 deletions of a ftz-f1
+cDNA were fused to the GAL4 activation domain (AD) in
+pACT2. Full length ftz cDNA was fused to the GAL4 DBD
+in pAS2.1. Deletion from the 5 0 end of ftz-f1 revealed three
+regions of the protein necessary for optimal interaction with
+Ftz (Fig. 3A). Deletion into the variable N-terminal A/B
+region (F1-393/1030) resulted in a precipitous drop in bgalactosidase activity, suggesting an interaction between the
+N-terminus of Ftz-F1 and full length Ftz. Further deletion of
+the A/B region had no effect on interaction with Ftz (F1503/1030). However, truncations resulting in partial or
+complete removal of the DBD (F1-576/1030; F1-616/
+1030) resulted in a signi®cantly decreased interaction.
+Thus, the DBD of Ftz-F1 appears to be necessary for strong
+interaction with Ftz protein. Finally, C-terminal fragments
+lacking the DBD still displayed considerable activity in the
+two hybrid assay (F1-616/1030; F1-946/1030), suggesting
+an additional interaction domain.
+In keeping with this, deletion of the 73 amino acids at the
+C-terminus of Ftz-F1 in the 3 0 deletion series (Fig. 3B, F1-1/
+957) resulted in a dramatic decrease in interaction with Ftz.
+Further deletion from the C-terminus into the LBD had no
+additional effect (F1-1/702), localizing the region involved
+in Ftz interaction to the C-terminus of the Ftz-F1 LBD.
+Consistent with the 5 0 deletions, 3 0 deletion fragments that
+removed the entire DBD (F1-1/456) interacted weakly with
+Ftz, while a fragment retaining the N-terminal portion of the
+DBD (F1-1/517) displayed stronger interaction with Ftz.
+Finally, the N-terminal arm of Ftz-F1 was suf®cient to interact weakly with full length Ftz protein (F1-1/456 and 1/
+265).
+In sum, this deletion analysis identi®ed three regions of
+Ftz-F1 that may directly contact Ftz: the N-terminal A/B
+region, the Ftz-F1 DBD and the C-terminus of the LBD
+which includes an AF-2 domain (see Fig. 2A). All three
+
+42
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+Fig. 2. Evolutionarily conserved domains of Ftz-F1 and Ftz. (A) Schematic diagram of the nuclear hormone receptor Ftz-F1. Schematic comparison of protein
+members of the Ftz-F1 family. The early and late forms of Drosophila Ftz-F1 are identical except for the N-terminal A/B region. The DBD of Drosophila FtzF1 proteins and murine SF-1 are highly conserved. The darker lined box within the DBD alignment indicates the Ftz-F1 box. Regions of similarity and identity
+are also dispersed through the LBDs of these proteins. Highlighted here is the conserved AF-2 domain. (B) Schematic comparison of Ftz protein from different
+species. Ftz from D. melanogaster, D. hydei and the beetle T. castaneum show a high degree of sequence identity within the HD. These proteins also share an
+identical hexapeptide (LRALLT) at the N-termini.
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+43
+
+Fig. 3. Multiple regions of Ftz-F1 interact with Ftz. Sequential deletions of Ftz-F1 were generated and fragments were tested for interaction with full length Ftz
+fused to the GAL4 DBD in yeast two hybrid assays. (A) Schematic representation of 5 0 deletion constructs fused to the GAL4 AD and the relative bgalactosidase units generated by interaction with Ftz. (B) Schematic representation of 3 0 deletion constructs. The relative b-galactosidase units were grouped
+into the following ranges: (1111)  .1500 units; (111)  500±1500 units; (1 1 )  300±500 units; (1)  150±300 units; (1/2)  100±150 units;
+(2) # 100 units. b-Galactosidase units were calculated as described in Section 4 based on measurement of at least six independent transformants. Note that
+neither full length pACT-Ftz-F1 nor pACT-Ftz-F1 deletions, activated reporter gene transcription alone, indicating that there are no Ftz-F1 binding sites in the
+promoter region.
+
+regions are necessary to achieve optimal levels of protein±
+protein interaction, as deletion of any single domain
+weakened the Ftz-F1/Ftz interaction considerably. Two of
+these candidate Ftz-interaction domains are present in both
+early and late forms of Drosophila Ftz-F1, are present in
+Ftz-F1 family members throughout the animal kingdom
+(Fig. 2A) and are found in the Ftz-F1 orthologs that rescued
+a ftz-f1 mutant embryos (Fig. 1). Thus, evolutionarily
+conserved regions of Ftz-F1 that are necessary for protein
+function in vivo act, at least in part, by mediating direct
+interactions with Ftz. This led us to further investigate the
+role of Ftz-F1's DBD and AF-2 portion of its LBD in the
+Ftz-F1/Ftz interaction, as described in the following two
+sections.
+2.3. The Ftz-F1 DBD interacts directly with Ftz protein
+The studies above demonstrated that the Ftz-F1 DBD was
+necessary for optimal interaction with Ftz protein. To test
+whether the Ftz-F1 DBD is suf®cient to mediate an interaction with Ftz, yeast two hybrid assays were carried out.
+Surprisingly, the Ftz-F1 DBD interacted with Ftz almost
+as strongly as Ftz-F1 protein (Fig. 4A, slashed bars).
+These two hybrid results suggest that the Ftz-F1 DBD
+directly interacts with Ftz protein.
+We showed previously that Ftz-F1 protein strongly
+enhances Ftz binding to an oligonucleotide containing adjacent Ftz/Ftz-F1 binding sites (Yu et al., 1997). Ftz binds
+DNA in the presence of Ftz-F1 at a concentration ,50
+times lower than that needed for Ftz to bind DNA alone.
+This results in the formation of a ternary Ftz/Ftz-F1/DNA
+
+complex that is readily detectable in gel retardation assays.
+To test whether the Ftz-F1 DBD is suf®cient to facilitate
+DNA binding by Ftz protein, puri®ed Ftz-F1 DBD was
+included in DNA binding reactions with full length Ftz
+(Fig. 4B). Ftz-F1 DBD strongly enhanced Ftz binding to
+DNA, with formation of a ternary Ftz-F1 DBD/Ftz/DNA
+complex (lane 2, arrow) under conditions for which no binding of Ftz protein alone was detected (lane 5). The addition
+of anti-Ftz antibody, but not pre-immune serum, abolished
+the formation of this complex, demonstrating that Ftz
+protein is present in the ternary complex (lanes 3 vs. 4).
+Thus, the Ftz-F1 DBD is suf®cient to dramatically enhance
+Ftz binding to DNA target sites.
+We next tested whether interaction between the two
+DBDs ± Ftz-F1 DBD and the Ftz HD was responsible for
+the facilitation of Ftz DNA binding seen above. Increasing
+amounts of Ftz HD were incubated with a ®xed amount of
+Ftz-F1 DBD and DNA (Fig. 4C). The formation of a ternary
+complex was observed (Fig. 4C, arrow, lanes 5±7). Ftz-F1
+DBD formed a binary complex with DNA (lanes 2±5) but all
+Ftz-F1 DBD was recruited to a ternary complex at high
+concentrations of Ftz HD (lane 7). In contrast to the situation for full length Ftz protein, ternary complex formation
+was detected only at levels of Ftz HD that also formed a HD/
+DNA binary complex (lanes 5±8). Thus, facilitation of binding was weaker with the isolated DBDs than with Ftz-F1
+DBD and full length Ftz or with the two full length proteins.
+Nonetheless, some degree of synergy was observed since
+ternary complex formation would not be expected stochastically in the presence of excess DNA (lanes 5,6). This
+enhancement likely results from direct protein±protein
+
+44
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+Fig. 4. The Ftz-F1 DBD is suf®cient to mediate strong interactions with Ftz protein. (A) Interaction of Ftz-F1 DBD with Ftz in a yeast two hybrid assay. bGalactosidase units were calculated based on measurement of six independent transformants. Columns indicate (from left to right): Controls, empty pAS2 1
+empty pACT; pAS-Ftz 1 empty pACT. Interaction of Ftz with Ftz-F1 DBD, empty pAS 1 pACT-F1 DBD; pAS-Ftz 1 pACT-F1 DBD. Interaction of Ftz with
+Ftz-F1, empty pAS 1 pACT-Ftz-F1; pAS-Ftz 1 pACT-Ftz-F1. pACT-Ftz-F1 and pACT-F1 DBD did not activate reporter gene transcription without Ftz. (B)
+F1 DBD facilitates Ftz binding to DNA. Gel retardation assays were used to compare the binding of Ftz to its target DNA (F1F) in the absence and presence of
+Ftz-F1 DBD. Lanes: (1) 0.25 mg of Ftz-F1 DBD; (2±4) 0.25 mg of Ftz-F1DBD; and 1 mg of Ftz protein. Lane 2 shows the formation of a Ftz/F1DBD/DNA
+complex (arrow). The addition of anti-Ftz antibody abolished the complex (lane 3) while addition of preimmune serum had no effect (lane 4). Lane 5, Ftz alone
+(1 mg) was not able to bind to F1F DNA. (C) F1 DBD and Ftz HD interact. Gel retardation assays were carried out with isolated F1DBD and Ftz HD. Increasing
+amounts of Ftz HD were incubated with a ®xed amount of Ftz-F1 DBD. Lanes: (1) free probe, (2) 0.25 mg of F1 DBD. Note formation of Ftz-F1/DNA binary
+complex (dot). Lanes 3±7, 0.25 mg of F1 DBD and increasing amounts of Ftz HD (lane 3, 50 ng; lane 4, 100 ng; lane 5, 200 ng; lane 6, 450 ng; lane 7, 900 ng).
+In lane 5, note the formation of a ternary complex (arrow) and the appearance of binary Ftz HD/DNA binary complex (gray arrowhead). At high concentrations
+of Ftz HD, all F1 DBD is recruited to the ternary complex (lane 7). Lane 8, 900 ng Ftz HD.
+
+contacts between the two DBDs. Alternatively, Ftz or FtzF1 may con®gure the DNA to increase binding by the partner protein. Such a mechanism contributes to cooperative
+DNA binding by the Hox±Extradenticle cofactor complex
+(Passner et al., 1999). In sum, these results indicate that the
+Ftz-F1 DBD interacts strongly and directly with Ftz protein.
+This interaction appears to involve weak contact between
+Ftz-F1 DBD and Ftz HD, but clearly requires additional
+region(s) of Ftz outside the HD that remain to be identi®ed.
+The unexpected strength of interaction of Ftz-F1 DBD with
+full length Ftz, in both yeast two hybrid and gel retardation
+assays, suggests that the DBD of Ftz-F1 is suf®cient to
+recruit Ftz to target DNA binding sites.
+2.4. The Ftz-F1 AF-2 domain interacts with Ftz via an
+LXXLL motif
+
+terminus contains a conserved LRALL sequence (Brown et
+al., 1994; Jost et al., 1995; Guichet et al., 1997; see Fig. 2B)
+Table 1
+Ftz-F1 interacts with the Ftz LXXLL motif and HD
+Proteins added
+
+b-Galactosidase units a
+
+A. Ftz-F1 plus: Ftz
+Ftz N-terminus
+Ftz LL AA
+
+2000 b
+235
+170
+
+B. Ftz-F1-1/957 1 Ftz N-terminus
+Ftz-F1 946/1030 1 Ftz LL ! AA
+
+,10
+,10
+
+C. Ftz-F1 plus: FtzdeltaHD
+Ftz HD
+Ftz LL AA/deltaHD
+Empty pAS2.1
+
+310
+215
+50
+,10
+
+a
+
+The Ftz-F1 deletion analysis (Fig. 3) suggested that, in
+addition to the DBD, the C-terminal portion of the Ftz-F1
+LBD was necessary for maximal interaction with Ftz. This
+was further investigated in the yeast two hybrid system
+(Table 1). As mentioned above, the C-terminal portion of
+Ftz-F1 contains an AF-2 domain, expected to interact with
+LXXLL motifs in nuclear receptor coactivators. The Ftz N-
+
+b-Galactosidase units were calculated as described in Section 4. An
+average of results obtained from at least six independent transformants is
+shown. The Ftz proteins were expressed as fusions to the GAL4 DBD in
+pAS2.1. Units were adjusted to account for background levels of activation
+mediated by pAS2.1-Ftz. The Ftz-F1 proteins were expressed as fusions to
+the GAL4 AD in pACT2. These proteins did not activate transcription
+above basal levels in the absence of Ftz, as indicated.
+b
+This represents an underestimate of the Ftz/Ftz-F1 interaction as assays
+with the full length proteins reaches saturation.
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+and, as initially suggested by H. Krause, this region could
+mediate the interaction of Ftz with the Ftz-F1 AF-2 domain.
+As shown in Table 1A, an N-terminal fragment of Ftz,
+including the LRALL sequence, mediated a signi®cant
+interaction with Ftz-F1 in the yeast two hybrid system.
+This N-terminal fragment displayed no detectable interaction with a Ftz-F1 protein lacking the C-terminal AF-2
+domain (Table 1B), suggesting a direct interaction between
+the N-terminus of Ftz and the AF-2 domain of Ftz-F1. To
+directly test the function of the LRALL sequence, the
+LRALL sequence in full length Ftz was mutated to
+LRAAA. The interaction with Ftz-F1 was dramatically
+reduced by mutation of the LXXLL motif (Table 1A).
+The Ftz LXXAA failed to interact with a peptide containing
+only the Ftz-F1 C-terminus (F1-946/1030, Table 1B). These
+results indicate that there is a direct interaction between the
+AF-2 domain of Ftz-F1 and the LXXLL motif of Ftz.
+While this manuscript was in preparation, Schwartz et al.
+(2001) reported that the Ftz LXXLL motif and the Ftz-F1
+AF-2 domain can interact in Far-Western assays. These
+®ndings provide an additional in vitro method supporting
+the physical interaction between these motifs of Ftz and FtzF1. Schwartz et al. (2001) further showed that the LXXLL
+region was necessary for Ftz to generate anti-ftz phenotypes
+(Struhl, 1985) and that the AF-2 domain of Ftz-F1 is
+required for rescue of ftz-f1 cuticle defects, further supporting the importance of this interaction for protein function in
+vivo.
+2.5. Ftz HD interacts with Ftz-F1
+Although the interaction was dramatically reduced, Ftz
+LXXAA still interacted with Ftz-F1, suggesting another
+interaction domain was still functional. To test the possibility that the HD was responsible for this interaction, a Ftz
+protein ± Ftz delta HD ± with a complete deletion of the HD 3
+was tested for interaction with Ftz-F1 (Table 1C). The interaction with Ftz-F1 was dramatically decreased by the deletion of the Ftz HD, suggesting that the HD contributes to
+interaction of Ftz with Ftz-F1. Note that mutation of the
+LXXLL motif or deletion of the HD each resulted in a
+roughly equivalent precipitous drop in interaction with
+Ftz-F1 in yeast two hybrid assays. The Ftz HD alone was
+suf®cient to mediate a direct interaction with Ftz-F1 protein
+(Table 1C). As for the Ftz N-terminus alone, this interaction
+was signi®cantly weaker than that of full length Ftz with
+Ftz-F1. To con®rm that Ftz interacts with Ftz-F1 through
+two domains, we generated a double mutant Ftz carrying the
+LXXAA substitution and lacking the HD; interaction was
+reduced to near background levels, although residual interaction was still observed (Table 1C). These results indicate
+3
+FtzdeltaHD is a Ftz protein with a complete and exact deletion of the
+HD. A previously published Ftz protein, FtzDHD, contains a deletion
+within the HD that removes helix 2 and parts of helices 1 and 3 (Copeland
+et al., 1996; Furukubo-Tokunaga et al., 1992).
+
+45
+
+that both the HD and the LXXLL motif of Ftz contribute to
+interactions with Ftz-F1 protein.
+2.6. Ftz and Ftz-F1 coordinately activate transcription in
+vitro and in vivo
+Ftz and Ftz-F1 are presumed to function in vivo by regulating the expression of target genes (reviewed in Biggin
+and McGinnis, 1997). We originally identi®ed Ftz-F1 as a
+Ftz partner by virtue of their interaction on a bona ®de Ftz
+target element from the ftz autoregulatory upstream
+element, the 323 bp ftz proximal enhancer (323 fPE)
+(Hiromi and Gehring, 1987; Pick et al., 1990; Schier and
+Gehring, 1992; Han et al., 1993; Yu et al., 1997). This
+autoregulatory element serves as a model Ftz/Ftz-F1 target
+element that functions in the same fashion as the Ftz-dependent enhancer of the downstream target engrailed (Florence
+et al., 1997). The 323 fPE contains ®ve native binding sites
+for Ftz and three Ftz-F1 binding sites, including one adjacent Ftz/Ftz-F1 binding site to which the proteins bind cooperatively (Yu et al., 1997) (Fig. 4). To quantitate the ability
+of Ftz and Ftz-F1 to synergistically activate transcription via
+this native regulatory element, the 323 fPE-lacZ reporter
+was integrated into the yeast genome and full length Ftz
+and/or Ftz-F1 were expressed (Fig. 5A). Synergistic activation of transcription was seen when both proteins were
+expressed, leading to an ,50-fold activation of reporter
+gene expression. Ftz-F1 alone was able to activate transcription of the reporter, while Ftz alone was minimally active.
+The addition of Ftz increased levels of activation by Ftz-F1
+alone 5±10 fold.
+The 323 fPE directs reporter gene expression in a Ftzdependent, ftz-like seven stripe pattern in vivo (Han et al.,
+1993 and Fig. 5B), re¯ecting the positive autoregulatory
+activity of this element. As shown in Fig. 5B, Ftz-F1 is
+also necessary for 323 fPE-lacZ reporter gene expression
+in vivo: in embryos derived from germline clones lacking
+ftz-f1 activity, no expression of b-galactosidase was detectable, as is the case for ftz mutant embryos. This demonstrates that Ftz-F1 is absolutely required for activation of
+this Ftz-dependent target gene in vivo.
+As mentioned above, the 323 fPE contains one composite
+Ftz-F1/Ftz site (F1F) to which Ftz-F1 and Ftz bind cooperatively (Fig. 4 and Yu et al., 1997). To test activation via this
+minimal binding site, Ftz-F1 and/or Ftz protein(s) were
+expressed along with a reporter gene containing three
+tandem copies of F1F upstream of a minimal promoter
+and lacZ. As for the native 323-fPE target element, Ftz
+and Ftz-F1 synergistically activated transcription. No activation above basal levels was detected without the F1F
+binding site (Fig. 5C). As for the native reporter, Ftz-F1
+alone activated more strongly than Ftz alone and levels of
+Ftz-F1 activation were increased 5±10 fold by addition of
+Ftz. Interestingly, in keeping with the in vivo rescue results
+presented in Fig. 1, the murine ortholog SF-1 also interacted
+
+46
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+synergistically with Ftz to activate transcription via the F1F
+composite site.
+In sum, the 323-fPE autoregulatory element provides a
+model target element for studying the Ftz/Ftz-F1 interaction. In vivo, both Ftz and Ftz-F1 proteins are absolutely
+required for activation of target gene expression. In vitro,
+Ftz and Ftz-F1 cooperatively bind to DNA target sites and
+synergistically activate transcription. Murine SF-1 can
+substitute for Ftz-F1 activity in embryos, presumably
+because of its ability to synergistically activate target gene
+expression in conjunction with Ftz protein.
+3. Discussion
+
+Fig. 5. Ftz and Ftz-F1 coordinately activate transcription in vivo and in
+vitro. (A) Transactivation of the 323 fPE-lacZ reporter gene in vitro. Yeast
+cells carrying an integrated copy of the 323 fPE-lacZ reporter were transformed with plasmids expressing Ftz and/or Ftz-F1, as indicated. b-Galactosidase activity was measured as described in Section 4 based upon assays
+performed with six individual transformants. (B) Expression of the 323
+fPE-lacZ reporter gene in embryos requires Ftz-F1. The 323 fPE-lacZ
+fusion gene was expressed in seven ftz-like stripes in wild type embryos.
+In embryos derived from ftz-f1 P1598 mutant germline clones, no reporter
+gene expression was detected. The expression was monitored with antib-galactosidase antibody (Cappell). The embryos are shown at the germ
+band extension stage; anterior, left. (C) The F1F binding site mediates
+transactivation by SF-1 and Ftz. The w3031A yeast cells carrying the
+reporter construct pSH201-3xF1F-lacZ were transformed with constructs
+expressing full length Ftz, Ftz-F1, Ftz 1 Ftz-F1, SF-1 or Ftz 1 SF-1, as
+indicated. No b-galactosidase activity was detected with a pSH201 vector
+lacking the F1F binding site for any combination of proteins. b-Galactosidase activity was measured as described in Section 4 based upon assays
+performed with six individual transformants.
+
+Nuclear hormone receptors and Hox proteins form two
+large families of transcription factors that regulate a wide
+range of processes during development, differentiation and
+homeostasis of organisms throughout the animal kingdom.
+Here, we have presented evidence for a novel type of interaction between a nuclear receptor and a Hox protein in
+regulating segmentation during Drosophila embryogenesis.
+The orphan receptor Ftz-F1 and HD protein Ftz cooperate to
+promote the development of alternate body segments,
+presumably by activating expression of downstream target
+genes such as engrailed. Ftz and Ftz-F1 are each sequence
+speci®c DNA binding proteins with strong transcriptional
+ADs (Ftz: Fitzpatrick and Ingles, 1989; Han et al., 1989;
+Winslow et al., 1989; Ananthan et al., 1993; Colgan et al.,
+1993, 1995; Ftz-F1, for example: Lala et al., 1992;
+Tsukiyama et al., 1992; Ayer et al., 1993; Honda et al.,
+1993; Ellinger-Ziegelbauer et al., 1994; Ohno et al., 1994;
+Shapiro et al., 1996; Halvorson et al., 1996; Han et al., 1998;
+Nachtigal et al., 1998). However, neither is apparently able
+to function in Drosophila embryos to regulate target gene
+expression in the absence of its partner, since mutation of
+either protein results in lethality accompanied by identical
+pair-rule defects. Each protein is necessary but neither Ftz
+nor Ftz-F1 alone is suf®cient to select and activate target
+gene transcription in the embryo. Why do Ftz and Ftz-F1
+require partners in vivo to regulate gene expression? By
+analogy to the function of b ftz-f1 as a competence factor
+for the ecdysone response (Broadus et al., 1999), a ftz-f1 can
+be seen as a competence factor for a `pulse' of Ftz expression in seven stripes in the blastoderm embryo (Fig. 6A).
+Why does Ftz-F1 fail to activate F1F targets in the
+absence of Ftz protein? Ftz-F1 proteins are strong transcriptional activators in a variety of cell systems. In Drosophila,
+ftz-f1 is maternally deposited and Ftz-F1 is found in all
+somatic nuclei before Ftz is expressed in seven stripes
+(Fig. 6A, green). Yet, Ftz-F1 does not detectably activate
+transcription in the absence of Ftz either temporally ± before
+Ftz is expressed zygotically ± or spatially ± in regions of the
+embryo outside the seven Ftz stripes. Thus the presence of
+Ftz functions as an apparent `on' versus `off' switch to
+enable Ftz-F1 to activate transcription. We propose two
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+47
+
+Fig. 6. Model for Ftz and Ftz-F1 interaction. (A) Ftz-F1 and Ftz overlap in the seven Ftz stripes. Ftz-F1 protein is expressed in all somatic cells of the
+blastoderm embryo (green). Ftz protein is expressed in seven stripes that encircle the embryo. Ftz protein was detected with a mouse anti-Ftz antibody
+(Kellerman et al., 1990) and rhodamine-conjugated secondary antibody. Ftz and Ftz-F1 overlap in all Ftz-expressing cells producing a yellow color. (B) Ftz-F1
+is inactive in cells that do not express Ftz. Ftz-F1 protein is found in all somatic nuclei before Ftz is expressed in stripes and is found in the nuclei of all somatic
+cells when Ftz is expressed in a spatially restricted pattern of stripes. When Ftz-F1 is able to bind cognate DNA sites in the genome of these Ftz-non-expressing
+(`green') cells, we propose that corepressors are recruited to inhibit transcription. (C) Ftz-F1 and Ftz cooperate to activate target gene expression. Ftz and FtzF1 bind cooperatively to composite Ftz-F1/Ftz binding sites. Ftz-F1 strongly enhances Ftz binding and may thus recruit Ftz to sites where it was `pre-bound'
+(B). Interaction of the Ftz LRALL sequence with the Ftz-F1 AF-2 domain displaces corepressors, allowing productive transcription complexes to form.
+Potential contacts of the Ftz C-terminus with TFIIB are indicated (Colgan et al., 1995). Ftz-F1 and Ftz interact synergistically through multiple protein
+domains. Ftz-F1 DBD interacts with Ftz protein very strongly and likely makes multiple contacts with Ftz; these sites remain to be identi®ed and are not
+indicated in the schematic. The F1F binding site sequence indicated is derived from the ftz 323 proximal enhancer and functions in vivo to mediate Ftz-F1/Ftz
+dependent gene expression.
+
+mechanisms that may contribute Ftz-F1's requirement for
+Ftz to activate transcription. First, Ftz-F1 might require Ftz
+for stable DNA binding. In vitro, Ftz-F1 activates transcription of the 323-fPE and F1F reporter constructs more
+strongly than does Ftz (Fig. 5), consistent with the in vitro
+DNA binding properties of the two proteins (Yu et al.,
+
+1997). In fact, the order of magnitude of synergy of transcriptional activation of Ftz-F1 compared to Ftz-F1 1 Ftz
+(5±10 fold, Fig. 1) is similar to the enhancement of DNA
+binding conferred by Ftz on Ftz-F1 (Yu et al., 1997). While
+this mechanism likely contributes to Ftz-F1 activation, the
+enhancement seen in vitro may not translate into the appar-
+
+48
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+ent `on' vs. `off' state of Ftz-F1 in Ftz-expressing vs. Ftznon-expressing cells in vivo. Therefore, we favor a model in
+which Ftz-F1 is actively repressed in the absence of Ftz,
+even if it is bound to cognate DNA target sites (Fig. 6B).
+Ftz-F1 is present in all somatic nuclei before Ftz is
+expressed and may bind cognate DNA sequences, but
+remains quiescent until it is activated by interaction with
+Ftz protein. We propose that interaction of Ftz with Ftz-F1
+through its LXXLL motif displaces corepressor molecules,
+allowing productive transcription complexes to form. The
+candidates for repressor molecules that keep Ftz-F1 in an
+`off' state are the corepresssors that inhibit activity of other
+nuclear receptor family members. The corepressors identi®ed in Drosophila that are expressed throughout the blastoderm embryo include Alien, which interacts with Ftz-F1
+in GST-pulldown assays (Dressel et al., 1999) and
+SMRTER (Tsai et al., 1999). In Fig. 6, we have depicted
+a corepressor binding directly to Ftz-F1. It is also possible
+that another partner of Ftz-F1 recruits a corepressor to the
+complex, as has been shown for SF-1 which is regulated by
+interaction with the nuclear receptor Dax-1 that recruits
+corepressors and inhibits SF-1 activity (Crawford et al.,
+1998; Nachtigal et al., 1998).
+Why does Ftz require Ftz-F1 for target gene regulation in
+vivo? As shown schematically in Fig. 6C, Ftz and Ftz-F1
+bind cooperatively to DNA to select speci®c target sites that
+are composite binding sites for the two proteins. The binding of Ftz and Ftz-F1 to composite sites is stabilized by
+protein±protein interactions mediated by at least two
+regions of each partner protein. The composite nature of
+the binding site raises the selectivity of Ftz binding by
+requiring a heterodimeric site for productive interaction.
+The af®nity of Ftz for composite sites is dramatically
+increased by Ftz-F1 (Yu et al., 1997; Florence et al., 1997
+and Fig. 4). Ftz protein can bind to monomeric `ATTA' core
+sites in vitro (Pick et al., 1990; Florence et al., 1991) and it
+appears to associate with a wide array of sites in the
+genome, as determined by UV cross-linking experiments
+(Walter et al., 1994; Biggin and McGinnis, 1997). However,
+we propose that in vivo, binding of Ftz to monomeric
+`ATTA' sites is transient, as Ftz scans the genome for
+cognate DNA binding sites. This relatively unstable binding
+does not allow Ftz to effectively activate transcription on its
+own, consistent with the ®nding that concatamerized Ftz
+binding sites do not mediate a Ftz-dependent pattern of
+gene expression in vivo (Kalionis and O'Farrell, 1993).
+Ftz binds productively to composite heterodimeric sites,
+where it is stabilized by protein±protein interactions with
+Ftz-F1 (Fig. 6C). This notion is also consistent with reports
+that fusion of Ftz to a strong VP16 activator did not alter
+target gene regulation in vivo (Nasiadka et al., 2000). Thus,
+speci®city of gene regulation by Ftz protein is achieved at
+the level of DNA binding/target site selection, as a result of
+interaction with DNA binding cofactors such as Ftz-F1.
+Future studies are required to elucidate the detailed
+mechanism whereby transcription is activated by the Ftz/
+
+Ftz-F1 complex. One candidate mechanism is direct contact
+of TFIIB by Ftz and/or Ftz-F1. Ftz was shown to directly
+contact TFIIB, activating transcription via a C-terminal
+region that does not appear to be involved in contacting
+Ftz-F1 (Colgan et al., 1993, 1995). Similarly, SF-1 interacts
+with TFIIB via the Ftz-F1 box and adjacent proline-rich
+region (Li et al., 1999), neither of which appear to be necessary for interaction with Ftz. Thus, these regions of the
+proteins could be available in the DNA bound ternary
+complex to directly contact the basal transcription machinery.
+3.1. Does Ftz interaction substitute for a ligand?
+We proposed above that Ftz interacts with the AF-2
+domain of Ftz-F1 to mediate transcription activation. For
+other nuclear receptors, this activation step ± unmasking
+of the LXXLL motif for coactivator binding ± is a consequence of ligand binding. What is the situation for Ftz-F1?
+We propose four hypotheses: (1) The Ftz-F1 LBD adopts a
+unique structure such that it does not require a ligandmediated conformational change to allow interaction with
+its AF-2 domain. However, deletion of part of the LBD
+enhances the transcription activity of SF-1, suggesting that
+the LBD does modulate SF-1 function (Shen et al., 1994).
+(2) As yet unidenti®ed ligand(s) regulate Ftz-F1. Thus far,
+no candidate Ftz-F1 ligand has been identi®ed in Drosophila and reports of a ligand for SF-1 appear to be controversial (Lala et al., 1997; Mellon and Bair, 1998). This does
+not exclude the possibility that an unknown cell-type
+restricted or ubiquitous ligand in¯uences Ftz-F1. (3) The
+DNA mimics a ligand: binding of Ftz-F1 to DNA results
+in a conformational change that activates transcriptional
+potential. (4) Ftz mimics a ligand: multiple regions of FtzF1 interact with Ftz raising the possibility that one of these
+interactions mimics ligand binding in conferring a large
+conformational change in the LBD of Ftz-F1. A somewhat
+similar mechanism was proposed for interaction of SF-1
+with the HD partner Ptx1 (Tremblay et al., 1999). Experiments are underway to determine which, if any, of these
+mechanisms regulate Ftz-F1 activity in vivo.
+3.2. Does Ftz interaction obviate a requirement for a Ftz-F1
+coactivator?
+The data presented above suggest the novel possibility
+that Ftz substitutes for coactivator function for Drosophila
+Ftz-F1. For mammalian SF-1, standard coactivator interactions have been demonstrated in vitro and in cell culture,
+suggesting that SRC and CBP/p300 family proteins are partners of SF-1 (Crawford et al., 1997; Ito et al., 1998; Monte et
+al., 1998). Drosophila CBP has been well characterized
+(Akimura et al., 1997a,b; Waltzer and Bienz, 1999) and
+one p160/SRC-type coactivator, Taiman, was recently identi®ed (Bai et al., 2000). Like Ftz, Drosophila CBP has one
+LXXLL motif while Tai has four such motifs, as is typical
+for mammalian coactivators. However, it is unlikely that
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+interaction with either of these coactivators is suf®cient to
+activate Ftz-F1 since both dCBP and Tai are expressed
+ubiquitously in the embryo, including the cells where FtzF1 is apparently inactive (green cells, Fig. 6A). One interesting possibility is that dCBP acts as a corepressor in the
+context of Ftz-F1, as it has been shown to do for TCF
+(Waltzer and Bienz, 1998). Thus dCBP might silence FtzF1 by interacting with its AF-2 domain via an LXXLL
+motif. This interaction could be displaced by Ftz because
+of an intrinsically higher af®nity of its LXXLL motif as
+compared to that of dCBP. Note that peptides with variations of the LXXLL motif have different af®nities for AF-2
+domains of nuclear receptors (Darimont et al., 1998;
+McInerney et al., 1998; Heery et al., 2001). Alternatively,
+Ftz may interact preferentially with Ftz-F1 because of the
+additional protein±protein and protein±DNA interactions
+that bring high levels of Ftz protein in close proximity of
+Ftz-F1, driving the interaction of its LXXLL motif with FtzF1.
+3.3. Homeodomain nuclear receptor interactions
+While the ®ndings discussed above highlight the importance of the LXXLL domain for Ftz function, our results
+also demonstrated a requirement for the HD in the Ftz/FtzF1 interaction (Fig. 6). These results suggest that in addition
+to its role in DNA binding (Gehring et al., 1994), the Ftz HD
+is involved in direct protein±protein interactions with its
+cofactor Ftz-F1. These ®ndings underscore the importance
+of the HD, which is absolutely required for the wild type
+function of Ftz (Schier and Gehring, 1992; Furukubo-Tokunaga et al., 1992; Schier and Gehring, 1993), as it is for other
+Hox proteins (Gehring et al., 1994; Gibson and Gehring,
+1988; Gibson et al., 1990; Mann and Hogness, 1990; Zhao
+et al., 1996; McGinnis and Kuziora, 1994). Some years ago,
+a `HD-independent' activity of Ftz was described (Copeland
+et al., 1996; Hyduk and Percival-Smith, 1996). These
+studies made use of a protein carrying a deletion within
+the HD (DHD) which removes helix 2 and portions of
+helices 1 and 3. It was shown that this protein is able to
+cause `anti-ftz' phenotypes (Struhl, 1985) that result from
+mis-expression of Ftz with a heat inducible promoter (Copeland et al., 1996; Hyduk and Percival-Smith, 1996) and it
+was suggested that this protein can rescue ftz-dependent
+cuticle when similarly overexpressed (Copeland et al.,
+1996; Hyduk and Percival-Smith, 1996). In contrast to
+these results, Ftz DHD was unable to rescue ftz mutants
+when the protein was expressed under control of endogenous ftz regulatory elements (Furukubo-Tokunaga et al.,
+1992). In addition, even subtle mutations within this region
+of the HD abolished rescue potential (Furukubo-Tokunaga
+et al., 1992). Finally, FtzDHD was unable to rescue any
+cuticular defects associated with ftz mutations when
+expressed using native ftz regulatory elements (Schier and
+Gehring, 1993). Thus it is likely that under conditions of
+overexpression, interactions with Ftz-F1 through the AF-2/
+
+49
+
+LXXLL domains of the proteins can to some extent overcome the endogenous requirement for the HD by positioning Ftz on the DNA of some target elements, allowing for
+gene activation.
+Given the highly conserved nature of the HD, the ®nding
+that it is involved in the Ftz/Ftz-F1 interaction led us to ask
+if other Hox proteins can interact with Ftz-F1. Preliminary
+results indicate that a number of Hox proteins coordinately
+activate transcription in conjunction with Ftz-F1 in cells
+(unpublished observation). Experiments are underway to
+determine whether these interactions ± which were less
+potent than Ftz ± are strong enough to support interactions
+between Ftz-F1 and Hox proteins during Drosophila development. Such interactions would have been masked in
+previous genetic studies by the fact that the earliest function
+of Ftz-F1 in segmentation results in a phenotype which
+precludes analysis of Ftz-F1 function at slightly later stages
+when Hox genes such as Ubx, Antp and Scr are active. An
+additional question is whether conserved Hox proteins are
+partners of mammalian Ftz-F1 proteins. To our knowledge,
+co-expression of and interaction between Hox proteins and
+Ftz-F1 have not been investigated in mammals. Several
+partners of SF-1 have been characterized, including the
+nuclear receptor Dax-1, the zinc ®nger transcription factor
+WT-1 (Nachtigal et al., 1998), and the Bcd-family HD
+protein Ptx-1 (Tremblay et al., 1998). For Ptx-1, the interaction domain with SF-1 was mapped outside of the HD
+(Tremblay et al., 1999). However, interactions between
+other nuclear receptors and the HDs of other proteins have
+been reported. For example, the glucocorticoid, androgen
+and progesterone receptors interact with the POU domains
+of Oct-1 and Oct-2 (Prefontaine et al., 1998) and functional
+interactions between the glucocorticoid receptor and the
+HDs of Oct-1 and Oct-2 were demonstrated both in vitro
+and in vivo (Wang et al., 1999). Interestingly, the DBD of
+the glucocorticoid receptor interacts directly with several
+HDs, including the Ftz HD (Wang et al., 1999). Since ftzf1 but not ftz genes are found in the vertebrate lineage, an
+intriguing possibility consistent with the results discussed
+above is that vertebrate Ftz-F1 proteins interact with HDs of
+Hox proteins that are conserved throughout evolution, to
+execute unique functions as nuclear receptor/Hox protein
+heterodimers.
+
+4. Experimental procedures
+4.1. Plasmid construction
+For transcription assays, cDNAs were cloned into
+pADNS (Colicelli et al., 1989) or Ycp50 ADH (Pick et
+al., 2000). The full length ftz-f1 cDNA was reconstructed
+by joining a HindIII/ SalI fragment containing 57 bp of
+5 0 UTR along with the ®rst ,600 bp of the coding region,
+generated by PCR of genomic DNA, to a Sal1/BamH1 fragment from pJC20-ftz-f1. This fragment was inserted into
+
+50
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+HindIII/Not1 linearized pADNS followed by ®lling in of
+non-compatible BamH1-Not1 ends before ligation. The
+F1F-lacZ reporter was generated by inserting an oligonucleotide containing three copies of F1F in the Xba1 site of
+pSH201. The constructs to express proteins in bacteria were
+generated as follows: ftz cDNA was cloned into pET30a
+(Novagen) as an EcoR1 fragment. The Ftz HD was generated by PCR and inserted into pET30. To express Ftz-F1, we
+used a previously described construct from C. Wu's laboratory, pJC20-Ftz-F1 (Lavorgna et al., 1991). The F1 DBD
+(aa510-605) was generated by PCR and inserted into pGEX.
+For yeast two hybrid assays, cDNAs were cloned into
+pAS2.1 or pACT2 (Clontech, CA). ftz cDNA was cloned
+into pAS2.1 as an EcoR1 fragment. To generate the Ftz Nterminal fragment, ftz cDNA was deleted from the 3 0 side
+with the ExoIII/Mung Bean System (Stratagene). Site-speci®c mutagenesis was performed to generate Ftz deltaHD and
+the LRALL ! LRAAA mutation with a Quickchangee Kit
+(Stratagene) or with a modi®ed protocol using Vent-Polymerase. The ftz-f1 deletions were generated by PCR. The
+fragments were inserted into the BamH1/EcoR1 sites of
+pACT2 (Clontech, CA) in frame with the Gal4 AD. For
+UAS constructs, ftz-f1, b ftz-f1 and SF-1 cDNAs were
+each inserted in the EcoR1 site of pUAS-T (Brand and
+Perrimon, 1993). All cloning steps used standard procedures; details are available upon request. All PCR products
+were veri®ed by sequencing.
+4.2. Gel retardation assays
+Gel retardation assays were carried out as described by
+Han et al., (1993). Twenty microliter binding reactions
+containing 25 mM HEPES, pH 7.8, 0.5 mM DTT; 10%
+glycerol, ,10 fmol 32P-labeled F1F oligonucleotide (5 0 TCGAGCGGCATCCTTGACTTTGATTGGTGCCGC-3 0 )
+and proteins as indicated, were incubated on ice for 1 h. The
+reactions were analyzed by electrophoresis through 4%
+native polyacrylamide gels. All proteins were synthesized
+in bacteria (strain BL21) and prepared as described (Yu et
+al., 1999). Ftz and Ftz HD were expressed with a His-tag
+and were puri®ed using Niquel bound beads (Qiagen, CA).
+The F1 DBD was puri®ed with a GST puri®cation kit (Pharmacia, NJ). The anti-Ftz antibody was a rabbit polyclonal
+(Yu et al., 1997).
+4.3. b -Galactosidase detection
+Yeast strain SFY526 carrying the lacZ reporter gene
+(Clontech, CA) was used for the two-hybrid assays. The
+b-galactosidase assay protocol was modi®ed from Steve
+Hanes. Individual colonies were inoculated in the proper
+selective liquid medium and incubated in the 308C shaker
+incubator until saturation (OD , 1.0). The cultures were
+then diluted approximately 100 £ and incubated again at
+308C with agitation until log phase. The OD600 of each
+culture was determined. The cells were collected and resuspended in 10 mM Tris/0.01% Triton X-100, immediately
+
+frozen in dry ice and stored at 2808C. For assay, cells
+were thawed on ice and 1 ml of ONPG solution (0.01% onitrophenyl b-d-galactopyranoside, 2.5 mM DTT, 0.006%
+SDS, 40 mM b mercaptoethanol in Z-Buffer: 60 mM
+Na2HPO4, 40 mM NaH2PO4, 10 mM KCl, 1 mM MgSO4)
+was added to each tube. The tubes were vortexed and incubated at 308C. The color development was checked every
+15 min. The reactions were stopped with addition of 0.3 ml
+of 1 M Na2CO3 solution. After brief centrifugation, OD420 of
+each supernatant was measured. b-Galactosidase units were
+calculated as: OD420/OD600 £ 1000/time (min). For transcription assays in yeast cells, w3031A cells were used.
+b-Galactosidase assays were carried out as described
+above. For the 323-fPE reporter, incubation with ONPG
+was carried out overnight since levels of expression are
+lower than with the concatamerized reporter construct (Yu
+et al., 1997).
+4.4. Transgenic experiments
+P-element transformation was carried out using standard
+techniques. At least two independent lines were analyzed
+for each construct. The immunohistochemical detection and
+cuticle preparation used standard protocols. The embryos
+were photographed with a Zeiss Axiophot microscope
+using a digital camera (Diagnostic Instrument Inc., MI)
+with Nomarski or dark ®eld optics.
+Acknowledgements
+We thank Keith Parker for the murine SF-1 cDNA, Craig
+Woodard for the b ftz-f1 cDNA, Diane Duncan and Carl Wu
+for antibodies and Peter Gergen, Antoine Guichet and Anne
+Ephrussi for ¯y stocks. We are grateful to Steve Hanes for
+pSH201 plasmid and the b-galactosidase assay protocol.
+We thank Jianbo Song for generating the ftz-f1 cDNA,
+Hong Zhu for technical assistance and Dave Kosman and
+Stephane Zaffran for advice. We thank Ron Kohanski, Craig
+Woodard, Reshma Taneja and Aneel Aggarwal for
+comments on the manuscript. This work was supported by
+a grant from the National Institutes of Health to L.P.
+References
+Akimura, H., Chen, Y., Dai, P., Hou, D.-X., Nonaka, M., Smolik, S.,
+Armstrong, S., Goodman, R.H., Ishii, S., 1997a. Drosophila CBP is a
+co-activator of cubitus interruptus in hedgehog signalling. Nature 386,
+735±738.
+Akimura, H., Hou, D.-X., Ishii, S., 1997b. Drosophila CBP is required for
+dorsal-dependent twist gene expression. Nat. Genet. 17, 211±214.
+Ananthan, J., Baler, R., Morrissey, D., Zuo, J., Lan, Y., Weir, M., Voellmy,
+R., 1993. Synergistic activation of transcription is mediated by the Nterminal domain of Drosophila fushi tarazu homeoprotein and can
+occur without DNA binding by the protein. Mol. Cell. Biol. 13,
+1599±1609.
+Ayer, S., Walker, N., Mosammaparast, M., Nelson, J.P., Shilo, B.Z., Benyajati, C., 1993. Activation and repression of Drosophila alcohol dehy-
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+drogenase distal transcription by two steroid hormone receptor superfamily members binding to a common response element. Nucleic Acids
+Res. 21, 1619±1627.
+Bai, J., Uehara, Y., Montell, D.J., 2000. Regulation of invasive cell behavior by Taiman, a Drosophila protein related to AIB1, a steroid receptor
+coactivator ampli®ed in breast cancer. Cell 103, 1047±1058.
+Barettino, D., Ruiz, M.M.V., Stunnenberg, H.G., 1994. Characterization of
+the ligand-dependent transactivation by steroid hormone receptors.
+EMBO J. 13, 3039±3049.
+Biggin, M.D., McGinnis, W., 1997. Regulation of segmentation and
+segmental identity by Drosophila homeoproteins: the role of DNA
+binding in functional activity and speci®city. Development 124,
+4425±4433.
+Brand, A.H., Perrimon, N., 1993. Targeted gene expression as a means of
+altering cell fates and generating dominant phenotypes. Development
+118, 401±415.
+Broadus, J., McCabe, J.R., Endrizzi, B., Thummel, C.S., Woodard, C.T.,
+1999. The Drosophila b FTZ-F1 orphan nuclear receptor provides
+competence for stage-speci®c responses to the steroid hormone ecdysone. Mol. Cell 3, 143±149.
+Brown, S.J., Hilgenfeld, R.B., Denell, R.E., 1994. The beetle Tribolium
+castaneum has a fushi tarazu homolog expressed in stripes during
+segmentation. Proc. Natl Acad. Sci. USA 91, 12922±12926.
+Chai, C., Chan, W.K., 2000. Developmental expression of a novel Ftz-F1
+homologue, ff1b (NR5A4), in the zebra®sh Danio rerio. Mech. Dev. 91,
+421±426.
+Chien, C.T., Bartel, P.L., Sternglanz, R., Fields, S., 1991. The two-hybrid
+system: a method to identify and clone genes for proteins that interact
+with a protein of interest. Proc. Natl Acad. Sci. USA 88, 9578±9582.
+Colgan, J., Wampler, S., Manley, J.L., 1993. Interaction between a transcriptional acitvator and transcription factor IIB in vivo. Nature 362,
+549±553.
+Colgan, J., Ashali, H., Manley, J.L., 1995. A direct interaction between a
+glutamine-rich activator and the N terminus of TFIIB can mediate
+transcriptional activation in vivo. Mol. Cell. Biol. 15, 2311±2320.
+Colicelli, J., Birchmeier, C., Michaeli, T., O'Neill, K., Riggs, M., Wigler,
+M., 1989. Isolation and characterization of a mammalian gene encoding
+a high-af®nity cAMP phosphodiesterase. Proc. Natl Acad. Sci. USA 86,
+3599±3603.
+Copeland, W.R., Nasiadka, A., Dietrich, B.H., Krause, H.M., 1996. Patterning of the Drosophila embryo by a homeodomain-deleted Ftz polypeptide. Nature 379, 162±165.
+Crawford, P.A., Polish, J.A., Ganpule, G., Sadovsky, Y., 1997. The activation function-2 hexamer of Steroidogenic Factor-1 is required, but not
+suf®cient for potentiation by SRC-1. Mol. Endocrinol. 11, 1626±1635.
+Crawford, P.A., Dorn, C., Sadovsky, Y., Milbrandt, J., 1998. Nuclear receptor DAX-1 recruits nuclear receptor corepressor N-CoR to Steroidogenic Factor 1. Mol. Cell. Biol. 18, 2949±2956.
+Danielian, P.S., White, R., Lees, J.A., Parker, M.G., 1992. Identi®cation of
+a conserved region required for hormone-dependent transcriptional
+activation by steroid hormone receptors. EMBO J. 11, 1025±1033.
+Darimont, B.D., Wagner, R.L., Aprilette, J.W., Stallcup, M.R., Kushnre,
+P.J., Baxter, J.D., Fletterick, R.J., Yamamoto, K.R., 1998. Structure and
+speci®city of nuclear receptor-coactivator interactions. Genes Dev. 12,
+3343±3356.
+Dressel, U., Thormeyer, D., Altncicek, B., Paululat, A., Eggert, M., Schneider, S., Tenbaum, S.P., Renkawitz, R., Baniahmad, A., 1999. Alien, a
+highly conserved protein with characteristics of a corepressor for
+members of the nuclear hormone receptor superfamily. Mol. Cell.
+Biol. 19, 3383±3394.
+Durand, B., Saunders, M., Gaudon, C., Roy, B., Losson, R., Chambon, P.,
+1994. Activation function-2 (AF-2) of retinoic acid receptor and 9-cis
+retinoic acid receptor: presence of a conserved autonomous constitutive
+activating domain and in¯uence of the nature of the response element
+on AF-2 activity. EMBO J. 13, 5370±5382.
+Ellinger-Ziegelbauer, H., Hihi, A.K., Laudet, V., Keller, H., Wahli, W.,
+Dreyer, C., 1994. FTZ-F1-related orphan receptors in Xenopus laevis:
+
+51
+
+transcriptional regulators differentially expressed during early embryogenesis. Mol. Cell. Biol. 14, 2786±2797.
+Ellinger-Ziegelbauer, H., Glaser, B., Dreyer, C., 1995. A naturally occurring short variant of the FTZ-F1-related nuclear orphan receptor
+xFF1rA and interactions between domains of xFF1rA. Mol. Endocrinol.
+9, 872±886.
+Fields, S., Song, O.K., 1989. A novel genetic system to detect protein±
+protein interaction. Nature 340, 245±246.
+Fitzpatrick, V.D., Ingles, C.J., 1989. The Drosophila fushi tarazu polypeptide is a DNA binding transcriptional activator in yeast cells. Nature
+337, 666±668.
+Florence, B., Handrow, R., Laughon, A., 1991. DNA-binding speci®city of
+the fushi tarazu homeodomain. Mol. Cell Biol. 11, 3613±3623.
+Florence, B., Guichet, A., Ephrussi, A., Laughon, A., 1997. Ftz-F1 is a
+cofactor in Ftz activation of the Drosophila engrailed gene. Development 124, 839±847.
+Furukubo-Tokunaga, K., Muller, M., Affolter, M., Pick, L., Kloter, U.,
+Gehring, W.J., 1992. In vivo analysis of the helix-turn-helix motif of
+the fushi tarazu homeo domain of Drosophila melanogaster. Genes
+Dev. 6, 1082±1096.
+Gehring, W.J., Qian, Y.Q., Billeter, M., Furukubo-Tokunaga, K., Schier,
+A.F., Resendez-Perez, D., Affolter, M., Otting, G., Wutrich, K., 1994.
+Homeodomain-DNA recognition. Cell 78, 211±233.
+Gibson, G., Gehring, W.J., 1988. Head and thoracic transformations caused
+by ectopic expression of Antennapedia during Drosophila development. Development 102, 657±675.
+Gibson, G., Schier, A., LeMotte, P., Gehring, W.J., 1990. The speci®cities
+of Sex Combs Reduced and Antennapedia are de®ned by a distinct
+portion of each protein that includes the homeodomain. Cell 62,
+1087±1103.
+Gissendanner, C.R., Sluder, A.E., 2000. nhr-25, the Caenorhabditis elegans
+ortholog of ftz-f1, is required for epidermal and somatic gonad development. Dev. Biol. 221, 259±272.
+Glass, C.K., Rosenfeld, M.G., 2000. The coregulator exchange in transcriptional functions of nuclear receptors. Genes Dev. 14, 121±141.
+Guichet, A., Copeland, J.W.R., Erdelyi, M., Hlousek, D., Zavorszky, P.,
+Ho, J., Brown, S., Percival-Smith, A., Krause, H.M., Ephrussi, A., 1997.
+The nuclear receptor homologue Ftz-F1 and the homeodomain protein
+Ftz are mutually dependent cofactors. Nature 385, 548±552.
+Hafen, E., Kuroiwa, A., Gehring, W.J., 1984. Spatial distribution of transcripts from the segmentation gene fushi tarazu during Drosophila
+embryonic development. Cell 37, 833±841.
+Halvorson, L.M., Kaiser, U.B., Chin, W.W., 1996. Stimulation of luteinizing hormone b gene promoter activity by the orphan nuclear receptor,
+Steroidogenic Factor-1. J. Biol. Chem. 271, 6645±6650.
+Han, K., Levine, M.S., Manley, J.L., 1989. Synergistic activation and
+repression of transcription by Drosophila homeobox proteins. Cell
+56, 573±583.
+Han, W., Yu, Y., Altan, N., Pick, L., 1993. Multiple proteins interact with
+the fushi tarazu proximal enhancer. Mol. Cell. Biol. 13, 5549±5559.
+Han, W., Yu, Y., Su, K., Kohanski, R.A., Pick, L., 1998. A binding site for
+multiple transcriptional activators in the fushi tarazu proximal enhancer
+is essential for gene expression in vivo. Mol. Cell. Biol. 18, 3384±3394.
+Hanley, N.A., Ikeda, Y., Luo, X., Parker, K.L., 2000. Steriodogenic factor 1
+(SF-1) is essential for ovarian development and function. Mol. Cell.
+Endocrinol. 163, 27±32.
+Heery, D.M., Kalkhoven, E., Hoare, S., Parker, M.G., 1997. A signature
+motif in transcriptional co-activators mediates binding to nuclear receptors. Nature 387, 733±736.
+Heery, D.M., Hussain, H.S., Parker, M.G., Sheppard, H.M., 2001. Core
+LXXLL motif sequences in CBP, SRC1 and PIP140 de®ne af®nity
+and selectivity for steroid and retinoid receptors. J. Biol. Chem. (in
+press).
+Hiromi, Y., Gehring, W.J., 1987. Regulation and function of the Drosophila
+segmentation gene fushi tarazu. Cell 50, 963±974.
+Honda, S.-i., Morohashi, K.-i., Nomura, M., Takeya, H., Kitajima, M.,
+Omura, T., 1993. Ad4BP regulating steroidogenic P-450 gene is a
+
+52
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+
+member of steroid hormone receptor superfamily. J. Biol. Chem. 268,
+7494±7502.
+Hyduk, D., Percival-Smith, A., 1996. Genetic characterization of the homeodomain-independent activity of the Drosophila fushi tarazu gene
+product. Genetics 142, 481±492.
+Ito, M., Yu, R.N., Jameson, J.L., 1998. Steroidogenic Factor-1 contains a
+carboxy-terminal transcriptional activation domain that interacts with
+steroid receptor coactivator-1. Mol. Endocrinol. 12, 290±301.
+Jost, W., Yu, Y., Pick, L., Preiss, A., Maier, D., 1995. Structure and regulation of the fushi tarazu gene from Drosophila hydei. Roux's Arch. Dev.
+Biol. 205, 160±170.
+Kalionis, B., O'Farrell, P.H., 1993. A universal target sequence is bound in
+vitro by diverse homeodomains. Mech. Dev. 43, 57±70.
+Kellerman, K.A., Mattson, D.M., Duncan, I., 1990. Mutation affecting the
+stability of the fushi tarazu protein of Drosophila. Genes Dev. 4, 1936±
+1950.
+Kuroiwa, A., Hafen, E., Gehring, W.J., 1984. Cloning and transcriptional
+analysis of the segmentation gene fushi tarazu of Drosophila 37, 825±
+831.
+Lala, D.S., Rice, D.A., Parker, K.L., 1992. Steroidogenic factor I, a key
+regulator of steroidogenic enzyme expression, is the mouse homolog of
+fushi tarazu-factor I. Mol. Endocrinol. 6, 1249±1258.
+Lala, D.S., Syka, P.M., Lazarchik, S., Magelsdorf, D.J., Parker, K.L.,
+Heyman, R.A., 1997. Activation of the orphan nuclear receptor steroidogenic factor 1 by oxysterols. Proc. Natl Acad. Sci. USA 94, 4895±
+4900.
+Lavorgna, G., Leda, H., Clos, J., Wu, C., 1991. FTZ-F1, a steroid hormone
+receptor-like protein implicated in the activation of fushi tarazu.
+Science 252, 848±851.
+Lavorgna, G., Karim, F.D., Thummel, C.S., Wu, C., 1993. Potential role for
+a FTZ-F1 steroid receptor superfamily member in the control of Drosophila metamorphosis. Proc. Natl Acad. Sci. USA 90, 3004±3008.
+Li, L.-A., Chiang, E.F.-L., Chen, J.-C., Hsu, N.-C., Chen, Y.-J., Chung, B.c., 1999. Function of steroidogenic factor 1 domains in nuclear localization, transactivation, and interaction with transcription factor TFIIB
+and c-Jun. Mol. Endocrinol. 13, 1588±1598.
+Liu, D., Chandy, M., Lee, S.-K., LeDrean, Y., Ando, H., Xiong, F., Lee,
+J.W., Hew, C.L., 2000. A zebra®sh Ftz-F1 (Fushi Tarazu factor 1)
+homologue requires multiple subdomains in the D and E region for
+its transcriptional activity. J. Biol. Chem. 275, 16758±16766.
+Mangelsdorf, D.J., Thummel, C., Beato, M., Herrlich, P., Schutz, G.,
+Umesono, K., Blumberg, B., Kastner, P., Mark, M., Chambon, P.,
+Evans, R.M., 1995. Overview: the nuclear receptor superfamily: the
+second decade. Cell 83, 835±840.
+Mann, R.S., 1995. The speci®city of homeotic gene function. BioEssays 17,
+855±863.
+Mann, R.S., Hogness, D.S., 1990. Functional dissection of Ultrabithorax
+proteins in D. melanogaster. Cell 60, 597±610.
+McGinnis, W., Krumlauf, R., 1992. Homeobox genes and axial patterning.
+Cell 68, 283±302.
+McGinnis, W., Kuziora, M., 1994. The molecular architects of body design.
+Sci. Am. 270, 58±66.
+McGinnis, W., Levine, M.S., Hafen, E., Kuroiwa, A., Gehring, W.J., 1984.
+A conserved DNA sequence in homeotic genes of the Drosophila
+Antennapedia and bithorax complexes. Nature 308, 428±433.
+McInerney, E.M., Rose, D.W., Flynn, S.E., Westin, S., Mullen, T.-M.,
+Krones, A., Inostroza, J., Torchia, J., Nolte, R.T., Assa-Munt, N.,
+Milburn, M.V., Glass, C.K., Rosenfeld, M.G., 1998. Determinants of
+coactivator LXXLL motif speci®city in nuclear receptor transcriptional
+activation. Genes Dev. 12, 3357±3368.
+Mellon, S.H., Bair, S.R., 1998. 25-Hydroxycholesterol is not a ligand for
+the orphan nuclear receptor steroidogenic factor-1 (SF-1). Endocrinology 139, 3026±3029.
+Monte, D., DeWitte, F., Hum, D.W., 1998. Regulation of the human
+P450scc gene by steroidogenic factor a is mediated by CBP/p300. J.
+Biol. Chem. 273, 4585±4591.
+Nachtigal, M.W., Hirokawa, Y., Enyeart-vanHouten, D.L., Flanagan, J.N.,
+
+Hammer, G.D., Ingraham, H.A., 1998. Wilms' tumor 1 and Dax-1
+modulate the orphan nuclear receptor SF-1 in sex-speci®c gene expression. Cell 93, 445±454.
+Nasiadka, A., Grill, A., Krause, H.M., 2000. Mechanisms regulating target
+gene selection by the homeodomain-containing protein Fushi tarazu.
+Development 127, 2965±2976.
+Nolte, R.T., Wisley, G.B., Westin, S., Cobb, J.E., Lambert, M.H., Kurokawa, R., Rosenfeld, M.G., Willson, T.M., Glass, C.K., Milburn, M.V.,
+1998. Ligand binding and co-activator assembly of the peroxisome
+proliferator-activated receptor-g. Nature 395, 137±143.
+Nusslein-Volhard, C., Wieschaus, E., Kluding, H., 1984. Mutations affecting the pattern of the larval cuticle in Drosophila melanogaster I.
+Zygotic loci on the second chromosome. Roux's Arch. Dev. Biol.
+193, 267±282.
+Ohno, C., Ueda, H., Petkovich, M., 1994. The Drosophila nuclear receptors
+FTZ-F1a and FTZ-F1b compete as monomers for binding to a site in the
+fushi tarazu gene. Mol. Cell. Biol. 14, 3166±3175.
+Passner, J.M., Ryoo, H.D., Shen, L., Mann, R.S., Aggarwal, A.K., 1999.
+Structure of a DNA-bound Ultrabithorax-Extradenticle homeodomain
+complex. Nature 397, 714±719.
+Pick, L., Affolter, M., Schmidt-Glenewinkel, T., Gehring, W.J., 1990.
+Analysis of the ftz upstream element: germ layer-speci®c enhancers
+are independently autoregulated. Genes Dev. 4, 1224±1239.
+Pick, L., Lohr, U., Yu, Y., 2000. A double interaction screen to isolate DNA
+binding and protein-tethered transcription factors. In: Zhu, L., Hannon,
+G.J. (Eds.). Yeast Hybrid Technologies, Eaton Publishing, Natick, MA.
+Prefontaine, G.G., Lemieux, M.E., Gif®n, W., Schild-Poulter, C., Pope, L.,
+LaCasse, E., Walker, P., Hache, R.J.G., 1998. Recruitment of octamer
+transcription factors to DNA by glucocorticoid receptor. Mol. Cell.
+Biol. 18, 3416±3430.
+Schier, A.F., Gehring, W.J., 1992. Direct homeodomain-DNA interaction
+in the autoregulation of the fushi tarazu gene. Nature 356, 804±807.
+Schier, A.F., Gehring, W.J., 1993. Functional speci®city of the homeodomain protein fushi tarazu: the role of DNA-binding speci®city. Proc.
+Natl Acad. Sci. USA 90, 1450±1454.
+Schwartz, C.J.E., Sampson, H.M., Hlousek, D., Percival-Smith, A., Copeland, J.W.R., Simmonds, A.J., Krause, H.M., 2001. FTZ-factor 1 and
+fushi tarazu interact via conserved nuclear receptor and coactivator
+motifs. EMBO J. 20, 510±519.
+Scott, M.P., Weiner, A.J., 1984. Structural relationships among genes that
+control development: sequence homology between the Antennapedia,
+Ultrabithorax, and fushi tarazu loci of Drosophila. Proc. Natl Acad.
+Sci. USA 81, 4115±4119.
+Shapiro, D.B., Pappalardo, A., White, B.A., Peluso, J.J., 1996. Steroidogenic factor-1 as a positive regulator of rat granulosa cell differentiation
+and a negative regulator of mitosis. Endocrinology 137, 1187±1195.
+Shen, W.-H., Moore, C.C.D., Ikeda, Y., Parker, K.L., Ingraham, H.A.,
+1994. Nuclear receptor steroidogenic factor 1 regulates the Mullerian
+inhibiting substance gene: a link to the sex determination cascade. Cell
+77, 651±661.
+Struhl, G., 1985. Near-reciprocal phenotypes caused by inactivation or
+indiscriminate expression of the Drosophila segmentation gene ftz
+318, 677±680.
+Taketo, M., Parker, K.L., Howard, T.A., Tsukiyama, T., Wong, M., Niwa,
+O., Morton, C.C., Miron, P.M., Seldin, M.F., 1995. Homologs of drosophila fushi-tarazu factor 1 map to mouse chromosome 2 and human
+chromosome 9q33. Genomics 25, 565±567.
+Tone, Y., Collinwood, T.N., Adams, M., Chattergee, V.K., 1994. Functional analysis of a transactivation domain in the thyroid hormone
+receptor. J. Biol. Chem. 269, 31157±31161.
+Tracey, W.D., Ning, X., Klingler, M., Kramer, S.G., Gergen, J.P., 2000.
+Quantitative analysis of gene function in the Drosophila embryo.
+Genetics 154, 273±284.
+Tremblay, J.J., Lanctot, C., Drouin, J., 1998. The pan-pituitary activator of
+transcription, Ptx1 (Pituitary Homeobox 1), acts in synergy with SF-1
+and Pit1 and is an upstream regulator of the Lim-homeodomain gene
+Lim3/Lhx3. Mol. Endocrinol. 12, 428±441.
+
+M. Yussa et al. / Mechanisms of Development 107 (2001) 39±53
+Tremblay, J.J., Marcil, A., Gauthier, Y., Drouin, J., 1999. Ptx1 regulates
+SF-1 activity by an interaction that mimics the role of the ligand-binding domain. EMBO J. 18, 3431±3441.
+Tsai, C.-C., Kao, H.-Y., Yao, T.-P., Mckeown, M., Evans, R.M., 1999.
+SMRTER, a Drosophila nuclear receptor coregulator, reveals that
+EcR-mediated repression is critical for development. Mol. Cell 4,
+175±186.
+Tsukiyama, T., Ueda, H., Hirose, S., Niwa, O., 1992. Embryonal long
+term repeat-binding protein is a murine homolog of FTZ-F1, a member
+of the steroid receptor superfamily. Mol. Cell. Biol. 12, 1286±
+1291.
+Ueda, H., Hirose, S., 1991. De®ning the sequence recognized with BmFTZF1, a sequence speci®c DNA binding factor in the silkworm, Bombyx
+mori, as revealed by direct sequencing of bound oligonucleaotides and
+gel mobility shift competition analysis. Nucleic Acids Res. 19, 3689±
+3693.
+Ueda, H., Sonoda, S., Brown, J.L., Scott, M.P., Wu, C., 1990. A sequencespeci®c DNA-binding protein that activates fushi tarazu segmentation
+gene expression. Genes Dev. 4, 624±635.
+Ueda, H., Sun, G.-C., Murata, T., Hirose, S., 1992. A novel DNA-binding
+motif abuts the zinc ®nger domain of insect nuclear hormone receptor
+FTZ-F1 and mouse embryonal long terminal repeat-binding protein.
+Mol. Cell. Biol. 12, 5667±5672.
+Wakimoto, B.T., Kaufman, T.C., 1981. Analysis of larval segmentation
+genotypes associated with the Antennapedia gene complex in Drosophila melanogaster. Dev. Biol. 81, 51±64.
+Walter, J., Dever, C.A., Biggin, M.D., 1994. Two homeodomain proteins
+
+53
+
+bind with similar speci®city to a wide range of DNA sites in Drosophila
+embryos. Genes Dev. 8, 1678±1692.
+Waltzer, L., Bienz, M., 1998. Drosophila CBP repressed the transcription
+factor TCF to antagonize Wingless signalling. Nature 395, 521±525.
+Waltzer, L., Bienz, M., 1999. A function of CBP as a transcriptional coactivator during Dpp signalling. EMBO J. 18, 1630±1641.
+Wang, J.M., Prefontaine, G.G., Lemieux, M.E., Pope, L., Akimenko, M.A., Hache, R.J.G., 1999. Developmental effects of ectopic expression of
+the glucocorticoid receptor DNA binding domain are alleviated by an
+amino acid substitution that interferes with homeodomain binding. Mol.
+Cell. Biol. 19, 7106±7122.
+Weiner, A.J., Scott, M.P., Kaufman, T.C., 1984. A molecular analysis of
+fushi tarazu, a gene in Drosophila melanogaster that encodes a product
+affecting embryonic segment number and cell fate. Nature 37, 843±851.
+Winslow, G.M., Hayashi, S., Krasnow, M., Hogness, D.S., Scott, M.P.,
+1989. Transcriptional activation by the Antennapedia and fushi tarazu
+proteins in cultured Drosophila cells. Cell 57, 1017±1030.
+Yu, Y., Pick, L., 1995. Non-periodic cues generate seven ftz stripes in the
+Drosophila embryo. Mech. Dev. 50, 163±175.
+Yu, Y., Li, W., Su, K., Han, W., Yussa, M., Perrimon, N., Pick, L., 1997.
+The nuclear hormone receptor FTZ-F1 is a cofactor for the Drosophila
+homeodomain protein Ftz. Nature 385, 552±555.
+Yu, Y., Yussa, M., Song, J., Hirsch, J., Pick, L., 1999. A double interaction
+screen identi®es positive and negative ftz gene regulators and Ftz-interacting proteins. Mech. Dev. 83, 95±105.
+Zhao, J.J., Lazzarini, R.A., Pick, L., 1996. Functional dissection of the
+mouse Hox-a5 gene. EMBO J. 15, 1313±1322.
+
+
