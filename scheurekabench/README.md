@@ -1,5 +1,7 @@
 # Using the HeurekaBench Framework to create a benchmark
 
+> A detailed walkthrough of both creation modes — flow diagrams, per-step inputs/outputs, and artifact schemas — is available in [PIPELINE.md](PIPELINE.md).
+
 The framework supports two creation modes, selected with `--mode`:
 
 - **`code` (default):** papers **with** code repositories. Insights are verified by generating multi-step code that reproduces them (Step 1a-1c below).
