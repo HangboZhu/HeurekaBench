@@ -12,6 +12,7 @@ import nbformat
 from prompts.code_matcher import code_matcher_prompt
 from prompts.code_generator import code_generator_prompt
 from utils.append_tree_to_prompt import inject_tree_into_prompt_text
+from utils.claude_code_client import query_claude_code
 
 load_dotenv()
 
@@ -54,9 +55,13 @@ def call_claude(prompt, model=CLAUDE_MODEL_DEFAULT, temperature=0.3, json_output
         return ""
 
 def call_llm(prompt, model_call="gpt", temperature=0.3):
+    if model_call == "claude_code":
+        return query_claude_code(prompt)
     return call_gpt(prompt, temperature=temperature) if model_call == "gpt" else call_claude(prompt, temperature=temperature)
 
 def call_llm_with_json(prompt, model_call="gpt", temperature=0.3):
+    if model_call == "claude_code":
+        return query_claude_code(prompt)
     return call_gpt(prompt, temperature=temperature, json_output=True) if model_call == "gpt" else call_claude(prompt, temperature=temperature)
 
 
@@ -66,11 +71,12 @@ def parse_insights_v2(insights_txt_path):
         content = f.read()
 
     # Regex pattern to match each insight block
+    # ([ \t]* tolerates markdown hard-break trailing spaces after the labels)
     pattern = re.compile(
         r"\*\*Insight #\d+\*\*\n\n"                           # Insight header
-        r"\*Summary:\*\n(.*?)\n\n"                            # Summary
-        r"\*How it was derived:\*\n(.*?)\n\n"                 # How it was derived
-        r"\*Relevant text paragraphs:\*\n(.*?)(?=\n\n\*\*Insight #\d+\*\*|\Z)",  # Relevant paragraphs
+        r"\*Summary:\*[ \t]*\n(.*?)\n\n"                            # Summary
+        r"\*How it was derived:\*[ \t]*\n(.*?)\n\n"                 # How it was derived
+        r"\*Relevant text paragraphs:\*[ \t]*\n(.*?)(?=\n\n\*\*Insight #\d+\*\*|\Z)",  # Relevant paragraphs
         re.DOTALL
     )
 
@@ -145,7 +151,11 @@ def match_code_to_insight(insight, script_dict, model_call, root_dir):
 def main(paper_dir, output_file, model_call):
     openai.api_key = OPENAI_API_KEY
 
-    insight_file = os.path.join(paper_dir, f"insights_paragraphs_gpt.txt")
+    # Prefer the original gpt insights file when present (keeps existing
+    # mappings consistent); otherwise fall back to the current model_call's file
+    insight_file = os.path.join(paper_dir, "insights_paragraphs_gpt.txt")
+    if not os.path.exists(insight_file):
+        insight_file = os.path.join(paper_dir, f"insights_paragraphs_{model_call}.txt")
     insights = parse_insights_v2(insight_file)
     print(f"Parsed {len(insights)} insights from '{insight_file}'.")
     
@@ -156,8 +166,13 @@ def main(paper_dir, output_file, model_call):
     with open(os.path.join(paper_dir, f"code_insights_{model_call}.json"), "r") as f:
         code_summary_dict = json.load(f)
 
-    output = {}
-    existing_codes_for_insights = json.load(open(output_file, "r"))
+    if os.path.exists(output_file):
+        with open(output_file, "r") as f:
+            existing_codes_for_insights = json.load(f)
+    else:
+        existing_codes_for_insights = {}
+    # keep previously generated codes when re-running for remaining insights
+    output = dict(existing_codes_for_insights)
 
     for idx, insight in enumerate(insights):
         print(f"\nProcessing Insight #{idx+1}...")
@@ -194,13 +209,16 @@ def main(paper_dir, output_file, model_call):
             continue
 
         matched_result = match_code_to_insight(insight, script_dict, model_call=model_call, root_dir=os.path.join(paper_dir, "code"))
-        # delete everything before the first ```json in the matched_result
+        # Extract the JSON payload: prefer the ```json fence, otherwise the
+        # outermost braces (the model sometimes appends prose after the JSON)
         if matched_result:
-            matched_result = matched_result.split("```json", 1)[-1]
-            if matched_result.endswith("```"):
-                matched_result = matched_result[:-3].strip()
+            fence = re.search(r"```json\s*(.*?)```", matched_result, re.DOTALL)
+            if fence:
+                matched_result = fence.group(1).strip()
             else:
-                matched_result = matched_result.strip()
+                start = matched_result.find("{")
+                end = matched_result.rfind("}")
+                matched_result = matched_result[start:end + 1].strip() if start != -1 and end > start else matched_result.strip()
         try:
             
             parsed = json.loads(matched_result) if matched_result else {}
@@ -238,7 +256,7 @@ def main(paper_dir, output_file, model_call):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_dir", type=str, required=True)
-    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude"])
+    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude", "claude_code"])
     args = parser.parse_args()
 
     paper_dirs = [os.path.join(args.base_dir, d) for d in os.listdir(args.base_dir) if os.path.isdir(os.path.join(args.base_dir, d))]

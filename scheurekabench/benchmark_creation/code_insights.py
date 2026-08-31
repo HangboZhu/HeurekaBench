@@ -1,10 +1,11 @@
-import os, json, sys, argparse, time
+import os, json, sys, argparse, time, re
 import openai
 import anthropic
 from dotenv import load_dotenv
 import nbformat
 
 from prompts.code_describer import code_describer_prompt
+from utils.claude_code_client import query_claude_code
 
 load_dotenv()
 
@@ -46,12 +47,7 @@ def batch_files(file_list, max_tokens):
     if batch:
         yield batch
 
-def describe_batch(batch, model_call="gpt"):
-    merged_source = "".join(
-        f"### BEGIN {path}\n{code}\n### END {path}\n" for path, code in batch
-    )
-    full_prompt = code_describer_prompt + "\n\n" + merged_source
-
+def _call_model(full_prompt, model_call):
     if model_call == "gpt":
         try:
             response = openai.chat.completions.create(
@@ -62,10 +58,10 @@ def describe_batch(batch, model_call="gpt"):
                 timeout=300,
                 response_format={"type": "json_object"},
             )
-            content = getattr(response.choices[0].message, "content", None)
+            return getattr(response.choices[0].message, "content", None)
         except Exception as e:
             print("OpenAI API call failed:", e)
-            return {}
+            return ""
 
     elif model_call == "claude":
         client = anthropic.Anthropic(api_key=CLAUDE_API_KEY)
@@ -76,20 +72,47 @@ def describe_batch(batch, model_call="gpt"):
                 temperature=0.3,
                 messages=[{"role": "user", "content": full_prompt}]
             )
-            content = response.content[0].text
+            return response.content[0].text
         except Exception as e:
             print("Claude API call failed:", e)
-            return {}
+            return ""
 
-    else:
-        raise ValueError(f"Unsupported model_call: {model_call}")
+    elif model_call == "claude_code":
+        return query_claude_code(full_prompt)
 
-    cleaned = content.strip().lstrip("```json").lstrip("```").strip('`\n ')
-    try:
-        return json.loads(cleaned or "{}")
-    except json.JSONDecodeError as e:
-        print(f"JSON decode error: {e}\nPartial response:\n{cleaned[:500]}...")
-        return {}
+    raise ValueError(f"Unsupported model_call: {model_call}")
+
+def describe_batch(batch, model_call="gpt"):
+    merged_source = "".join(
+        f"### BEGIN {path}\n{code}\n### END {path}\n" for path, code in batch
+    )
+    full_prompt = code_describer_prompt + "\n\n" + merged_source
+
+    # Claude Code runs can occasionally come back empty or with malformed JSON
+    # (e.g. trailing commas), so retry those instead of dropping the whole batch
+    attempts = 3 if model_call == "claude_code" else 1
+    for attempt in range(1, attempts + 1):
+        content = _call_model(full_prompt, model_call)
+        if not content:
+            print(f"Empty response (attempt {attempt}/{attempts}).")
+            continue
+        content = (content or "").strip()
+        # Extract the JSON payload: prefer the ```json fence, otherwise the
+        # outermost braces (the model sometimes prepends/appends prose)
+        fence = re.search(r"```json\s*(.*?)```", content, re.DOTALL)
+        if fence:
+            content = fence.group(1)
+        else:
+            start, end = content.find("{"), content.rfind("}")
+            if start != -1 and end > start:
+                content = content[start:end + 1]
+        cleaned = content.strip().lstrip("```json").lstrip("```").strip('`\n ')
+        cleaned = re.sub(r",\s*([}\]])", r"\1", cleaned)
+        try:
+            return json.loads(cleaned or "{}")
+        except json.JSONDecodeError as e:
+            print(f"JSON decode error (attempt {attempt}/{attempts}): {e}\nPartial response:\n{cleaned[:300]}...")
+    return {}
 
 def process_single_paper_dir(paper_dir, model_call):
     code_path = os.path.join(paper_dir, "code")
@@ -121,7 +144,16 @@ def process_single_paper_dir(paper_dir, model_call):
         print(f"No code files found in {code_path}. Skipping.")
         return
 
+    # Resume support: keep descriptions from a previous (possibly partial) run
     descriptions = {}
+    if os.path.exists(output_file):
+        try:
+            with open(output_file, "r", encoding="utf-8") as fp:
+                descriptions = json.load(fp)
+        except json.JSONDecodeError:
+            descriptions = {}
+    files = [(path, code) for path, code in files if path not in descriptions]
+
     for i, batch in enumerate(batch_files(files, MAX_PROMPT_TOKENS - 8192), 1):
         print(f"{os.path.basename(paper_dir)}: Batch {i} of {len(files)} files")
         desc = describe_batch(batch, model_call=model_call)
@@ -143,7 +175,7 @@ def main(base_dir, model_call):
     paper_dirs = sorted(
         os.path.join(base_dir, d)
         for d in os.listdir(base_dir)
-        if os.path.isdir(os.path.join(base_dir, d)) and d.startswith("paper") and not os.path.exists(os.path.join(base_dir, d, f"code_insights_{model_call}.json"))
+        if os.path.isdir(os.path.join(base_dir, d)) and d.startswith("paper")
     )
 
 
@@ -155,7 +187,7 @@ def main(base_dir, model_call):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_dir", type=str, required=True, help="Directory with paper1/, paper2/, ...")
-    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude"])
+    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude", "claude_code"])
     args = parser.parse_args()
 
     main(args.base_dir, args.model_call)

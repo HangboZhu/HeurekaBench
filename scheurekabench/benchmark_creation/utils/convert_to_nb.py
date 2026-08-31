@@ -40,12 +40,14 @@ def run_convert2nb(base_code_dir, model_call="claude"):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_dir", required=True)
-    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude"])
+    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude", "claude_code"])
     args = parser.parse_args()
     
     
     paper_dirs = os.listdir(args.base_dir)
     for paper_dir in paper_dirs:
+        if not os.path.isdir(os.path.join(args.base_dir, paper_dir)):
+            continue
         run_convert2nb(os.path.join(args.base_dir, paper_dir), model_call=args.model_call)
         print(f"Converted {paper_dir} code to Jupyter notebooks with model call {args.model_call}")
 

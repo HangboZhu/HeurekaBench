@@ -8,6 +8,7 @@ import json
 import dotenv
 from prompts.insight2question_prompt import insight2question_prompt_text as insight2mcq_question_prompt_text
 from prompts.insight2open_question_prompt import insight2question_prompt_text as insight2open_question_prompt_text
+from utils.claude_code_client import query_claude_code
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
@@ -84,8 +85,10 @@ def main(insight_json_path, model_call, q_type):
             
         if model_call == "gpt":
             questions = query_gpt(full_prompt)
-        else:
+        elif model_call == "claude":
             questions = query_claude(full_prompt)
+        else:
+            questions = query_claude_code(full_prompt, timeout=1800)
         if questions:
             print(f"Question generated for paper {paper_id}.")
         else:
@@ -114,7 +117,7 @@ def main(insight_json_path, model_call, q_type):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--insight_json_path", type=str, required=True, help="Path to insights.json file")
-    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude"])
+    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude", "claude_code"])
     parser.add_argument("--qtype", type=str, choices=["mcq", "oe"])
     args = parser.parse_args()
 

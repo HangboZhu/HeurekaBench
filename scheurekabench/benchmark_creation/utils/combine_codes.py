@@ -50,7 +50,7 @@ if __name__ == "__main__":
     parser.add_argument("--base_dir", type=str, required=True)
     parser.add_argument("--output_root", type=str, required=True)
 
-    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude"])
+    parser.add_argument("--model_call", type=str, default="claude", choices=["gpt", "claude", "claude_code"])
     args = parser.parse_args()
 
     paper_dirs = [os.path.join(args.base_dir, d) for d in os.listdir(args.base_dir) if os.path.isdir(os.path.join(args.base_dir, d))]

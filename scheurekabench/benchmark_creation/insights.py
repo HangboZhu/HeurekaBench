@@ -8,6 +8,8 @@ import json
 import dotenv
 
 from prompts.insight_extractor import insight_extractor_prompt
+from utils.claude_code_client import query_claude_code
+from utils import llm_gateway
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
@@ -95,6 +97,18 @@ def query_claude(prompt, paper):
         print("API call failed:", e)
         return ""
 
+def query_claude_code_llm(prompt, paper):
+    full_prompt = f"{prompt}\n\n---\n\n{paper}"
+    return query_claude_code(full_prompt, timeout=1800)
+
+def query_gateway(paper):
+    model = os.getenv("INSIGHT_MODEL") or (llm_gateway.model_pool() or [None])[0]
+    if not model:
+        print("No gateway model configured: set MODEL_NAME (or INSIGHT_MODEL) in .env.")
+        return ""
+    full_prompt = f"{insight_extractor_prompt}\n\n---\n\n{paper}"
+    return llm_gateway.chat(full_prompt, model=model)
+
 def main(paper_pdf, output_file, model_call):
     openai.api_key = OPENAI_API_KEY
 
@@ -106,6 +120,10 @@ def main(paper_pdf, output_file, model_call):
         insights = query_gpt(insight_extractor_prompt, paper)
     elif model_call == "claude":
         insights = query_claude(insight_extractor_prompt, paper)
+    elif model_call == "claude_code":
+        insights = query_claude_code_llm(insight_extractor_prompt, paper)
+    elif model_call == "gateway":
+        insights = query_gateway(paper)
     print(f"Insights extracted from paper.") if insights else print(f"No insights returned for paper.")
     insights = insights or "No insights returned for paper."
     with open(output_file, "w") as f:
@@ -115,6 +133,9 @@ def batch_process_all_papers(base_folder, model_call):
     subdirs = [os.path.join(base_folder, d) for d in os.listdir(base_folder) if os.path.isdir(os.path.join(base_folder, d))]
     for subdir in sorted(subdirs):
         paper_pdf = os.path.join(subdir, "paper.pdf")
+        if not os.path.exists(paper_pdf):
+            print(f"No paper.pdf found in {subdir}. Skipping.")
+            continue
         output_file = os.path.join(subdir, f"insights_paragraphs_{args.model_call}.txt")
         main(paper_pdf, output_file, model_call)
 
@@ -122,7 +143,7 @@ def batch_process_all_papers(base_folder, model_call):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--base_dir", type=str, required=True)
-    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude"],)
+    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude", "claude_code", "gateway"],)
     args = parser.parse_args()
 
     batch_process_all_papers(args.base_dir, args.model_call)
