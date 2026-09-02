@@ -71,12 +71,15 @@ def parse_insights_v2(insights_txt_path):
         content = f.read()
 
     # Regex pattern to match each insight block
-    # ([ \t]* tolerates markdown hard-break trailing spaces after the labels)
+    # ([ \t]* tolerates markdown hard-break trailing spaces after the labels;
+    #  headers appear as **Insight #N** or as ##/### markdown headings, e.g.
+    #  from the claude_code backend)
+    insight_header = r"(?:\*\*Insight #\d+\*\*|#{1,3}[ \t]+Insight #\d+)"
     pattern = re.compile(
-        r"\*\*Insight #\d+\*\*\n\n"                           # Insight header
+        rf"{insight_header}\n\n"                                # Insight header
         r"\*Summary:\*[ \t]*\n(.*?)\n\n"                            # Summary
         r"\*How it was derived:\*[ \t]*\n(.*?)\n\n"                 # How it was derived
-        r"\*Relevant text paragraphs:\*[ \t]*\n(.*?)(?=\n\n\*\*Insight #\d+\*\*|\Z)",  # Relevant paragraphs
+        r"\*Relevant text paragraphs:\*[ \t]*\n(.*?)(?=\n\n" + insight_header + r"|\Z)",  # Relevant paragraphs
         re.DOTALL
     )
 

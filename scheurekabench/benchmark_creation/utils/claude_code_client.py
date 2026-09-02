@@ -20,6 +20,12 @@ def query_claude_code(prompt, timeout=1200, max_turns=2):
         cmd += ["--model", model]
 
     env = os.environ.copy()
+    # Route the CLI's API traffic directly: a flaky system proxy (http_proxy
+    # et al.) breaks the gateway connection with ECONNRESET — same rationale
+    # as trust_env=False in utils/llm_gateway.py.
+    for var in ("http_proxy", "https_proxy", "all_proxy",
+                "HTTP_PROXY", "HTTPS_PROXY", "ALL_PROXY"):
+        env.pop(var, None)
     no_proxy = env.get("NO_PROXY", env.get("no_proxy", ""))
     env["NO_PROXY"] = env["no_proxy"] = ",".join(p for p in ["127.0.0.1", "localhost", no_proxy] if p)
 
