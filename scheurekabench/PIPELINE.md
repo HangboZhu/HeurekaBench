@@ -274,11 +274,45 @@ debate 模式产出的 `insights.json`：
 ```bash
 python benchmark_creation/insights_to_questions.py \
     --insight_json_path <path_to_insights.json> \
-    --model_call gateway \
+    --model_call claude_code \
     --qtype mcq   # 或 oe
 ```
 
-每条 insight 附加一个 `<qtype>_question` 字段，MCQ 含题干 + A-D 选项 + 多选答案（如 `"A,C"`），OE 为开放问题 + 参考答案。产出 `mcq_questions.json` / `oe_questions.json`（及对应 `.txt`），与 `insights.json` 同目录。
+默认（legacy）模式下，每条 insight 附加一个 `<qtype>_question` 字段，MCQ 含题干 + A-D 选项 + 多选答案（如 `"A,C"`），OE 为开放问题 + 参考答案。产出 `mcq_questions.json` / `oe_questions.json`（及对应 `.txt`），与 `insights.json` 同目录。
+
+### 5.1 结构化出题（`--structured`，推荐）
+
+```bash
+python benchmark_creation/insights_to_questions.py \
+    --insight_json_path <path_to_insights.json> \
+    --model_call claude_code \
+    --qtype oe --structured
+```
+
+`--structured` 使用 `prompts/insight2question_rubric_prompts.py`，要求 LLM 返回严格 JSON：每题都是
+**Question + Answer + 评分 Rubric** 三件套，由 LLM 基于 Insights 设计：
+
+- **自包含硬性规则**：答题者**只能看到题目本身**（无论文、无数据集、无图表）。所有必要上下文必须以中性事实前提的形式写进题干；题目中禁止出现 "the article/paper/review/study"、"according to"、"as described"、"Figure/Table X" 等任何指向原文的措辞。生成后脚本会用 `SOURCE_LEAK_RE` 自动检测违规题，发现即携带反馈自动重生成一次，保留泄漏更少的版本；仍有残留则打印 WARNING 留给人工清理；
+- **OE**：`rubric.facts` 为原子评分要点（F1, F2, …，对齐 `geval_prompts` G-Eval 的 PRESENT/PARTIAL/MISSING/INCORRECT 协议），`rubric.scoring_guide` 为 1-5 分映射；
+- **MCQ**：`rubric.correct_reasoning` 解释正确项为何正确，`rubric.distractor_analysis` 逐项解释每个干扰项代表的误读。
+
+每条 insight 同时挂两个字段：
+- `<qtype>_questions`：结构化题目列表（新格式，供人工审核与 rubric 评测使用）；
+- `<qtype>_question`：自动渲染的 legacy 文本（`**Question1:** … **Answer1:** …`），保证
+  `evaluate_agent_answer.py` / `extract_agent_answer.py` 的正则解析不变即可继续使用。
+
+```json
+"Insight1": {
+  "summary": "…", "how": "…", "relevant": "…",
+  "oe_questions": [
+    {"question": "…", "answer": "…",
+     "rubric": {"facts": ["F1: …", "F2: …"], "scoring_guide": "…"}}
+  ],
+  "oe_question": "**Question1:** …\n\n**Answer1:** …"
+}
+```
+
+JSON 解析失败时不会覆盖已有产物：原始 LLM 输出存入 `<qtype>_questions_raw.txt` 便于排查重试。
 
 出题后按 README 建议做两轮清理：自动过滤强 LLM 能直接答对的简单题，人工剔除幻觉 / 重复 / 未验证部分的题。
 
