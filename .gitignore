@@ -6,3 +6,9 @@ commands
 **__pycache__**
 scheurekabench/benchmark/scdata
 compressed_scdata
+
+molintbench
+.env
+.gitignore
+.DS_Store
+.zcode/
