@@ -316,6 +316,38 @@ JSON 解析失败时不会覆盖已有产物：原始 LLM 输出存入 `<qtype>_
 
 出题后按 README 建议做两轮清理：自动过滤强 LLM 能直接答对的简单题，人工剔除幻觉 / 重复 / 未验证部分的题。
 
+### 5.2 难度闭环（`difficulty_loop.py`，推荐的自动清理环节）
+
+把"过滤简单题"自动化为闭环：参考 solver（无原文访问）做题 → MCQ 字母精确匹配 / OE 由 grader 按 rubric facts 打 1-5 分 → **solver 答对（MCQ）或评分 ≥ `--keep-rating`（OE）的题被重新生成得更难**（MCQ 选项为"结论+理由"组合、需组合题干 ≥2 个前提；OE 需多步推导、采分点依赖题干数字组合），已有区分度的题原样保留 → 循环直到整体得分落入目标区间或到达 `--max-rounds`。
+
+**错误集合挖掘（2026-09-06 起）**：每轮判分后，凡某 solver 对某 rubric fact 判为
+INCORRECT（直接推翻）或 PARTIAL（只 hedge）的，该 fact 连同 solver 名被逐条注入重生成
+prompt 的 "PROVEN solver weak points" 区块，并要求新题的采分点**直接反驳这些已证实的
+错误认知**——重复同样错误的 solver 必然 INCORRECT/MISSING，只列可能性不表态的作答最多
+PARTIAL。`--solver` 传多个模型（逗号分隔）时自动取**错误并集**，避免只针对单一模型出题。
+
+```bash
+# MCQ：目标 exact-match 50%-70%
+python benchmark_creation/difficulty_loop.py --qtype mcq \
+    --questions_json <dir>/mcq_questions.json --insight_json_path <dir>/insights.json \
+    --model_call claude_code --solver MiniMax-M3 --target-min 0.5 --target-max 0.7
+
+# OE：目标均分 2.5-3.5；双 solver 错误并集 + 缓存续跑
+python benchmark_creation/difficulty_loop.py --qtype oe \
+    --questions_json <dir>/oe_questions.json --insight_json_path <dir>/insights.json \
+    --model_call claude_code --solver MiniMax-M3,glm-5.3-flash --grader gpt-5.6-luna \
+    --oe-target-min 2.5 --oe-target-max 3.5 \
+    --seed_solved "MiniMax-M3=<dir>/oe_solved_minimax.json"
+```
+
+- 每轮题目快照存为 `<qtype>_questions_round<N>.json`，**每轮全部 solver 的作答+判分结果**
+  落盘为 `<qtype>_solved_round<N>.json`（分数不再只存在于终端）；结束后**最接近目标区间的
+  轮次**回写为正式 `<qtype>_questions.json`（含 legacy 文本与 `.txt`）
+- `--seed_solved SOLVER=PATH[,SOLVER=PATH...]`：把 `solve_and_grade.py` 的缓存结果直接
+  作为第 1 轮成绩（不重做题、不重判分，但计入均分），缓存缺失的题正常做题
+- 重新生成的题仍走自包含检查（泄漏原文的题回退上一轮版本）；claude_code 空响应自动重试
+- 单独复测某模型得分可用 `solve_and_grade.py`（不修改题目，只做题+判分，断点续跑）
+
 ---
 
 ## 6. 产物链一览

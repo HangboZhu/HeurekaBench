@@ -41,6 +41,8 @@ I want the PhDs to reason through observations and derive insights similar to th
 
 * Questions can be *single-answer* (e.g., "D") or *multiple-answer* (e.g., "A,C,D"). If multiple entities are part of the correct answer, split them across options and key the combination (e.g., "A,C").
 * Exactly four options A-D. Randomize the position of the correct answer(s) among the options.
+* **Option structure (HARD REQUIREMENT):** every option must be a *conclusion + reasoning* pair of the form "<conclusion> because <reasoning>" (or an equivalent single sentence making both a claim and its justification). An option is correct ONLY IF both its conclusion AND its reasoning are correct. Distractors must mix failure modes: right conclusion + wrong reasoning, wrong conclusion + plausible-sounding reasoning, and claims that are individually true but do not answer the question asked.
+* **Difficulty requirement (HARD REQUIREMENT):** the keyed answer must NOT be identifiable by surface plausibility alone. It must require combining at least two premises stated in the stem (or chaining a premise with a quantitative observation given in the stem). Every distractor must remain defensible under a naive single-premise reading, so that a respondent who does not carefully reason through the stated observations should find at least two options credible.
 * Phrase questions as standalone scientific reasoning problems: state the observations neutrally, then ask which conclusion, interpretation, or decision follows. Use neutral language such as “these observations indicate,” “based on the stated findings,” or “given this pattern.”
 * The question should not specify the exact methods to use to derive the answer from the data.
 * Do not create questions that can be answered without analyzing the data.
@@ -50,8 +52,8 @@ I want the PhDs to reason through observations and derive insights similar to th
 **Guidelines for the rubric:**
 
 * For every question provide a grading rubric consisting of:
-  - "correct_reasoning": a concise justification of why the keyed option(s) are correct, grounded in the insight derivation and the associated paragraphs.
-  - "distractor_analysis": for every non-keyed option, one sentence explaining the specific misconception or misreading of the data it represents.
+  - "correct_reasoning": spell out BOTH parts of the keyed option — the conclusion and the full reasoning chain (which premises from the stem are combined, in what order), grounded in the insight derivation and the associated paragraphs.
+  - "distractor_analysis": for every non-keyed option, state which part fails (the conclusion, the reasoning, or both), what naive single-premise reading it corresponds to, and why that reading is insufficient.
 * The rubric must let a grader verify the answer without re-reading the article.
 
 ---
@@ -65,7 +67,7 @@ Return ONLY a strict JSON array — no prose before or after, no markdown fences
     "questions": [
       {
         "question": "…",
-        "options": {"A": "…", "B": "…", "C": "…", "D": "…"},
+        "options": {"A": "<conclusion> because <reasoning>", "B": "…", "C": "…", "D": "…"},
         "answer": "A,C",
         "rubric": {
           "correct_reasoning": "…",
@@ -119,6 +121,7 @@ I want the PhDs to reason through observations and derive insights similar to th
 
 **Guidelines for the questions:**
 
+* **Difficulty requirement (HARD REQUIREMENT):** each question must require chaining at least two stated premises (or computing/combining quantities given in the stem) — never a single-premise read and never something answerable from textbook knowledge alone. When the insight carries quantitative observations, embed them in the stem and make the answer depend on combining them.
 * Avoid phrasing that suggests PhD students need to recall the article or authors’ conclusions. Phrase questions as standalone scientific reasoning problems: state the observations neutrally, then ask which conclusion, interpretation, or decision follows. Use neutral language such as “these observations indicate,” “based on the stated findings,” or “given this pattern.”
 * The question should not specify the exact methods to use to derive the answer from the data.
 * To reduce bias, formulate questions more generally (e.g., instead of “Type 1 and Type 7 show xyz behaviour”, ask “Which types show xyz behaviour, and justify with evidence?”).
@@ -131,11 +134,12 @@ I want the PhDs to reason through observations and derive insights similar to th
 
 * For each question, provide the reference answer based strictly on the dataset-derived insight.
 * Answers should focus on the findings themselves and not mention the specific methods or tools used to obtain them.
+* The reference answer must be *derivation-dependent*: it should follow only from combining the stated premises. A respondent relying on general domain knowledge alone, without carefully chaining the stated observations, should only be able to produce a partial answer.
 
 **Guidelines for the rubric:**
 
 * For every question provide a grading rubric with two components:
-  - "facts": the ground-truth answer decomposed into atomic, independently verifiable facts (F1, F2, …). Each fact must be a single claim checkable against the reference answer (entity + direction/magnitude of change, identifiers, statistical evidence, conclusion). Facts must be necessary conditions for a complete answer — do not pad with trivia.
+  - "facts": the ground-truth answer decomposed into atomic, independently verifiable facts (F1, F2, …). Each fact must be a single claim checkable against the reference answer (entity + direction/magnitude of change, identifiers, statistical evidence, conclusion). Facts must be necessary conditions for a complete answer — do not pad with trivia. **Facts must capture the derived claims** (conclusions that follow only from combining the stated premises, including any quantities computed from them); facts that merely restate generic domain knowledge without derivation must not appear, so that a knowledge-only answer cannot score above PARTIAL on them.
   - "scoring_guide": a concise mapping from fact coverage to a 1-5 correctness score, in the spirit of: 5 = all facts fully covered with data-grounded support; 4 = most facts covered, none incorrect; 3 = some facts covered, at least one partial/missing; 2 = no fact fully covered, some partial; 1 = facts missing or contradicted.
 * The rubric must let a grader score any student answer without re-reading the article.
 
