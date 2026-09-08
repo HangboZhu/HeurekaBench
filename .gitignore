@@ -12,3 +12,4 @@ molintbench
 .gitignore
 .DS_Store
 .zcode/
+.tcr_links/
