@@ -70,6 +70,54 @@ def resolve_roles(debaters_arg, judge_arg, reviewer_arg):
     return debaters, judge, reviewer
 
 
+def _salvage_json(text, start):
+    """Best-effort salvage of an array whose head or tail got mangled in
+    transit (the gateway/claude CLI occasionally drops leading bytes or
+    emits malformed runs). Scans string-aware from `start` (a '{' or '['),
+    records every bracket-complete top-level element, parses each element
+    INDIVIDUALLY, and returns the list of elements that parse — one broken
+    element no longer discards its well-formed siblings. Returns None if no
+    complete element survives."""
+    base = 1 if text[start] == "[" else 0  # element depth relative to the start
+    depth = 0
+    in_str = esc = False
+    elem_start = None
+    elements = []
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch in "[{":
+            if depth == base and ch == "{":
+                elem_start = i
+            depth += 1
+        elif ch in "]}":
+            if depth <= base:  # stray closer: boundary of the dropped outer part
+                break
+            depth -= 1
+            if depth == base and ch == "}" and elem_start is not None:
+                elements.append((elem_start, i + 1))
+                elem_start = None
+    if in_str or not elements:
+        return None
+    salvaged = []
+    for s, e in elements:
+        chunk = text[s:e]
+        try:
+            salvaged.append(json.loads(chunk))
+        except json.JSONDecodeError:
+            continue
+    return salvaged or None
+
+
 def extract_json(text):
     """Return the first JSON object/array in an LLM response, or None."""
     if not text:
@@ -88,7 +136,25 @@ def extract_json(text):
     try:
         return json.loads(cleaned)
     except json.JSONDecodeError:
-        return None
+        pass
+    # Fallback: salvage the complete top-level elements instead of discarding
+    # the whole response — try successive '{'/'[' offsets from the earliest
+    # structural character onward (covers head-truncated and tail-mangled
+    # outputs; anything before the first surviving element is unrecoverable).
+    # Keep the offset that recovers the MOST complete elements: offsets inside
+    # a broken head only rescue nested sub-objects (fewer, smaller elements),
+    # while the first intact container boundary rescues its every sibling.
+    candidates = sorted({m.start() for m in re.finditer(r"[{\[]", text)})[:25]
+    best = None  # (count, offset, salvaged)
+    for cand in candidates:
+        salvaged = _salvage_json(text, cand)
+        if salvaged and (best is None or len(salvaged) > best[0]):
+            best = (len(salvaged), cand, salvaged)
+    if best is not None:
+        print(f"extract_json: raw JSON mangled; salvaged {best[0]} complete "
+              f"element(s) starting at offset {best[1]}.")
+        return best[2]
+    return None
 
 
 def insight_block(insight):
