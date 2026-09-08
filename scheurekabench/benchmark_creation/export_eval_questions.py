@@ -18,15 +18,19 @@ difficulty_loop.py run (final canonical write); it can also be run standalone:
 import os
 import json
 import argparse
+from collections import Counter
 
 
 def export_eval(questions_json_path, q_type):
     """Write <qtype>_questions_eval.json next to the input.
 
-    Returns (item count, output path)."""
+    Returns (item count, output path). Also reports the question-type mix and
+    stem-length stats (architecture guardrails from the generation prompts)."""
     with open(questions_json_path, "r", encoding="utf-8") as f:
         data = json.load(f)
     items = []
+    mix = Counter()
+    lengths = []
     for paper in data.values():
         for insight in paper.values():
             for q in insight.get(f"{q_type}_questions", []) or []:
@@ -36,9 +40,15 @@ def export_eval(questions_json_path, q_type):
                 item["answer"] = q["answer"]
                 item["rubric"] = q.get("rubric", {})
                 items.append(item)
+                mix[str(q.get("question_type") or "untagged")] += 1
+                lengths.append(len(q["question"]))
     out_path = os.path.splitext(questions_json_path)[0] + "_eval.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(items, f, indent=2, ensure_ascii=False)
+    if lengths:
+        ordered = sorted(lengths)
+        print(f"Type mix: {dict(mix)} | stem chars p50={ordered[len(ordered)//2]} "
+              f"max={ordered[-1]} (target <=~900)")
     return len(items), out_path
 
 

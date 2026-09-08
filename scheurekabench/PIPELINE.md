@@ -294,7 +294,18 @@ python benchmark_creation/insights_to_questions.py \
 **Question + Answer + 评分 Rubric** 三件套，由 LLM 基于 Insights 设计：
 
 - **自包含硬性规则**：答题者**只能看到题目本身**（无论文、无数据集、无图表）。所有必要上下文必须以中性事实前提的形式写进题干；题目中禁止出现 "the article/paper/review/study"、"according to"、"as described"、"Figure/Table X" 等任何指向原文的措辞。生成后脚本会用 `SOURCE_LEAK_RE` 自动检测违规题，发现即携带反馈自动重生成一次，保留泄漏更少的版本；仍有残留则打印 WARNING 留给人工清理；
-- **OE**：`rubric.facts` 为原子评分要点（F1, F2, …，对齐 `geval_prompts` G-Eval 的 PRESENT/PARTIAL/MISSING/INCORRECT 协议），`rubric.scoring_guide` 为 1-5 分映射；
+- **题干经济性**：题干 ≤ ~900 字符（~150 词），只保留推理所需前提，砍掉背景铺陈——避免 benchmark 实际测成"长文本抗干扰能力"；
+- **题型阶梯**（2026-09-08 起）：每题有唯一 `question_type` 标签，取值固定为
+  `extraction / comparison / causal / multi_hop / counterfactual / experimental` 六类；
+  每条 insight 的两题按 **Q1=低阶（理解/比较）、Q2=高阶（因果/多跳/反事实，优先后两者）** 分层，
+  全集由此形成"基础理解 → 信息整合 → 多步推理 → 反事实/条件变化 → 综合判断"的难度梯度，
+  且两题不得互为换词复述。出题与闭环定稿时会打印题型分布与题干长度统计（p50/max）供把关；
+- **一题一核心考点**：一题可含多个支撑步骤，但必须围绕唯一 reasoning target——
+  禁止"数字提取+原因解释+设计批评+结论复述"混装，保证失败可归因；
+- **OE rubric 粒度**：`rubric.facts` **硬性 3–5 条**，语义级核心科学事实（推导产物/机制环节/由数字得出的结论），
+  判分为**语义覆盖**（改写/换序/替代推导均算覆盖）——禁止把一个完整结论机械拆成措辞级子点、
+  禁止按参考答案粒度复刻；优先"组合前提推出新结论"而非罗列事实（测 reasoning 而非 checklist completion）。
+  `rubric.scoring_guide` 为 1-5 分映射；
 - **MCQ**：`rubric.correct_reasoning` 解释正确项为何正确，`rubric.distractor_analysis` 逐项解释每个干扰项代表的误读。
 
 每条 insight 同时挂两个字段：

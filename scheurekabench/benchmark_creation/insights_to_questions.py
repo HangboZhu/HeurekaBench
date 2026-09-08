@@ -109,6 +109,9 @@ def validate_structured(parsed, q_type):
                 "question": str(q["question"]).strip(),
                 "answer": str(q.get("answer") or "").strip(),
             }
+            q_type_tag = str(q.get("question_type") or "").strip().lower()
+            if q_type_tag:  # difficulty-ladder tag (extraction/comparison/causal/
+                entry["question_type"] = q_type_tag  # multi_hop/counterfactual/experimental)
             if q_type == "mcq":
                 options = q.get("options")
                 if not isinstance(options, dict) or not options:

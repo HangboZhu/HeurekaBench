@@ -23,8 +23,24 @@ I want the PhDs to reason through observations and derive insights similar to th
 **Self-containment rule (HARD REQUIREMENT):**
 
 * Every question must be answerable from the question text ALONE. Embed all context the student needs (system, intervention, entities, quantitative observations, experimental setting) directly in the question stem as neutral, factual premises (e.g., "In patients with advanced synovial sarcoma treated with autologous T cells engineered to express an NY-ESO-1-directed TCR, 50% showed objective responses while serious complications such as cytokine release syndrome were manageable, ...").
+* **Stem economy (HARD REQUIREMENT):** keep each stem under ~900 characters (~150 words). Include ONLY the premises the reasoning needs; cut background narration, redundant qualifiers, and scene-setting that no inference depends on. Self-containment means completeness of the NECESSARY premises, not length — otherwise the benchmark silently becomes a long-text interference test.
 * NEVER refer to any external source. The following are FORBIDDEN in questions: "the article", "the paper", "the review", "the study", "the text", "the passage", "the material", "the authors", "according to ...", "as described", "described in", "mentioned", "reported in", "Figure X", "Table X", "Section X", and any equivalent wording in any language.
 * Do not presuppose access to any artifact (e.g., "the dataset shows..."). Instead, state the concrete observations yourself (e.g., "a screen of 1,477 tick-associated viruses found...").
+
+**Question types and difficulty ladder (HARD REQUIREMENT):**
+
+* Every question has exactly ONE primary type, recorded in its "question_type" field, chosen from this fixed list:
+  - "extraction" — identify/integrate the stated observations (basic comprehension tier)
+  - "comparison" — contrast conditions/entities: what differs, and what explains the difference
+  - "causal" — explain the mechanism or causal chain behind the stated observations
+  - "multi_hop" — derive a NEW conclusion that requires chaining at least two stated premises (or computing from stated quantities)
+  - "counterfactual" — alter or remove a stated condition and determine what follows ("if condition X were removed / if group Y were excluded, does the conclusion still hold, and why (not)?")
+  - "experimental" — interpret an experimental design or manipulation: what each comparison isolates, what conclusion the observed pattern licenses
+* Per insight, the two questions must NOT be near-duplicates in different words. Follow a two-tier split:
+  - **Q1 = lower tier** ("extraction" or "comparison"): core understanding of the stated observations.
+  - **Q2 = higher tier** ("causal", "multi_hop", "counterfactual", or "experimental" — prefer "counterfactual" or "multi_hop"): reasoning that goes beyond restating the observations.
+* This produces a set-wide difficulty ladder (understanding → integration → multi-step reasoning → counterfactual/conditional change → judgement) instead of N questions at one indistinguishable difficulty.
+* **One core reasoning target (HARD REQUIREMENT):** a question may involve several supporting steps, but everything in it must serve ONE main reasoning target — the single insight-proving move. Never mix unrelated competences (number extraction + cause explanation + design critique + conclusion restatement) in one question; otherwise a failure cannot be attributed to any specific ability.
 
 **Your task:**
 
@@ -67,6 +83,7 @@ Return ONLY a strict JSON array — no prose before or after, no markdown fences
     "questions": [
       {
         "question": "…",
+        "question_type": "comparison",
         "options": {"A": "<conclusion> because <reasoning>", "B": "…", "C": "…", "D": "…"},
         "answer": "A,C",
         "rubric": {
@@ -76,6 +93,7 @@ Return ONLY a strict JSON array — no prose before or after, no markdown fences
       },
       {
         "question": "…",
+        "question_type": "multi_hop",
         "options": {"A": "…", "B": "…", "C": "…", "D": "…"},
         "answer": "B",
         "rubric": {
@@ -109,8 +127,24 @@ I want the PhDs to reason through observations and derive insights similar to th
 **Self-containment rule (HARD REQUIREMENT):**
 
 * Every question must be answerable from the question text ALONE. Embed all context the student needs (system, intervention, entities, quantitative observations, experimental setting) directly in the question stem as neutral, factual premises (e.g., "In patients with advanced synovial sarcoma treated with autologous T cells engineered to express an NY-ESO-1-directed TCR, 50% showed objective responses while serious complications such as cytokine release syndrome were manageable, ...").
+* **Stem economy (HARD REQUIREMENT):** keep each stem under ~900 characters (~150 words). Include ONLY the premises the reasoning needs; cut background narration, redundant qualifiers, and scene-setting that no inference depends on. Self-containment means completeness of the NECESSARY premises, not length — otherwise the benchmark silently becomes a long-text interference test.
 * NEVER refer to any external source. The following are FORBIDDEN in questions: "the article", "the paper", "the review", "the study", "the text", "the passage", "the material", "the authors", "according to ...", "as described", "described in", "mentioned", "reported in", "Figure X", "Table X", "Section X", and any equivalent wording in any language.
 * Do not presuppose access to any artifact (e.g., "the dataset shows..."). Instead, state the concrete observations yourself (e.g., "a screen of 1,477 tick-associated viruses found...").
+
+**Question types and difficulty ladder (HARD REQUIREMENT):**
+
+* Every question has exactly ONE primary type, recorded in its "question_type" field, chosen from this fixed list:
+  - "extraction" — identify/integrate the stated observations (basic comprehension tier)
+  - "comparison" — contrast conditions/entities: what differs, and what explains the difference
+  - "causal" — explain the mechanism or causal chain behind the stated observations
+  - "multi_hop" — derive a NEW conclusion that requires chaining at least two stated premises (or computing from stated quantities)
+  - "counterfactual" — alter or remove a stated condition and determine what follows ("if condition X were removed / if group Y were excluded, does the conclusion still hold, and why (not)?")
+  - "experimental" — interpret an experimental design or manipulation: what each comparison isolates, what conclusion the observed pattern licenses
+* Per insight, the two questions must NOT be near-duplicates in different words. Follow a two-tier split:
+  - **Q1 = lower tier** ("extraction" or "comparison"): core understanding of the stated observations.
+  - **Q2 = higher tier** ("causal", "multi_hop", "counterfactual", or "experimental" — prefer "counterfactual" or "multi_hop"): reasoning that goes beyond restating the observations.
+* This produces a set-wide difficulty ladder (understanding → integration → multi-step reasoning → counterfactual/conditional change → judgement) instead of N questions at one indistinguishable difficulty.
+* **One core reasoning target (HARD REQUIREMENT):** a question may involve several supporting steps, but everything in it must serve ONE main reasoning target — the single insight-proving move. Never mix unrelated competences (number extraction + cause explanation + design critique + conclusion restatement) in one question; otherwise a failure cannot be attributed to any specific ability.
 
 **Your task:**
 
@@ -135,11 +169,16 @@ I want the PhDs to reason through observations and derive insights similar to th
 * For each question, provide the reference answer based strictly on the dataset-derived insight.
 * Answers should focus on the findings themselves and not mention the specific methods or tools used to obtain them.
 * The reference answer must be *derivation-dependent*: it should follow only from combining the stated premises. A respondent relying on general domain knowledge alone, without carefully chaining the stated observations, should only be able to produce a partial answer.
+* **Prefer combinatorial reasoning over enumeration:** design questions whose answer is a NEW conclusion derived from combining two or three stated facts, rather than a list of stated facts. The benchmark should measure reasoning, not checklist completion — do not add more scoring facts where an additional inference hop could be demanded instead.
 
 **Guidelines for the rubric:**
 
 * For every question provide a grading rubric with two components:
-  - "facts": the ground-truth answer decomposed into atomic, independently verifiable facts (F1, F2, …). Each fact must be a single claim checkable against the reference answer (entity + direction/magnitude of change, identifiers, statistical evidence, conclusion). Facts must be necessary conditions for a complete answer — do not pad with trivia. **Facts must capture the derived claims** (conclusions that follow only from combining the stated premises, including any quantities computed from them); facts that merely restate generic domain knowledge without derivation must not appear, so that a knowledge-only answer cannot score above PARTIAL on them.
+  - "facts": **3 to 5 facts — hard lower AND upper bound** — capturing the decision-critical scientific claims of the answer. Each fact is ONE core claim at SEMANTIC level: a distinct inference result, mechanism step, quantity-derived conclusion, or judgement. Rules:
+      * Do NOT mechanically split one coherent conclusion into wording-level sub-points (e.g., the same claim with and without its justification as separate facts, or one conclusion fractured into "states X" + "states X because Y" + "states X applies under Z"). A respondent who states the core conclusion correctly earns that fact — full stop.
+      * Do NOT transcribe the reference answer's granularity or phrasing. Grading is SEMANTIC COVERAGE: paraphrase, reordering, and alternative correct derivations all count as coverage.
+      * Prefer facts that require COMBINING stated premises over facts that restate a single premise. Every fact must be necessary to judge correctness — no checklist padding: if dropping a fact would not change the score of any reasonable answer, drop it.
+      * Facts must capture the DERIVED claims (conclusions that follow only from combining the stated premises, including quantities computed from them); generic domain knowledge without derivation must not appear, so a knowledge-only answer cannot score above PARTIAL on them.
   - "scoring_guide": a concise mapping from fact coverage to a 1-5 correctness score, in the spirit of: 5 = all facts fully covered with data-grounded support; 4 = most facts covered, none incorrect; 3 = some facts covered, at least one partial/missing; 2 = no fact fully covered, some partial; 1 = facts missing or contradicted.
 * The rubric must let a grader score any student answer without re-reading the article.
 
@@ -154,14 +193,16 @@ Return ONLY a strict JSON array — no prose before or after, no markdown fences
     "questions": [
       {
         "question": "…",
+        "question_type": "extraction",
         "answer": "…",
         "rubric": {
-          "facts": ["F1: …", "F2: …"],
+          "facts": ["F1: …", "F2: …", "F3: …"],
           "scoring_guide": "…"
         }
       },
       {
         "question": "…",
+        "question_type": "counterfactual",
         "answer": "…",
         "rubric": {
           "facts": ["F1: …", "F2: …", "F3: …"],

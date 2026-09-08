@@ -217,6 +217,8 @@ You saw this insight's CURRENT questions and how a strong solver model (with NO 
     prompt += """
 * The solver's quoted reasoning shows HOW it succeeded. Design the replacement so that exactly that style of reasoning is no longer sufficient — e.g. add a quantitative comparison, an exception the reasoner must notice, or a second hop that the first-pass reading misses.
 * Where PROVEN solver weak points are listed (ground-truth facts a solver contradicted or only hedged on), exploit them: design the replacement so its keyed facts directly refute those misconceptions. A solver repeating the same error must score INCORRECT/MISSING on the affected facts, and an answer that merely lists possibilities without committing must stay PARTIAL at best.
+* To make a question harder, PREFER raising its reasoning tier — turn an extraction/comparison question into multi_hop or counterfactual ("if condition X were removed / group Y excluded, does the conclusion still hold?") — rather than adding more scoring facts or lengthening the stem.
+* Keep every architectural constraint from the main instructions intact in replacements: exactly 3-5 rubric facts per question at semantic granularity (never 6+, never wording-level splits); stems under ~900 characters; one core reasoning target per question; Q1 lower tier / Q2 higher tier split; keep or upgrade the "question_type" tag.
 
 All other rules from the main instructions (self-containment, option structure, rubric format, exactly two questions per insight, strict JSON array output) remain unchanged.
 """
