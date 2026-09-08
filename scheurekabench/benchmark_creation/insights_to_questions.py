@@ -260,6 +260,12 @@ def main_structured(insight_json_path, model_call, q_type):
     with open(output_path, "w") as out_f:
         json.dump(output_dict, out_f, indent=2)
 
+    # Bare question/answer/rubric export for agent review systems (no insight
+    # provenance fields); list order = question id.
+    from export_eval_questions import export_eval
+    n_eval, eval_path = export_eval(output_path, q_type)
+    print(f"Eval export: {n_eval} bare {q_type} question(s) -> '{eval_path}'")
+
 
 def main(insight_json_path, model_call, q_type):
     with open(insight_json_path, "r") as f:

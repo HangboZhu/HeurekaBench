@@ -33,6 +33,7 @@ flowchart TD
     HUMAN --> QG
     AUTO --> QG["insights_to_questions.py — Step 2<br/>--qtype mcq|oe"]
     QG --> QS["mcq_questions.json / oe_questions.json"]
+    QS --> EVAL["export_eval_questions.py 自动导出<br/>mcq/oe_questions_eval.json<br/>(仅 question/answer/rubric,<br/>评测系统入口文件)"]
 
     style HUMAN fill:#fff3cd
     style DEB fill:#d1ecf1
@@ -346,6 +347,9 @@ python benchmark_creation/difficulty_loop.py --qtype oe \
 - `--seed_solved SOLVER=PATH[,SOLVER=PATH...]`：把 `solve_and_grade.py` 的缓存结果直接
   作为第 1 轮成绩（不重做题、不重判分，但计入均分），缓存缺失的题正常做题
 - 重新生成的题仍走自包含检查（泄漏原文的题回退上一轮版本）；claude_code 空响应自动重试
+- 出题与难度闭环定稿回写后都会**自动导出** `<qtype>_questions_eval.json`（平铺数组，每项仅
+  question/answer/rubric，MCQ 另有 options，无任何论文/insight 信息）——**评测系统只应消费此文件**；
+  嵌套版保留作溯源审计。手动重生成：`python benchmark_creation/export_eval_questions.py <dir>/oe_questions.json --qtype oe`（格式规范见 `docs/oe_dataset_evaluation_guide.md` §2）
 - 单独复测某模型得分可用 `solve_and_grade.py`（不修改题目，只做题+判分，断点续跑）
 
 ---
@@ -364,4 +368,8 @@ paper.pdf
                    └─ insights_debate_<mc>.json
                        └─ insights.json (自动, 不覆盖手工版)
                            └─ mcq_questions.json / oe_questions.json   (Step 2)
+                               └─ mcq/oe_questions_eval.json          (自动导出, 评测系统入口:
+                                                                    平铺数组, 每项仅 question/answer/
+                                                                    rubric (MCQ 另有 options), 无任何
+                                                                    论文/insight 信息; 顺序即题目 id)
 ```

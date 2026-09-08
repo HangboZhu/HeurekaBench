@@ -50,6 +50,7 @@ from insights_to_questions import (
 )
 from prompts.insight2question_rubric_prompts import MCQ_RUBRIC_PROMPT, OE_RUBRIC_PROMPT
 from solve_and_grade import solve_mcq, grade_mcq, solve_oe, grade_oe
+from export_eval_questions import export_eval
 
 
 def qtext(q, q_type):
@@ -446,6 +447,9 @@ def main():
         len(ins.get(f"{args.qtype}_questions", []) or []) for paper in data.values() for ins in paper.values()
     )
     print(f"Final: {n_questions} {args.qtype} questions | source leaks: {len(leaks)}")
+
+    n_eval, eval_path = export_eval(args.questions_json, args.qtype)  # bare Q/A/rubric for agent review
+    print(f"Eval export: {n_eval} bare question(s) -> '{eval_path}'")
 
 
 if __name__ == "__main__":
