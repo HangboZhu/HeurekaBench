@@ -196,3 +196,38 @@ F3: MISSING
 - 参考实现：本仓库 `benchmark_creation/solve_and_grade.py`（单模型评测）、
   `difficulty_loop.py`（难度闭环）与 `export_eval_questions.py`（评测文件导出）；
   G-Eval 协议原始定义见 `geval_prompts/eval_prompts.py`。
+
+---
+
+## 10. 题包生产合规基线（验收清单）
+
+2026-09-13 Aging-Res OE 审核（20 题全量字段审计）通过后固化的标准；后续题包按此生产与验收。
+一条命令跑完全部检查：
+
+```bash
+python benchmark_creation/validate_question_pack.py <dir>/oe_questions_eval.json --qtype oe
+```
+
+**硬性项（HARD，出现即视为不合格，须修复后重导）**
+
+1. 条目字段恰为 `question` / `answer` / `rubric`（MCQ 另加 `options`），无多余、无缺失；
+2. `rubric.facts` **3–5 条**非空原子事实（语义级断言，不是措辞级子点）；
+3. `rubric.scoring_guide` 非空（facts 覆盖 → 1-5 分的映射）；MCQ 为
+   `correct_reasoning` + 覆盖全部选项的 `distractor_analysis`；
+4. `answer` 非空；批次内无完全重复题干。
+
+**告警项（WARN，需人工确认后放行）**
+
+5. 题干 **≤ ~900 字符**（经济性上限；超限逐题压缩，保持自包含不降信息）；
+6. 自包含：不得出现 `the article / the paper / the study / according to / as described /
+   Figure N / Table N / supplementary / the authors` 等指向外部材料的措辞；
+7. 批内题干两两相似度 **< 0.40**（阈值可调 `--similarity-warn`）。0.40–0.55 区间需人工确认
+   "背景相同但推理目标不同"是否成立；≥0.55 视为近似/照搬，必须重构其中一题的场景与问法。
+
+**其它约束**（见 §5、§9）：题干是唯一输入；`answer` / `rubric` / 溯源字段不进被测模型上下文；
+每条 insight 两题分居低阶/高阶（`question_type` 阶梯）。
+
+**回归夹具**：`benchmark_validation/fixtures/aging-res-oe-v1/`（20 题审核版 + grader 校准数据 +
+基线分数）。压缩/改写/换 prompt 后重跑 evaluation，与该夹具对比：字段检查必须无 HARD，
+solver 均分相对基线漂移应在 ±0.5 内（超出说明改动动了推理目标，而非措辞）。
+

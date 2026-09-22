@@ -48,7 +48,7 @@ from insights_to_questions import (
     render_legacy_text,
     render_rubric_block,
 )
-from prompts.insight2question_rubric_prompts import MCQ_RUBRIC_PROMPT, OE_RUBRIC_PROMPT
+from prompts.insight2question_rubric_prompts import mcq_rubric_prompt, oe_rubric_prompt
 from solve_and_grade import solve_mcq, grade_mcq, solve_oe, grade_oe
 from export_eval_questions import export_eval
 
@@ -170,7 +170,7 @@ def collect_errors(recs, q):
     return errors
 
 
-def build_insight_prompt(idx, paper_id, insight_id, insight, results, q_type, keep_rating):
+def build_insight_prompt(idx, paper_id, insight_id, insight, results, q_type, keep_rating, per_insight=2):
     """Base rubric prompt ({insights} = ONE insight + its questions + solver
     performance) + hardening instructions. Small per-insight prompts parse
     far more reliably than one giant all-insights prompt."""
@@ -193,9 +193,27 @@ def build_insight_prompt(idx, paper_id, insight_id, insight, results, q_type, ke
         if weak:
             block += ("  PROVEN solver weak points on Q%d (facts a solver contradicted or only "
                       "hedged on):\n" % qno + "\n".join(f"    - {w}" for w in weak) + "\n")
-    template = MCQ_RUBRIC_PROMPT if q_type == "mcq" else OE_RUBRIC_PROMPT
+    if q_type == "mcq":
+        # Regeneration happens one insight at a time, so the model cannot
+        # balance answer positions across the pack and left alone it parks
+        # them in one slot (observed: 7/10 keyed at B after three rounds, i.e.
+        # a constant-B guess scoring the top of the target band). Position
+        # carries no information, so assign it here, cycling by insight index.
+        block += (
+            f"\n\n* **Answer position for the replacement:** if it has a single keyed "
+            f"option, place that option at position {'ABCD'[(idx - 1) % 4]} — the pack "
+            f"assigns positions so the key is not concentrated in one slot."
+        )
+    template = mcq_rubric_prompt(per_insight) if q_type == "mcq" else oe_rubric_prompt(per_insight)
     prompt = template.replace("{insights}", block.strip())
     verdict_rule = 'marked CORRECT' if q_type == "mcq" else f'with rating >= {keep_rating}/5'
+    n_word = "two" if per_insight == 2 else "one"
+    s = "s" if per_insight == 2 else ""
+    ladder_note = (
+        "Q1 lower tier / Q2 higher tier split"
+        if per_insight == 2
+        else "the single question must stay the higher tier (counterfactual/multi_hop)"
+    )
     prompt += f"""
 
 ---
@@ -214,13 +232,13 @@ You saw this insight's CURRENT questions and how a strong solver model (with NO 
     else:
         prompt += """ and design the reference answer so that knowledge-only respondents can produce at most a partial answer.
 """
-    prompt += """
+    prompt += f"""
 * The solver's quoted reasoning shows HOW it succeeded. Design the replacement so that exactly that style of reasoning is no longer sufficient — e.g. add a quantitative comparison, an exception the reasoner must notice, or a second hop that the first-pass reading misses.
 * Where PROVEN solver weak points are listed (ground-truth facts a solver contradicted or only hedged on), exploit them: design the replacement so its keyed facts directly refute those misconceptions. A solver repeating the same error must score INCORRECT/MISSING on the affected facts, and an answer that merely lists possibilities without committing must stay PARTIAL at best.
 * To make a question harder, PREFER raising its reasoning tier — turn an extraction/comparison question into multi_hop or counterfactual ("if condition X were removed / group Y excluded, does the conclusion still hold?") — rather than adding more scoring facts or lengthening the stem.
-* Keep every architectural constraint from the main instructions intact in replacements: exactly 3-5 rubric facts per question at semantic granularity (never 6+, never wording-level splits); stems under ~900 characters; one core reasoning target per question; Q1 lower tier / Q2 higher tier split; keep or upgrade the "question_type" tag.
+* Keep every architectural constraint from the main instructions intact in replacements: exactly 3-5 rubric facts per question at semantic granularity (never 6+, never wording-level splits); stems under ~900 characters; one core reasoning target per question; {ladder_note}; keep or upgrade the "question_type" tag.
 
-All other rules from the main instructions (self-containment, option structure, rubric format, exactly two questions per insight, strict JSON array output) remain unchanged.
+All other rules from the main instructions (self-containment, option structure, rubric format, exactly {n_word} question{s} per insight, strict JSON array output) remain unchanged.
 """
     return prompt
 
@@ -323,7 +341,7 @@ def main():
                         help="insights.json backing the questions (summary/how/relevant used in regen)")
     parser.add_argument("--qtype", type=str, required=True, choices=["mcq", "oe"])
     parser.add_argument("--model_call", type=str, default="claude_code",
-                        choices=["gpt", "claude", "claude_code"])
+                        choices=["gpt", "claude", "claude_code", "gateway"])
     parser.add_argument("--solver", type=str, required=True,
                         help="Gateway model(s) used to measure difficulty; comma-separated list "
                              "runs every solver on every question (a question is too easy if ANY "
@@ -340,6 +358,9 @@ def main():
                              "reused as round-1 answers (no re-solving, grades still count); "
                              "keys missing from the cache are solved normally")
     parser.add_argument("--max-rounds", type=int, default=4, help="Solve/regen iterations (default 4)")
+    parser.add_argument("--per-insight", type=int, default=2, choices=[1, 2], dest="per_insight",
+                        help="Questions per insight the pack holds (default 2); with 1 the regeneration "
+                             "keeps the single question at the higher reasoning tier.")
     args = parser.parse_args()
     if args.qtype == "oe" and not args.grader:
         parser.error("--grader is required for --qtype oe.")
@@ -410,7 +431,7 @@ def main():
                 n_kept += len(qs)
                 continue
             prompt = build_insight_prompt(idx, paper_id, insight_id, insight, results,
-                                          args.qtype, args.keep_rating)
+                                          args.qtype, args.keep_rating, args.per_insight)
             dump = os.path.join(
                 os.path.dirname(args.questions_json), f"{args.qtype}_regen_raw_insight{idx}.txt"
             )

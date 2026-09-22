@@ -28,7 +28,12 @@ You will be given the student's answer and the ground-truth (GT) answer.
    - Contradictions should only be judged relative to GT, not relative to biological knowledge outside GT.
    - Facts marked as MISSING do not count into contradictions.
    - Omitting details, partial coverage, or failing to mention context is not a contradiction. It may affect coverage (PARTIAL/MISSING) but does not count as contradictory.
-4) Count number of GT facts that are PRESENT, PARTIAL, MISSING, or INCORRECT. Evaluate only against parts of the answer that address the GT facts. 
+4) **Negation guard**: Before assigning labels, compare each Fi against the student answer to determine whether the claim is **affirmed or negated**.
+   - An answer that **reverses the polarity** of a GT fact (e.g. GT says "gene X increased" → answer says "gene X did not change" or "gene X decreased"; GT says "A is necessary for B" → answer says "A is irrelevant for B" or "A is sufficient for B") is **INCORRECT**, not PARTIAL or MISSING.
+   - An answer that **qualifies a GT fact with an overt negation keyword** (e.g. "no evidence for", "not supported by the data", "the opposite was observed") such that the fact is effectively denied is **INCORRECT**.
+   - An answer that **omits an essential causal or mechanistic link** (the rubric fact makes a directional claim about mechanism, and the answer describes the phenotype without addressing that mechanism) is **MISSING** for that fact, because it does not provide evidence against the claim either — it simply does not address what the fact requires.
+   - If the student answer contains both an affirmation and a negation of the same GT fact (self-contradiction), the negation takes precedence → label INCORRECT.
+5) Count number of GT facts that are PRESENT, PARTIAL, MISSING, or INCORRECT. Evaluate only against parts of the answer that address the GT facts. 
 5) Review the coverage labels for all GT facts and determine the overall correctness score (1-5) based on the scoring rubric below.
 6) Presence of additional information that is not part of GT facts, but does not contradict GT, DOES NOT AFFECT THE SCORE. Calculate the score solely based on the GT facts and their coverage labels.
 

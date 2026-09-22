@@ -14,7 +14,12 @@ def query_claude_code(prompt, timeout=1200, max_turns=2):
     when a system http_proxy is set.
     """
     claude_path = shutil.which("claude") or "claude"
-    cmd = [claude_path, "-p", "--output-format", "text", "--max-turns", str(max_turns)]
+    # --tools "": the CLI is an agent, and every caller here wants raw
+    # generation. Left with tools, it sometimes answers a "return strict JSON"
+    # prompt by *writing a file* instead of replying, and stdout then carries
+    # the tool call ("[Tool call: Write]\n{\"file_path\":...,\"content\":\"...\"}")
+    # rather than the answer (observed 2026-09-17 on the MCQ regeneration).
+    cmd = [claude_path, "-p", "--output-format", "text", "--max-turns", str(max_turns), "--tools", ""]
     model = os.getenv("CLAUDE_CODE_MODEL")
     if model:
         cmd += ["--model", model]

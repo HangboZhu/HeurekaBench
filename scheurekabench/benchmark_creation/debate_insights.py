@@ -118,6 +118,31 @@ def _salvage_json(text, start):
     return salvaged or None
 
 
+def _close_unbalanced(text):
+    """Append the closing brackets `text` is missing, or None if it is already
+    balanced (or ends inside a string literal, where guessing is unsafe)."""
+    stack, in_str, esc = [], False, False
+    for ch in text:
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch in "[{":
+            stack.append(ch)
+        elif ch in "]}":
+            if stack:
+                stack.pop()
+    if in_str or not stack:
+        return None
+    return text + "".join("]" if opener == "[" else "}" for opener in reversed(stack))
+
+
 def extract_json(text):
     """Return the first JSON object/array in an LLM response, or None."""
     if not text:
@@ -137,6 +162,16 @@ def extract_json(text):
         return json.loads(cleaned)
     except json.JSONDecodeError:
         pass
+    # A complete body missing only its closing brackets (the outer ']' is the
+    # byte most often lost in transit) parses once they are re-appended.
+    rebalanced = _close_unbalanced(cleaned)
+    if rebalanced is not None:
+        try:
+            parsed = json.loads(rebalanced)
+            print("extract_json: raw JSON was missing its closing bracket(s); rebalanced and parsed.")
+            return parsed
+        except json.JSONDecodeError:
+            pass
     # Fallback: salvage the complete top-level elements instead of discarding
     # the whole response — try successive '{'/'[' offsets from the earliest
     # structural character onward (covers head-truncated and tail-mangled
@@ -155,6 +190,21 @@ def extract_json(text):
               f"element(s) starting at offset {best[1]}.")
         return best[2]
     return None
+
+
+METHODS_HEADING_RE = re.compile(r"(?m)^\s*Methods\s*$")
+
+
+def drop_methods_section(paper_text):
+    """Cut everything from the standalone 'Methods' heading onward.
+
+    The Methods section is ~40% of the text of a Nature research article but
+    the least load-bearing part for judging whether an insight is supported:
+    the claims and their quantitative support live in the results/discussion.
+    Dropping it keeps the debater/review prompts inside the size the gateway
+    serves reliably (see --drop-methods)."""
+    match = METHODS_HEADING_RE.search(paper_text)
+    return paper_text[: match.start()].rstrip() if match else paper_text
 
 
 def insight_block(insight):
@@ -322,6 +372,10 @@ def process_paper(paper_dir, args):
     print(f"{paper_id}: {len(insights)} draft insights from '{os.path.basename(insight_file)}'.")
 
     paper_text = extract_text_from_pdf_cleaned(pdf_path)
+    if args.drop_methods:
+        trimmed = drop_methods_section(paper_text)
+        print(f"{paper_id}: paper text {len(paper_text)} -> {len(trimmed)} chars (--drop-methods).")
+        paper_text = trimmed
 
     transcript_path = os.path.join(paper_dir, f"debate_transcript_{args.model_call}.json")
     transcript = {}
@@ -440,6 +494,10 @@ def main():
                              "Default: REVIEW_MODEL from .env, else 'claude_code'.")
     parser.add_argument("--rounds", type=int, default=2,
                         help="Total statement rounds per insight (round 1 = independent openings, later rounds = rebuttals)")
+    parser.add_argument("--drop-methods", action="store_true",
+                        help="Trim the paper text at the Methods heading before debating/reviewing. Use when "
+                             "the full text is too large for the gateway (observed: ~140K-char prompts stall "
+                             "for every model but MiniMax-M3); the claims under debate live in the main text.")
     parser.add_argument("--strict-review", action="store_true",
                         help="Drop insights that fail the final agent review instead of keeping them flagged")
     parser.add_argument("--force", action="store_true",

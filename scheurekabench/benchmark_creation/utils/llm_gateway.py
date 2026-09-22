@@ -48,15 +48,31 @@ def _api_keys():
     return sources
 
 
+def _timeout():
+    """Per-request read timeout. The 600 s default fits the short-output calls
+    (debate statements, judge verdicts), but insight extraction streams ~40 KB
+    of markdown in one response and needs more — override with GATEWAY_TIMEOUT
+    (seconds) when a long generation keeps dying at the default."""
+    try:
+        return float(os.getenv("GATEWAY_TIMEOUT") or 600)
+    except ValueError:
+        raise SystemExit("ERROR: GATEWAY_TIMEOUT must be a number of seconds.")
+
+
 def _client_for(api_key):
     if api_key not in _clients:
         import httpx
         import openai
 
+        # max_retries=0: the SDK's built-in retries sit *below* the key/model
+        # fallback logic in chat(), and they multiply a stalled call by up to
+        # 3x before our own retry ever sees it (observed: a single hung call
+        # occupying ~30 minutes instead of the read timeout).
         _clients[api_key] = openai.OpenAI(
             api_key=api_key,
             base_url=_base_url(),
-            http_client=httpx.Client(trust_env=False, timeout=600),
+            http_client=httpx.Client(trust_env=False, timeout=_timeout()),
+            max_retries=0,
         )
     return _clients[api_key]
 
@@ -108,7 +124,8 @@ def _anthropic_client_for(api_key):
         _anthropic_clients[api_key] = anthropic.Anthropic(
             base_url=os.getenv("BASE_URL", "").rstrip("/"),
             api_key=api_key,
-            http_client=httpx2.Client(trust_env=False, timeout=600),
+            http_client=httpx2.Client(trust_env=False, timeout=_timeout()),
+            max_retries=0,  # see _client_for: no SDK-level retry amplification
         )
     return _anthropic_clients[api_key]
 
@@ -136,9 +153,12 @@ def chat(prompt, model, temperature=0.3, max_tokens=16384, json_output=False, at
     """Call `model` on the gateway, trying keys in fallback order.
 
     Non-GPT families (claude/qwen/glm/MiniMax/deepseek/...) are served on the
-    Anthropic-compatible endpoint (CLAUDE_KEY) and are tried there FIRST; the
-    OpenAI-compatible key loop remains as the fallback. GPT-style models go
-    straight to the OpenAI-compatible loop as before.
+    Anthropic-compatible endpoint (CLAUDE_KEY) and are tried there FIRST; if
+    that endpoint fails, the OpenAI-compatible loop also tries CLAUDE_KEY
+    before OPENAI_KEY, because these models live in the CLAUDE_KEY account
+    group — trying OPENAI_KEY first only burns retries on a group that does
+    not serve them. GPT-style models go straight to the OpenAI-compatible
+    loop (OPENAI_KEY first) as before.
 
     Returns the response text, or "" if every route failed.
     """
@@ -158,6 +178,8 @@ def chat(prompt, model, temperature=0.3, max_tokens=16384, json_output=False, at
     preferred = _preferred_key.get(model)
     if preferred:
         order.sort(key=lambda source: source[0] != preferred)
+    elif not _is_openai_family(model):
+        order.sort(key=lambda source: source[0] != "CLAUDE_KEY")
 
     last_error = None
     for var, api_key in order:
