@@ -1,0 +1,116 @@
+{
+  "0": {
+    "raw": "**Answer: C**\n\nReducing cytosolic mtDNA should lower the ligand available to activate cGAS–STING, so the downstream inflammatory/type I interferon response in aged oocytes would be strongly suppressed. This is consistent with the evidence that cytosolic mtDNA accumulation drives cGAS–STING signaling.",
+    "letter": "*",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "1": {
+    "raw": "Answer: C) cGAS sensing is the rate-limiting pathological step because deleting Cgas suppresses fibrosis and senescence markers even though cytosolic mtDNA leakage persists, indicating that leakage without cGAS signaling is insufficient to drive ovarian aging phenotypes.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "2": {
+    "raw": "**D)** cGAS deletion lowers fibrosis and senescence markers while mtDNA leakage persists, indicating that the cGAS sensing step — not leakage — is the bottleneck at which pathology is gated.",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "3": {
+    "raw": "D) Yes, because GAL3+ cells specifically show trending or significantly higher uPAR and CD38 within the fimbria myeloid population, even though dPP4 elevation was detected only when comparing fimbria vs. hippocampus myeloid cells overall. The within-fimbria GAL3-stratified analysis is the appropriate test for marker co-expression in the same population.\n\nThe conclusion about co-upregulation of uPAR and CD38 with GAL3 follows from the within-fimbria comparison. The fact that dPP4 does not show the same within-GAL3+ pattern would matter only if the conclusion claimed dPP4 was also co-upregulated.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "4": {
+    "raw": "A) The findings indicate that senescence programs are integrated within the broader disease-associated microglia (DAM) continuum, because organelle stress and cell surface domains recur across multiple aged clusters rather than defining one unique state. The inverse relationship with homeostatic identity supports overlap with DAM, not separation.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "5": {
+    "raw": "**Answer: A)** Microglia in each region carry low-level transcripts from the dominant neighboring cell type, because imperfect segmentation assigns a fraction of transcripts from adjacent oligodendrocytes (white matter) or neurons (gray matter) to the microglia segment.\n\nThis pattern most directly indicates **spatial transcriptomic spillover/contamination due to imperfect cell segmentation**, not true microglial expression of myelin or neuronal genes.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "6": {
+    "raw": "A) GAL3 marks a myeloid population that expands preferentially in aged female white matter, because colocalization with IBA1 (not GFAP) localizes the signal to microglia/myeloid cells and the sex-stratified increase was detected in females but not males.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "7": {
+    "raw": "Answer: **B**\n\nBecause cluster 3 is described as being **specifically marked by nuclear stress**, and that is the domain distinguishing it from the prototypical senescent-DAM cluster 10, removing nuclear stress from the SenBrain panel would eliminate the only reported enrichment that makes cluster 3 distinguishable as an age-dominant senescent subset. The other options overstate the data or imply unsupported causal necessity.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "8": {
+    "raw": "**C)** Astrocytes are likely the predominant contributors to pathological perivascular FN1 deposition in AD because, although they are 22.7% of FN1-expressing cells, their abundance (~40% of brain cells) and near-universal vascular contact indicate a disproportionate role at the gliovascular interface.\n\nThis is best supported because it integrates the cell-abundance and vascular-contact context with the ROSMAP finding linking FN1 specifically to an astrocyte cluster (SERPINA3⁺). The excitatory neuron fraction is larger, but raw percentage alone does not establish predominance in perivascular pathology.",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "9": {
+    "raw": "**Answer: B)** Astroglial FN1 overexpression is sufficient to compromise gliovascular barrier integrity because dextran leakage and elevated fibronectin co-occurred specifically in the FN1-expressing larvae, while both injection controls (empty plasmid and PBS) lacked FN1 and kept the vascular barrier intact.\n\nThe key comparison is that all groups underwent injection, but only the group expressing FN1 under an astroglial promoter showed fibronectin elevation and dextran extravasation. This isolates FN1 expression as the variable associated with barrier leakage.",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "10": {
+    "raw": "A) Widespread FN1 overexpression would still be expected to elevate fibronectin, but dextran leakage could not be predicted because the experiment only established astroglial FN1 as sufficient in that specific context; changing to ubiquitous expression introduces different cellular contexts, so barrier disruption cannot be inferred.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "11": {
+    "raw": "",
+    "letter": "",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "12": {
+    "raw": "**D)** The absence of astroglial GFP would be uninformative about the transgene’s role because transgene expression/integration can be mosaic; without GFP, there is no evidence that astroglial FN1 was expressed in that larva, so its BBB outcome cannot be used to conclude whether FN1 is necessary or sufficient for disruption.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "13": {
+    "raw": "**B) FN1 would still be sufficient to cause BBB leakage in zebrafish, because the in vivo result directly links FN1 elevation to leakiness without identifying a specific required intermediate, and the rescue experiments were performed in vitro and in vivo only for the integrin/FAK and growth-factor arms.**\n\nThe stated evidence establishes FN1 overexpression as sufficient for BBB leakage in vivo, but it does not prove that the VEGFA → HB-EGF → IGF-1 axis is the obligate mediator of that in vivo effect.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "14": {
+    "raw": "B) The amyloid-driven FN1 deposition is likely gated by an inflammatory tone that includes astrocytic NF-κB signaling because APOE ε4 amplifies astrocytic NF-κB1 and NF-κB2 predicts astrocytic FN1 in humans, and dampening inflammation pharmacologically rescues the analogous phenotype in zebrafish.",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "15": {
+    "raw": "**Answer: A**\n\nThe best-supported interpretation is that **astroglial FN1 expression is sufficient to compromise the gliovascular barrier**. Compared with PBS and empty-plasmid controls, only larvae expressing the **her4.1:FN1-T2A-GFP** construct showed elevated fibronectin and dextran–Texas Red leakage into the brain parenchyma, indicating that the FN1 transgene is the key experimental variable associated with barrier disruption.",
+    "letter": "*",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "16": {
+    "raw": "C) The FN1–VEGFA relationship is CNS-specific because CSF showed a significant FN1–VEGFA association while plasma showed essentially no correlation (r = 0.13, R² = 0.018), indicating the link is not a general peripheral blood feature.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  }
+}

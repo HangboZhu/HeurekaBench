@@ -1,0 +1,362 @@
+[
+  {
+    "question": "In aged female and male mice, RT-PCR measurements from microdissected fimbria-fornix and corpus callosum white matter regions showed significantly higher expression of p16ink4a, Cdkn2a, Lgals3, Cdkn1a/p21, and Ccl2 compared with hippocampal gray matter. In aged females specifically, Ccl5, Apoe, and Gpr34 were also significantly higher in those white matter regions than in hippocampus. Which conclusion is best supported by these observations?",
+    "options": {
+      "A": "Senescence- and DAM-related transcripts are more elevated in aged white matter than in aged hippocampal gray matter, because multiple genes from both programs were simultaneously higher in fimbria-fornix and corpus callosum than in hippocampus within the same aged animals.",
+      "B": "Senescence- and DAM-related transcripts are more elevated in aged hippocampal gray matter than in aged white matter, because gray matter is denser in nuclei and therefore accumulates more microglia per unit volume.",
+      "C": "White matter accumulates senescence transcripts selectively over DAM transcripts, because only p16ink4a, Cdkn2a, Lgals3, Cdkn1a/p21, and Ccl2 were elevated while every DAM gene remained unchanged.",
+      "D": "The elevation of these transcripts in white matter indicates a single causal upstream driver specific to white matter, because a coordinated upregulation across two distinct gene programs can only arise from one shared regulator."
+    },
+    "answer": "A",
+    "rubric": {
+      "correct_reasoning": "Option A correctly captures both the conclusion (senescence- and DAM-related transcripts are more elevated in aged white matter than in aged hippocampal gray matter) and the reasoning: multiple genes from both programs were higher in fimbria-fornix and corpus callosum than in hippocampus within the same aged animals. The stem explicitly states that several senescence genes (p16ink4a, Cdkn2a, Lgals3, Cdkn1a/p21, Ccl2) were significantly higher in white matter, and additional female-specific DAM/inflammation-associated genes (Ccl5, Apoe, Gpr34) were also higher. This supports a coordinated elevation of both programs in white matter.",
+      "distractor_analysis": {
+        "B": "Wrong conclusion (claims white matter is lower, hippocampal gray matter higher) plus unsupported reasoning (density/microglia-per-volume argument is not stated or measured).",
+        "C": "Wrong conclusion that DAM transcripts are unchanged; the stem states DAM-related genes such as Apoe and Gpr34 were also elevated in aged females, so DAM transcripts are not selectively absent.",
+        "D": "Wrong reasoning: a coordinated upregulation across two programs does not by itself identify a single upstream driver, and the stem provides no evidence for a unique causal regulator."
+      }
+    }
+  },
+  {
+    "question": "Relative to young sex-matched controls, p16ink4a, Cdkn2a, Csf1r, Gpr34, and Trem2 increased in both gray and white matter microdissections of old male and female mice, while Apoe, Bcl2a1a, Cd11b, Klk8, Lgals3, Cdkn1a/p21, and Tmem173 increased only in old fimbria-fornix and corpus callosum, and Ccl2, Ccl5, Il1b, and Tyrobp increased only in old male fimbria-fornix and corpus callosum. A regional heat map showed age-dependent increases more consistently in old white matter than in hippocampus or cerebellum. If the white matter microdissections were excluded from this analysis, which conclusion would still be supported by the remaining data?",
+    "options": {
+      "B": "A core set of aging-sensitive genes (p16ink4a, Cdkn2a, Csf1r, Gpr34, Trem2) rises with age in multiple brain regions, because the stem states these transcripts increased in both gray and white matter of old mice, which is sufficient to demonstrate an aging effect outside white matter alone.",
+      "A": "White matter is the only brain region exhibiting age-related transcriptional change, because removing it leaves no aging signal whatsoever in hippocampus or cerebellum.",
+      "C": "Apoe, Bcl2a1a, Cd11b, Klk8, Lgals3, Cdkn1a/p21, and Tmem173 still increase with age throughout the brain, because these genes are known housekeeping transcripts unaffected by region.",
+      "D": "The male-specific Ccl2, Ccl5, Il1b, and Tyrobp increases must reflect a white matter-independent process, because they were reported alongside white matter samples only."
+    },
+    "answer": "B",
+    "rubric": {
+      "correct_reasoning": "Option A is supported: the stem explicitly states that p16ink4a, Cdkn2a, Csf1r, Gpr34, and Trem2 increased in both gray and white matter of old mice. Removing the white matter data still leaves the gray-matter observation, so an age-related increase in these five genes is documented outside white matter. Therefore the conclusion that a core aging-sensitive gene set rises with age in multiple regions is preserved.",
+      "distractor_analysis": {
+        "A": "Wrong conclusion. Excluding white matter does not eliminate the aging signal: the stem specifies p16ink4a, Cdkn2a, Csf1r, Gpr34, and Trem2 also increased in gray matter, so a regional aging effect persists.",
+        "C": "Wrong conclusion. The stem explicitly restricts the increase of Apoe, Bcl2a1a, Cd11b, Klk8, Lgals3, Cdkn1a/p21, and Tmem173 to old fimbria-fornix and corpus callosum; without white matter data, no age-related increase is documented for these genes.",
+        "D": "Wrong reasoning. Reporting a male-specific increase in white matter alongside gray-matter data does not establish white-matter independence; the stem states these genes increased only in old male white matter, not that they are independent of it."
+      }
+    }
+  },
+  {
+    "question": "In young mice, GAL3+ cells are rare throughout the brain, but in aged brains they appear in several limbic regions and accumulate densely in white matter tracts, especially the fimbria, where GAL3 colocalizes with IBA1 and not with GFAP. Which conclusion is best supported by this pattern of colocalization?",
+    "options": {
+      "A": "GAL3 is expressed by astrocytes in the fimbria because GFAP marks astrocytes and GFAP signal overlaps with GAL3 in aged fimbria. because astrocyte identity is defined by GFAP and the fimbria contains many GFAP+ processes.",
+      "C": "GAL3 in the aged fimbria is associated with a myeloid/microglial population rather than with astrocytes, because GAL3 colocalizes with the myeloid marker IBA1 and does not colocalize with the astrocyte marker GFAP. because colocalization with IBA1 alone, in the absence of GFAP overlap, places GAL3 in IBA1+ cells.",
+      "B": "GAL3 marks neurons in the aged fimbria, because neurons are the dominant cell type in white matter tracts and GAL3 signal is dense there. because dense immunoreactivity in a tract implies the most abundant resident cell type carries the marker.",
+      "D": "GAL3 is restricted to oligodendrocytes in the aged fimbria, because the fimbria is a myelinated tract and GFAP (an astrocyte marker) does not colocalize with GAL3, ruling out any glial source. because non-colocalization with GFAP eliminates astrocytes as the only possible glial carrier."
+    },
+    "answer": "C",
+    "rubric": {
+      "correct_reasoning": "The stem states that in aged fimbria, GAL3 colocalizes with the myeloid/microglial marker IBA1 but not with the astrocyte marker GFAP. The correct conclusion is therefore that GAL3 in the aged fimbria is associated with a myeloid/microglial population rather than with astrocytes. The reasoning chain is: GAL3+IBA1+ overlap + absence of GAL3+GFAP+ overlap → GAL3 is carried by IBA1+ cells (myeloid), not GFAP+ cells (astrocytes).",
+      "distractor_analysis": {
+        "A": "The conclusion (GAL3 is astrocytic) is wrong because the stem explicitly states GAL3 does NOT colocalize with GFAP. The reasoning tries to rescue it by appealing to GFAP as the astrocyte marker, but that is exactly the premise that contradicts the conclusion.",
+        "B": "The conclusion (GAL3 is neuronal) is wrong; the stem does not address neurons, and 'dense in a tract' does not imply the dominant cell type carries the marker. The reasoning conflates abundance of a marker with abundance of the carrier cell type.",
+        "D": "The conclusion (GAL3 is restricted to oligodendrocytes) is wrong and overreaches. Non-colocalization with GFAP rules out astrocytes as the GAL3 carrier, but does not by itself identify oligodendrocytes; the stem provides positive evidence only for IBA1 (myeloid) colocalization."
+      }
+    }
+  },
+  {
+    "question": "In aged female fimbria, IBA1+GAL3+ cells are larger than IBA1+GAL3− cells, and PCA of these two populations separates them along size-related components. Imaging mass cytometry shows fimbria myeloid cells have greater GAL3, CD38, uPAR, dPP4, IBA1, and CD45 intensity than hippocampal myeloid cells, and stratification of fimbria myeloid cells by GAL3 shows trending or significantly higher uPAR and CD38 in the GAL3+ subset but does not show the same for dPP4. If one were to conclude that GAL3 expression in aged fimbria myeloid cells marks a senescent-like state with co-upregulation of the senescence-associated markers uPAR and CD38, would this conclusion follow?",
+    "options": {
+      "D": "Yes, because GAL3+ cells specifically show trending or significantly higher uPAR and CD38 within the fimbria myeloid population, even though dPP4 elevation was detected only when comparing fimbria vs. hippocampus myeloid cells overall. because the within-fimbria GAL3-stratified analysis is the appropriate test for marker co-expression in the same population.",
+      "A": "Yes, because every marker measured (GAL3, CD38, uPAR, dPP4, IBA1, CD45) is elevated in fimbria versus hippocampal myeloid cells, so all of them must co-vary with GAL3 within the fimbria. because a between-region increase in every marker implies a within-population co-upregulation with GAL3.",
+      "B": "No, because the GAL3-stratified comparison within the fimbria does not show elevated dPP4 in GAL3+ cells, so any claim that GAL3 marks a uniformly senescent-like state with all listed markers would overreach the within-region evidence. because within-population stratification, not between-region differences, tests co-expression with GAL3.",
+      "C": "No, because IBA1+GAL3+ cells being larger than IBA1+GAL3− cells shows that GAL3 marks a morphologically distinct subset but says nothing about senescence marker co-expression. because size differences and marker co-regulation are unrelated measurements."
+    },
+    "answer": "D",
+    "rubric": {
+      "correct_reasoning": "The stem specifies two distinct comparisons: (1) fimbria vs. hippocampus myeloid cells overall, where GAL3, CD38, uPAR, dPP4, IBA1, and CD45 are all higher in fimbria; and (2) within fimbria myeloid cells stratified by GAL3, where GAL3+ cells show trending or significantly higher uPAR and CD38 but dPP4 is not reported as elevated in the GAL3+ subset. The correct conclusion is that GAL3 expression in aged fimbria myeloid cells does mark a subset with elevated uPAR and CD38 (senescence-associated markers), because the appropriate test for co-expression within the same population is the within-fimbria GAL3-stratified analysis, which supports uPAR and CD38 even though it does not support dPP4.",
+      "distractor_analysis": {
+        "A": "The conclusion (yes) is correct in direction but the reasoning is wrong. Between-region elevation of all six markers does not establish within-population co-variation with GAL3; the within-fimbria stratification is what tests that, and it specifically fails for dPP4. This is the 'cross-baseline arithmetic' failure mode.",
+        "B": "The conclusion (no) is too strong. The evidence does support co-upregulation of uPAR and CD38 with GAL3 within the fimbria; the absence of dPP4 co-upregulation does not negate the uPAR/CD38 finding. The reasoning correctly identifies the relevant test but overgeneralizes the negative dPP4 result to all senescence markers.",
+        "C": "The conclusion (no) is wrong because the within-fimbria GAL3 stratification does support uPAR and CD38 co-upregulation independently of the size observation. The reasoning incorrectly treats the morphological difference as the only thing the data show, ignoring the marker co-regulation evidence."
+      }
+    }
+  },
+  {
+    "question": "GeoMx whole-transcriptome spatial profiling was performed on 5-µm FFPE sagittal sections from 28-month-old female mouse brains. Hippocampal and fimbria regions were segmented with positive selection for GAL3, IBA1 and SYTO83 and negative selection for GFAP. Comparing IBA1+ populations between hippocampus and fimbria, five genes — Fth1, Ctss, Apoe, Ccno and Sesn3 — were enriched in fimbria IBA1+ cells. Which option best characterizes what these five genes collectively indicate about fimbria IBA1+ microglia?",
+    "options": {
+      "B": "They indicate a generic microglial activation state because Ccno and Sesn3 are canonical activation markers in mouse microglia. because all five genes were detected only in the fimbria IBA1+ population and were absent in hippocampal IBA1+ cells.",
+      "C": "They indicate that fimbria IBA1+ microglia adopt a senescence- and DAM-associated profile enriched in the fimbria. because Fth1, Ctss and Apoe are established senescence/DAM genes and Ccno and Sesn3 are candidate/emergent senescence-related genes that were jointly enriched in fimbria versus hippocampal IBA1+ cells.",
+      "A": "They indicate a senescence- and DAM-associated profile that is spatially enriched in fimbria IBA1+ cells. because the enrichment combines established senescence/DAM genes (Fth1, Ctss, Apoe) with candidate senescence-related genes (Ccno, Sesn3), and the comparison was made between fimbria and hippocampal IBA1+ populations in the same brains.",
+      "D": "They indicate that fimbria IBA1+ microglia are molecularly distinct but phenotypically undefined. because the spatial comparison identifies enriched transcripts but does not quantify protein-level changes or functional readouts of senescence."
+    },
+    "answer": "A",
+    "rubric": {
+      "correct_reasoning": "The conclusion ('a senescence- and DAM-associated profile that is spatially enriched in fimbria IBA1+ cells') is supported because the enrichment combines (1) established senescence/DAM genes (Fth1, Ctss, Apoe) with (2) candidate senescence-related genes (Ccno, Sesn3), and (3) the comparison was made regionally between fimbria and hippocampal IBA1+ populations in aged female mouse brains. The reasoning correctly integrates the gene categories with the spatial design.",
+      "distractor_analysis": {
+        "B": "Fails on the conclusion: Ccno and Sesn3 are described in the source as candidate/emergent senescence-related genes, not as canonical microglial activation markers. The reasoning is also inaccurate — the genes were enriched in fimbria IBA1+ relative to hippocampal IBA1+, not detected exclusively with absence in hippocampus.",
+        "C": "The conclusion ('adopt a senescence- and DAM-associated profile') is close, but the reasoning is weaker because it does not make the spatial 'enriched in the fimbria' statement explicit; it merely restates gene categories. The key is C because it explicitly ties the enrichment to the regional comparison.",
+        "D": "The conclusion is too agnostic. The stated enrichment of named senescence/DAM and candidate senescence genes is itself a phenotype-level statement; saying 'phenotypically undefined' contradicts the clear transcriptomic signature described."
+      }
+    }
+  },
+  {
+    "question": "In the same GeoMx DSP analysis, IBA1+GAL3+ and IBA1+GAL3− microglia were compared within the aged fimbria. Apoe was the most abundantly expressed transcript in IBA1+GAL3+ relative to IBA1+GAL3− microglia and strongly distinguished these two populations. If GAL3 were used as the sole positive-selection marker (with GFAP-based negative selection) and Apoe were excluded from the differential expression readout, which option correctly states what could and could not be concluded about the IBA1+GAL3+ population?",
+    "options": {
+      "A": "The senescence/DAM enrichment of fimbria IBA1+ microglia could still be assessed through Ccno and Sesn3. because these two candidate senescence-related genes were among the five enriched in fimbria IBA1+ cells in the regional comparison, so they would still register as enriched without Apoe.",
+      "C": "The strong distinction between IBA1+GAL3+ and IBA1+GAL3− fimbria microglia would be retained. because Ccno and Sesn3 were also enriched in fimbria IBA1+ cells and therefore would substitute for Apoe in separating the GAL3+ and GAL3− subpopulations.",
+      "B": "The senescence/DAM enrichment in fimbria versus hippocampal IBA1+ microglia could still be detected, but the GAL3+ versus GAL3− distinction within the fimbria could not be made. because Fth1, Ctss, Ccno and Sesn3 were enriched in the regional comparison, but only Apoe was reported as the most abundant transcript that distinguished IBA1+GAL3+ from IBA1+GAL3− cells in the fimbria.",
+      "D": "Neither the regional enrichment nor the GAL3+/GAL3− distinction could be assessed. because GeoMx DSP without Apoe readout cannot detect senescence- or DAM-associated transcripts in fimbria microglia."
+    },
+    "answer": "B",
+    "rubric": {
+      "correct_reasoning": "The conclusion is that regional enrichment remains detectable while the within-fimbria GAL3+/GAL3− distinction cannot be made. The reasoning correctly separates two distinct comparisons: (1) the fimbria vs hippocampus IBA1+ comparison, where Fth1, Ctss, Ccno and Sesn3 were enriched alongside Apoe, so removing Apoe still leaves four enriched genes; and (2) the IBA1+GAL3+ vs IBA1+GAL3− comparison within the fimbria, where only Apoe was explicitly reported as the most abundant transcript that strongly distinguished the two subpopulations, so no other gene in the list was singled out for that within-fimbria split.",
+      "distractor_analysis": {
+        "A": "The first half of the conclusion is correct, but the option omits the second required claim — that the within-fimbria GAL3+/GAL3− distinction depends on Apoe and would be lost. It answers only part of what the question asks.",
+        "C": "Fails on the conclusion. The source explicitly identifies Apoe as the gene that strongly distinguished IBA1+GAL3+ from IBA1+GAL3− microglia; Ccno and Sesn3 were reported only in the regional (fimbria vs hippocampus) comparison, not as discriminators of GAL3+ vs GAL3− within the fimbria.",
+        "D": "Overstates the loss. Four other enriched genes (Fth1, Ctss, Ccno, Sesn3) remain available for the regional comparison, so the regional enrichment signal is not abolished by excluding Apoe."
+      }
+    }
+  },
+  {
+    "question": "In a CosMx spatial molecular imaging study of mouse brains using a 102-gene panel (50 aging/senescence genes merged with a 950-gene neuroscience panel, termed the 'SenBrain' panel), two independent datasets were analyzed. In dataset 1, microglial cluster 7 showed the highest SenBrain module enrichment and the greatest frequency of Lgals3+ cells, with elevated DAM genes. In dataset 2, microglial cluster 10 appeared only in aged brains, was concentrated in white matter but also present in gray matter, expressed DAM/senescence genes (Apoe, Axl, Itgax, Lgals3, Lgals3bp, Lilrb4a/b, Lpl, Lyz1/2, Mmp12, Spp1, Tyrobp), and had the highest overall SenBrain score. After Harmony integration of both datasets, cluster 6 was concordant with both cluster 7 and cluster 10 and again showed the highest SenBrain score. Which conclusion about the senescence/DAM-linked microglial population is best supported?",
+    "options": {
+      "A": "Cluster 10 is a white-matter-exclusive population because it was detected in cluster 6 of the harmonized data only after white matter cells were subset, because concentration in white matter implies exclusion from gray matter.",
+      "B": "Cluster 10 represents an artifact of dataset 2's larger sample size, because reproducibility across datasets requires identical cluster numbers, and the shift from cluster 7 to cluster 10 indicates the signature is dataset-specific.",
+      "D": "Cluster 7 and cluster 10 are unrelated microglial states that happen to share Lgals3 expression, because each cluster scored highest in SenBrain enrichment in different datasets, indicating independent aging responses.",
+      "C": "The senescence/DAM-linked microglial population is a reproducible, conserved feature of aged brains across datasets, because cluster 10 (highest SenBrain score, aged-only, DAM genes) overlaps molecularly with cluster 7, and the harmonized cluster 6 recapitulates the same profile and SenBrain enrichment."
+    },
+    "answer": "C",
+    "rubric": {
+      "correct_reasoning": "D is correct because it combines (i) the molecular overlap between cluster 7 (dataset 1) and cluster 10 (dataset 2), (ii) the aged-only presence and highest SenBrain score of cluster 10, and (iii) the fact that after Harmony integration cluster 6 reproduces the same DAM/senescence profile and SenBrain enrichment. Together these premises license the conclusion that the senescence/DAM-linked microglial state is a reproducible, conserved feature of the aged brain across independent datasets.",
+      "distractor_analysis": {
+        "A": "Fails on the conclusion. The stem explicitly states cluster 10 was identifiable in white and gray matter but concentrated in white matter. The reasoning also conflates a within-tissue concentration with cross-tissue exclusivity, which the data do not support.",
+        "B": "Fails on both conclusion and reasoning. The stem states cluster 6 from Harmony integration is concordant with clusters 7 and 10, contradicting the claim of dataset-specificity. Reproducibility does not require identical cluster numbering, and no evidence indicates sample-size-driven artifact.",
+        "D": "Fails on the conclusion. Both clusters score highest on the SenBrain module and cluster 10 is described as having a molecular profile overlap with cluster 7. The different cluster IDs reflect different datasets, not unrelated biology; the evidence supports a shared state, not independent responses."
+      }
+    }
+  },
+  {
+    "question": "In the same CosMx study, dataset 1 cluster 7 showed the highest SenBrain enrichment and greatest Lgals3+ frequency. Dataset 2 cluster 10 was aged-only, concentrated in white matter but present in gray matter, expressed DAM/senescence genes including Lgals3, and had the highest overall SenBrain score. Harmony integration yielded cluster 6 with a profile concordant with clusters 7 and 10 and the highest SenBrain score. If the highest-SenBrain-score cluster in the harmonized data (cluster 6) had instead shown low SenBrain scores and lacked DAM gene expression despite harmonization, which inference would be licensed?",
+    "options": {
+      "A": "The senescence/DAM-linked profile would still be a conserved feature of aged brains, because individual datasets already showed the signature independently, so reproducibility depends on per-dataset observation rather than integration outcome.",
+      "B": "The DAM/senescence signature would be a dataset-specific artifact of dataset 2, because cluster 10 was concentrated in white matter, and white-matter enrichment alone can explain a high SenBrain score independent of DAM biology.",
+      "D": "The senescence/DAM-linked microglial state would not be supported as reproducible across independent datasets, because the harmonized integration failing to recover a concordant high-SenBrain DAM cluster would undercut the cross-dataset concordance that the original conclusion requires.",
+      "C": "The senescence/DAM signature would necessarily shift to a neuronal cluster, because Harmony integration redistributes cell types, and microglia lose their identity when batch-corrected, so any high-SenBrain score in microglia is unreliable."
+    },
+    "answer": "D",
+    "rubric": {
+      "correct_reasoning": "C is correct because the original conclusion (conserved senescence/DAM microglial state across datasets) rests on cross-dataset concordance demonstrated by Harmony integration producing a concordant cluster 6 with the highest SenBrain score. If integration had failed to recover such a cluster, the cross-dataset concordance evidence would be absent, leaving the reproducibility claim unsupported even though each dataset individually showed a high-SenBrain cluster.",
+      "distractor_analysis": {
+        "A": "Fails on reasoning. The original insight explicitly invokes Harmony integration and the combined Lgals3-enriched set as the basis for the 'reproducible' claim. Per-dataset observations alone are not equated with cross-dataset reproducibility in the stated evidence.",
+        "B": "Fails on reasoning. Cluster 10 was present in both white and gray matter, so white-matter concentration does not account for the high SenBrain score. The hypothesis of a dataset-2-specific artifact is not supported by any stated premise.",
+        "C": "Fails on conclusion and reasoning. No premise states that Harmony integration redistributes cell types or strips microglial identity; the stated evidence shows integration produced a concordant microglial cluster 6. This option invents a methodological claim not grounded in the stem."
+      }
+    }
+  },
+  {
+    "question": "In a single-nucleus survey of mouse microglia, six senescence domains (cell cycle, nuclear stress, SASP, SCAP, organelle stress, cell surface) were scored per cell. In aged mice (dataset 1), white-matter-enriched cluster 7 scored high across all six domains; in young-vs-old comparison (dataset 2), age-exclusive cluster 10 scored high in SASP, organelle stress, and cell surface, while age-dominant cluster 3 was selectively enriched for nuclear stress plus cell surface and organelle stress. Across both datasets, SenBrain enrichment was inversely related to homeostatic microglia module scores.\n\nWhich statement best describes how these observations should be interpreted?",
+    "options": {
+      "B": "The findings indicate three functionally discrete senescent microglial states, because each cluster showed enrichment for a distinct, non-overlapping combination of senescence domains. The inverse correlation with the homeostatic module reflects loss of a different state rather than integration.",
+      "A": "The findings indicate that senescence programs are integrated within the broader disease-associated microglia (DAM) continuum, because organelle stress and cell surface domains recur across multiple aged clusters rather than defining one unique state. The inverse relationship with homeostatic identity supports overlap with DAM, not separation.",
+      "C": "The findings indicate SASP is the canonical senescence signature, because cluster 10's overall SenBrain score was highest and only SASP-marked cells should be called senescent. The nuclear-stress enrichment in cluster 3 is an unrelated artifact of small cluster size.",
+      "D": "The findings indicate that white-matter cluster 7 is a contamination artifact, because it scores across all six senescence domains simultaneously, which is biologically implausible. The inverse correlation with homeostatic markers is coincidental."
+    },
+    "answer": "A",
+    "rubric": {
+      "correct_reasoning": "The correct answer is B. The stem states that organelle stress and cell surface domains recur across aged clusters 7, 10, and 3, so no single senescence-domain combination defines a discrete state. The inverse relationship between SenBrain and homeostatic module scores indicates that senescence-high cells lose homeostatic identity and gain DAM-like features. Together these observations support the conclusion that senescence programs are embedded within the DAM continuum rather than forming a separable senescent-only subset.",
+      "distractor_analysis": {
+        "B": "Fails. The conclusion (three discrete states) is contradicted by the stated overlap of organelle stress and cell surface domains across clusters. The reasoning misreads the inverse homeostatic correlation as evidence against integration, when it actually supports overlap with a non-homeostatic (DAM) identity.",
+        "C": "Fails. The conclusion treats SASP as the only valid senescence signature, but the stem lists six domains scored per cell and shows cluster 7 enriched for all six, contradicting the claim that only SASP-marked cells are senescent. The reasoning about cluster 3 being an artifact is unsupported by any stated observation.",
+        "D": "Fails. The conclusion (cluster 7 is contamination) contradicts the explicit observation that cluster 7 shows reproducible enrichment across all six senescence domains in aged white matter. The reasoning that high multi-domain enrichment is 'biologically implausible' has no support in the stated data."
+      }
+    }
+  },
+  {
+    "question": "In two microglial snRNA-seq datasets, white-matter-enriched cluster 7 in dataset 1 shows enrichment across all six SenBrain domains (cell cycle, nuclear stress, SASP, SCAP, organelle stress, cell surface). In dataset 2, age-exclusive cluster 10 is enriched for SASP, organelle stress, and cell surface, and age-dominant cluster 3 is enriched for nuclear stress, organelle stress, and cell surface. Organelle stress and cell surface recur across these age-increased clusters, while SASP marks cluster 10 and nuclear stress marks cluster 3. SenBrain scores inversely correlate with homeostatic microglia module scores.\n\nIf the homeostatic microglia module were scored in a hypothetical cluster composed entirely of cells from clusters 3, 7, and 10 combined, which statement follows from the stated observations?",
+    "options": {
+      "B": "The combined cluster would show low homeostatic module scores and shared enrichment in organelle stress and cell surface domains, because the stated inverse correlation predicts low homeostatic identity in senescence-enriched cells, and the only senescence domains shared across all three clusters are organelle stress and cell surface.",
+      "A": "The combined cluster would show high homeostatic module scores and high SASP, because cluster 10 is age-exclusive and dominant, so its SASP signature would dominate and pull the homeostatic score upward by mass action.",
+      "C": "The combined cluster would show high nuclear stress as the only common senescence feature, because nuclear stress is the most specific marker and all three clusters carry it either directly or indirectly through shared downstream targets.",
+      "D": "No inference can be drawn, because combining cells from different datasets violates the assumption of a shared embedding, so any combined-cluster score would be uninterpretable regardless of the stated correlations."
+    },
+    "answer": "B",
+    "rubric": {
+      "correct_reasoning": "The correct answer is A. Step 1: The stem states SenBrain enrichment is inversely related to homeostatic microglia module scores. Step 2: All three clusters (3, 7, 10) are SenBrain-enriched, so combining their cells predicts low homeostatic module scores. Step 3: The only senescence domains listed as enriched in every one of these three clusters are organelle stress and cell surface (cluster 7: all six; cluster 10: SASP, organelle stress, cell surface; cluster 3: nuclear stress, organelle stress, cell surface). The intersection is organelle stress and cell surface. Both premises combine to support the keyed conclusion.",
+      "distractor_analysis": {
+        "A": "Fails. The reasoning contradicts the stated inverse correlation (senescence-enriched cells have LOW homeostatic scores, not high). The conclusion that cluster 10's SASP would 'pull the homeostatic score upward by mass action' has no basis in any stated observation.",
+        "C": "Fails. The stem explicitly states nuclear stress marks cluster 3 but not cluster 10, so nuclear stress is not shared across all three. The reasoning that nuclear stress propagates 'through shared downstream targets' introduces an unsupported mechanism not present in the stated data.",
+        "D": "Fails. The conclusion (no inference possible) is wrong because the question is internal to the stated observations, not about cross-dataset integration. Cross-dataset harmonization is explicitly addressed in the source material but is not required to answer this question; the inverse correlation and the listed per-cluster domain enrichments are sufficient."
+      }
+    }
+  },
+  {
+    "question": "In a spatial transcriptomics dataset of microglia, only 1–5% of cells across all clusters expressed Cdkn2a, and the age-exclusive senescent-DAM cluster (cluster 10) showed only low Cdkn2c/p18ink4c signal. Microglia expressing any Cdkn showed elevated Cdkn1b, Cdkn2a, Cdkn2c, Apoe, Csf3r, Hmgb1, Tgfbr1, Cyfip1, P2ry12 and Sparc relative to Cdkn-negative microglia. Which conclusion is best supported?",
+    "options": {
+      "A": "Cdkn2a is a reliable single-gene marker for senescent microglia because it was upregulated in Cdkn+ versus Cdkn− microglia. because its upregulation in the comparison of Cdkn+ to Cdkn− cells identifies it as the most specific senescence indicator among Cdkn family members.",
+      "C": "No single Cdkn transcript, including Cdkn2a, can serve as a stand-alone senescence marker in aged microglia. because Cdkn2a was detected in only 1–5% of cells, the senescent-DAM cluster showed only low Cdkn2c, and many co-upregulated genes (Apoe, Csf3r, Hmgb1, Sparc) are known to change in non-senescent microglial states.",
+      "B": "Cluster 10 is unambiguously a senescent population because it is the only cluster with detectable Cdkn2c. because the low Cdkn2c signal in cluster 10, combined with its age-exclusive status, is sufficient to define it as senescent without additional markers.",
+      "D": "The senescent-DAM state is fully captured by the canonical Cdkn2a/p16ink4a–Cdkn2c/p18ink4c axis. because Cdkn2c coordinates arrest via CDK4/CDK6 and CosMx probes cover both p16ink4a and p19arf exons, the two Cdkns jointly define the cluster 10 identity."
+    },
+    "answer": "C",
+    "rubric": {
+      "correct_reasoning": "The keyed option combines (i) the stated quantitative observations that Cdkn2a was found in only 1–5% of microglia across clusters and Cdkn2c was only lowly detected in cluster 10, with (ii) the explicit caveat in the source material that co-regulated genes such as Apoe, Csf3r, Hmgb1, and Sparc are not senescence-specific and can change in non-senescent contexts. Both premises jointly license the conclusion that no single Cdkn transcript can stand alone as a senescence marker, which is the authors' explicit recommendation (≥2–3 biomarkers/domains).",
+      "distractor_analysis": {
+        "A": "Conclusion is wrong: it treats Cdkn2a as a stand-alone senescence marker, which the data and authors explicitly reject. The reasoning is also flawed because upregulation in a Cdkn+ vs Cdkn− comparison does not establish specificity, given the stated caveat that any individual SenBrain gene can change outside senescence. A naive reader could fall for this by confusing 'upregulated in the comparison' with 'specific and sufficient as a marker.'",
+        "B": "Conclusion overstates the evidence: low Cdkn2c signal in cluster 10, even combined with age exclusivity, does not unambiguously define senescence without additional biomarkers, contrary to the stated multi-biomarker requirement. The reasoning conflates 'detectable only here' with 'sufficient to define the state.'",
+        "D": "Conclusion overstates what the evidence licenses: the stated low Cdkn2c signal and the note that CosMx probes span p16ink4a/p19arf are caveats about detection limits, not evidence that the Cdkn2a–Cdkn2c axis fully captures the senescent-DAM identity. A naive reader could be drawn in by the mechanistic-sounding CDK4/CDK6 framing."
+      }
+    }
+  },
+  {
+    "question": "Microglia expressing any Cdkn showed elevated Cdkn1b, Cdkn2a, Cdkn2c, Apoe, Csf3r, Hmgb1, Tgfbr1, Cyfip1, P2ry12 and Sparc relative to Cdkn-negative cells. Aged versus young Cdkn2a+ microglia additionally showed age-increased Cdkn2a, Apoe, C1qa and Clu, and age-decreased Trem2 and Serpine1. The authors warn that any single SenBrain gene can be altered outside senescence. Which experimental follow-up is most appropriate?",
+    "options": {
+      "D": "Score aged microglia with a combined panel of at least two to three biomarkers spanning distinct senescence domains (cell-cycle, SASP, nuclear) rather than calling senescence from Cdkn2a alone. because the data show Cdkn2a at 1–5% positivity, Cdkn2c lowly detected in cluster 10, and co-regulated non-senescence genes (Apoe, Csf3r, Hmgb1, Sparc), so any single gene is insufficient and a multi-domain panel reflects the authors' explicit recommendation.",
+      "A": "Definitive senescence calls in aged microglia from the current dataset because the age-increased expression of Cdkn2a, Apoe, C1qa and Clu in Cdkn2a+ cells is itself a senescence signature. because age-increased Cdkn2a together with the SASP-like Apoe/C1qa/Clu pattern is sufficient to declare those cells senescent under the authors' own criteria.",
+      "B": "Discard the CosMx platform for any senescence work because the Cdkn2a probe spans both p16ink4a and p19arf exons without signal amplification. because the inability to separate p16ink4a from p19arf and the lack of amplification invalidate the platform for any senescence conclusion, including multi-domain panels.",
+      "C": "Use only Cdkn2c/p18ink4c as the senescence marker for cluster 10 because it is age-exclusive and coordinates arrest via CDK4/CDK6. because low Cdkn2c in cluster 10, together with its CDK4/CDK6 mechanism, is more specific than Cdkn2a and therefore safe to use alone."
+    },
+    "answer": "D",
+    "rubric": {
+      "correct_reasoning": "The keyed option chains three stated premises: (1) Cdkn2a is sparse (1–5%) and Cdkn2c is lowly detected even in the senescent-DAM cluster, (2) co-regulated genes include non-senescence-associated transcripts (Apoe, Csf3r, Hmgb1, Sparc), and (3) the authors explicitly recommend ≥2–3 distinct biomarkers/domains. Together these license the conclusion that a multi-domain, multi-biomarker panel—not a single gene—is the correct next step.",
+      "distractor_analysis": {
+        "A": "Conclusion is wrong: the data do not license definitive senescence calls because the authors state any single gene may be altered outside senescence and the platform caveats further limit interpretation. The reasoning naively treats the age-increased Apoe/C1qa/Clu pattern as a senescence signature, ignoring the stated non-senescence caveat and detection limits. This is the 'premature conclusion' trap.",
+        "B": "Conclusion is wrong: it overgeneralizes from the platform caveat to 'the platform is unusable,' whereas the authors only call for additional/orthogonal approaches, not abandonment of CosMx. The reasoning is also flawed because multi-domain panels on the same data could still be informative. A respondent who fixates on the probe-design caveat might pick this.",
+        "C": "Conclusion is wrong: it proposes using Cdkn2c alone, directly contradicting the multi-biomarker recommendation and ignoring that Cdkn2c was only 'lowly detected' in cluster 10, not robustly expressed. The reasoning confuses 'low detection + age exclusivity' with 'specific and sufficient marker.'"
+      }
+    }
+  },
+  {
+    "question": "In a CosMx spatial transcriptomics dataset of microglia, two-sided Wilcoxon rank-sum testing between white matter-localized and gray matter-localized microglia shows white matter microglia enriched for Mbp, Mobp, and Plp1, while gray matter microglia are enriched for Camk2a, Adcy1, Sncb, and Snap25. What does this pattern most directly indicate?",
+    "options": {
+      "B": "Microglia transcribe neuronal genes when in gray matter and myelin genes when in white matter, because regional cues drive lineage-inappropriate transcription in microglia.",
+      "A": "Microglia in each region carry low-level transcripts from the dominant neighboring cell type, because imperfect segmentation assigns a fraction of transcripts from adjacent oligodendrocytes (white matter) or neurons (gray matter) to the microglia segment.",
+      "C": "The differences reflect contamination of the microglial cluster by oligodendrocytes and neurons, because the gene sets are too specific to represent spillover and instead indicate misclassification of cell identity.",
+      "D": "These transcripts are bona fide markers of microglial subtypes specialized for myelin or synaptic interaction, because the regional specificity rules out a technical artifact."
+    },
+    "answer": "A",
+    "rubric": {
+      "correct_reasoning": "The keyed option (A) combines two premises: (1) the observed enrichment is region-matched to the dominant neighboring cell type (oligodendrocyte/myelin transcripts in white matter microglia; neuronal transcripts in gray matter microglia), and (2) this matching is consistent with low-level spillover ('molecular shadows') from imperfect segmentation of adjacent cells rather than de novo microglial transcription. The authors exploit this artifact as 'contact-tracing' evidence of proximity, not as evidence of microglial gene expression.",
+      "distractor_analysis": {
+        "B": "Fails on the conclusion. The matching of transcript identity to the neighboring non-microglial cell type, combined with the authors' interpretation of low-level spillover, does not support lineage-inappropriate transcription in microglia. This is a single-premise reading that ignores the artifact-based interpretation.",
+        "C": "Fails on the reasoning. The authors explicitly treat the signal as low-level spillover from adjacent cells (corroborated by independent contact-tracing modules and anatomical registration), not as misclassification that would invalidate the microglial cluster identity. This misreads the evidence as a classification error rather than an exploitable proximity signal.",
+        "D": "Fails on both conclusion and reasoning. The region-specific enrichment matches non-microglial canonical markers (myelin vs. neuronal genes), which is the hallmark of spillover rather than of microglial subtype identity. Treating these as bona fide microglial markers contradicts the stated evidence that the signal originates from adjacent cells."
+      }
+    }
+  },
+  {
+    "question": "A separate analysis compares CosMx-defined young versus old immune cells (including microglia) for non-immune markers. Old immune cells show elevated Gfap (astrocyte), Plp1/Mbp/Mobp (oligodendrocyte), and C1qa/C1qb/Ctss (microglia) transcripts relative to young immune cells. If the 'molecular shadow' interpretation is correct, what follow-up prediction is most strongly licensed by these data?",
+    "options": {
+      "A": "Old immune cells upregulate astrocyte, oligodendrocyte, and complement genes intrinsically, because aging induces transcription of non-immune programs in immune cells.",
+      "B": "The elevated glial markers in old immune cells reflect increased physical proximity of immune cells to resident glia with age, because the same spillover logic that explains region-matched transcripts predicts that any shift toward glia-rich neighborhoods produces matching marker enrichment.",
+      "C": "The complement transcripts C1qa/C1qb/Ctss must originate from contaminating microglia, because complement genes are microglia-specific and cannot be part of an immune-cell signature.",
+      "D": "Aging eliminates astrocyte and oligodendrocyte identity, because their canonical markers appear outside the glial lineage in immune cells."
+    },
+    "answer": "B",
+    "rubric": {
+      "correct_reasoning": "Option B chains two premises: (1) the 'molecular shadow' mechanism assigns low-level transcripts from neighboring cells to a segmented cell, and (2) the elevated glial markers in old immune cells match the canonical markers of brain-resident glia. Combining these, the prediction that old immune cells sit closer to glia than young immune cells is directly licensed. The authors explicitly state this conclusion: 'suggesting proximity to brain-resident glia.'",
+      "distractor_analysis": {
+        "A": "Fails on the reasoning. The same spillover logic that produces region-matched enrichment (myelin in white-matter microglia, neuronal in gray-matter microglia) shows that non-immune markers in immune cells reflect neighborhood, not intrinsic transcription. This option asserts the opposite mechanism on the basis of a single premise (the elevation) without accounting for the established artifact.",
+        "C": "Fails on both conclusion and reasoning. The immune-cell category in this comparison includes microglia themselves, and the contact-tracing framework explicitly allows microglia-derived transcripts (e.g., C1qa/C1qb/Ctss) to appear in immune-cell segments. Treating complement transcripts as impossible in immune cells contradicts the stated evidence and the framework.",
+        "D": "Fails on both conclusion and reasoning. The data show elevated glial markers in immune-cell segments, which under the spillover framework indicates proximity, not loss of glial identity. Astrocyte and oligodendrocyte identity is not erased by the presence of their transcripts in adjacent immune-cell segments."
+      }
+    }
+  },
+  {
+    "question": "In a combined young-and-old spatially resolved microglia dataset, Monocle3 was applied to a restricted partition (clusters 1, 3, 8, 9, 10, 13, 15). A forward-trajectory model rooted at homeostatic cluster 1 passes through 13, then 3, where it splits into branches terminating at 9, 10, or 15→8. A retrograde model rooted at the age-exclusive cluster 10 branches backward to 3, then splits toward (a) 15→8, (b) 9, and (c) 13→1. Through the 8→15→3→10 route, cluster 10 is reached with fewer branch points than through the 1→13→3→10 route. Which interpretation is best supported by these observations?",
+    "options": {
+      "A": "Cluster 10 is produced by a single lineage because both the forward and retrograde models converge on a unique route with the fewest branch points.",
+      "C": "Cluster 10 lies at the convergence of at least two anatomically distinct trajectories (a longer homeostatic gray-matter path 1→13→3→10 and a more direct white-matter/ependymocyte–oligodendrocyte path 8→15→3→10) because the retrograde model reveals three separate precursor branches feeding into it.",
+      "B": "Cluster 10 must originate from white-matter ependymocytes because the shortest pseudotime path passes through ependymocyte-associated clusters.",
+      "D": "Cluster 10 is the unique root of microglial aging because the retrograde model places it at the pseudotime root and pseudotime inversely correlates with SenBrain/DAM scores."
+    },
+    "answer": "C",
+    "rubric": {
+      "correct_reasoning": "The keyed option combines two premises: (i) the retrograde model rooted at cluster 10 splits into three branches — through 15→8, through 9, and through 13→1 — demonstrating multiple precursor routes, and (ii) one of these (8→15→3→10, ependymocyte/oligodendrocyte-associated) is more direct than another (1→13→3→10, homeostatic gray-matter). Together these premises support the interpretation that cluster 10 is reachable by at least two anatomically distinct trajectories of differing lengths.",
+      "distractor_analysis": {
+        "A": "The conclusion is wrong: the forward model itself shows three forward branches from cluster 3 (toward 9, 10, and 15→8), and the retrograde model shows three precursor branches, so the evidence supports multiple, not single, routes. The reasoning collapses two separate routes into one.",
+        "B": "The reasoning is correct that the 8→15→3→10 path is shortest, but the conclusion overreaches: 'must originate' is not licensed because a shorter pseudotime route is not a necessity test and the trajectories are computationally inferred, not validated.",
+        "D": "The reasoning mixes two premises (retrograde rooting and pseudotime–module correlation) but the conclusion is wrong: pseudotime was rooted at cluster 10 only in the retrograde model, and an inverse correlation between pseudotime and SenBrain/DAM scores means cells farther from cluster 10 score lower on these modules, which is consistent with cluster 10 being a terminal age-selective state rather than a unique origin."
+      }
+    }
+  },
+  {
+    "question": "Given that Monocle3 trajectory inference on the integrated young+old microglia partition returned (i) a forward-rooted graph in which cluster 3 branches into terminal clusters 9, 10, and 15→8, (ii) a retrograde graph in which cluster 10 has three precursor branches (15→8, 9, 13→1), and (iii) the 8→15→3→10 route reaching cluster 10 in fewer branch points than 1→13→3→10, while pseudotime distance from cluster 10 inversely correlates with SenBrain/DAM module scores and clusters 1, 13, 3, 10 show gradient increases in senescence/DAM markers (Apoe, Axl, C4b, Cd9, Clec7a, Ctsb, Lgals3, Tyrobp) — which conclusion is licensed by the stated evidence about how cluster 10 arises?",
+    "options": {
+      "A": "Cluster 10 arises from a unique precursor lineage, because the most parsimonious pseudotime path identifies 8→15→3 as the obligatory origin route.",
+      "D": "Anatomically distinct microenvironments can produce the same transcriptional endpoint, because at least two divergent routes (8→15→3→10 and 1→13→3→10) terminate at cluster 10 alongside the shared 3→10 segment.",
+      "B": "Cluster 10 cannot be age-exclusive because multiple branches feed into it from young-cell-enriched clusters.",
+      "C": "Cluster 10 is unnecessary for the age-increased transcriptional signature, because pseudotime inverse correlation with module scores shows other clusters carry higher DAM/SenBrain expression."
+    },
+    "answer": "D",
+    "rubric": {
+      "correct_reasoning": "Chain three premises: (1) forward branches from cluster 3 and three retrograde precursor branches from cluster 10 indicate multiple incoming routes; (2) one route involves white-matter/ependymocyte/oligodendrocyte-associated clusters 8 and 15, while the other involves homeostatic gray-matter clusters 1 and 13 — i.e., two anatomically distinct contexts; (3) the shared 3→10 segment shows that despite different upstreams, the same transcriptional endpoint (cluster 10, with its age-enriched senescence/DAM signature) is reached. Combined, these support a microenvironmental-priming interpretation in which distinct anatomical routes converge on a common age-selective endpoint.",
+      "distractor_analysis": {
+        "A": "The reasoning ('fewest branch points = obligatory origin') is invalid: parsimony in a trajectory graph is not a necessity test, and the forward model shows cluster 10 as one of three terminal branches from cluster 3, not a unique one.",
+        "B": "The reasoning conflates multiple incoming routes with age identity. The retrograde model having three branches to cluster 10 does not contradict cluster 10 being age-exclusive in cell percentage; the routes describe molecular trajectories, not age composition.",
+        "C": "The reasoning misreads the inverse correlation: it implies cells far from cluster 10 have higher module scores, but pseudotime farther from cluster 10 actually corresponds to lower SenBrain/DAM scores, while cluster 10 itself carries the highest module scores."
+      }
+    }
+  },
+  {
+    "question": "In aged (16–20 month) p16-InkAttac mice, two systemic senolytic regimens were tested in fimbria-fornix/corpus callosum (FFCC) and hippocampus (HIP) and compared to young vehicle controls. AP20187 (2 mg/kg i.p.) reduced FFCC-p16ink4a (P = 0.0234), HIP-p16ink4a (P < 0.0001), FFCC-Trem2 (P = 0.0024), FFCC-Tmem173 (P = 0.0164) and FFCC-Tyrobp (P = 0.0256). Venetoclax (50 mg/kg oral) did not reduce p16ink4a. Both AP20187 and venetoclax reduced FFCC-Lgals3 (P = 0.0074 and P = 0.0160). Male transcriptional profiles were more heterogeneous. Which conclusion is best supported?",
+    "options": {
+      "A": "p16+ cell ablation and BCL2 inhibition engage partially distinct molecular axes in aged female white matter because only AP20187 lowered p16ink4a, Trem2, Tmem173 and Tyrobp, whereas venetoclax lowered Lgals3 but not p16ink4a.",
+      "B": "BCL2 inhibition is the dominant senolytic mechanism in aged white matter because venetoclax lowered the DAM marker Lgals3, while AP20187's p16ink4a reduction reflects an off-target p16-independent effect.",
+      "C": "The two senolytics are mechanistically equivalent because each lowered at least one marker, so the Lgals3 reduction by venetoclax implies it also eliminates p16+ cells in aged FFCC.",
+      "D": "Male heterogeneity invalidates the female findings because the significant effects were obtained only in females, so any conclusion about senolytic action in white matter is unsupported."
+    },
+    "answer": "A",
+    "rubric": {
+      "correct_reasoning": "Option A is correct. It combines two premises from the stem: (1) only AP20187 reduced p16ink4a, Trem2, Tmem173 and Tyrobp, and (2) venetoclax reduced Lgals3 but not p16ink4a. Because the two drugs share one reduced target (Lgals3) but differ on p16ink4a (and on the DAM transcripts Trem2/Tmem173/Tyrobp, which only AP20187 touched), the data license the conclusion that the two interventions engage partially distinct molecular axes — they are not redundant, and p16-cell clearance does additional work that venetoclax does not. The associated paper text explicitly endorses this interpretation: 'BCL2 targeting also reduced DAM markers but not Cdkn2a/p16ink4a expression'.",
+      "distractor_analysis": {
+        "B": "Fails on reasoning: venetoclax lowering Lgals3 does not make BCL2 the 'dominant' senolytic, and AP20187's p16ink4a reduction is the expected on-target effect of a p16-InkAttac suicide-gene system, not an off-target artefact. The conclusion that BCL2 inhibition is dominant is not licensed by the data.",
+        "C": "Fails on reasoning. Sharing one lowered marker (Lgals3) does not make the two drugs mechanistically equivalent, and venetoclax's failure to reduce p16ink4a argues against it eliminating p16+ cells. The conclusion over-reads the shared Lgals3 hit into a claim of mechanistic identity.",
+        "D": "Fails on conclusion (and reasoning). Greater male heterogeneity does not invalidate the female effects; it limits generalization to males. The female findings stand on their own and are what the question concerns, so this option is a misreading of what heterogeneity implies."
+      }
+    }
+  },
+  {
+    "question": "In the FFCC of aged female p16-InkAttac mice, AP20187 reduced p16ink4a (P = 0.0234), Trem2 (P = 0.0024), Tmem173 (P = 0.0164), Tyrobp (P = 0.0256) and Lgals3 (P = 0.0074). Venetoclax reduced Lgals3 (P = 0.0160) but did not reduce p16ink4a, Trem2, Tmem173 or Tyrobp. If p16+ cell ablation were the only route by which a senolytic could affect these DAM genes in aged female FFCC, which prediction follows?",
+    "options": {
+      "A": "Venetoclax would still lower Trem2, Tmem173 and Tyrobp, because it reduces the shared marker Lgals3 and senolytics must converge on a single downstream DAM program.",
+      "C": "Venetoclax would lower Trem2, Tmem173 and Tyrobp only if those genes were obligate p16-effector transcripts downstream of a single p16-driven microglial state.",
+      "D": "Venetoclax would also reduce p16ink4a, because DAM transcripts and p16ink4a are co-regulated within one senescent transcriptional program.",
+      "B": "Venetoclax would not be expected to reduce Trem2, Tmem173 or Tyrobp, because the observed pattern shows those transcripts are lowered only by the p16-ablating drug and not by BCL2 inhibition."
+    },
+    "answer": "B",
+    "rubric": {
+      "correct_reasoning": "Option D is correct. Under the counterfactual assumption that p16+ cell ablation is the only route a senolytic could use to affect these DAM genes, any agent that does not ablate p16+ cells (here venetoclax, which did not reduce p16ink4a) should fail to reduce those DAM transcripts. The observed data match this prediction: venetoclax did not reduce Trem2, Tmem173 or Tyrobp, while AP20187 (which does ablate p16+ cells, as evidenced by the p16ink4a reduction) did. This consistency between the prediction and the observation is what the counterfactual is meant to test. The paper's interpretation — that p16-cell targeting engages a distinct axis from BCL2 inhibition — is the same point made in qualitative form.",
+      "distractor_analysis": {
+        "A": "Fails on reasoning. The premise of the counterfactual is that p16-cell ablation is the only route, so venetoclax (which does not ablate p16+ cells, given the unchanged p16ink4a) would not be expected to lower those DAM genes. The claim that senolytics must converge on a single DAM program contradicts the stated observation that they do not.",
+        "C": "The conditional structure ('only if …') is logically compatible with the premise, but the option asserts what would happen as a categorical prediction tied to a hypothetical architecture, while the question asks what follows from the stated evidence under the given assumption. Option B muddles the test by introducing an untested mechanistic commitment (an 'obligate p16-effector' program) rather than reading the prediction directly off the pattern of which drug moved which transcript.",
+        "D": "Fails on reasoning. The data show that venetoclax reduced Lgals3 without reducing p16ink4a, directly contradicting the claim that DAM transcripts and p16ink4a are obligately co-regulated within one program. The counterfactual prediction in this option is contradicted by the stated evidence."
+      }
+    }
+  },
+  {
+    "question": "In p16-InkAttac female mice, old fimbria shows higher IBA1+ density and larger IBA1+ cell area than young fimbria. AP20187 reduces old IBA1+ density toward young levels (P = 0.0095), and both AP20187 (P = 0.0045) and venetoclax (P = 0.0003) reduce old IBA1+ cell size. Which conclusion is best supported by these observations?",
+    "options": {
+      "A": "Both drugs fully normalize fimbria microglial density because their cell-size P-values (0.0045 and 0.0003) are smaller than the AP20187 density P-value (0.0095) and thus indicate a stronger tissue-wide effect. because smaller P-values here necessarily reflect larger biological effect sizes across both morphological readouts.",
+      "C": "AP20187 and venetoclax each act on a distinct morphological axis of aged fimbria microglia, with AP20187 rescuing an age-elevated density readout and both rescuing an age-elevated size readout. because the stated effects partition by measurement — only AP20187 was reported to shift density, whereas both drugs shifted cell size — so the data do not identify one drug as uniformly stronger.",
+      "B": "Venetoclax is the more effective senotherapeutic in old fimbria because its cell-size P-value (0.0003) is the smallest of the three reported. because the smallest P-value among the three comparisons identifies the drug with the largest effect on microglial morphology.",
+      "D": "Neither drug meaningfully alters aged fimbria microglia because all three P-values fall above conventional genome-wide significance thresholds. because thresholds applied to transcriptomic studies apply identically to per-cell morphological measurements in tissue."
+    },
+    "answer": "C",
+    "rubric": {
+      "correct_reasoning": "The stem reports that IBA1+ density was reduced by AP20187 (P = 0.0095) but does not report a venetoclax effect on density, whereas both AP20187 (P = 0.0045) and venetoclax (P = 0.0003) reduced IBA1+ cell size. Chaining these two observations yields the conclusion that each drug acts on a distinct morphological axis — AP20187 on density, both on size — rather than one drug being uniformly stronger. The conclusion follows from partitioning the reported effects by readout, not from ranking P-values.",
+      "distractor_analysis": {
+        "A": "Fails on reasoning. The conclusion (full normalization) overstates the evidence (only AP20187 was reported to shift density, and 'full' is not licensed), and the reasoning incorrectly treats smaller P-values as proxies for tissue-wide effect magnitude across readouts that are not directly comparable.",
+        "B": "Fails on both conclusion and reasoning. P-value magnitude reflects effect size, variance, and n jointly, and does not rank drugs across non-comparable readouts; the data also do not establish venetoclax as more effective overall.",
+        "D": "Fails on reasoning. P-value thresholds for 'significance' are interpretive conventions, not evidence that the effects are biologically absent; the stem reports statistically supported reductions in the stated readouts."
+      }
+    }
+  },
+  {
+    "question": "In old female p16-InkAttac fimbria, both AP20187 and venetoclax lower the IBA1+GAL3+ cell frequency and GAL3 footprint. AP20187 additionally lowers per-cell GAL3 fluorescence intensity in remaining IBA1+GAL3+ cells (KS P < 0.001), whereas venetoclax reduces cell number without detectably altering residual per-cell GAL3 intensity. If the AP20187-specific reduction in per-cell GAL3 intensity did not occur (i.e., AP20187 only reduced IBA1+GAL3+ cell number), what would follow for the claim that the two drugs converge on GAL3+ microglia through distinct effector routes?",
+    "options": {
+      "D": "The convergence claim would be weakened, because removing AP20187's per-cell intensity effect eliminates the stated mechanistic distinction between the two drugs and leaves only a shared reduction in IBA1+GAL3+ cell number. because the only evidence in the stem that the two drugs act through distinct routes is the AP20187-specific per-cell intensity reduction.",
+      "A": "The convergence claim would be strengthened, because both drugs would then act through the identical route of reducing GAL3+ cell number, which is the defining feature of convergence. because identical mechanisms across drugs are required for convergence on a target population.",
+      "B": "The convergence claim would be unaffected, because convergence is defined by the shared outcome (lower GAL3 burden) regardless of mechanism. because shared phenotypic outcome is the only criterion needed to assert mechanistic convergence.",
+      "C": "The convergence claim would be inverted to claim the drugs diverge, because identical mechanisms on the same cell population constitute divergence rather than convergence. because converging on a target means acting through different mechanisms, so identical mechanisms must indicate divergence."
+    },
+    "answer": "D",
+    "rubric": {
+      "correct_reasoning": "The stem states the convergence claim rests on a mechanistic distinction: AP20187 reduces per-cell GAL3 intensity in remaining cells, whereas venetoclax reduces cell number without altering residual intensity. If the AP20187-specific intensity reduction is removed, the only remaining shared effect is reduced IBA1+GAL3+ cell number — the very feature that, taken alone, would not distinguish the two drugs' effector routes. Therefore the evidence supporting the 'distinct effector routes' half of the convergence claim collapses, weakening (though not necessarily falsifying) the broader convergence statement.",
+      "distractor_analysis": {
+        "A": "Fails on reasoning. Identical mechanisms on a shared target do not strengthen a 'distinct routes' claim; they would in fact remove the mechanistic distinction the stem uses to justify the routes language.",
+        "B": "Fails on conclusion. The stem explicitly couples 'convergence' to 'distinct effector populations,' so removing the mechanistic distinction affects the routes portion of the claim even if the shared outcome remains.",
+        "C": "Fails on both conclusion and reasoning. The stem defines convergence on the GAL3+ population (a shared target), not convergence as requiring mechanistic difference; identical mechanisms would not convert a convergence claim into a divergence claim."
+      }
+    }
+  }
+]

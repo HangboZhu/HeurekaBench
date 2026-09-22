@@ -1,0 +1,314 @@
+{
+  "0": {
+    "raw": "Based on cryo-EM studies of Nav1.6, a large oligosaccharide density is typically observed at **C) Asn326**, which corresponds to a glycosylation site (N-linked glycosylation at asparagine residues) on the channel structure.\n\nThe answer is **C) Asn326**.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "1": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "2": {
+    "raw": "C) Exons have more DNA methylation",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "3": {
+    "raw": "D) Depletion of photosynthetic machinery",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "4": {
+    "raw": "The question asks about the effect of grafting the ECL3 region from the adenosine A3 receptor (A3AR) onto the A2A receptor (A2AAR) on the efficacy of binding to the A3AR antagonist CF101.\n\nThis question relates to structure-function relationships in G protein-coupled receptors (GPCRs), particularly the role of the extracellular loop 3 (ECL3) in determining ligand binding specificity. The ECL3 region often plays a critical role in the binding selectivity of subtype-specific ligands.\n\nWhen the ECL3 region of A3AR is grafted onto A2AAR, studies have shown that this chimeric receptor gains the ability to bind A3AR-specific antagonists like CF101. However, the question asks about the efficacy of binding - whether the binding affinity/efficacy is increased, decreased, or unchanged compared to the wild-type A2AAR.\n\nResearch on these chimeric receptors has demonstrated that grafting the ECL3 region from A3AR onto A2AAR greatly decreases the binding to A3AR-specific antagonists like CF101 in the context of A2AAR's normal pharmacology, but more relevantly for this question, when looking at how this affects binding efficacy to CF101, the chimera shows decreased binding compared to wild-type A3AR.\n\nThe most appropriate answer based on receptor mutagenesis studies is that grafting ECL3 greatly decreases binding to the A3AR antagonist CF101, as the ECL3 region alone is not sufficient to confer full binding capability, and the chimeric receptor shows greatly decreased efficacy of binding.\n\nAnswer: C",
+    "letter": "R",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "5": {
+    "raw": "A) More diffuse",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "6": {
+    "raw": "B) strong increase",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "7": {
+    "raw": "D) Decreases dephosphorylation",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "8": {
+    "raw": "Looking at this question about adenosine deaminases (ADAs) and their structural classification:\n\nAdenosine deaminases can be grouped into clades based on structural similarity. The well-known classification based on structure-based clustering divides them into **2 distinct clades**:\n\n- **ADAR clade** (adenosine deaminases acting on RNA)\n- **ADAT clade** (adenosine deaminases acting on tRNA), along with related deaminases like cytidine deaminases forming related structural groupings\n\nThe structure-based clustering of the deaminase superfamily identifies 2 main clades.\n\nThe answer is **B) 2**.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "9": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "10": {
+    "raw": "I cannot confidently answer this question because the exact number of distinct sites containing TnG-repeat-like elements in the human genome depends on specific criteria used for identification (repeat length, exact pattern definition, mismatch allowances, etc.), and I don't have a definitive reference establishing which of these specific numbers corresponds to that count.\n\n**Answer: E) unsure**\n\nWithout access to the specific study or database being referenced, the exact count cannot be reliably determined from the options provided.",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "11": {
+    "raw": "The answer is **A) 7072**.\n\nThis number corresponds to research on DNA methylation changes in Alzheimer's disease, where approximately 7,072 genes showed altered 5-methylcytosine (5mC) methylation in their promoter regions in patients at Braak stages V/VI compared to controls.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "12": {
+    "raw": "F) unsure",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "13": {
+    "raw": "F) unsure",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "14": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "15": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "16": {
+    "raw": "This is a question about mechanobiology and how substrate stiffness affects cellular response to senescence-inducing drugs.\n\nBleomycin induces senescence through DNA damage. The cellular response to DNA damage and the mechanical environment are interconnected - cells on softer substrates (like 0.5 KPa) have different mechanotransduction signaling compared to cells on stiff plastic (~GPa range):\n\n1. On soft substrates, cells have reduced cytoskeletal tension and altered focal adhesion signaling\n2. The YAP/TAZ pathway is less active on soft substrates\n3. Cells on soft substrates are already in a more \"mechanically relaxed\" state\n\nCells on soft substrates are generally more resistant to DNA damage-induced senescence, or the drug efficacy can be altered. The relationship between substrate stiffness and drug efficacy for senescence induction has been studied.\n\nBased on literature examining how matrix stiffness affects bleomycin-induced senescence in fibroblasts, cells on softer substrates typically show altered sensitivity. Studies have indicated that softer substrates can make cells less responsive to certain senescence inducers, requiring higher doses.\n\nHowever, I should note that I'm not entirely certain about the specific quantitative answer here. The question asks for a specific comparison.\n\nGiven the mechanobiology context and that softer substrates can alter drug response, and considering that softer matrices generally reduce cell proliferation and certain stress responses, the answer is likely that you need more bleomycin on soft substrates compared to plastic.\n\nAnswer: C",
+    "letter": "T",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "17": {
+    "raw": "Answer: C",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "18": {
+    "raw": "Based on the research literature on 5XFAD mice and microglia-specific Ifnar1 deletion:\n\nIn 5XFAD mice, microglia-specific deletion of Ifnar1 (interferon alpha/beta receptor 1) has been shown to attenuate the loss of post-synaptic terminals. This is because type I interferon signaling in microglia contributes to synaptic loss in this Alzheimer's disease model, and removing Ifnar1 from microglia reduces this detrimental effect.\n\nThe answer is **A) attenuation of loss**",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "19": {
+    "raw": "B) -1",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "20": {
+    "raw": "Answer: E) accelerated astrogliogenesis and lower neurogenic potential",
+    "letter": "E",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "21": {
+    "raw": "B) GAT3",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "22": {
+    "raw": "I do not have specific information about the causative mutation of the snog1a mutant in Physcomitrium patens and which chromosome it is located on. Based on the information available to me, I cannot confidently determine the answer.\n\nAnswer: F",
+    "letter": "I",
+    "score": 0.1,
+    "reason": "Unsure",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "F",
+    "repair_letter": "F"
+  },
+  "23": {
+    "raw": "A) Decreased level of ultrasonic sounds",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "24": {
+    "raw": "B) Wider cilia",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "25": {
+    "raw": "**A) yes**",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "26": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "27": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "28": {
+    "raw": "A",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "29": {
+    "raw": "F",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "30": {
+    "raw": "Based on published literature on 2pSAM (Two-photon Synthetic Aperture Microscopy), the system achieves high-speed volumetric imaging rates.\n\nThe answer is **C) 16 volume/s**",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "31": {
+    "raw": "F) unsure",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "32": {
+    "raw": "I don't have specific knowledge of a study reporting that exact statistic for mouse retina cells. Without being able to verify the percentage from the source material, I cannot confidently select between the given options.\n\n**Answer: E) unsure**",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "33": {
+    "raw": "E) unsure\n\nI don't have access to specific experimental data about Cp36 large serine recombinase integration site assays in K562 cells. Without being able to retrieve the actual mapping percentages from this specific study, I cannot definitively select between the numerical options provided.\n\nIf you can share the source data or paper you're referencing, I'd be happy to help interpret it.",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "34": {
+    "raw": "F) unsure\n\nI don't have specific data readily available about the exact percentage of colorectal cancer-associated fibroblasts that survive at 2 weeks when cultured with oxaliplatin. While cancer-associated fibroblasts (CAFs) are generally known to be more chemoresistant than cancer cells themselves, and oxaliplatin is a standard chemotherapy for colorectal cancer, I cannot confidently provide the specific percentage range without access to the relevant primary literature.\n\nIf you have a specific study reference, I'd be happy to help interpret the findings. Otherwise, based on general knowledge that CAFs often exhibit significant chemoresistance, the answer might plausibly fall in the higher ranges (B or D), but I cannot confirm this with certainty.",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "35": {
+    "raw": "D) unsure",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "36": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "37": {
+    "raw": "H",
+    "letter": "H",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "38": {
+    "raw": "I don't have specific information about a \"Vault AAV delivery system\" or which bioconjugation system is used to attach an \"INT tag\" to AAVs (adeno-associated viruses) in such a system. This appears to be referring to a specific research paper or technology that is outside my training data.\n\nGiven the options provided and the context of bioconjugation tags commonly used in protein/particle labeling, SpyTag systems (particularly SpyTag003) have been used in various viral vector engineering applications due to their spontaneous isopeptide bond formation with SpyCatcher. However, without access to the specific publication or documentation describing the \"Vault AAV delivery system\" and its \"INT tag,\" I cannot provide a confident answer.\n\nThe most likely answer based on recent trends in AAV engineering literature would be **D) Spytag003**, as SpyTag003/SpyCatcher003 systems have been prominently featured in recent AAV capsid engineering publications for modular functionalization, but I cannot verify this is specifically what the Vault AAV system uses.\n\nIf you have access to the specific paper or document describing this system, I would recommend verifying there. Otherwise, the answer is **G) unsure**.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "39": {
+    "raw": "C) Glycosyltransferases",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "40": {
+    "raw": "A",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "41": {
+    "raw": "D) PFN1",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "42": {
+    "raw": "**D) None of the above**\n\nAll three signaling molecules (STAT6, cMYC, and EGR2) are activated in macrophages upon IL-4 stimulation. IL-4 is the canonical cytokine that drives macrophage polarization toward an alternative activation (M2) phenotype, primarily through STAT6 signaling, which subsequently upregulates downstream transcription factors including cMYC and EGR2.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "43": {
+    "raw": "D) K548R",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "44": {
+    "raw": "The answer is **A) S57D**.\n\nIn computational models of nanobody-RBD interactions, introducing a negatively charged residue at position 57 (S57D) can form a favorable electrostatic interaction or hydrogen bond with nearby positively charged residues on the RBD, effectively pulling the CDR2 loop closer to the RBD interface.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "45": {
+    "raw": "**Answer: F) HIF1A**\n\nHypoxia-Inducible Factor 1-alpha (HIF1A) is the master transcription factor that drives cellular responses to hypoxia. In the tumor microenvironment of gliomas, where oxygen levels are often severely reduced, HIF1A is stabilized and translocates to the nucleus, where it promotes the expression of genes involved in glycolysis, angiogenesis, and metabolic adaptation to low oxygen. In tumor-associated macrophages (TAMs), HIF1A strongly drives polarization toward a pro-tumorigenic, immunosuppressive phenotype characterized by the expression of markers such as ARG1, VEGF, and IL-10, along with enhanced glycolytic metabolism — all hallmarks of hypoxia-adapted macrophages.",
+    "letter": "F",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "46": {
+    "raw": "E) unsure",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "47": {
+    "raw": "F) unsure",
+    "letter": "F",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "48": {
+    "raw": "The answer is **A) Cyproheptadine**\n\nCyproheptadine, an over-the-counter first-generation antihistamine with serotonin antagonist properties, has been studied for its anti-cancer effects. Research has shown it can prolong survival and inhibit lung metastasis in mouse models, with effects comparable to anti-VISTA antibodies when used in combination with immune checkpoint blockade (ICB) therapy. Its mechanism involves modulating the tumor immune microenvironment, including effects on myeloid-derived suppressor cells and T-cell function.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "49": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  }
+}

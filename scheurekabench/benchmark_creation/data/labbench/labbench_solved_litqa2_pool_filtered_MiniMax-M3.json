@@ -1,0 +1,112 @@
+{
+  "0": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "1": {
+    "raw": "C) cGAS sensing is the rate-limiting pathological step because deleting Cgas suppresses fibrosis and senescence markers even though cytosolic mtDNA leakage persists, indicating that leakage without cGAS signaling is insufficient to drive ovarian aging phenotypes.\n\n**Rationale:** The dissociation described in the stem is a classic \"upstream still present, downstream blocked\" pattern. If cytosolic mtDNA leakage were itself the rate-limiting pathogenic event, then removing cGAS should not rescue the phenotype—but it does. This demonstrates that sensing/activation downstream of leakage (cGAS) is what translates the leaked mtDNA into fibrotic and senescent changes. Option A is self-contradictory (it says mtDNA leakage is rate-limiting, yet proposes an mtDNA-independent cGAS function after cGAS was deleted). Option B overinterprets the persistence of leakage as evidence against any pathogenic role for it—leakage can still be necessary upstream even if not rate-limiting on its own. Option D incorrectly posits equal necessity for both inputs; the data show that removing cGAS alone abolishes the phenotype despite continued leakage, so cGAS is the limiting node.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "2": {
+    "raw": "D",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "3": {
+    "raw": "B) No, because the GAL3-stratified comparison within the fimbria does not show elevated dPP4 in GAL3+ cells, so any claim that GAL3 marks a uniformly senescent-like state with all listed markers would overreach the within-region evidence. because within-population stratification, not between-region differences, tests co-expression with GAL3.",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "4": {
+    "raw": "**A**\n\nThe reasoning: The senescence domains (particularly organelle stress and cell surface) recur across multiple aged clusters (cluster 7 in dataset 1, and clusters 3 and 10 in dataset 2), which argues against each cluster representing a truly discrete senescent state with non-overlapping signatures (ruling out B). Instead, this overlap suggests senescence programs coexist with or are integrated into the broader DAM-like activation continuum. The inverse relationship with homeostatic microglial identity further supports this: senescent microglia lose homeostatic markers and gain activation/DAM-associated features rather than representing a completely separate lineage. C, D, and E are not supported by the data.",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "5": {
+    "raw": "# Analysis\n\nThe key genes mentioned are highly informative:\n- **Mbp, Mobp, Plp1** — canonical oligodendrocyte/myelin markers\n- **Camk2a, Adcy1, Sncb, Snap25** — canonical neuronal markers\n\nIn CosMx spatial transcriptomics (and similar imaging-based assays), transcripts are assigned to cells based on segmentation boundaries. When cells are densely packed or have complex morphology (as microglia often do with their ramified processes intermingling among other cell types), segmentation errors occur and transcripts from neighboring cells get misassigned to the wrong cell.\n\nThe hallmark of this **transcript spillover** artifact is:\n- Genes appear in a cell type that doesn't biologically express them\n- The \"enrichment\" matches the dominant neighboring cell type in that tissue region\n- The signal is strongest for highly abundant transcripts in neighbors\n\nThis is precisely what we see here: microglia pick up oligodendrocyte transcripts in white matter and neuronal transcripts in gray matter.\n\n**Why the other options are wrong:**\n- **A** correctly identifies this as spillover from imperfect segmentation\n- **B** claims microglia are doing lineage-inappropriate transcription driven by regional cues — there's no evidence microglia transcribe MBP or Camk2a; this conflates spillover with biology\n- **C** invokes gross misclassification, but the question specifies these are microglia identified as such — the issue is transcript assignment, not cell identity\n- **D** asserts these are real microglial subtype markers, but genes like MBP and Snap25 are not expressed by microglia; regional specificity actually supports spillover (because the neighbors differ by region), not bona fide microglial biology\n- **E** — we can answer\n\n**Answer: A**\n\nThis pattern most directly indicates transcript spillover due to imperfect segmentation — a well-known technical artifact in imaging-based spatial transcriptomics.",
+    "letter": "#",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "6": {
+    "raw": "A",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "7": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "8": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "9": {
+    "raw": "B) Astroglial FN1 overexpression is sufficient to compromise gliovascular barrier integrity because <reasoning>. Dextran leakage and elevated fibronectin co-occurred specifically in the FN1-expressing larvae, while both injection controls (which share the physical manipulation but lack FN1) kept the barrier intact, isolating FN1 expression as the variable distinguishing leaky from non-leaky animals",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "10": {
+    "raw": "B",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "11": {
+    "raw": "E",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "12": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "13": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "14": {
+    "raw": "**Answer: B**\n\n**Reasoning:**\n\nOption B correctly synthesizes the convergent evidence without overreaching:\n\n1. **Human snRNA-seq data** establish that astrocytic NF-κB signaling (NF-κB1 elevated in AD, amplified by APOE ε4; NF-κB2 strongly predicting astrocytic FN1 with β ≈ 0.44, P = 2.4×10⁻²¹) is meaningfully linked to the reactive SERPINA3⁺/FN1⁺ astrocytic phenotype at the gliovascular interface.\n\n2. **Zebrafish data** show that promoting anti-inflammatory microglial states with camptothecin and Torin2 rescues amyloid-induced FN1 deposition and astrocytic hypertrophy — demonstrating that the inflammatory milieu is a tractable causal node.\n\n3. The inference licensed by combining these observations is that **inflammatory tone — of which astrocytic NF-κB is a measurable component — gates FN1 deposition**, and that dampening this tone is sufficient to rescue the phenotype across species.\n\n**Why the others fail:**\n\n- **A** is too dismissive: microglial state and astrocytic NF-κB signaling are coupled components of a shared neuroinflammatory program; human NF-κB/FN1 associations are not invalidated by drugs acting upstream on microglia.\n- **C** overstates: a strong association (even β ≈ 0.44) is not equivalent to causal necessity, and no manipulation in the zebrafish experiment isolates astrocytic NF-κB2.\n- **D** is unsupported: the zebrafish drugs act on microglia, and other cell types clearly modulate FN1; the data do not establish exclusivity.\n- **E** is not warranted given the clear correctness of B.",
+    "letter": "*",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "15": {
+    "raw": "A",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "16": {
+    "raw": "C) The FN1–VEGFA relationship is CNS-specific because CSF showed a significant FN1–VEGFA association while plasma showed essentially no correlation (r = 0.13, R² = 0.018), indicating the link is not a general peripheral blood feature.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  }
+}

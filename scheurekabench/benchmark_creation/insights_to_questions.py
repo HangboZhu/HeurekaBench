@@ -8,8 +8,10 @@ import json
 import dotenv
 from prompts.insight2question_prompt import insight2question_prompt_text as insight2mcq_question_prompt_text
 from prompts.insight2open_question_prompt import insight2question_prompt_text as insight2open_question_prompt_text
-from prompts.insight2question_rubric_prompts import MCQ_RUBRIC_PROMPT, OE_RUBRIC_PROMPT
+from prompts.insight2question_rubric_prompts import (mcq_rubric_prompt, oe_rubric_prompt,
+                                                    mcq_recall_prompt, mcq_pool_prompt)
 from utils.claude_code_client import query_claude_code
+from utils import llm_gateway
 from debate_insights import extract_json
 
 # Load environment variables from .env file
@@ -153,6 +155,12 @@ def generate_raw(full_prompt, model_call):
         return query_gpt(full_prompt)
     elif model_call == "claude":
         return query_claude(full_prompt)
+    elif model_call == "gateway":
+        model = os.getenv("QUESTION_MODEL") or (llm_gateway.model_pool() or [None])[0]
+        if not model:
+            print("No gateway model configured: set MODEL_NAME (or QUESTION_MODEL) in .env.")
+            return ""
+        return llm_gateway.chat(full_prompt, model=model)
     else:
         raw = ""
         for attempt in (1, 2, 3):  # claude_code backend fails intermittently
@@ -163,11 +171,84 @@ def generate_raw(full_prompt, model_call):
         return raw
 
 
-def main_structured(insight_json_path, model_call, q_type):
+def insight_prompt_block(entries, start_index=1):
+    """Render insights as the '#### Insight #N' block the rubric prompts expect."""
+    return "\n\n".join(
+        f"#### Insight #{start_index + offset}\n\n"
+        f"* Summary: {content['summary']}\n\n"
+        f"* How it was derived: {content['how']}\n\n"
+        f"* Associated paragraphs from the paper: {content['relevant']}"
+        for offset, (_, content) in enumerate(entries)
+    )
+
+
+def generate_checked(prompt_template, block, model_call, q_type, output_dir, context,
+                     parse_attempts=3):
+    """One generation pass + source-leak guard (one corrective regeneration,
+    keeping whichever draft leaks less). Returns the structured items, or
+    exits with the raw response saved when nothing parses.
+
+    Parse failures are retried up to `parse_attempts` times: the transport
+    occasionally drops the tail of long responses, and the same request
+    usually comes back intact on a retry — aborting the whole paper because
+    one stochastic call got truncated wastes the calls already spent."""
+    full_prompt = prompt_template.replace("{insights}", block)
+    raw = ""
+    for attempt in range(1, parse_attempts + 1):
+        raw = generate_raw(full_prompt, model_call)
+        items = validate_structured(extract_json(raw), q_type)
+        if items is not None:
+            break
+        print(f"{context}: unparseable structured output "
+              f"(attempt {attempt}/{parse_attempts}); retrying...")
+    if items is None:
+        raw_path = os.path.join(output_dir, f"{q_type}_questions_raw.txt")
+        with open(raw_path, "w") as f:
+            f.write(raw or "(empty LLM response)")
+        raise SystemExit(
+            f"ERROR: no parseable structured questions for {context}; "
+            f"raw output saved to '{raw_path}'. Existing output files were left untouched."
+        )
+
+    leaks = find_source_leakage(items)
+    if leaks:
+        print(f"{context}: {len(leaks)} question(s) reference the source article; regenerating once with feedback...")
+        feedback = "\n".join(
+            f'- insight {iid} question {no}: "{match}" in "{snippet}..."'
+            for iid, no, match, snippet in leaks
+        )
+        retry_prompt = full_prompt + (
+            "\n\n### CORRECTION FEEDBACK ON YOUR PREVIOUS DRAFT\n"
+            "Your previous draft contained questions that violate the self-containment rule: "
+            "they presuppose or reference the source article, which the reader does not have. "
+            "Regenerate ALL questions for ALL insights as fully self-contained, fixing at least "
+            "these violations:\n" + feedback
+        )
+        items2 = validate_structured(extract_json(generate_raw(retry_prompt, model_call)), q_type)
+        leaks2 = find_source_leakage(items2)
+        if items2 is not None and len(leaks2) < len(leaks):
+            items, leaks = items2, leaks2
+    if leaks:
+        print(f"WARNING: {len(leaks)} question(s) still reference the source (manual cleanup needed):")
+        for iid, no, match, snippet in leaks:
+            print(f'  - insight {iid} question {no}: "{match}" in "{snippet}..."')
+    return items
+
+
+def main_structured(insight_json_path, model_call, q_type, per_insight=2, split_calls=False,
+                    style="self_contained"):
     """Structured generation: every question carries question / answer / rubric.
 
     Writes '<qtype>_questions' (list of dicts) plus a legacy '{qtype}_question'
-    text rendering so evaluate_agent_answer.py keeps working unchanged."""
+    text rendering so evaluate_agent_answer.py keeps working unchanged.
+    `per_insight` is forwarded to the prompt builders (2 = original behaviour).
+    `split_calls` asks the LLM once per insight instead of once per paper —
+    small prompts come back intact, whereas the single all-insights response
+    is long enough that the transport sometimes drops its head (see the
+    same rationale in difficulty_loop.build_insight_prompt).
+    `style` selects the question-design rule: "self_contained" (default) keeps
+    the premise-complete stems, "litqa_recall" emits LAB-Bench LitQA2-style
+    literature-recall items (MCQ only) that require knowledge of the article."""
     with open(insight_json_path, "r") as f:
         insights_data = json.load(f)
 
@@ -178,55 +259,47 @@ def main_structured(insight_json_path, model_call, q_type):
     output_dict = {}
     all_questions = ""
     for paper_id, paper_content in insights_data.items():
-        insight_text4prompt = ""
-        for insight_idx, (insight_id, insight_content) in enumerate(paper_content.items()):
-            summary = insight_content["summary"]
-            how = insight_content["how"]
-            relevant = insight_content["relevant"]
+        if q_type == "mcq":
+            if style == "litqa_recall":
+                prompt_template = mcq_recall_prompt(per_insight)
+            elif per_insight > 2:  # candidate pool: N questions spanning the ladder
+                prompt_template = mcq_pool_prompt(per_insight)
+            else:
+                prompt_template = mcq_rubric_prompt(per_insight)
+        else:
+            prompt_template = oe_rubric_prompt(per_insight)
+        entries = list(paper_content.items())
 
-            insight_text4prompt += f"#### Insight #{insight_idx + 1}\n\n* Summary: {summary}\n\n* How it was derived: {how}\n\n* Associated paragraphs from the paper: {relevant}\n\n\n"
+        if split_calls:
+            items = []
+            for idx, entry in enumerate(entries, 1):
+                # Numbering restarts inside each single-insight prompt, so the
+                # model always sees "Insight #1" and the index is re-anchored here.
+                block = insight_prompt_block([entry], start_index=1)
+                if q_type == "mcq" and per_insight <= 2:
+                    # An LLM asked one question at a time cannot balance answer
+                    # positions across the pack, and left alone it concentrates
+                    # them (observed: 8/10 keyed at B, i.e. 80% for a constant
+                    # guess). Position carries no information, so assign it here.
+                    # (Pool mode asks for several questions in one call, where a
+                    # single position would collide across them; rebalance_mcq_positions.py
+                    # redistributes those deterministically after generation.)
+                    block += (
+                        f"\n\n### ANSWER POSITION FOR THIS QUESTION\n"
+                        f"If this question has a single keyed option, place it at position "
+                        f"{'ABCD'[(idx - 1) % 4]}. Options are otherwise ordered freely; the "
+                        f"assignment exists only so the key is not concentrated in one slot."
+                    )
+                parsed = generate_checked(prompt_template, block, model_call, q_type,
+                                          output_dir, f"{paper_id}/{entry[0]}")
+                questions = parsed[0]["questions"] if parsed else []
+                items.append({"insight_index": idx, "questions": questions})
+        else:
+            block = insight_prompt_block(entries, start_index=1)
+            items = generate_checked(prompt_template, block, model_call, q_type,
+                                     output_dir, f"paper {paper_id}")
 
-        insight_text4prompt = insight_text4prompt.strip()
-        prompt_template = MCQ_RUBRIC_PROMPT if q_type == "mcq" else OE_RUBRIC_PROMPT
-        # replace (not str.format): the templates embed literal JSON braces
-        full_prompt = prompt_template.replace("{insights}", insight_text4prompt)
-
-        raw = generate_raw(full_prompt, model_call)
-        items = validate_structured(extract_json(raw), q_type)
-        if items is None:
-            raw_path = os.path.join(output_dir, f"{q_type}_questions_raw.txt")
-            with open(raw_path, "w") as f:
-                f.write(raw or "(empty LLM response)")
-            raise SystemExit(
-                f"ERROR: no parseable structured questions for paper {paper_id}; "
-                f"raw output saved to '{raw_path}'. Existing output files were left untouched."
-            )
-
-        # Self-containment guard: questions referencing the source article get one
-        # corrective regeneration; keep whichever draft leaks less.
-        leaks = find_source_leakage(items)
-        if leaks:
-            print(f"{paper_id}: {len(leaks)} question(s) reference the source article; regenerating once with feedback...")
-            feedback = "\n".join(
-                f'- insight {iid} question {no}: "{match}" in "{snippet}..."'
-                for iid, no, match, snippet in leaks
-            )
-            retry_prompt = full_prompt + (
-                "\n\n### CORRECTION FEEDBACK ON YOUR PREVIOUS DRAFT\n"
-                "Your previous draft contained questions that violate the self-containment rule: "
-                "they presuppose or reference the source article, which the reader does not have. "
-                "Regenerate ALL questions for ALL insights as fully self-contained, fixing at least "
-                "these violations:\n" + feedback
-            )
-            items2 = validate_structured(extract_json(generate_raw(retry_prompt, model_call)), q_type)
-            leaks2 = find_source_leakage(items2)
-            if items2 is not None and len(leaks2) < len(leaks):
-                items, leaks = items2, leaks2
         print(f"Structured questions generated for paper {paper_id}.")
-        if leaks:
-            print(f"WARNING: {len(leaks)} question(s) still reference the source (manual cleanup needed):")
-            for iid, no, match, snippet in leaks:
-                print(f'  - insight {iid} question {no}: "{match}" in "{snippet}..."')
 
         by_index = {it["insight_index"]: it["questions"] for it in items if it["insight_index"]}
         if not by_index:  # model omitted insight_index: fall back to positional order
@@ -329,14 +402,33 @@ def main(insight_json_path, model_call, q_type):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--insight_json_path", type=str, required=True, help="Path to insights.json file")
-    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude", "claude_code"])
+    parser.add_argument("--model_call", type=str, default="gpt", choices=["gpt", "claude", "claude_code", "gateway"])
     parser.add_argument("--qtype", type=str, choices=["mcq", "oe"])
     parser.add_argument("--structured", action="store_true",
                         help="Generate structured questions (question / answer / grading rubric) as JSON; "
                              "also renders the legacy '{qtype}_question' text for the evaluation scripts")
+    parser.add_argument("--per-insight", type=int, default=2, choices=[1, 2, 3, 4, 5, 6, 7, 8],
+                        dest="per_insight",
+                        help="Questions generated per insight (default 2). With 1, the single question "
+                             "must be the higher tier of the difficulty ladder (counterfactual/multi_hop). "
+                             "With 3..8 the candidate-pool prompt is used: N questions spanning the "
+                             "ladder in one call, meant to be filtered by solver testing (drop easy).")
+    parser.add_argument("--split-calls", action="store_true",
+                        help="Ask the LLM once per insight instead of once per paper. Much more reliable "
+                             "for large packs: the single all-insights response is long enough that the "
+                             "transport sometimes returns it head-truncated.")
+    parser.add_argument("--style", type=str, default="self_contained",
+                        choices=["self_contained", "litqa_recall"],
+                        help="Question-design rule: self_contained (default) embeds every premise in the "
+                             "stem; litqa_recall emits LAB-Bench LitQA2-style literature-recall items "
+                             "whose answers require knowledge of the source article (MCQ only)")
     args = parser.parse_args()
 
+    if args.style == "litqa_recall" and args.qtype != "mcq":
+        raise SystemExit("ERROR: --style litqa_recall supports --qtype mcq only "
+                         "(literature recall has no open-ended rubric form).")
     if args.structured:
-        main_structured(args.insight_json_path, args.model_call, args.qtype)
+        main_structured(args.insight_json_path, args.model_call, args.qtype, args.per_insight,
+                        args.split_calls, args.style)
     else:
         main(args.insight_json_path, args.model_call, args.qtype)

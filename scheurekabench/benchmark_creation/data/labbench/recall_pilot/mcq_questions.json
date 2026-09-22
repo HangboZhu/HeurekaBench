@@ -1,0 +1,274 @@
+{
+  "Aging-Res-0911": {
+    "Insight1": {
+      "summary": "Astrocyte-derived fibronectin (FN1) is a proximal mechanistic mediator linking APOE \u03b54 to blood\u2013brain barrier (BBB) dysfunction in Alzheimer's disease. APOE4 and amyloid-\u03b242/inflammatory signals drive astrocytic FN1 upregulation and amorphous perivascular deposition that accumulates at AQP4-positive endfeet, and FN1 accumulation is sufficient to cause BBB leakage by engaging integrin/FAK signaling to suppress the VEGFA/HB-EGF/IGF-1 trophic axis.",
+      "how": "This insight integrates postmortem human neuropathology, snRNA-seq, isogenic iPS cell-derived astrocyte and 3D vascular models, and zebrafish and APOE knock-in mouse studies. APOE \u03b54/\u03b54 astrocytes showed elevated FN1 with amorphous (rather than fibrillar) deposits, and FN1 strongly colocalized with AQP4 at astrocytic endfeet at the gliovascular interface. Astroglial FN1 overexpression in zebrafish demonstrated sufficiency for BBB leakage (Extended Data Fig. 9b\u2013e). Mechanistically, FN1 acts through integrin/FAK signaling to suppress VEGFA, which reduces endothelial HB-EGF and downstream astrocytic IGF-1; FAK inhibition, integrin \u03b21 blockade (ATN-161), and HB-EGF/IGF-1 supplementation each restored components of this cascade and BBB integrity. Human CSF co-expression analyses (FN1 \u00d7 APOE \u03b54 \u00d7 disease interaction, F = 14.02, P = 1.81\u00d710\u207b\u2074) provided clinical validation. The 71% AD risk reduction from an FN1 loss-of-function variant is attributed to prior work (ref. 12) cited as motivation, not a new finding of this paper.",
+      "relevant": "Here we show that astrocyte-derived fibronectin (FN1) is a key mediator of apolipoprotein E4 (APOE4)-driven BBB dysfunction in AD. Using postmortem human brain tissue, human three-dimensional vascular models and in vivo models, we demonstrate that APOE4, amyloid-\u03b242 and inflammatory signals induce astrocytic FN1 upregulation and excessive perivascular deposition. Fibronectin accumulation is sufficient to cause BBB leakage and disrupt VEGF/HB-EGF/IGF-1 signaling through integrin-mediated focal adhesion kinase activity. Reducing fibronectin or restoring growth factor signaling rescues BBB function in vitro and in vivo. Together, evidence from experimental models, human brain tissue and clinical datasets identifies fibronectin as a proximal mediator of APOE4-driven gliovascular dysfunction and highlights FN1 as a potential therapeutic target for vascular and BBB dysfunction in AD.\n\nWe previously reported that APOE \u03b54 carriers with AD accumulate fibronectin at the gliovascular interface of the BBB, and that a protective loss-of-function fibronectin 1 (FN1) variant reduces AD risk by 71% (ref. 12). These findings implicate fibronectin as a downstream mediator of APOE4 but leave its pathogenic mechanism unresolved.\n\nAPOE \u03b54/\u03b54 human astrocytes not only showed increased fibronectin expression but also generated amorphous fibronectin deposits. In contrast, APOE \u03b53/\u03b53 astrocytes deposited fibronectin at lower levels and in fibrillar, thread-like arrays.\n\nThese results demonstrate that, in the brain, astrocytes drive APOE \u03b54-dependent FN1 deposition at the vascular interface, consistent with their enrichment among FN1-expressing cells in perivascular regions.\n\nFN1 strongly colocalized with AQP4 across all samples, confirming enrichment at astrocytic endfeet.\n\nThese findings indicate that the FN1/VEGF/HB-EGF/IGF-1 signaling axis regulates gliovascular homeostasis, which is disrupted in AD through APOE \u03b54-dependent elevated fibronectin deposition.\n\nOur findings illustrate the crucial role of fibronectin as a pathological mediator in AD, especially among APOE \u03b54 carriers. Our work demonstrates that APOE \u03b54-induced BBB dysfunction in AD is augmented by the pathological deposition of fibronectin.",
+      "mcq_questions": [
+        {
+          "question": "In isogenic human iPSC-derived astrocytes used to model gliovascular dysfunction in Alzheimer's disease, which morphological pattern characterized fibronectin deposits produced by APOE \u03b54/\u03b54 astrocytes compared with APOE \u03b53/\u03b53 astrocytes?",
+          "answer": "A",
+          "question_type": "extraction",
+          "options": {
+            "A": "Amorphous fibronectin deposits in APOE \u03b54/\u03b54 astrocytes and fibrillar, thread-like deposits in APOE \u03b53/\u03b53 astrocytes",
+            "B": "Amorphous fibronectin deposits in APOE \u03b53/\u03b53 astrocytes and fibrillar, thread-like deposits in APOE \u03b54/\u03b54 astrocytes",
+            "C": "Fibrillar, thread-like deposits in both APOE \u03b54/\u03b54 and APOE \u03b53/\u03b53 astrocytes",
+            "D": "Amorphous deposits in both APOE \u03b54/\u03b54 and APOE \u03b53/\u03b53 astrocytes"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that APOE \u03b54/\u03b54 astrocytes showed increased fibronectin expression and produced amorphous fibronectin deposits, whereas APOE \u03b53/\u03b53 astrocytes deposited fibronectin at lower levels in fibrillar, thread-like arrays.",
+            "distractor_analysis": {
+              "B": "Reverses the genotype-to-morphology mapping reported in the paper.",
+              "C": "Implies both produce fibrillar arrays, which contradicts the \u03b54-specific amorphous phenotype.",
+              "D": "Implies both produce amorphous deposits, eliminating the qualitative \u03b53/\u03b53 fibrillar distinction."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In isogenic human iPSC-derived astrocytes used to model gliovascular dysfunction in Alzheimer's disease, which morphological pattern characterized fibronectin deposits produced by APOE \u03b54/\u03b54 astrocytes compared with APOE \u03b53/\u03b53 astrocytes?\nA) Amorphous fibronectin deposits in APOE \u03b54/\u03b54 astrocytes and fibrillar, thread-like deposits in APOE \u03b53/\u03b53 astrocytes\nB) Amorphous fibronectin deposits in APOE \u03b53/\u03b53 astrocytes and fibrillar, thread-like deposits in APOE \u03b54/\u03b54 astrocytes\nC) Fibrillar, thread-like deposits in both APOE \u03b54/\u03b54 and APOE \u03b53/\u03b53 astrocytes\nD) Amorphous deposits in both APOE \u03b54/\u03b54 and APOE \u03b53/\u03b53 astrocytes\n**Answer1:** A"
+    },
+    "Insight2": {
+      "summary": "In aged (21\u201322 month) APOE \u03b53/\u03b53 versus APOE \u03b54/\u03b54 knock-in mice, APOE \u03b54 drives a robust, genotype-dependent ~99% increase in vascular fibronectin (P = 4.1\u00d710\u207b\u00b3\u2079), coinciding with elevated fibrinogen extravasation (+79.7%, P = 1.7\u00d710\u207b\u00b3), increased FN1\u2013fibrinogen colocalization, and dextran\u2013Texas Red leakage, collectively indicating APOE4-associated BBB dysfunction independent of overt amyloid pathology.",
+      "how": "The authors used aged APOE knock-in mice to isolate APOE4-dependent effects independent of AD pathology. Cortical sections were immunolabeled for FN1 and CD31, with FN1 intensity quantified across randomly selected vessels and statistical inference performed at the animal level using GEEs. Fibrinogen extravasation was assessed by confocal imaging and quantified with log-normal QQ plot validation, showing a +79.7% increase in APOE \u03b54 vessels, and FN1\u2013fibrinogen colocalization was significantly elevated in APOE \u03b54 brains. A complementary dextran\u2013Texas Red leakage assay confirmed increased BBB permeability. These orthogonal readouts collectively establish that APOE4 is associated with fibronectin-mediated BBB dysfunction (Fig. 1i\u2013p, Extended Data Fig. 1e\u2013h).",
+      "relevant": "To validate our results from human brains, we used aged (21- to 22-month-old) APOE \u03b53 and APOE \u03b54 knock-in mice, as APOE \u03b54 mice have previously been shown to exhibit CVP. APOE knock-in mice allowed us to isolate APOE4-dependent effects independent of overt AD pathology. We performed immunolabeling for fibronectin and CD31 in brain sections from both genotypes, followed by quantitative analyses of randomly selected regions of the cortex to evaluate the contribution of APOE \u03b54 to fibronectin accumulation. By comparing FN1 levels between genotypes using animals as the unit of inference, we found that APOE \u03b54 mouse brains showed markedly higher FN1 levels than APOE \u03b53 brains, with a percentage difference of +98.9% (95% confidence interval, 84.1\u2013113.7%; P = 4.1 \u00d7 10\u207b\u00b3\u2079), indicating a robust genotype-dependent effect. Given that fibrinogen extravasation is an indication of BBB dysfunction, we assessed fibrinogen leakage in APOE \u03b54 versus APOE \u03b53 mouse brains to determine whether fibronectin accumulation correlates with this BBB compromise. APOE \u03b54 mouse brain tissue exhibited markedly elevated fibrinogen accumulation in the vasculature compared to APOE \u03b53 brains. A log-normal quantile\u2013quantile (QQ) plot confirmed that fibrinogen intensity values followed a log-normal distribution, validating the use of parametric statistics. Quantitative analysis revealed a significant increase in fibrinogen intensity in vessels from APOE \u03b54 mouse brains relative to vessels from APOE \u03b53 brains. This genotype-dependent increase was consistently observed across individual mice. Furthermore, colocalization analysis showed that FN1 and fibrinogen overlap was significantly higher in APOE \u03b54 than in APOE \u03b53 mouse brains. Comparison of the dextran-based vessel leakage assay in control and APOE \u03b54 mouse brains (Extended Data Fig. 1e) showed significantly increased fibronectin deposition and dextran\u2013Texas Red extravasation in APOE \u03b54 mice compared to control mice (Extended Data Fig. 1f\u2013h), supporting the presence of a dysfunctional BBB and increased leakiness with elevated fibronectin levels in APOE \u03b54 mice.",
+      "mcq_questions": [
+        {
+          "question": "In aged (21\u201322 month) APOE \u03b53/\u03b53 versus APOE \u03b54/\u03b54 knock-in mice, by what percentage did cortical vascular fibronectin (FN1) intensity differ in APOE \u03b54 relative to APOE \u03b53 brains, as quantified with animals as the unit of inference?",
+          "answer": "B",
+          "question_type": "extraction",
+          "options": {
+            "A": "+21.4%",
+            "B": "+98.9%",
+            "C": "+147.6%",
+            "D": "+63.2%"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports a genotype-dependent percentage difference of +98.9% (95% CI 84.1\u2013113.7%; P = 4.1 \u00d7 10\u207b\u00b3\u2079) in cortical vascular FN1 intensity in APOE \u03b54 versus APOE \u03b53 knock-in mouse brains, using animals as the unit of statistical inference.",
+            "distractor_analysis": {
+              "A": "21.4% is roughly one-quarter of the true effect and would correspond to a misreading of the confidence-interval lower bound (84.1%) or to a fibrinogen-related value from another figure.",
+              "C": "147.6% exceeds the reported point estimate and 95% CI upper bound, approximating the value a reader might invent by confusing APOE \u03b54 with another comparison or doubling the true value.",
+              "D": "63.2% is not a value reported in this experiment; it is a plausible mid-range number that an unprimed reader could not eliminate without having seen the article."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In aged (21\u201322 month) APOE \u03b53/\u03b53 versus APOE \u03b54/\u03b54 knock-in mice, by what percentage did cortical vascular fibronectin (FN1) intensity differ in APOE \u03b54 relative to APOE \u03b53 brains, as quantified with animals as the unit of inference?\nA) +21.4%\nB) +98.9%\nC) +147.6%\nD) +63.2%\n**Answer1:** B"
+    },
+    "Insight3": {
+      "summary": "Reactive astrocytes, particularly the SERPINA3\u207a inflammatory cluster 5, represent a major cellular source of APOE \u03b54-associated FN1 expression in AD brains. Although astrocytes constitute 22.7% of FN1-expressing cells (less than excitatory neurons at 32.68%), they appear to be the predominant contributors to pathological perivascular FN1 deposition at the gliovascular interface due to their abundance (~40% of brain cells), near-universal vascular contact, and demonstrated APOE \u03b54-dependent FN1 protein upregulation.",
+      "how": "The authors combined multiple lines of evidence: (1) snRNA-seq from 413,175 cells across 52 individuals showing astrocytes constitute 22.7% of 19,387 FN1-expressing cells; (2) ROSMAP analysis of 424 DLPFC samples (1.64 million nuclei) identifying astrocyte cluster 5 (SERPINA3\u207a, inflammatory) as the cluster most strongly associated with FN1 in AD (\u03b2 = 0.0300, FDR P = 1.55\u00d710\u207b\u2076); (3) label transfer showing reactive astrocyte subcluster 5 expresses FN1 in the highest proportion of cells; (4) an independent snRNA-seq dataset showing astrocytes show the highest APOE \u03b54-dependent FN1 upregulation; and (5) multiplex immunostaining of 1,098,338 cells demonstrating APOE \u03b54/\u03b54 selectively increases astrocytic FN1 protein. The authors argue that astrocyte predominance refers to pathological ECM deposition at the vascular interface, supported by their abundance and perivascular localization, rather than the proportion of total FN1-expressing cells.",
+      "relevant": "\"We found that, among 413,175 cells sequenced, 19,387 cells express FN1 (4.7%), and astrocytes constitute 22.7% of FN1-expressing cells, while endothelial cells and pericytes together constitute 8.9% of FN1-expressing cells.\" \"Astrocytes are among the most abundant CNS cell types, comprising ~40% of brain cells, and nearly all astrocytes contact the vasculature. In contrast, endothelial cells and pericytes together account for only 2\u20134% of CNS cells.\" \"Fibronectin was associated with pathological AD, particularly in astrocyte cluster 5 (\u03b2: 0.0300, standard error (SE): 0.0057, false discovery rate (FDR) P: 1.55 \u00d7 10\u207b\u2076), characterized by inflammation, gliosis and SERPINA3 expression.\" \"Label transfer from the ROSMAP snRNA-seq dataset to our independent snRNA-seq dataset further showed that reactive astrocyte subcluster 5 expressed FN1 in the highest proportion of cells, confirming that reactive astrocytes are a major source of FN1.\" \"We analyzed an independent human single-nucleus RNA-sequencing (snRNA-seq) dataset and found that astrocytes show the highest upregulation of FN1 with APOE \u03b54.\" \"Automated analyses of 1,098,338 cells (165,099 GFAP+ astrocytes, 417,936 MBP+ oligodendrocytes, 153,096 IBA1+ microglia, 205,398 MAP2+ neurons, 86,668 CD31+ endothelial cells and 70,141 PDGFR\u03b2+ pericytes) showed that the APOE \u03b54/\u03b54 genotype increases FN1 protein levels in astrocytes.\" \"Although single-cell transcriptomic studies have reported higher FN1 expression in pericytes and endothelial cells than in astrocytes, these measurements reflect mRNA abundance rather than extracellular protein deposition, which can diverge substantially due to post-transcriptional regulation and ECM assembly.\" \"Although we found that FN1 is produced by multiple cell types, consistent with previous studies, the combination of astrocyte abundance at the gliovascular niche and marked APOE \u03b54-associated upregulation of FN1 suggests that astrocytes are the predominant contributors to pathological fibronectin deposition in AD.\"",
+      "mcq_questions": [
+        {
+          "question": "In a snRNA-seq analysis of AD brains examining FN1-expressing cells across 413,175 sequenced cells, what fraction of the 19,387 FN1-expressing cells were astrocytes?",
+          "answer": "C",
+          "question_type": "extraction",
+          "options": {
+            "A": "8.9% of FN1-expressing cells",
+            "B": "14.3% of FN1-expressing cells",
+            "C": "22.7% of FN1-expressing cells",
+            "D": "32.68% of FN1-expressing cells"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that among 19,387 FN1-expressing cells, astrocytes constitute 22.7%, making option C the correct answer.",
+            "distractor_analysis": {
+              "A": "8.9% is the combined fraction of endothelial cells and pericytes among FN1-expressing cells, not astrocytes.",
+              "B": "14.3% is a fabricated distractor that does not correspond to any reported value in the article.",
+              "D": "32.68% is the fraction of FN1-expressing cells that are excitatory neurons, which is higher than the astrocyte fraction."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In a snRNA-seq analysis of AD brains examining FN1-expressing cells across 413,175 sequenced cells, what fraction of the 19,387 FN1-expressing cells were astrocytes?\nA) 8.9% of FN1-expressing cells\nB) 14.3% of FN1-expressing cells\nC) 22.7% of FN1-expressing cells\nD) 32.68% of FN1-expressing cells\n**Answer1:** C"
+    },
+    "Insight4": {
+      "summary": "Inflammation\u2014specifically TNF/NF-\u03baB signaling\u2014is identified by the authors as a major driver of fibronectin (FN1) deposition in reactive astrocytes, with APOE \u03b54 carriers with AD showing stronger astrocytic NF-\u03baB1 upregulation (P < 0.0001) and NF-\u03baB2 expression strongly predicting astrocytic FN1 levels (\u03b2 \u2248 0.44, P = 2.4 \u00d7 10\u207b\u00b2\u00b9). Anti-inflammatory interventions rescue amyloid-induced FN1 deposition in vivo.",
+      "how": "The authors integrated multiple experimental approaches: (1) 3D primary human astrocyte cultures in starPEG\u2013heparin hydrogels, in which TNF induced reactive markers (SERPINA3, SAA1), NF-\u03baB signaling, and FN1 expression, while IL-4 reversed these effects; (2) snRNA-seq analysis of ~1.64 million nuclei from 424 ROSMAP dorsolateral prefrontal cortex samples, identifying reactive astrocyte cluster 5 (SERPINA3+) as the strongest FN1-associated cluster and showing NF-\u03baB1 upregulation in AD with a stronger effect in APOE \u03b54 carriers; (3) donor-averaged regression showing NF-\u03baB2 strongly predicts astrocytic FN1; (4) postmortem immunolabeling confirming FN1\u2013GFAP correlation (Spearman r = 0.9177); (5) in vivo zebrafish experiments in which TNF injection induced fibronectin deposition concomitant with NF-\u03baB:GFP activation; and (6) pharmacological rescue showing that camptothecin and Torin2 reversed amyloid-induced FN1 deposition and astrocytic hypertrophy at the gliovascular interface.",
+      "relevant": "Because APOE \u03b54 and brain amyloidosis amplify inflammation and are linked to ECM remodeling during tissue repair, we investigated whether inflammation mediates APOE \u03b54-dependent fibronectin deposition. We used primary human astrocyte (pHA) cultures embedded in a starPEG\u2013heparin hydrogel system to model inflammation and recapitulate key features of the brain microenvironment, including fibronectin- and laminin-rich ECM structures and astroglia\u2013neuron networks. Tumor necrosis factor (TNF) induced reactive astrocytic states, nuclear factor-\u03baB (NF-\u03baB) signaling and FN1 expression, whereas interleukin-4 (IL-4) reversed these effects. Because pHAs express TNF and IL-4 receptors and upregulate their expression following TNF treatment, these findings support direct cytokine regulation of astroglia. Comparison with previous analyses of 3D pHA cultures treated with A\u03b242 or kynurenic acid (KYNA) showed that TNF significantly increased FN1 expression, whereas IL-4 reduced fibronectin levels both on its own and following TNF or A\u03b242 treatment. Likewise, TNF and IL-1\u03b2 increased FN1 expression in induced pluripotent stem cell (iPS cell)-derived endothelial cells, supporting inflammatory regulation of fibronectin in both astrocytes and endothelial cells. Postmortem immunolabeling confirmed fibronectin upregulation in reactive astrocytes, with FN1 intensity strongly correlating with GFAP intensity (Spearman r = 0.9177, P < 1.0 \u00d7 10\u207b\u00b9\u2075). Analysis of ROSMAP human brain single-cell RNA-sequencing (scRNA-seq) data showed increased astrocytic NF-\u03baB1 expression in AD, with a stronger effect in APOE \u03b54 carriers (P < 0.0001). NF-\u03baB2 expression also strongly predicted FN1 levels in astrocytes (\u03b2 \u2248 0.44, P = 2.4 \u00d7 10\u207b\u00b2\u00b9), consistent with the findings in zebrafish. We validated these findings in vivo using a zebrafish model, where TNF induced fibronectin deposition around astroglia concomitant with NF-\u03baB activation. Camptothecin and Torin2, which promote anti-inflammatory states by modulating microglial polarization, rescued amyloid-induced fibronectin deposition and astrocytic hypertrophy at the gliovascular interface in a zebrafish model of amyloid-mediated fibronectin deposition. Together, these results identify inflammation as a major driver of fibronectin deposition and astrocyte reactivity.",
+      "mcq_questions": [
+        {
+          "question": "In a snRNA-seq analysis of ~1.64 million dorsolateral prefrontal cortex nuclei from ROSMAP donors, what was the standardized regression coefficient (\u03b2) for NF-\u03baB2 predicting astrocytic FN1 levels, and its associated P value?",
+          "answer": "D",
+          "question_type": "extraction",
+          "options": {
+            "A": "\u03b2 \u2248 0.18, P = 3.1 \u00d7 10\u207b\u2076",
+            "B": "\u03b2 \u2248 0.27, P = 4.8 \u00d7 10\u207b\u00b9\u00b2",
+            "C": "\u03b2 \u2248 0.35, P = 9.2 \u00d7 10\u207b\u00b9\u2077",
+            "D": "\u03b2 \u2248 0.44, P = 2.4 \u00d7 10\u207b\u00b2\u00b9"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that in donor-averaged regression of ROSMAP snRNA-seq data, NF-\u03baB2 expression strongly predicted astrocytic FN1 levels with \u03b2 \u2248 0.44 and P = 2.4 \u00d7 10\u207b\u00b2\u00b9.",
+            "distractor_analysis": {
+              "A": "A weaker effect size in the same direction, resembling what might be expected for a related but secondary NF-\u03baB family member.",
+              "B": "An intermediate \u03b2/P value pairing not reported for this regression.",
+              "C": "A plausible mid-range value one might misremember if conflating NF-\u03baB2 with another inflammation\u2013ECM association in the same dataset."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In a snRNA-seq analysis of ~1.64 million dorsolateral prefrontal cortex nuclei from ROSMAP donors, what was the standardized regression coefficient (\u03b2) for NF-\u03baB2 predicting astrocytic FN1 levels, and its associated P value?\nA) \u03b2 \u2248 0.18, P = 3.1 \u00d7 10\u207b\u2076\nB) \u03b2 \u2248 0.27, P = 4.8 \u00d7 10\u207b\u00b9\u00b2\nC) \u03b2 \u2248 0.35, P = 9.2 \u00d7 10\u207b\u00b9\u2077\nD) \u03b2 \u2248 0.44, P = 2.4 \u00d7 10\u207b\u00b2\u00b9\n**Answer1:** D"
+    },
+    "Insight5": {
+      "summary": "APOE \u03b54/\u03b54 astrocytes show 163.6% higher APOE protein signal (P = 1.6 \u00d7 10\u207b\u00b2\u00b9) and stronger APOE\u2013FN1 colocalization (R\u00b2 = 0.396 vs 0.049 in \u03b53/\u03b53), with postmortem \u03b54/\u03b54 AD brains confirming elevated APOE (+64.9%) and FN1 (+30.6%). The elevated APOE signal reflects perivascular accumulation due to impaired secretion rather than increased synthesis, and co-immunoprecipitation detected no direct APOE\u2013FN1 interaction, indicating their convergence at the gliovascular interface is indirect.",
+      "how": "Co-immunolabeling of APOE, FN1, and GFAP in isogenic iPS cell-derived APOE \u03b53/\u03b53 and \u03b54/\u03b54 astrocytes and postmortem AD brains (n = 4 per genotype) was quantified by donor-clustered GEE analysis and Pearson correlation. FN1 colocalized with AQP4-positive endfeet in both genotypes, but FN1\u2013AQP4 colocalization did not differ significantly by APOE genotype, and the APOE\u2013AQP4 shift in \u03b54/\u03b54 brains was qualitative rather than statistically significant. Co-immunoprecipitation of FN1 from astrocyte media and lysates failed to detect direct APOE binding. The authors attribute the elevated APOE signal in \u03b54/\u03b54 to perivascular retention from impaired lipidation/secretion rather than increased synthesis, and identify astrocytes as the predominant source of pathological FN1 deposition.",
+      "relevant": "In iPS cell-derived APOE \u03b54/\u03b54 astrocytes, fibronectin deposits colocalized with APOE4, unlike in APOE \u03b53/\u03b53 astrocytes. APOE \u03b54/\u03b54 astrocytes also exhibited significantly higher APOE protein levels than APOE \u03b53/\u03b53 astrocytes (163.6%, P = 1.6 \u00d7 10\u207b\u00b2\u00b9). At any given APOE intensity, APOE \u03b54/\u03b54 astrocytes consistently contained more fibronectin than APOE \u03b53/\u03b53 astrocytes, resulting in significantly higher APOE and FN1 levels (Fig. 3c; \u03b53: R\u00b2 = 0.049, \u03b54: R\u00b2 = 0.396). Accordingly, APOE \u03b54/\u03b54 astrocytes showed greater colocalization of APOE and fibronectin deposits than APOE \u03b53/\u03b53 astrocytes (Fig. 3d).\n\nImmunolabeling of APOE, fibronectin and GFAP in postmortem AD brains (n = 4 APOE \u03b54/\u03b54 and n = 4 APOE \u03b53/\u03b53) confirmed these in vitro findings (Fig. 3e,f). Donor-clustered GEE analysis showed significantly increased APOE (+64.9%; P = 7.3 \u00d7 10\u207b\u00b3) and FN1 (+30.6%; P = 1.9 \u00d7 10\u207b\u00b2) in APOE \u03b54-associated AD compared to APOE \u03b53-associated AD (Fig. 3f,g). Consistent with this, the correlation between APOE and fibronectin was stronger in APOE \u03b54 carriers than in noncarriers (Fig. 3h; \u03b53: R\u00b2 = 0.108, \u03b54: R\u00b2 = 0.154).\n\nFN1 strongly colocalized with AQP4 across all samples, confirming enrichment at astrocytic endfeet (Fig. 3k). Additionally, APOE4 exhibited greater colocalization with AQP4 than APOE3 (Fig. 3l)\u2026 High correlation was observed in individual groups, but no significant difference in FN1\u2013AQP4 colocalization was found between APOE genotypes\u2026 Colocalization levels were variable but not significantly different between the APOE \u03b53/\u03b53 and APOE \u03b54/\u03b54 groups.\n\nTo test whether APOE and FN1 interact directly, we immunoprecipitated FN1 from conditioned media and lysates of iPS cell-derived astrocytes (Extended Data Fig. 3f,g). FN1 was efficiently immunoprecipitated, but APOE was not detected in the FN1 immunoprecipitates, indicating no detectable direct interaction under these experimental conditions. These data do not support a direct FN1\u2013APOE interaction under the experimental conditions used, but they do not exclude indirect associations or technical factors that may have prevented the detection of such interactions.\n\nAlthough APOE \u03b54 has been widely reported to reduce overall APOE secretion and steady-state protein levels in the brain and CSF, the increased APOE intensity observed in APOE \u03b54/\u03b54 astrocytes likely reflects intracellular and perivascular accumulation rather than increased synthesis. This interpretation is consistent with impaired APOE \u03b54 lipidation and BBB trafficking, resulting in aggregation and retention within astrocytic endfeet and perivascular regions.\n\nThis convergence of FN1 and APOE4 at gliovascular sites may amplify astrocyte\u2013endothelial dysfunction in APOE \u03b54 carriers.",
+      "mcq_questions": [
+        {
+          "question": "In isogenic iPS cell-derived APOE \u03b53/\u03b53 and \u03b54/\u03b54 astrocytes, what was the coefficient of determination (R\u00b2) for the APOE\u2013FN1 correlation in the APOE \u03b54/\u03b54 genotype?",
+          "answer": "A",
+          "question_type": "extraction",
+          "options": {
+            "A": "R\u00b2 = 0.396",
+            "B": "R\u00b2 = 0.049",
+            "C": "R\u00b2 = 0.154",
+            "D": "R\u00b2 = 0.108"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that in iPS cell-derived APOE \u03b54/\u03b54 astrocytes, the APOE\u2013FN1 correlation yielded R\u00b2 = 0.396, which was substantially higher than the R\u00b2 = 0.049 observed in APOE \u03b53/\u03b53 astrocytes.",
+            "distractor_analysis": {
+              "B": "R\u00b2 = 0.049 is the value reported for the APOE \u03b53/\u03b53 genotype in the same in vitro experiment \u2014 an easy misreading of the comparator.",
+              "C": "R\u00b2 = 0.154 is the APOE\u2013FN1 correlation R\u00b2 reported for APOE \u03b54/\u03b54 in the postmortem AD brain cohort, not the iPS cell-derived astrocyte dataset.",
+              "D": "R\u00b2 = 0.108 is the APOE\u2013FN1 correlation R\u00b2 reported for APOE \u03b53/\u03b53 in the postmortem AD brain cohort."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In isogenic iPS cell-derived APOE \u03b53/\u03b53 and \u03b54/\u03b54 astrocytes, what was the coefficient of determination (R\u00b2) for the APOE\u2013FN1 correlation in the APOE \u03b54/\u03b54 genotype?\nA) R\u00b2 = 0.396\nB) R\u00b2 = 0.049\nC) R\u00b2 = 0.154\nD) R\u00b2 = 0.108\n**Answer1:** A"
+    },
+    "Insight6": {
+      "summary": "Fibronectin suppresses astrocytic VEGFA ligand expression through integrin-mediated focal adhesion kinase (FAK) activity, with VEGFA reduced by 12.3% in AD brains (P = 3.7\u00d710\u207b\u00b9\u2076), by 19.4% in APOE \u03b54/\u03b54 astrocytes (P = 3.6\u00d710\u207b\u00b9\u2070), and by 25.7% upon FN1 coating (P = 1.2\u00d710\u207b\u00b9\u2070); pharmacological blockade of FAK (PF-573228) or \u03b2-integrin (ATN-161, +20.0%, P = 1.0\u00d710\u207b\u2074) restores VEGFA, establishing FN1\u2013integrin\u2013FAK signaling as the upstream suppressor of the VEGF/HB-EGF/IGF-1 axis at the gliovascular interface.",
+      "how": "Single-cell transcriptomics in fn1b knockout zebrafish (32,294 cells, 38 clusters) identified significant KEGG enrichment of VEGF (P = 3.8\u00d710\u207b\u00b2, OR = 2.87), insulin (P = 4.3\u00d710\u207b\u00b3, OR = 35.78), and MAPK (P = 4.0\u00d710\u207b\u2075, OR = 3.41) pathways, with vegfa upregulated in fn1b\u207b/\u207b astrocytes. VEGFA protein was reduced 12.3% in AD versus control postmortem brains and 19.4% in APOE \u03b54/\u03b54 versus isogenic \u03b53/\u03b53 iPS cell-derived astrocytes. Culturing APOE \u03b53/\u03b53 astrocytes on fibronectin-coated plates phenocopied the \u03b54 effect (\u221225.7% VEGFA). The selective FAK inhibitor PF-573228 restored VEGFA in A\u03b242-treated zebrafish and in \u03b54/\u03b54 astrocytes, while the independent \u03b2-integrin blocker ATN-161 upregulated VEGFA by 20.0% in \u03b54/\u03b54 astrocytes. CSF coexpression analysis confirmed a strong FN1\u2013VEGFA main effect (F = 26.39, P = 2.79\u00d710\u207b\u2077) with a significant three-way interaction among FN1, APOE \u03b54 status, and disease status (F = 14.02, P = 1.81\u00d710\u207b\u2074), supporting genotype- and disease-dependent coregulation.",
+      "relevant": "We performed differential gene expression and Kyoto Encyclopedia of Genes and Genomes (KEGG) pathway analyses across 32,294 cells in 38 clusters by comparing cells from wild-type (+A\u03b242) and fn1b\u207b/\u207b (+A\u03b242) zebrafish. We identified significant enrichment of vascular endothelial growth factor (VEGF) (P = 3.8 \u00d7 10\u207b\u00b2, odds ratio (OR) = 2.87) and insulin pathways (P = 4.3 \u00d7 10\u207b\u00b3, OR = 35.78), mediated by MAPK signaling (P = 4.0 \u00d7 10\u207b\u2075, OR = 3.41). Astrocytes in fn1b knockout zebrafish upregulated the NF-\u03baB inhibitor nfkbib, the VEGF ligand vegfa, the insulin growth factor igf1 and the VEGF signaling inducer irfbp2b. VEGFA protein levels were significantly reduced in AD brains compared to control brains (\u221212.3%, P = 3.7 \u00d7 10\u207b\u00b9\u2076) and in APOE \u03b54/\u03b54 compared to APOE \u03b53/\u03b53 iPS cell-derived astrocytes (\u221219.4%, P = 3.6 \u00d7 10\u207b\u00b9\u2070). Culturing APOE \u03b53/\u03b53 astrocytes on fibronectin-coated plates also significantly reduced VEGFA levels (\u221225.7%, P = 1.2 \u00d7 10\u207b\u00b9\u2070), recapitulating the effects of APOE \u03b54/\u03b54 on astrocytic VEGFA. Fibronectin binds integrins that are expressed on astrocytes. We tested the hypothesis that inhibition of focal adhesion kinase (FAK), an intracellular mediator of the integrin signaling cascade, could restore VEGFA expression by treating zebrafish with the selective FAK inhibitor PF-573228. This restored VEGFA expression under A\u03b242 conditions. Similarly, blocking FAK with PF-573228 in isogenic APOE \u03b53/\u03b53 and APOE \u03b54/\u03b54 iPS cell-derived astrocytes restored the reduced VEGFA levels in APOE \u03b54/\u03b54 astrocytes. Treatment with ATN-161, an independent \u03b2-integrin blocker, resulted in a similarly significant upregulation of VEGFA in APOE \u03b54/\u03b54 astrocytes (+20.0%, P = 1.0 \u00d7 10\u207b\u2074). FN1 expression was strongly associated with VEGFA levels (F = 26.39, P = 2.79 \u00d7 10\u207b\u2077), and a significant three-way interaction among FN1, APOE \u03b54 status and disease status (F = 14.02, P = 1.81 \u00d7 10\u207b\u2074) indicated that the slope of the FN1\u2013VEGFA relationship differs in APOE \u03b54 carriers with AD compared to noncarriers and controls.",
+      "mcq_questions": [
+        {
+          "question": "In an scRNA-seq comparison of wild-type and fn1b-knockout zebrafish under A\u03b242 conditions, what was the reported odds ratio for KEGG enrichment of the VEGF pathway?",
+          "answer": "B",
+          "question_type": "extraction",
+          "options": {
+            "A": "1.92",
+            "B": "2.87",
+            "C": "3.41",
+            "D": "35.78"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports significant KEGG enrichment of the VEGF pathway in the fn1b knockout versus wild-type zebrafish single-cell comparison with an odds ratio of 2.87 (P = 3.8 \u00d7 10\u207b\u00b2).",
+            "distractor_analysis": {
+              "A": "1.92 is a fabricated value chosen to be a plausible odds ratio near the correct answer.",
+              "C": "3.41 is the odds ratio reported for the MAPK signaling pathway enrichment in the same analysis, not VEGF.",
+              "D": "35.78 is the odds ratio reported for the insulin pathway enrichment, not VEGF."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In an scRNA-seq comparison of wild-type and fn1b-knockout zebrafish under A\u03b242 conditions, what was the reported odds ratio for KEGG enrichment of the VEGF pathway?\nA) 1.92\nB) 2.87\nC) 3.41\nD) 35.78\n**Answer1:** B"
+    },
+    "Insight7": {
+      "summary": "VEGFR inhibition reduces endothelial HB-EGF expression (\u221228.3%, P = 3.5\u00d710\u00b2), which suppresses astrocytic IGF-1 (\u221235.2%, P = 6.6\u00d710\u2076\u2070); HB-EGF in turn upregulates IGF-1 in a dose-dependent manner (APOE \u03b53: +73.4%, P = 3.1\u00d710\u00b9\u00b2; APOE \u03b54: +39.0%, P = 1.0\u00d710\u207b) without affecting vegfa, establishing a VEGF\u2192HB-EGF\u2192IGF-1 trophic cascade. The authors frame this as a unified FN1/VEGF/HB-EGF/IGF-1 signaling axis disrupted by APOE \u03b54-dependent fibronectin deposition.",
+      "how": "Single-cell transcriptomics of 22,712 sorted cells from VEGFR inhibitor-treated Tg(fli1a:EGFP)/Tg(her4.1:RFP) zebrafish identified downregulation of endothelial hbegf isoforms, validated by immunolabeling in kdrl:GFP zebrafish (\u221228.3%, P = 3.5\u00d710\u00b2). KEGG analysis of VEGFRi-treated zebrafish showed downregulation of MAPK, ErbB, and insulin pathways, with IGF-1 confirmed reduced by immunolabeling (\u221235.2%, P = 6.6\u00d710\u2076\u2070). RT\u2013qPCR on sorted her4:EGFP\u207a astrocytes showed that HB-EGF injection induced igf1 without altering vegfa, placing HB-EGF upstream of IGF-1. In human iPS cell-derived isogenic APOE \u03b53/\u03b53 and \u03b54/\u03b54 astrocytes, HB-EGF dose-dependently increased IGF-1 expression. Fibronectin coating reduced IGF-1 in APOE \u03b53 astrocytes (\u221219.9%, P = 2.8\u00d710\u207b\u2079), and \u03b2-integrin blockade (ATN-161) rescued IGF-1 in APOE \u03b54 astrocytes (+15.9%, P = 1.1\u00d710\u2075), demonstrating that FN1-integrin signaling suppresses this cascade.",
+      "relevant": "\"We found that VEGFR inhibition (VEGFRi) significantly downregulated endothelial hbegf isoforms, as validated in kdrl:GFP zebrafish, a fluorescent reporter for endothelia (\u221228.3%, P = 3.5 \u00d7 10\u00b2).\"\n\n\"HB-EGF, upon binding to the EGF receptor (ERBB1), regulates inflammation, neurogenesis and astrocyte maturation through MAPK and ERBB1 signaling. Thus, fibronectin-dependent reduction of HB-EGF may alter astrocytes in the gliovascular niche. VEGFRi in zebrafish revealed downregulated MAPK, ERBB and insulin pathways, reflecting changes observed in fn1b knockout. Notably, known EGF targets, including igf1, were significantly reduced, a finding further confirmed by immunolabeling and quantification (\u221235.2%, P = 6.6 \u00d7 10\u207b\u2076\u2070).\"\n\n\"HB-EGF induced igf1 expression without affecting vegfa levels (Fig. 6l), and in human iPS cell-derived astrocytes, insulin-like growth factor 1 (IGF-1) expression was significantly increased by HB-EGF in a dose-dependent manner in both isogenic APOE \u03b53 and APOE \u03b54 astrocytes (APOE \u03b53: +73.4%, P = 3.1 \u00d7 10\u207b\u00b9\u00b2; APOE \u03b54: +39.0%, P = 1.0 \u00d7 10\u2074), indicating that HB-EGF is upstream of IGF-1.\"\n\n\"To determine whether IGF-1 expression in astrocytes is integrin-dependent, we treated APOE \u03b54 astrocytes with the \u03b2-integrin blocker ATN-161 and observed significantly upregulated IGF-1 protein (+15.9%, P = 1.1 \u00d7 10\u2075). Conversely, APOE \u03b53/\u03b53 astrocytes showed significantly reduced IGF-1 levels when the culture wells were coated with fibronectin (\u221219.9%, P = 2.8 \u00d7 10\u207b\u2079), recapitulating the effects of the APOE \u03b54/\u03b54 genotype on IGF-1 levels in astrocytes.\"\n\n\"As IGF-1 is crucial for BBB function, these findings indicate that the FN1/VEGF/HB-EGF/IGF-1 signaling axis regulates gliovascular homeostasis, which is disrupted in AD through APOE \u03b54-dependent elevated fibronectin deposition.\"",
+      "mcq_questions": [
+        {
+          "question": "In human iPS cell-derived astrocytes treated with HB-EGF, what was the percentage increase in IGF-1 expression observed in the isogenic APOE \u03b53/\u03b53 line?",
+          "answer": "C",
+          "question_type": "extraction",
+          "options": {
+            "A": "+39.0%",
+            "B": "+19.9%",
+            "C": "+73.4%",
+            "D": "+15.9%"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that HB-EGF treatment increased IGF-1 expression by +73.4% in isogenic APOE \u03b53/\u03b53 iPS cell-derived astrocytes (P = 3.1 \u00d7 10\u207b\u00b9\u00b2).",
+            "distractor_analysis": {
+              "A": "+39.0% is the HB-EGF\u2013induced IGF-1 increase reported for the isogenic APOE \u03b54/\u03b54 line, not \u03b53/\u03b53.",
+              "B": "+19.9% (negative direction) reflects the reduction of IGF-1 in APOE \u03b53/\u03b53 astrocytes plated on fibronectin-coated wells, not the HB-EGF stimulation.",
+              "D": "+15.9% is the rescue of IGF-1 protein seen in APOE \u03b54/\u03b54 astrocytes treated with the \u03b2-integrin blocker ATN-161, not the HB-EGF effect in \u03b53/\u03b53."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In human iPS cell-derived astrocytes treated with HB-EGF, what was the percentage increase in IGF-1 expression observed in the isogenic APOE \u03b53/\u03b53 line?\nA) +39.0%\nB) +19.9%\nC) +73.4%\nD) +15.9%\n**Answer1:** C"
+    },
+    "Insight8": {
+      "summary": "Astroglial overexpression of human FN1 via a her4.1 promoter-driven FN1-T2A-GFP construct in zebrafish larvae is sufficient to induce BBB leakage, as shown by elevated fibronectin levels and dextran\u2013Texas Red extravasation compared with empty plasmid and PBS controls.",
+      "how": "The authors tested whether fibronectin accumulation alone could disrupt BBB integrity by selectively overexpressing human FN1 in zebrafish astroglia using a her4.1 promoter-driven construct. Controls received either empty plasmid or PBS. her4.1:FN1-T2A-GFP larvae exhibited astroglial GFP expression, elevated fibronectin levels, and dextran leakage, while controls maintained intact vascular dextran confinement (Extended Data Fig. 9b\u2013e). The authors explicitly concluded that 'astroglial FN1 expression is sufficient to compromise the integrity of the gliovascular barrier.' Because no amyloid or APOE4 manipulation was involved, this experiment isolates FN1 overexpression as the causal variable. Specific experimental parameters such as timing (4 d.p.f.) and dextran molecular weight (3 kDa) are not stated in the cited passage and were removed.",
+      "relevant": "We then tested whether increased fibronectin alone is sufficient to disrupt BBB integrity by overexpressing human FN1 in the astroglia of zebrafish larvae and by generating a her4.1 promoter-driven FN1-T2A-GFP construct (human FN1 linked to GFP through a T2A self-cleaving peptide) for injection. Control animals injected with empty plasmid or PBS maintained intact vascular dextran\u2013Texas Red confinement and exhibited minimal fibronectin signal or leakage (Extended Data Fig. 9b\u2013e). In contrast, her4.1:FN1-T2A-GFP larvae exhibited astroglial GFP expression, elevated fibronectin levels and dextran leakage. These data indicate that astroglial FN1 expression is sufficient to compromise the integrity of the gliovascular barrier.",
+      "mcq_questions": [
+        {
+          "question": "In a zebrafish larval experiment designed to test whether fibronectin accumulation alone is sufficient to disrupt blood\u2013brain barrier integrity, which promoter was used to drive astroglial expression of the human FN1-T2A-GFP construct?",
+          "answer": "D",
+          "question_type": "extraction",
+          "options": {
+            "A": "gfap promoter",
+            "B": "mbp promoter",
+            "C": "vglut promoter",
+            "D": "her4.1 promoter"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that astroglial overexpression of human FN1 was achieved using a her4.1 promoter-driven FN1-T2A-GFP construct injected into zebrafish larvae, which then exhibited astroglial GFP expression, elevated fibronectin, and dextran leakage.",
+            "distractor_analysis": {
+              "A": "gfap is a commonly used astroglial promoter in zebrafish neurobiology studies but was not the promoter used in this FN1 overexpression experiment.",
+              "B": "mbp drives oligodendrocyte/myelin expression, not astroglial expression, and was not used here.",
+              "C": "vglut is a neuronal (glutamatergic) promoter and does not target astroglia; it was not used in this construct."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In a zebrafish larval experiment designed to test whether fibronectin accumulation alone is sufficient to disrupt blood\u2013brain barrier integrity, which promoter was used to drive astroglial expression of the human FN1-T2A-GFP construct?\nA) gfap promoter\nB) mbp promoter\nC) vglut promoter\nD) her4.1 promoter\n**Answer1:** D"
+    },
+    "Insight9": {
+      "summary": "The VEGFA/HB-EGF/IGF-1 signaling axis shows evolutionarily conserved reductions across zebrafish, APP knock-in mice, and human AD brains (Braak V\u2013VI), with highly significant decreases in all three growth factors. In zebrafish, VEGFR inhibition compromises tight junction integrity (reduced ZO-1/GFP colocalization), which is rescued by HB-EGF/IGF-1 co-treatment, while human genetic and transcriptomic data provide associative validation linking fibronectin to disrupted VEGF/IGF-1 signaling.",
+      "how": "The authors performed immunostaining and quantification of VEGFA, HB-EGF, and IGF-1 across three species (zebrafish, APP knock-in mice, and human Braak I vs. Braak VI brains), reporting highly significant reductions in AD models (Welch's t test, P < 1.0 \u00d7 10\u207b\u00b9\u2075 for HB-EGF/IGF-1; P = 9.7 \u00d7 10\u207b\u2078 for VEGFA in human tissue). In zebrafish, VEGFR inhibition reduced ZO-1/GFP colocalization in parenchymal capillaries, and HB-EGF/IGF-1 co-treatment restored tight junction levels \u2014 the only direct functional rescue demonstration in the paper. KEGG analysis of FN1\u00d7APOE4 interaction genes from ROSMAP brain endothelial scRNA-seq identified insulin signaling among negatively regulated pathways. An mQTL (rs2304573) linked an intronic FN1 variant to altered VEGFA methylation, which the authors describe as supporting but not proving transcriptional regulation of VEGFA by fibronectin.",
+      "relevant": "\"By investigating the evolutionary conservation of the VEGFA/HB-EGF/IGF-1 signaling axis, we observed reduced levels of VEGFA, HB-EGF and IGF-1 in zebrafish, APP knock-in mice and human AD brains (Fig. 7c\u2013e). AD brains with Braak stage V\u2013VI, representing advanced AD pathology characterized by extensive neurofibrillary tangles in the neocortex and substantial cognitive decline, also show significant alterations in VEGFA, HB-EGF and IGF-1 (Fig. 7d\u2013f), mirroring fibronectin-induced VEGFR/HB-EGF/IGF-1 signaling disruption.\" \"VEGFRi compromised endothelial integrity, as ZO-1/GFP colocalization was significantly reduced (Fig. 7a,b; analyses were performed on parenchymal capillary vessels rather than larger arterial structures), consistent with previous findings. In contrast, HB-EGF/IGF-1 treatment restored tight junction levels (Fig. 7b).\" \"KEGG enrichment analysis of these interacting genes uncovered distinct pathway signatures, with some pathways enriched among negatively regulated genes (for example, insulin signaling) and others enriched among positively regulated genes. This mirrors the downregulation of IGF-1 signaling observed in vitro and provides clinical validation of our findings that fibronectin and APOE \u03b54 lead to altered insulin signaling in the gliovascular niche.\" \"We found an intronic FN1 variant linked to altered VEGFA methylation, which supports the transcriptional regulation of VEGFA by fibronectin (Fig. 7h).\" \"Quantification of HB-EGF, IGF-1 and VEGFA intensities in human brains. Statistical test: two-sided Welch's t test (HB-EGF and IGF-1: P < 1.0 \u00d7 10\u207b\u00b9\u2075; VEGFA: P = 9.7 \u00d7 10\u207b\u2078).\" \"Quantification of HB-EGF, IGF-1 and VEGFA intensities in mouse brains. Statistical test: two-sided Welch's t test (HB-EGF: P = 6.8 \u00d7 10\u207b\u2077; IGF-1: P = 0.0099; VEGFA: P = 0.016).\"",
+      "mcq_questions": [
+        {
+          "question": "In a zebrafish model of fibronectin-induced blood-brain barrier disruption, VEGFR inhibition reduced ZO-1/GFP colocalization in parenchymal capillaries, and co-treatment with which two recombinant growth factors restored tight junction levels?",
+          "answer": "A",
+          "question_type": "experimental",
+          "options": {
+            "A": "HB-EGF and IGF-1",
+            "B": "VEGFA and FGF-2",
+            "C": "EGF and PDGF-BB",
+            "D": "HB-EGF and VEGFA"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that HB-EGF and IGF-1 co-treatment restored ZO-1/GFP colocalization and tight junction levels after VEGFR inhibition in zebrafish parenchymal capillaries, establishing the only direct functional rescue in the paper.",
+            "distractor_analysis": {
+              "B": "VEGFA and FGF-2 are angiogenic growth factors not used in the rescue experiment; VEGFA itself is one of the factors being suppressed.",
+              "C": "EGF and PDGF-BB are not part of the VEGFA/HB-EGF/IGF-1 axis tested in this study.",
+              "D": "HB-EGF is correct, but VEGFA is the ligand reduced by fibronectin/VEGFR inhibition, not the rescue factor used."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In a zebrafish model of fibronectin-induced blood-brain barrier disruption, VEGFR inhibition reduced ZO-1/GFP colocalization in parenchymal capillaries, and co-treatment with which two recombinant growth factors restored tight junction levels?\nA) HB-EGF and IGF-1\nB) VEGFA and FGF-2\nC) EGF and PDGF-BB\nD) HB-EGF and VEGFA\n**Answer1:** A"
+    },
+    "Insight10": {
+      "summary": "CSF fibronectin (FN1) levels are significantly elevated in AD (t = 5.22, P = 3.31\u00d710\u207b\u2077), and FN1\u2013VEGFA coexpression in CSF shows a significant three-way interaction with APOE \u03b54 status and disease status (F = 14.02, P = 1.81\u00d710\u207b\u2074), with non-\u03b54 AD cases exhibiting a compensatory VEGFA increase that is absent in \u03b54 carriers. This CNS-specific relationship (absent in plasma, r = 0.13) supports FN1 as both a biomarker candidate and a mechanistic mediator of AD-related BBB dysfunction.",
+      "how": "The authors quantified FN1 protein in CSF from the Emory Somalogic 7k dataset (n = 156 AD, n = 139 controls) and reported significantly elevated AD levels (Fig. 2f). Transformed gene coexpression analyses revealed that FN1 strongly predicts VEGFA (F = 26.39, P = 2.79\u00d710\u207b\u2077) with a significant three-way interaction among FN1, APOE \u03b54 status, and disease status (Fig. 5n). Stratified visualization showed compensatory VEGFA elevation in AD confined to non-\u03b54 carriers. Plasma analysis (n = 113) showed no FN1\u2013VEGFA correlation (Pearson r = 0.13, R\u00b2 = 0.018), confirming CNS specificity. The Discussion integrates these findings to position FN1 as both a biomarker candidate and a mechanistic mediator of AD-related BBB dysfunction.",
+      "relevant": "Consistent with the increased fibronectin deposition observed in APOE \u03b54/\u03b54 cellular and vascular models, we also found that FN1 protein levels were significantly elevated in the CSF of individuals with AD compared to controls (Student's t test: t = 5.22, P = 3.31 \u00d7 10\u207b\u2077). FN1 expression was strongly associated with VEGFA levels (F = 26.39, P = 2.79 \u00d7 10\u207b\u2077), and a significant three-way interaction among FN1, APOE \u03b54 status and disease status (F = 14.02, P = 1.81 \u00d7 10\u207b\u2074) indicated that the slope of the FN1\u2013VEGFA relationship differs in APOE \u03b54 carriers with AD compared to noncarriers and controls. In controls, VEGFA expression levels were similar between APOE \u03b53 and APOE \u03b54 carriers, whereas in AD brains, non-\u03b54 carriers exhibited a compensatory increase that was absent in APOE \u03b54 carriers. Unlike in CSF, plasma FN1 did not correlate with VEGFA (Pearson r = 0.13; R\u00b2 = 0.018), indicating that the FN1\u2013VEGFA association is CNS-specific and varies according to the APOE genotype in AD. This conclusion is supported by elevated FN1 levels in the CSF of living individuals with AD, the strong association between fibronectin and inflammatory astrocytic states in human AD brains, and altered VEGFA regulation associated with FN1 variants in postmortem AD brains, highlighting FN1 as both a biomarker candidate and a mechanistic mediator of AD-related BBB dysfunction.",
+      "mcq_questions": [
+        {
+          "question": "In proteomic analyses of CSF from individuals with Alzheimer's disease versus controls, what is the Pearson correlation coefficient (r) between plasma FN1 and VEGFA levels?",
+          "answer": "B",
+          "question_type": "extraction",
+          "options": {
+            "A": "r = 0.02",
+            "B": "r = 0.13",
+            "C": "r = 0.41",
+            "D": "r = 0.67"
+          },
+          "rubric": {
+            "correct_reasoning": "The article reports that, unlike in CSF, plasma FN1 did not correlate with VEGFA, with a Pearson r = 0.13 (R\u00b2 = 0.018), demonstrating that the FN1\u2013VEGFA association is CNS-specific.",
+            "distractor_analysis": {
+              "A": "r = 0.02 is an implausibly low correlation not reported; it would represent near-total absence of any linear relationship, which the study did not observe in plasma.",
+              "C": "r = 0.41 reflects a moderate correlation that would suggest meaningful plasma co-regulation, inconsistent with the CNS-specific conclusion reported.",
+              "D": "r = 0.67 reflects a strong correlation more characteristic of the CSF FN1\u2013VEGFA relationship, not the absent plasma correlation."
+            }
+          }
+        }
+      ],
+      "mcq_question": "**Question1:** In proteomic analyses of CSF from individuals with Alzheimer's disease versus controls, what is the Pearson correlation coefficient (r) between plasma FN1 and VEGFA levels?\nA) r = 0.02\nB) r = 0.13\nC) r = 0.41\nD) r = 0.67\n**Answer1:** B"
+    }
+  }
+}

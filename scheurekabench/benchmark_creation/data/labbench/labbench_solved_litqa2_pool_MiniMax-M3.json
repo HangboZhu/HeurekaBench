@@ -1,0 +1,1206 @@
+{
+  "0": {
+    "raw": "**Answer: A**\n\nThe findings collectively support that cGAMP transfer from oocytes to granulosa cells depends on CX37 gap junctions:\n\n1. In young oocytes, cGAMP transfer to granulosa cells **only occurs when CX37 channels are open** and is **attenuated when blocked** — indicating the channels are necessary for transfer.\n2. In aged oocytes, blocking CX37 prevents endogenous cGAMP from reaching granulosa cells — again showing CX37 dependence.\n3. Cytosolic mtDNA alone (in oocytes uncoupled from granulosa cells) does **not** activate STING in granulosa cells — showing that the cGAMP signal requires a direct conduit (CX37), not just proximity or extracellular diffusion.\n\nWhy the others fail:\n- **B** is contradicted: if diffusion through extracellular space were the primary route, blocking CX37 should not eliminate transfer.\n- **C** is unsupported: the findings show oocytes produce cGAMP, not granulosa cells.\n- **D** directly contradicts the data, since transfer requires open CX37 channels.\n- **E** is unnecessary given the evidence clearly supports A.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "1": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "2": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "3": {
+    "raw": "D) Loss of cGAS–STING in aged oocytes would establish that cytosolic mtDNA contributes to inflammation through cGAS–STING only if inflammation is reduced, because the two stated experiments alone show sufficiency of cytosolic mtDNA but not which sensor transduces it.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "4": {
+    "raw": "Answer: A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "5": {
+    "raw": "**C) Inflammation would be strongly suppressed, because mtDNA is the upstream driver of cGAS–STING activation and removing it eliminates the activating ligand.**\n\nThis is the most consistent answer with the stated evidence. The key reasoning:\n\n1. The evidence shows that in aged oocytes, cytosolic mtDNA accumulation activates cGAS–STING signaling, driving the inflammatory phenotype (increased cGAMP, type I interferon signaling).\n\n2. In aged Cgas−/− oocytes, mtDNA leakage was unchanged, but inflammatory consequences were suppressed — proving that mtDNA-driven inflammation requires cGAS.\n\n3. Therefore, mtDNA is the upstream ligand and cGAS is the required sensor. If cytosolic mtDNA is removed (by overexpressing a mitochondrial nuclease), the activating ligand for cGAS–STING would be eliminated, strongly suppressing inflammation regardless of cGAS genotype.\n\n- **A** is incorrect: it misapplies the logic of the Cgas−/− experiment (which shows cGAS is required, not that mtDNA leakage can't matter).\n- **B** is incorrect: it's internally inconsistent — if the *absence* of cGAS is what suppresses inflammation in Cgas−/− oocytes, then in wild-type aged oocytes with intact cGAS, removing mtDNA would be necessary to suppress inflammation.\n- **D** is incorrect: while the comparison to young oocytes isn't specified, the key comparison is between wild-type aged oocytes with vs. without reduced cytosolic mtDNA — and reducing the upstream activating ligand would suppress cGAS–STING-driven inflammation.",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "6": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "7": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "8": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "9": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "10": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "11": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "12": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "13": {
+    "raw": "B) Combination blockades would produce a larger reduction than any single blockade alone, because each blocker hits a distinct parallel route so inhibiting two routes leaves fewer routes to carry mtDNA out.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "14": {
+    "raw": "**Answer: C**\n\n**Reasoning:**\n\nThis question tests the logic of epistasis/dissociation: if the upstream signal (cytosolic mtDNA leakage) persists but the downstream phenotype is rescued by removing a sensor, then the sensor is the rate-limiting pathological step.\n\n- In aged wild-type oocytes: mtDNA leaks into the cytosol → cGAS senses it → fibrosis, senescence, depleted ovarian reserve.\n- In aged Cgas-null oocytes: mtDNA still leaks (unchanged), but without cGAS, the downstream damage is largely prevented.\n\nThis means the leakage alone is not sufficient to cause the aging phenotype; it must be **interpreted** by cGAS to become pathological. Therefore, **cGAS sensing is the rate-limiting step**.\n\n**Why the others are wrong:**\n\n- **A)** Contradicts itself — it acknowledges mtDNA leakage persists in Cgas-null oocytes (so leakage isn't sufficient on its own), yet claims leakage is still rate-limiting. Also invokes an implausible \"mtDNA-independent cGAS function\" without evidence, while simultaneously noting cGAS was deleted.\n- **B)** Overreach — the presence of cytosolic mtDNA in aged oocytes doesn't prove it is harmless; it could still require cGAS to be pathogenic (which is exactly what the rescue shows). Also misattributes cause to \"cGAS not being activated\" rather than appreciating the experimental logic.\n- **D)** \"Equally contribute\" isn't supported — the data show that leakage *without* cGAS produces no phenotype, so leakage alone is not necessary for the rescue; only cGAS deletion is required. This is not a balanced contribution.\n- **E)** No need — option C cleanly fits the dissociation.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "15": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "16": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "17": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "18": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "19": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "20": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "21": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "22": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "23": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "24": {
+    "raw": "**A) The inflammatory phenotype in aged oocytes is caused by cytosolic mtDNA accumulation, because reducing mtDNA in aged cells blunts inflammation and artificially elevating mtDNA in young cells is sufficient to recapitulate it.**\n\nThis option captures the logic of the paired manipulation design:\n\n- **Necessity test (loss-of-function):** DNase I in aged oocytes removes cytosolic mtDNA → inflammation is reduced. This shows cytosolic mtDNA is *necessary* for the aged inflammatory phenotype.\n\n- **Sufficiency test (gain-of-function):** A permeabilization inducer in young oocytes raises cytosolic mtDNA → the aged inflammatory phenotype appears. This shows cytosolic mtDNA is *sufficient* to produce the phenotype in otherwise young cells.\n\nTogether, necessity and sufficiency constitute the strongest causal inference available from this experimental logic.\n\nThe other options are weaker:\n- **B** identifies correlation (elevated mtDNA) but doesn't establish causation.\n- **C** misinterprets the sufficiency experiment — the inducer is used precisely to *test* the role of permeabilization, not to exclude it.\n- **D** confuses upstream cause with downstream trigger; aging itself isn't shown to act independently of mtDNA.\n- **E** is unnecessary because the correct answer is clear.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "25": {
+    "raw": "B) The conclusion that cGAS sensing is the rate-limiting step would remain supported, because cGAS–STING activation still requires sensing of cytosolic DNA, which the aged Cgas−/− oocytes already showed is suppressed even with full mtDNA leakage.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "26": {
+    "raw": "The correct answer is **C**.\n\n**Reasoning:**\n\nThe observations collectively support a cell-nonautonomous mechanism where cGAMP originates in the oocyte and is transferred to granulosa cells via CX37 gap junctions:\n\n1. **Granulosa cells lack autonomous cGAMP production machinery** — they did not show mtDNA leakage or cGAS upregulation, the upstream triggers needed for endogenous cGAMP synthesis. This rules out granulosa cells as the source.\n\n2. **Direct demonstration of transfer in young oocytes** — microinjected cGAMP reached granulosa cells and activated STING, and this transfer required open CX37 channels (blocked when channels were closed).\n\n3. **Confirmation in aged oocytes** — endogenous cGAMP transfer was also CX37-dependent (pharmacological blockade prevented it).\n\n**Why other options are incorrect:**\n\n- **A** is wrong because it invokes a \"non-ovarian source\" — the data specifically support the *oocyte* as the source, not an external one.\n- **B** is wrong because it concludes granulosa cells made their own cGAMP via cGAS, directly contradicting the observation that cGAS was not upregulated and mtDNA did not leak.\n- **D** is problematic because it makes an absolute claim (\"sole source\") and overstates what the aged-oocyte experiment proves; while it supports oocyte origin, \"sole source\" is too strong given the evidence.\n\n**Option C** accurately integrates all findings: granulosa cells lack the upstream triggers for autonomous synthesis, and CX37-dependent transfer from the oocyte is directly demonstrated, making the oocyte-to-granulosa cGAMP transfer via gap junctions the best-supported conclusion.",
+    "letter": "T",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "27": {
+    "raw": "**D) Granulosa cells would no longer accumulate oocyte-derived cGAMP or activate STING via cell-nonautonomous signaling, because the demonstrated conduit for this transfer is CX37-based, while meiotic arrest would likely be lost because the same channels supply the cyclic GMP that sustains oocyte cAMP.**\n\nThis answer follows directly from the stated evidence:\n\n1. **cGAMP transfer → STING activation:** The question specifies that \"blocking CX37 channels in young oocytes attenuated STING activation in granulosa cells,\" establishing CX37 as the demonstrated conduit. If CX37 were completely non-functional throughout folliculogenesis, this conduit would be absent, so granulosa cells would not accumulate oocyte-derived cGAMP, and STING would not be activated via this cell-nonautonomous route. Options A and C, which predict persistence of STING activation, are inconsistent with this evidence.\n\n2. **cGMP transfer → meiotic arrest:** The question states that CX37 channels \"supply the oocyte with cyclic GMP, which sustains oocyte cAMP and meiotic arrest.\" Without functional CX37 channels, granulosa cell–derived cGMP cannot reach the oocyte, oocyte cAMP would drop, and meiotic arrest would be lost. This rules out options A and B, which predict maintained arrest.\n\n3. **Option B's \"increased accumulation\" claim** is unsupported—the oocyte is the source of the cGAMP, not granulosa cells, so blocking export channels on the oocyte side would decrease, not increase, granulosa-cell cGAMP.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "28": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "29": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "30": {
+    "raw": "**Answer: C**\n\n**Reasoning:**\n\nThe experiments described establish a clear genetic epistasis pathway:\n\n1. **Oocyte-specific *Tfam* deletion** → cytosolic mtDNA accumulation → oocyte-intrinsic cGAS–STING activation → cGAMP transfer → granulosa cell STING activation → ovarian dysfunction.\n2. **Oocyte-specific *Tfam* heterozygosity** → milder but qualitatively similar phenotypes, indicating dose-dependence.\n3. ***Cgas* deletion on the *Tfam*-deficient background** → rescue of both the inflammatory and ovarian phenotypes.\n\nThis is a classic sufficiency-and-necessity argument applied to a single pathway:\n\n- *Tfam* loss is **sufficient** to trigger the cascade (homozygous deletion in young mice produces the full phenotype).\n- The cGAS–STING axis is **necessary** for the ovarian dysfunction downstream of *Tfam* loss, because removing *Cgas* rescues it.\n\n**Why the other options fail:**\n\n- **A** overreaches: the data show *Tfam* loss is sufficient to trigger this cascade in young mice, but they do **not** prove TFAM decline is the *sole cause* of natural ovarian aging — a recessive oocyte-specific deletion is an extreme perturbation, not a model of gradual physiological decline.\n- **B** reverses the pathway: cGAS–STING activation is clearly **downstream** of the mitochondrial defect (mtDNA leakage into the cytosol is caused by TFAM loss, not by cGAS). *Cgas* deletion rescues the *consequences* of *Tfam* loss; it does not place cGAS upstream of the mitochondrial defect.\n- **D** overgeneralizes from the heterozygote: similar phenotypic signatures in the heterozygote demonstrate dose-sensitivity of the pathway, but they do not \"prove that gradual TFAM decline is necessary and sufficient for ovarian aging\" — necessity for natural aging is not tested here.\n- **E** is not appropriate because option C is well supported.\n\n**Correct choice: C** — Loss of oocyte TFAM is sufficient to trigger the cytosolic-mtDNA → cGAS–STING inflammatory cascade and impair ovarian function in this genetic model, because deleting *Tfam* recapitulates that sequence in young animals, and adding *Cgas* deletion abolishes the inflammatory and ovarian defects.",
+    "letter": "S",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "31": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "32": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "33": {
+    "raw": "B)",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "34": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "35": {
+    "raw": "**Answer: D**\n\nIf mtDNA leakage were the rate-limiting pathogenic event, then reducing it (not merely removing the sensor cGAS) would be necessary to rescue the ovarian phenotype. The observation that mtDNA leakage is unchanged in aged Cgas-null oocytes compared to wild-type — yet fibrosis, senescence markers, and ovarian reserve decline are all improved — indicates that the upstream trigger (leakage) is not what was reduced; instead, removal of the downstream sensor (cGAS) uncoupled the constant leakage signal from its damaging consequences. Therefore, leakage is unlikely to be the rate-limiting step.\n\n- A is incorrect because there is no a priori reason cGAS loss would increase leakage, and the data do not support this.\n- B is incorrect because cGAS does not have nucleolytic activity on mtDNA, and leakage was unchanged, not sharply elevated.\n- C is incorrect because unchanged leakage with reduced downstream damage actually argues *against* leakage being rate-limiting (if leakage were limiting, the phenotype should persist when leakage is unchanged).",
+    "letter": "S",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "36": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "37": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "38": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "39": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "40": {
+    "raw": "**Answer: A**\n\n**Reasoning:**\n\nThe combined experimental pattern points specifically to the oocyte as the initiating source:\n\n1. **Source of the signal:** The question explicitly states that cytosolic mtDNA accumulates and activates cGAS–STING (generating cGAMP) *in aged oocytes*. Granulosa cells, by contrast, do not leak mtDNA and do not upregulate cGAS. This rules out a granulosa-cell-autonomous trigger (eliminating **D**).\n\n2. **Mechanism of transfer:** Microinjected cGAMP reaches granulosa cells from young oocytes *only when CX37 gap junctions are open*, and blocking gap junctions prevents endogenous cGAMP transfer from aged oocytes. This demonstrates a specific, regulated, cell-to-cell conduit — not passive diffusion or a granulosa-intrinsic process. This eliminates **B** (passive bystander with no functional consequence) and **C** (cannot localize the trigger).\n\n3. **Functional consequence in granulosa cells:** The detection of cGAMP in granulosa cells — transferred via open CX37 gap junctions from the oocyte — means the oocyte-generated signal is *actively delivered* and therefore functionally meaningful in the recipient cells.\n\nThus, the data localize the **initiating** inflammatory event to the aged oocyte (mtDNA leakage → cGAS–STING → cGAMP), with granulosa cells acting as **receivers** of this signal via CX37-mediated gap junction transfer.\n\n**Correct choice: A**",
+    "letter": "P",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "41": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "42": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "43": {
+    "raw": "D) Cytosolic mtDNA is sufficient to drive an inflammatory phenotype in young oocytes, because inducing permeabilization in otherwise young oocytes increased cytosolic mtDNA and reproduced the inflammatory output.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "44": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "45": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "46": {
+    "raw": "**C) Granulosa-cell STING activation must depend on cGAMP supplied from outside the cell, because the cells lack the cytosolic DNA and elevated cGAS needed to generate cGAMP internally.**\n\nThis is the conclusion best supported by the stated observations:\n\n1. **Granulosa cells show STING activation** — this is observed.\n2. **They do not leak mtDNA** — so the canonical STING-trigger (cytosolic DNA) is absent.\n3. **They do not upregulate cGAS** — the enzyme that produces cGAMP (the second messenger that activates STING) is not elevated.\n\nSince STING activation requires cGAMP binding, and the cells lack both the upstream cytosolic DNA signal and elevated cGAS to produce cGAMP themselves, the most parsimonious explanation is that cGAMP must be supplied externally — potentially via the gap junctional communication linking granulosa cells to the oocyte or surrounding tissue.\n\nThe other options are not supported:\n- **A** contradicts its own reasoning (lack of cGAS upregulation would argue *against* intrinsic generation, not for it).\n- **B** unfairly dismisses the observation as artifact without evidence.\n- **D** invents a mechanism (CX37 as a STING co-receptor) that is not indicated by the given facts.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "47": {
+    "raw": "**Answer: D) The outcome cannot be predicted with confidence, because the aged-oocyte experiment used a pharmacological gap-junction blocker not confirmed to act on CX37 specifically.**\n\nThe reasoning hinges on a key distinction the question carefully highlights:\n\n- In **young oocytes**, the evidence is clear and specific: CX37 gap-junction channels must be open for cGAMP to reach granulosa cells and activate STING. Blocking CX37 attenuates this transfer.\n\n- In **aged oocytes**, a pharmacological gap-junction blocker prevented transfer of endogenous cGAMP — but this blocker was **not confirmed to be CX37-specific**. It could have acted on other connexins (e.g., CX43) or through nonspecific mechanisms.\n\nTherefore, you cannot simply extrapolate from the young-oocyte data (where CX37 specificity is established) to predict what selective CX37 closure would do in aged oocytes. The aged-oocyte experiment does not isolate CX37 as the responsible channel, so it neither confirms nor rules out a CX37-specific role in that context. The lack of CX37-specificity in the aged-oocyte blockade is the critical piece of uncertainty.\n\nWhy the other options fail:\n- **A** over-extrapolates from young oocytes to aged oocytes, ignoring the unresolved specificity issue in the aged-oocyte experiment.\n- **B** misrepresents the aged-oocyte result — that experiment did show an effect of gap-junction blockade, just not a CX37-specific one.\n- **C** introduces a speculative mechanism (cGAMP trapping increasing local concentration) that isn't supported by the evidence.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "48": {
+    "raw": "A) Reduced packaging/stabilization of the mitochondrial genome is a reproducible feature of aged oocytes because the same factor declined at both the transcript level in single oocytes and the protein level in two species.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "49": {
+    "raw": "**B**\n\n**B) TFAM decline is one of multiple distinct mitochondrial insults that can cause cytosolic mtDNA leakage and cGAS–STING activation, because the same downstream phenotype arose from three independent perturbations (Tfam loss, Opa1 loss, Pink1 loss), so TFAM is not the unique upstream trigger.**\n\n**Reasoning:**\n\n- **Option A** is incorrect because the Opa1 and Pink1 data are not overridden by the relevance of Tfam to aging. The fact that multiple independent perturbations converge on the same phenotype directly undermines the claim that TFAM is the *unique* trigger. Biological relevance (modeling aging) does not establish mechanistic exclusivity.\n\n- **Option C** is incorrect because TFAM, OPA1, and PINK1 function in *distinct* aspects of mitochondrial biology:\n  - TFAM packages mtDNA\n  - OPA1 maintains inner membrane cristae/structure\n  - PINK1 mediates mitophagy of damaged mitochondria\n  \n  Convergence on the same downstream readout does not imply a single linear pathway—it reflects convergence on a common consequence (cytosolic mtDNA → cGAS–STING).\n\n- **Option D** is incorrect because the premise directly states that Pink1 deletion *did* produce cytosolic mtDNA accumulation. Calling this result \"artifactual\" contradicts the given evidence rather than interpreting it.\n\n- **Option B** correctly captures the logic of the experiment: three mechanistically distinct insults (mtDNA packaging defect, mitochondrial fragmentation, failed mitophagy) all produce the same downstream phenotype. This demonstrates **convergence**, not a single obligatory upstream trigger. TFAM decline is therefore *one of several* causes, not the unique one.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "50": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "51": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "52": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "53": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "54": {
+    "raw": "D) cGAS deletion lowers fibrosis and senescence markers while mtDNA leakage persists, indicating that the cGAS sensing step — not leakage — is the bottleneck at which pathology is gated.",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "55": {
+    "raw": "**D**\n\nThe key evidence is that cGAS deletion reduced fibrosis, senescence markers, and preserved ovarian reserve **even though cytosolic mtDNA leakage persisted** at levels comparable to aged wild-type oocytes. This demonstrates that suppressing cGAS is sufficient to mitigate the aging phenotypes regardless of leakage status.\n\nReasoning through the options:\n- **A** is incorrect because it assumes cGAS's only role is sensing cytosolic mtDNA. The experiment shows cGAS deletion helps even when leakage persists, meaning cGAS signaling contributes to aging phenotypes independently of—or downstream of—leakage levels.\n- **B** is incorrect; there's no evidence that removing the signal would worsen phenotypes.\n- **C** is incorrect; the fact that cGAS deletion reduces phenotypes *despite persistent leakage* is itself strong evidence that cGAS sensing contributes to aging, even without identifying the exact activating signal.\n- **D** correctly captures the logic: because the benefit of cGAS deletion occurs even when leakage is unchanged, abolishing leakage wouldn't be expected to suppress the phenotypes further—cGAS sensing still contributes to the aging phenotypes regardless of the upstream trigger.\n\nThe takeaway: cGAS is established as a **necessary** contributor to ovarian aging phenotypes in this experiment. Whether or not mtDNA leakage is the relevant upstream signal, cGAS itself is doing pathogenic work, and removing that downstream node is what matters.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "56": {
+    "raw": "**Answer: A**\n\n**Reasoning:**\n\nBoth interventions converge on reducing activity of the CGAS–STING signaling axis in the ovary, just at different nodes (genetic deletion of the upstream sensor Cgas vs. pharmacological inhibition of the downstream adaptor STING). Both produced qualitatively similar protective phenotypes against natural ovarian aging:\n\n- **Genetic Cgas deletion** → preserved ovarian reserve, reduced fibrosis, reduced senescence markers.\n- **Pharmacological STING inhibition** → preserved ovarian reserve, improved oocyte quality, increased litter size.\n\nThe three end points reported for each experiment (reserve, fibrosis, senescence in one case; reserve, oocyte quality, litter size in the other) are all downstream readouts of ovarian aging, and they point in the same protective direction.\n\n**Why the others are wrong:**\n\n- **B** is incorrect because comparing effectiveness across experiments that used different end points, different ages, and different durations is not valid. Litter size being \"new\" doesn't make the drug superior.\n- **C** is incorrect because absence of a reported end point ≠ evidence the effect didn't occur. The drug study simply used a different (but overlapping) panel of readouts.\n- **D** is incorrect because meaningful comparison *is* possible: the end points (reserve, fibrosis/senescence vs. reserve, oocyte quality/litter size) overlap conceptually and both reflect the same biological axis of ovarian aging.\n- **E** is not correct because A is well supported.",
+    "letter": "G",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "57": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "58": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "59": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "60": {
+    "raw": "Answer: A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "61": {
+    "raw": "B) A core set of aging-sensitive genes (p16ink4a, Csf1r, Gpr34, Trem2) rises with age in multiple brain regions, because the statement specifies these transcripts increased in both gray and white matter of old mice, which is sufficient to demonstrate an aging effect outside white matter alone.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "62": {
+    "raw": "**Answer: C**\n\nThe colocalization data directly support this conclusion: GAL3 overlaps with IBA1 (a myeloid/microglial marker) and not with GFAP (an astrocyte marker) in the aged fimbria. This pattern indicates that GAL3 is expressed by IBA1+ myeloid cells (microglia or related macrophages), not by GFAP+ astrocytes.\n\nThe other options fail because:\n- **A** contradicts the stated finding that GFAP does not colocalize with GAL3.\n- **B** is unsupported; IBA1 is not a neuronal marker, and abundance in a region does not equate to colocalization.\n- **D** overinterprets the data; absence of GFAP overlap rules out astrocytes but does not specifically identify oligodendrocytes, and GAL3 is well-known to be a microglial/myeloid marker.\n- **E** is unnecessary because option C is well supported.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "63": {
+    "raw": "B",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "64": {
+    "raw": "**A**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "65": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "66": {
+    "raw": "**C**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "67": {
+    "raw": "D) The senescence/DAM-linked microglial state would not be supported as reproducible across independent datasets, because the harmonized integration failing to recover a concordant high-SenBrain DAM cluster would undercut the cross-dataset concordance that the original conclusion requires.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "68": {
+    "raw": "**Answer: B**\n\n**Reasoning:**\n\nThe question asks how to interpret three key observations:\n1. Cluster 7 (white-matter, aged) is high across **all six** senescence domains.\n2. Cluster 10 (age-exclusive) is high in SASP + organelle stress + cell surface.\n3. Cluster 3 (age-dominant) is selectively high in nuclear stress + cell surface + organelle stress.\n4. SenBrain enrichment inversely correlates with homeostatic microglia identity.\n\n**Why B is correct:**\n- Each cluster shows a **distinct combination** of senescence domain enrichments (cluster 7 = all six; cluster 10 = SASP/organelle/cell surface; cluster 3 = nuclear/organelle/cell surface).\n- The non-overlapping combinatorial profiles suggest these are **functionally discrete senescent microglial states**, not a single homogeneous population.\n- The inverse correlation with the homeostatic module indicates that as microglia acquire a senescent state, they lose homeostatic identity — consistent with a **separate state** (loss of one program, gain of another), rather than mere integration within DAM.\n\n**Why the others are wrong:**\n- **A** is incorrect because the clusters do show distinct, non-overlapping domain combinations (cluster 3 lacks SASP; cluster 10 lacks nuclear stress/cell cycle/SCAP), arguing against a single integrated DAM continuum. The overlap in organelle/cell surface domains across clusters does not override the distinct combinatorial signatures.\n- **C** is incorrect because no evidence supports SASP as the sole canonical marker; cluster 7 scores high across all domains, and cluster 3 lacks SASP enrichment yet still shows senescence features. Dismissing cluster 3 as artifact is unsupported.\n- **D** is incorrect because scoring high across multiple senescence domains in aged white-matter microglia is biologically plausible (cumulative senescent burden), and there is no evidence of contamination. Calling the inverse correlation \"coincidental\" ignores the consistent pattern.\n- **E** is unnecessary because B is well-supported.",
+    "letter": "P",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "69": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "70": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "71": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "72": {
+    "raw": "The correct answer is **B**.\n\nIn CosMx spatial transcriptomics, segmentation is a critical step, and transcripts near cell boundaries can be incorrectly assigned to adjacent cells. The gene sets reported here are classic markers for **oligodendrocytes** (Mbp, Mobp, Plp1) and **neurons** (Camk2a, Adcy1, Sncb, Snap25) — not microglia. Microglia are not known to transcribe myelin genes or synaptic neuron genes as part of their canonical identity.\n\nThis pattern is a hallmark of **transcript spillover due to imperfect cell segmentation**, where a small fraction of transcripts from neighboring cells is assigned to the microglial segment. Because microglia are densely packed and interdigitated with oligodendrocytes in white matter and with neurons in gray matter, this regional contamination is expected.\n\nWhy the other options are less correct:\n\n- **A** attributes the signal to lineage-inappropriate transcription driven by regional cues — this is biologically implausible and not supported for such highly specific terminal-differentiation genes of other lineages.\n- **C** misinterprets the spillover as wholesale misclassification of cells, but the question specifies that these are *microglia* (already identified as such); the issue is transcript assignment, not cell identity.\n- **D** claims these are bona fide microglial subtype markers, but the gene sets are lineage markers of oligodendrocytes and neurons, not microglia. Regional specificity of the artifact (due to cell-type composition of the neighborhood) explains the pattern without invoking new microglial biology.\n- **E** is not applicable given the clear technical explanation.\n\n**Answer: B**",
+    "letter": "T",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "73": {
+    "raw": "**B)**\n\nThe \"molecular shadow\" interpretation proposes that apparent co-expression of non-lineage markers reflects technical spillover from spatially neighboring cells rather than true transcription by the immune cell. Under this logic, elevated glial markers in old immune cells would be most parsimoniously explained by an age-related change in the spatial neighborhood—specifically, increased physical proximity (or contact frequency) between immune cells and resident glia in the aged brain. This prediction is directly licensed by the spillover framework, because the same proximity-dependent signal that explains why immune cells pick up region-matched transcripts (e.g., myelin genes near white matter) would predict that any shift toward glia-rich microenvironments yields matching marker enrichment in the immune-cell signal. The other options either treat the elevation as intrinsic biology (A), make an unsupported claim about microglia specificity (C), or draw an unjustified conclusion about loss of glial identity (D).",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "74": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "75": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "76": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "77": {
+    "raw": "**B** is the correct prediction.\n\nThe logical structure of the question is a counterfactual conditional test:\n\n1. **The premise:** AP20187 in p16-InkAttac mice kills p16+ cells (it induces apoptosis via FKBP-Casp8 fusion driven by the p16 promoter). Venetoclax is a BCL2 inhibitor with senolytic activity that works independently of p16+ cell ablation (and notably *failed* to reduce p16ink4a itself, Lgals3 aside).\n\n2. **The hypothetical:** If p16+ cell ablation were the *only* route by which a senolytic could lower DAM genes in this context, then only drugs that eliminate p16+ cells should be able to reduce DAM transcripts.\n\n3. **The data fit this model:** AP20187 reduced p16ink4a *and* the DAM genes (Trem2, Tmem173, Tyrobp, Lgals3). Venetoclax reduced only Lgals3 — it did not reduce p16ink4a or the other three DAM genes.\n\n4. **The prediction:** Under the stated hypothesis, we expect venetoclax would *not* reduce Trem2, Tmem173, or Tyrobp — exactly what is observed. This is the clean answer.\n\nThe other options fail the counterfactual:\n- **A** asserts convergence on a single DAM program, but the hypothesis specifies there is only *one* route (p16+ cell ablation) under consideration, not \"routes.\"\n- **C** invokes obligate downstream p16-effector transcripts — again presupposing the very p16-dependent mechanism the question asks us to treat as the sole hypothetical route, and adding an untested molecular commitment claim.\n- **D** asserts co-regulation with p16ink4a, directly contradicted by the data (venetoclax did *not* reduce p16ink4a).",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "78": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "79": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "80": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "81": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "82": {
+    "raw": "**A**",
+    "letter": "*",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "83": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "84": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "85": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "86": {
+    "raw": "C) The senescence/DAM microglial profile is a reproducible feature of aged brain because the same profile — highest SenBrain score, DAM/senescence gene expression, and Lgals3 enrichment — reappears as cluster 7, cluster 10, and harmonized cluster 6 across independent datasets and integration, so CosMx SMI can recover conserved microglial states across cohorts.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "87": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "88": {
+    "raw": "**Answer: B**\n\n**Reasoning:**\n\nLet me evaluate each option against the data provided:\n\n- **Option A:** The data shows cluster 7 enriched in *all six* domains, cluster 10 enriched in 3 domains (cell surface, organelle stress, SASP), and cluster 3 enriched in 3 domains (cell surface, organelle stress, nuclear stress). Cell surface and organelle stress are shared between clusters 10 and 3, while SASP (cluster 10) and nuclear stress (cluster 3) distinguish them. This interpretation is consistent with the evidence.\n\n- **Option B (originally listed as \"Cluster 7\"):** While cluster 7 is enriched across all six domains, calling it a \"discrete senescent state\" requires more than just multi-domain enrichment — the inverse tracking with homeostatic genes is what supports a senescent identity. However, \"the only population enriched across all six\" is stated, but the conclusion about it being a *discrete senescent state* is not strongly supported because clusters 10 and 3 also show senescence features.\n\n- **Option C:** The data does not state that cluster 10 has the highest SenBrain score. Cluster 7 shows the broadest enrichment, making the claim about cluster 10 unsupported.\n\n- **Option D:** The inverse relationship between SenBrain and homeostatic scores suggests that microglia *lose* homeostatic identity as they acquire senescent features — it does **not** mean homeostatic microglia upregulate senescence genes. This misinterprets the inverse correlation.\n\n- **Option E:** Not applicable since option B (as renumbered in the question's logic) is supported.\n\n**The best-supported conclusion is that organelle stress and cell surface remodeling are shared features across aged microglial clusters (3 and 10), while SASP distinguishes cluster 10 and nuclear stress distinguishes cluster 3 — matching option B in the reasoning above (labeled \"A\" in the original list).**\n\n**Answer: A**",
+    "letter": "P",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "89": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "90": {
+    "raw": "The best-supported interpretation is **C**.\n\nHere's the reasoning:\n\n1. **Low detection rate (1–5%)**: At this level, distinguishing true biological signal from technical noise is difficult, especially without signal amplification on the CosMx platform.\n\n2. **Probe design ambiguity**: The Cdkn2a probe covers both p16ink4a and p19arf exons, so positive signal cannot be cleanly assigned to the specific senescence-associated p16 isoform.\n\n3. **Heterogeneous co-expression**: The Cdkn2a+ cells show variable expression of Apoe, C1qa, Clu, Trem2, and Serpine1 — genes associated with diverse microglial states (DAM-like, activated, etc.). This heterogeneity means Cdkn2a is not cleanly defining one senescent population.\n\n4. **No signal amplification**: This reduces sensitivity, making it harder to confidently call low-expressing cells as truly positive versus background.\n\nTogether, these observations mean that while Cdkn2a expression is detectable, the data alone are insufficient to conclusively map a senescent microglial population. Option A overstates the conclusion (heterogeneity contradicts a \"well-defined\" population), B is the opposite of what the data show, and D mischaracterizes the co-expression pattern.",
+    "letter": "T",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "91": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "92": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "93": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "94": {
+    "raw": "**C) Cluster 10 can be reached by at least two distinct trajectories (1→13→3→10 and 8→15→3→10) that both pass through cluster 3, indicating convergent routes rather than a unique cellular origin.**\n\nThis is the best-supported interpretation. The retrograde model rooted at cluster 10 explicitly shows multiple precursor branches (via 15/8, via 9, and via 13→1), demonstrating that cluster 10 is not reached by a single route. The forward model shows 1→13→3 as the common trunk, which then can continue to 10, 9, or 15→8 — meaning cluster 3 sits at a convergence/bifurcation point. Importantly, clusters 3 and 10 both lie along paths of increasing senescence/DAM marker expression, so cluster 10's DAM identity is preserved regardless of which upstream trajectory cells take.\n\nThe other options fail because:\n- **A)** incorrectly assumes a unique lineage; the data explicitly show multiple paths.\n- **B)** invents a mechanism (white-matter/OPC exclusivity) not supported by the described analysis and wrongly claims a single \"most direct\" route outcompetes others.\n- **D)** is contradicted by the gradient of DAM/senescence markers rising through cluster 3 toward cluster 10, consistent with — not against — cluster 10's DAM identity.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "95": {
+    "raw": "**Answer: D**\n\nThe evidence presented documents two specific routes (1→13→3→10 and 8→15→3→10) that pass through cluster 3. Both options A and B overreach: \n\n- **A** is too strong because it asserts cluster 3 is the *unique* obligatory gateway. The stated evidence only shows these two documented routes converge through cluster 3 — it does not rule out that cluster 10 could be reached via alternative molecular trajectories not captured by the specifically described paths.\n- **B** makes an absolute claim (\"all inferred routes would dissolve... cannot survive\") that the evidence does not support, since absence of cluster 3 from the model would remove these documented routes but does not logically prove no other route exists in the underlying data.\n- **C** is factually wrong — both documented routes pass through cluster 3, not just the white-matter one.\n- **D** is the most defensible conclusion: cluster 3's removal would eliminate *the documented routes*, but the evidence does not justify claiming this proves cluster 10 is unreachable by any other molecular path. This appropriately distinguishes between loss of the *described* trajectories and claims about all possible trajectories.\n\n**The answer is D.**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "96": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "97": {
+    "raw": "B) Both p16ink4a and Lgals3 would be lowered, because lowering p16+ cell numbers by any route should reduce p16 transcription and downstream DAM markers, matching AP20187's observed pattern.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "98": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "99": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "100": {
+    "raw": "A) White matter regions (fimbria-fornix and corpus callosum) show more pronounced late-life senescence and DAM transcriptional changes than hippocampal gray matter, because a broader set of senescence/DAM transcripts is elevated in white matter of aged mice and age-dependent increases are more consistently observed in white matter than in hippocampus or cerebellum.\n\n**Reasoning:**\n\nThe observations in the passage support a conclusion about white matter regions being prominent sites of senescence and DAM transcriptional changes:\n\n1. **Broader transcript elevation in white matter of aged mice**: In aged females, p16ink4a, Cdkn2a, Lgals3, Cdkn1a/p21, and Ccl2 were significantly higher in white matter than in hippocampal gray matter. Additionally, Ccl5, Apoe, and Gpr34 were also significantly higher in white matter specifically in aged females.\n\n2. **Age-dependent increases more consistent in white matter**: The passage explicitly states that \"a regional heat map showed age-related increases across these genes more consistently in fimbria-fornix and corpus callosum than in hippocampus or cerebellum.\" Additionally, several age-elevated genes (Apoe, Bcl2a1a, Cd11b, Klk8, Lgals3, Cdkn1a/p21, and Tmem173) rose specifically in old fimbria-fornix and corpus callosum.\n\n**Why the other options are less supported:**\n\n- **B**: Incorrect because the data indicates that white matter shows more pronounced senescence, not that hippocampal gray matter is the primary site.\n- **C**: Incorrect because while the listed genes were elevated in white matter regions, the presence of some genes rising in hippocampus and the lack of comprehensive data across all brain regions doesn't fully support that these signatures are \"restricted\" to white matter.\n- **D**: Incorrect because the data does not indicate uniformly stronger senescence signatures in males; only a subset of inflammation-associated genes (Ccl2, Ccl5, Il1b, Tyrobp) showed male-specific elevations, and most other genes showed similar or female-specific patterns.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "101": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "102": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "103": {
+    "raw": "**Answer: D)**\n\nThe reasoning hinges on a key logical principle: when you have two levels of comparison, the direct test at the most relevant level should take precedence.\n\n**Bulk-level observation:** Fimbria myeloid cells have higher dPP4 than hippocampal myeloid cells (overall fimbria vs. hippocampus comparison).\n\n**Subset-level observation:** When fimbria myeloid cells are split by GAL3 status, dPP4 is **not** enriched in the GAL3+ subpopulation — unlike uPAR and CD38, which showed trending or significant enrichment.\n\nThe colleague's argument attempts to bridge these two levels by assuming the fimbria-wide dPP4 elevation must be carried by GAL3+ cells specifically. However, the data directly tested this and **did not support it**. The dPP4 elevation in bulk fimbria myeloid cells could instead be driven by:\n- GAL3− cells in the fimbria\n- A general shift across both GAL3+ and GAL3− populations\n- Other myeloid subsets not stratified here\n\nBecause the subset-level (GAL3-stratified) analysis is the more specific and direct test of the colleague's claim, and it returned null for dPP4, the bulk-level difference cannot be attributed to the GAL3+ subpopulation based on these data alone.\n\n**Why the other options fail:**\n- **A:** Misframes the data — the question is about dPP4 intensity, not size. Size data are irrelevant to this rebuttal.\n- **B:** Accepts the colleague's faulty logic and incorrectly dismisses the negative GAL3-stratified result as merely \"underpowered\" without evidence.\n- **C:** Invokes panel differences, but dPP4 was measured in both comparisons via IMC — the panels are compatible.\n- **E:** Unnecessary, since D is clearly correct.\n\n**Final answer: D**",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "104": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "105": {
+    "raw": "**B**\n\nThe reasoning is as follows: In GeoMx DSP, the IBA1+ selection mask defines the region of illumination, but astrocytes (which can express IBA1 at low levels or lie adjacent within the masked area) can contribute transcripts to the measured pool. GFAP is used as a negative selection marker to exclude astrocyte-contributed signal from the IBA1+ segments. Apoe is well known to be highly expressed by astrocytes, so without GFAP-based exclusion, the Apoe signal attributed to IBA1+ cells could be substantially inflated by astrocyte contamination. This would specifically compromise the within-fimbria claim that Apoe is the most abundant transcript in the IBA1+GAL3+ microglial subset versus IBA1+GAL3− microglia, since the comparison depends on the IBA1+ measurements being truly microglial.\n\nOption A is wrong because GFAP exclusion doesn't specifically explain Apoe enrichment in the regional comparison being uninterpretable; the issue is more specific. Option C is wrong because GFAP exclusion affects all IBA1+ measurements, not just regional comparisons. Option D is wrong because IBA1 is not perfectly specific and astrocyte transcripts can be captured. Option E doesn't apply since B is correct.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "106": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "107": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "108": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "109": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "110": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "111": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "112": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "113": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "114": {
+    "raw": "**C**\n\nThis is the most warranted interpretation given the evidence.\n\nThe reasoning for each option:\n\n- **A** is incorrect because a transcriptional gradient along one trajectory does not establish a unique developmental origin; senescent-DAM signatures can be induced by microenvironmental cues and may be reached via multiple paths.\n- **B** is incorrect because the problem explicitly excludes unreachable peripheral clusters and identifies 1 → 13 → 3 → 10 as a resolved path; the presence of additional endpoints (8, 15) in a branching trajectory does not invalidate one branch.\n- **C** is correct because (i) the path shows progressive enrichment of senescence/DAM markers (Apoe, Axl, Clec7a, Lgals3, Tyrobp) with proportional loss of young-cell identity, and (ii) pseudotime values being inversely correlated with SenBrain/DAM scores indicates that cells along this trajectory progressively acquire the senescent-DAM program as they approach cluster 10. In branching trajectories with a convergent endpoint, different branches can reflect distinct anatomical/environmental contexts feeding into a shared transcriptional state—consistent with senescent-DAM being a convergent activation program rather than a single lineage.\n- **D** is incorrect as a blanket dismissal; Monocle3 can resolve branching, and the coherent marker gradients argue against a pure technical artifact.\n- **E** is not appropriate since the data described support a clear best answer.\n\n**Answer: C**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "115": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "116": {
+    "raw": "A) p16+ senolytic and BCL2 targeting engage partially distinct molecular axes, because AP20187 lowers both p16ink4a and DAM genes (Trem2, Tmem173, Tyrobp, Lgals3) while venetoclax lowers only Lgals3 without affecting p16ink4a.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "117": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "118": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "119": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "120": {
+    "raw": "The correct answer is **A**.\n\n**Reasoning:**\n\nThe key observations from the study are:\n1. APOE ε4/ε4 astrocytes show **elevated FN1 expression** and deposit FN1 in an **amorphous pattern**.\n2. APOE ε3/ε3 astrocytes deposit **lower levels of FN1** in **fibrillar, thread-like arrays**.\n3. FN1 **colocalizes with AQP4** (an endfoot marker) in all postmortem brain samples, confirming enrichment at the gliovascular interface.\n\n**Why A is correct:**\n- Option A logically integrates all observations: it acknowledges the **elevated FN1 in ε4 astrocytes**, the **morphological shift from fibrillar to amorphous deposition**, and the **colocalization with AQP4 at endfeet**, concluding that ε4 carriers have higher perivascular FN1 at the gliovascular interface due to genotype-driven changes in FN1 deposition pattern and quantity.\n\n**Why the others are incorrect:**\n\n- **B:** The study does not support that AQP4 *drives* FN1 transcription, nor that this effect is genotype-specific. AQP4 is simply a marker for endfeet where FN1 accumulates.\n\n- **C:** This contradicts the stated findings — ε3 astrocytes still show FN1 colocalization with AQP4 (just at lower levels), so there is no evidence of a \"loss of ε3-specific AQP4 distribution.\"\n\n- **D:** There is no data presented about proteolytic cleavage of fibrillar FN1 or differential binding of cleavage products to AQP4. This introduces unsupported mechanistic claims.\n\n- **E:** A is well supported, so \"unsure\" is not appropriate.\n\n**Final answer: A**",
+    "letter": "T",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "121": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "122": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "123": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "124": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "125": {
+    "raw": "**B**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "126": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "127": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "128": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "129": {
+    "raw": "B) The APOE signal would decrease toward ε3/ε3 levels, because the elevated ε4/ε4 signal reflects intracellular and perivascular retention from impaired secretion rather than increased synthesis, so restoring secretion would relieve the accumulation.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "130": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "131": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "132": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "133": {
+    "raw": "**B**\n\nThe evidence supports B because:\n1. Fibronectin coating reduces IGF-1 in ε3 cells (showing fibronectin-integrin signaling can suppress IGF-1)\n2. Blocking integrins in ε4 cells (which have high fibronectin) raises IGF-1 (showing the fibronectin-integrin signal is actively suppressing IGF-1)\n3. The VEGFRi → reduced HB-EGF finding supplies the upstream ligand connection, since loss of HB-EGF would similarly dampen IGF-1 output\n\nTogether these observations are consistent with a unified axis in which integrin engagement by fibronectin (or reduced HB-EGF availability from endothelial cells) converges to suppress the trophic IGF-1 output — the \"sufficiency\" and \"dampening\" language is appropriately calibrated to the effect sizes (~20% reduction, ~16% rescue), unlike the stronger obligatory/sole-driver claims in A, C, and D.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "134": {
+    "raw": "B",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "135": {
+    "raw": "B) Widespread FN1 overexpression would also produce dextran leakage because the original data show that adding FN1 is enough to disrupt the barrier; removing the astroglial restriction does not negate the demonstrated sufficiency and would still expose the vasculature to elevated fibronectin",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "136": {
+    "raw": "**Answer: A**\n\n**Rationale:**\n\nOption A provides the most accurate and properly qualified interpretation:\n\n- **Cross-species consistency is real evidence of evolutionary conservation:** Finding the same direction of change (reduction) in VEGFA, HB-EGF, and IGF-1 across zebrafish, mice, and humans supports the conclusion that this axis is evolutionarily conserved and its suppression is a feature of AD-like pathology.\n- **High statistical significance strengthens this inference:** P-values < 1.0 × 10⁻¹⁵ indicate very low probability that these consistent reductions arose by chance across multiple species.\n\n**Why the other options are incorrect:**\n\n- **B is wrong:** Identical (or similarly very small) P-values do *not* imply identical effect sizes. P-values depend on both effect size *and* sample size/variance. A small study with a huge effect can yield the same P-value as a large study with a modest effect. The data only show significance, not equivalent magnitude.\n\n- **C is wrong:** Statistical significance of a downstream change (VEGFA reduction) cannot identify an upstream causal driver. Establishing fibronectin as the \"obligatory\" upstream regulator requires targeted mechanistic experiments (e.g., loss-of-function of fibronectin with rescue), not P-value ranking.\n\n- **D is wrong:** A significant decrease at one measured time point or in bulk tissue does not exclude compensatory upregulation. Compensation could occur in specific cell types, at other time points, or be masked by the dominant downregulation signal. This conclusion vastly overreaches the data.\n\n- **E is incorrect** because option A is well supported.\n\n**Final answer: A**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "137": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "138": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "139": {
+    "raw": "**Answer: D**\n\nIf a systemic inflammatory response were leaking into CSF, you would expect the FN1–VEGFA correlation to be detectable in plasma (since the inflammatory signal is systemic). The finding that the correlation is strong in CSF (evidenced by the three-way interaction) but essentially absent in plasma (r = 0.13) argues against a systemic leakage model — a peripheral process should produce concordant plasma and CSF signals. Furthermore, the APOE ε4–dependent divergence in VEGFA response (compensatory increase in non-ε4 AD, absent in ε4 AD) points to a CNS-specific, genotype-modulated pathway rather than nonspecific leakage, since systemic inflammation would not be expected to stratify so cleanly by APOE genotype within the AD population.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "140": {
+    "raw": "**A**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "141": {
+    "raw": "B) BBB integrity would likely improve, because reducing the upstream driver (FN1) should relieve the integrin/FAK-mediated suppression of the VEGFA/HB-EGF/IGF-1 trophic axis that maintains the gliovascular interface.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "142": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "143": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "144": {
+    "raw": "**Answer: A**\n\n**Reasoning:**\n\nTo determine the predominant *contributor* to perivascular FN1 deposition, we must consider both the **number of FN1-expressing cells per lineage** and the **biological relevance of those cells to perivascular deposition**. The question hinges on the difference between *fraction of FN1-expressing cells* and *total FN1-producing cells per lineage*, combined with spatial relevance.\n\n**Evaluating each option:**\n\n- **Option B** is misleading: excitatory neurons make up the largest *fraction* of FN1-expressing cells (32.68%), but this is relative to the small pool of neurons that express it. Since excitatory neurons rarely contact the vasculature directly (unlike astrocytes, whose endfeet ensheath >99% of capillaries), their contribution to *perivascular* FN1 deposition is spatially implausible.\n\n- **Option C** is incorrect: although endothelial cells/pericytes are perivascular, they constitute only 2–4% of total brain cells. Even with a high per-cell FN1 rate, their small absolute numbers cannot outweigh the contribution of astrocytes (~40% of all brain cells, ~100% with vascular contact).\n\n- **Option D** contains a logical fallacy (\"larger fraction of expressing cells always implies a larger contribution\"). The fraction of *expressing cells* says nothing about the *total number* of expressing cells or their perivascular relevance.\n\n- **Option A** correctly integrates all the relevant factors:\n  - Astrocytes are ~40% of all brain cells → large absolute pool.\n  - Nearly all astrocytes contact the vasculature via endfeet → direct perivascular relevance.\n  - 22.7% of FN1-expressing cells × ~40% abundance = a large absolute number of FN1-producing astrocytes.\n  - APOE ε4-dependent upregulation further amplifies astrocytic FN1 production in disease contexts, consistent with known Alzheimer’s pathology literature.\n\nThus, the best-supported conclusion is **A**.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "145": {
+    "raw": "**Answer: B**\n\n**Reasoning:**\n\nLet me evaluate each option against the evidence provided:\n\n**Option A** is incorrect. The premise states that cluster 5 is *most strongly* associated with FN1 in AD, and that this specific reactive subcluster expresses FN1 in the highest proportion of cells. Total astrocyte abundance is not the sole determinant—*which* astrocyte subcluster dominates matters substantially.\n\n**Option B** is correct. The observations converge on a specific conclusion:\n- Cluster 5 (SERPINA3⁺, inflammatory astrocytes) shows the strongest statistical association with FN1 in AD (β = 0.0300, FDR P = 1.55×10⁻⁶)\n- Label transfer confirms this subcluster expresses FN1 in the highest proportion of cells\n- Astrocytes show the highest APOE ε4-dependent FN1 upregulation\n- APOE ε4/ε4 *selectively* increases astrocytic FN1 protein\n\nRemoving this specific subcluster would remove the cells most responsible for the APOE ε4-driven perivascular FN1 signal, substantially reducing FN1 deposition at the gliovascular interface.\n\n**Option C** is incorrect. The premise that removing inflammatory astrocytes would \"eliminate competition\" and increase FN1 is biologically implausible and contradicts the data showing cluster 5 is the primary FN1-expressing subcluster. Astrocytes don't compete for FN1 transcripts in a meaningful physiological sense.\n\n**Option D** is incorrect. While β = 0.0300 may seem modest, it represents the *strongest* cluster-level association with FN1 in AD, and the convergent evidence (label transfer, ε4-dependence, protein-level validation) all point in the same direction. A directional counterfactual prediction is well-supported, not precluded.\n\n**Conclusion:** The evidence specifically pins the APOE ε4-driven, AD-associated FN1 signal to cluster 5, so its removal would substantially reduce perivascular FN1 deposition.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "146": {
+    "raw": "**Answer: C**\n\nThe data converge on inflammatory signaling as the driver of astrocytic FN1 deposition:\n\n1. **TNF increases FN1** along with reactive markers (SERPINA3, SAA1) and NF-κB signaling in the 3D pHA hydrogel.\n2. **Aβ42 also induces FN1**, and IL-4 reduces FN1 both alone and after TNF or Aβ42 treatment — meaning IL-4 counteracts multiple inflammatory/pro-inflammatory inducers.\n3. **snRNA-seq from human AD cortex** identifies the SERPINA3+ reactive astrocyte cluster (cluster 5) as the one most strongly associated with FN1 — directly linking the reactive/inflammatory astrocyte state to FN1 in vivo.\n\nThis convergence across in vitro (hydrogel) and in vivo (human snRNA-seq) data points to **inflammatory signaling (TNF → NF-κB → SERPINA3+ reactive state → FN1)** as the convergent upstream driver, with IL-4 acting as a counter-regulator rather than the obligatory driver.\n\nThe other options fail:\n- **A**: IL-4 reduces FN1 — it does not drive it; calling it the \"obligatory upstream regulator\" contradicts the data.\n- **B**: Reversing an induced phenotype does not place the reversing agent downstream — this is a logical error.\n- **D**: The in vitro and snRNA-seq findings are complementary, not incompatible — and the snRNA-seq actually *supports* generalization to human AD brain.\n\nThus, **C** is the best-supported interpretation.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "147": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "148": {
+    "raw": "# Analyzing the Findings\n\nThe key observations are:\n1. **Higher APOE protein signal** in ε4/ε4 astrocytes (iPS-derived and postmortem brain)\n2. **Higher FN1** in ε4/ε4 postmortem brains\n3. **Higher APOE–FN1 colocalization** in ε4/ε4 cells (R² = 0.396 vs 0.049)\n4. **Co-localization ≠ direct interaction**\n\n# Evaluating Each Option\n\n**Option B** — Incorrect. Higher protein signal does not equal higher synthesis. ε4 APOE is well-known to have a secretion deficit, leading to intracellular accumulation. The claim that \"APOE likely drives FN1 deposition directly\" is also unsupported; colocalization alone does not establish directionality or a direct interaction.\n\n**Option C** — Incorrect. Higher colocalization does not establish FN1 as the driver of APOE elevation. No evidence is provided that FN1 causes increased APOE.\n\n**Option D** — Incorrect. Failure to detect a direct complex via co-immunoprecipitation does not rule out a functional relationship — proteins can interact indirectly (e.g., via bridging molecules) or co-localize in the same compartment without forming a stable complex. The colocalization data actually *suggest* a relationship.\n\n**Option A** — Correct. This interpretation integrates the findings with established knowledge:\n- Elevated APOE signal in ε4/ε4 reflects **retention/accumulation** due to the known ε4 secretion deficit, not increased production.\n- Parallel elevation of FN1 places both at the **gliovascular interface**.\n- Colocalization indicates **co-occurrence**, not necessarily a direct physical interaction.\n- This is the most parsimonious and mechanistically informed reading of the data.\n\n# Answer\n\n**A**",
+    "letter": "#",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "149": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "150": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "151": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "152": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "153": {
+    "raw": "E",
+    "letter": "E",
+    "score": 0.1,
+    "reason": "Unsure"
+  },
+  "154": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "155": {
+    "raw": "The answer hinges on understanding the logic of the experiment.\n\nThe original experiment showed:\n- FN1-injected larvae → astroglial GFP + elevated fibronectin + dextran leakage\n- Empty plasmid/PBS controls → no GFP, no fibronectin elevation, no leakage\n\nThe conclusion drawn is that astroglial FN1 overexpression causes BBB disruption.\n\nNow the question asks: if a FN1-injected larva showed no astroglial GFP, what conclusion is licensed?\n\nKey reasoning: The GFP signal marks the cells that took up and expressed the construct. If GFP is absent, it means the construct did not successfully label/express in astroglia in that particular larva (likely due to mosaic distribution common in zebrafish injection experiments).\n\nA) Incorrect - absence of GFP doesn't prove the construct failed to work in general, nor does it prove FN1 is unnecessary. It's just one larva.\n\nB) Incorrect - absence of GFP doesn't mean FN1 is uninvolved. The original conclusion depended on the *correlation* across larvae, and a single larva lacking GFP could still have transient FN1 expression that wasn't captured, or mosaic effects.\n\nD) Correct - Because transgene integration is mosaic (well-established limitation of zebrafish injections), the absence of GFP in one larva is uninformative. The FN1 construct remains the only variable that differs between leaking and non-leaking larvae. You cannot draw a mechanistic conclusion from a single non-leaking larva without GFP, because you cannot confirm whether the construct was actually expressed in that individual.\n\nC) Incorrect - C controls don't demonstrate anything about non-FN1 mechanisms; they just confirm baseline conditions.\n\nThe answer is **D**.",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "156": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "157": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "158": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "159": {
+    "raw": "# Analyzing the Question\n\nThe question asks what prediction is **licensed by the stated evidence** — meaning what can we legitimately infer given only the data presented.\n\n## Key Evidence to Consider:\n1. FN1 is elevated in AD (P = 3.31×10⁻⁷) — this is a main effect across the whole AD group\n2. The three-way interaction (FN1 × APOE × disease) concerns **VEGFA coexpression**, not FN1 itself\n3. No plasma FN1–VEGFA correlation (r = 0.13) — argues against tight coupling\n4. VEGFA shows APOE-dependent pattern in AD only\n\n## Evaluating Each Option:\n\n**Option A:** Claims FN1 and VEGFA are coupled with equivalent forced changes. But the plasma correlation (r = 0.13) directly contradicts tight coupling. The interaction concerns VEGFA, not FN1. No basis for \"equivalent change.\" ❌\n\n**Option B:** Claims ε4 carriers would be unaffected because they don't show VEGFA elevation. But this is a manipulation that specifically concerns non-ε4 AD cases — we cannot conclude what happens in ε4 carriers by absence of baseline effect. The evidence doesn't license this claim about ε4 carriers. ❌\n\n**Option C:** Claims blocking VEGFA elevation in non-ε4 AD cases would abolish the three-way interaction because the interaction is \"defined entirely\" by the difference in VEGFA slopes. This conflates the *source* of the interaction with what happens when one component is removed. Even if non-ε4 VEGFA were blocked back to ε4-like levels, the interaction term describes the statistical pattern across all groups. More importantly, the evidence shows the interaction involves VEGFA — but saying blocking would \"abolish\" it requires assumptions about what VEGFA levels would become after blocking. This overreaches the evidence. ❌\n\n**Option D:** Claims blocking VEGFA elevation would not affect FN1 elevation because:\n- FN1 is already elevated in AD regardless of APOE (a main effect independent of the interaction)\n- The interaction term specifically concerns VEGFA, not FN1 itself\n- These are conceptually distinct measures\n\nThis is a **cautious, conservative inference** that is directly supported by the stated evidence: the FN1 main effect is reported separately from the VEGFA interaction, and there's no stated evidence of FN1 being downstream of VEGFA. ❌ (this one is actually correct!)\n\n**Option E:** Unsure — only appropriate if none of the predictions are licensed.\n\n## Conclusion:\n\nThe answer is **D**.\n\nBlocking VEGFA elevation in non-ε4 AD cases would not necessarily affect FN1 elevation because:\n1. FN1 elevation in AD is reported as a **main effect** (significant across all AD cases)\n2. The three-way interaction specifically describes **VEGFA** coexpression patterns\n3. The weak plasma FN1–VEGFA correlation argues against tight mechanistic coupling\n4. The evidence does not establish that VEGFA elevation drives or maintains FN1 elevation\n\nOption D makes the most modest claim consistent with what the data actually show, without overreaching into unsupported mechanistic assumptions.\n\n**Answer: D**",
+    "letter": "#",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "160": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "161": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "162": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "163": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "164": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "165": {
+    "raw": "**Answer: B**\n\nThe reasoning hinges on what the data actually demonstrates versus what is assumed:\n\n- The **multiplex immunostaining** in 1,098,348 cells shows APOE ε4/ε4 selectively increases FN1 protein \"in astrocytes\" generally, but the effect is *attributed* to cluster 5 (SERPINA3⁺) based on the snRNA-seq correlation (β = 0.0300, FDR P = 1.55×10⁻⁶).\n- Critically, no separate measurement of non-cluster-5 (non-reactive) astrocytes under ε4/ε4 is provided. We don't know whether the bulk immunostaining signal reflects (a) FN1 upregulation across all astrocytes, (b) expansion/activation of the SERPINA3⁺ subset alone, or (c) something in between.\n\nEvaluating the alternatives:\n- **A** assumes the immunostaining elevation reflects all astrocytes, but the strongest molecular evidence (cluster 5 association) is subset-specific.\n- **C** overstates — reactive astrocytes are not \"the sole FN1 source.\"\n- **D** is contradicted by the genotype effect observed in the bulk immunostaining data.\n- **B** is the conservative, data-faithful answer: the evidence linking APOE ε4 to FN1 upregulation localizes to the SERPINA3⁺ subset, and without that subset, the dataset provides no direct measurement to predict FN1 levels.\n\nTherefore, the most defensible prediction is **B**.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "B",
+    "repair_letter": "B"
+  },
+  "166": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "167": {
+    "raw": "B",
+    "letter": "B",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "168": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "169": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "170": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "171": {
+    "raw": "The correct answer is **D**.\n\nThe observation explicitly reports a significant three-way interaction among FN1, APOE ε4 status, and disease status (F = 14.02, P = 1.81×10⁻⁴). By definition, a significant three-way interaction means that the FN1–VEGFA slope is not constant but varies depending on the joint combination of APOE ε4 status and disease status. This directly licenses the conclusion that the FN1–VEGFA relationship is modulated by both APOE ε4 and disease context.\n\nWhy the others fail:\n- **A** overgeneralizes: PF-573228 restoring VEGFA in specific model systems does not demonstrate that VEGFA reduction is *exclusively* caused by FAK signaling in human AD, nor does it license claims about cognitive rescue in patients.\n- **B** is a non-sequitur: subtracting two percentage effects from independent experiments (human brain vs. iPSC astrocytes) does not yield a meaningful quantification of the ε4 contribution; the experiments lack a shared baseline and measurement context.\n- **C** misuses statistics: F-statistic magnitudes reflect signal-to-noise, not biological importance; a smaller interaction F can still represent a critical biological modulatory effect, and the presence of a significant interaction shows the main effect is *qualified* by context rather than independently dominant.\n- **E** is incorrect because the data clearly support option D.",
+    "letter": "T",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "172": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "173": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "174": {
+    "raw": "A",
+    "letter": "A",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "175": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "176": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "177": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "178": {
+    "raw": "The best answer is **C**.\n\n**Reasoning:**\n\n- **Option A** is incorrect because a Pearson r of 0.13 (R² = 0.018) indicates that only ~1.8% of the variance is shared—essentially no meaningful correlation, not a strong one. It also misrepresents the data by claiming CSF and plasma showed the same correlation.\n\n- **Option C** correctly captures the key pattern: the FN1–VEGFA association is robust in CSF (where the CNS microenvironment would reflect brain pathology relevant to AD) but negligible in plasma (r = 0.13, R² = 0.018). This dissociation strongly suggests the relationship is CNS-specific rather than a general systemic/peripheral phenomenon. The significant three-way interaction with APOE ε4 and disease status further supports a brain-specific, AD-relevant mechanism.\n\n- **Option B** misinterprets F-statistics. The smaller F for the interaction term relative to the main FN1–VEGFA effect does not mean APOE ε4 \"overwhelms\" the signal; it simply reflects that interaction terms inherently have additional degrees of freedom and explain less variance than a primary two-variable association. A significant interaction actually *modulates* the relationship by genotype and disease state—it doesn't negate it.\n\n- **Option D** is incorrect logically and empirically: co-elevation with VEGFA in CSF does not disqualify FN1 as a biomarker. In fact, CSF-specific relationships are precisely what one wants in a CNS biomarker. The argument that \"any molecule linked to VEGFA in plasma would be excluded\" is a non-sequitur.\n\n- **Option E** is not applicable since C is clearly correct.\n\n**Answer: C** — The FN1–VEGFA relationship is CNS-specific, as evidenced by the strong CSF association contrasted with negligible plasma correlation.",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "179": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "0": {
+    "raw": "**Answer: C**",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "1": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "2": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "3": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "4": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "5": {
+    "raw": "**C**\n\nThe DNase I experiment in aged oocytes shows that removing cytosolic mtDNA reduces inflammation (necessary role), but because aged oocytes have many concurrent age-related changes, it cannot distinguish whether cytosolic mtDNA is a true driver versus a passive byproduct of other aging alterations.\n\nThe permeabilization experiment in young oocytes — which lack those other age-related changes — shows that **inducing mtDNA leakage alone is sufficient** to reproduce the inflammatory phenotype. This rules out the alternative explanation (that cytosolic mtDNA in aged oocytes is merely correlative/epiphenomenal) and establishes causal sufficiency.\n\n- A is wrong: it's not about DNase I specificity.\n- B is wrong: the experiment shows inflammation can occur in young cells, the opposite of \"aging required.\"\n- D is wrong: a pharmacological mimic reproducing a phenotype doesn't establish physiological causation in aging.\n- E is unnecessary — C is correct.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "6": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "7": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "8": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "9": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "10": {
+    "raw": "**B) cGAS-dependent signaling is required for the inflammatory and ovarian pathology downstream of the TFAM defect, because removing cGAS on the Tfam-deficient background suppressed the phenotypes that Tfam deletion alone produced.**\n\nThe rescue of the phenotype by concurrent Cgas deletion demonstrates that cGAS is required for the downstream inflammatory and ovarian pathology caused by TFAM loss. This is a classic epistasis result: removing a component (cGAS) of the proposed signaling pathway abolishes the phenotypes that arise when the upstream defect (TFAM loss → mtDNA accumulation) is present, establishing that cGAS-dependent signaling mediates the pathology downstream of the mitochondrial defect.\n\nThe other options are incorrect:\n- **A)** Cgas deletion doesn't prevent TFAM loss; the double mutant still lacks TFAM.\n- **C)** The epistasis logic is reversed here — rescuing the downstream phenotype places cGAS downstream of (or as a necessary effector of) the TFAM defect, not upstream.\n- **D)** mtDNA accumulation still occurs in the double mutant; Cgas deletion only removes the sensor, not the mtDNA itself.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "11": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "12": {
+    "raw": "**C** — The two perturbations (Opa1 knockdown disrupting dynamics/inner-membrane structure, Pink1 deletion disabling mitophagy) are mechanistically distinct, yet both produced the same outcome of cytosolic mtDNA accumulation and cGAS-STING activation. This convergence from divergent upstream causes indicates that mtDNA leakage is a common downstream consequence of different types of mitochondrial insult, rather than the result of one specific pathway.",
+    "letter": "*",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "13": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "14": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "15": {
+    "raw": "B) cGAS sensing of leaked mtDNA, rather than leakage itself, is the rate-limiting step for pathology, because removing the sensor suppressed the downstream ovarian pathology while leaving the amount of leaked substrate intact.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "16": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "17": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "18": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "19": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "20": {
+    "raw": "C) {p16ink4a, Cdkn2a, Gpr34} — because these three were each higher in aged white matter than in hippocampus and were also reported to rise with age in gray as well as white matter, whereas the other regionally elevated transcripts rose with age only in white matter or only in males.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "21": {
+    "raw": "**A)** Still warranted — because in the male data alone five transcripts rose with age in gray as well as white matter while a partly different set rose only in white matter, so both components were reported for males and do not depend on the female arms.\n\n**Reasoning:**\n\nThe conclusion has two components:\n1. A shared gray-and-white core (transcripts increased with age in both tissues)\n2. An additional white-matter-restricted set (transcripts increased only in white matter)\n\nLooking at what is reported for males specifically from the old-vs-young comparisons:\n\n**Shared core (both gray and white matter, both sexes including males):** p16ink4a, Cdkn2a, Csf1r, Gpr34, Trem2 — these five are stated to increase in \"both gray and white matter of both sexes,\" so they are clearly present in the male data.\n\n**White-matter-restricted set in males:** Apoe, Bcl2a1a, Cd11b, Klk8, Lgals3, Cdkn1a/p21, Tmem173 are stated to increase in \"white matter of both sexes,\" and additionally Ccl2, Ccl5, Il1b, Tyrobp increased \"in male white matter only.\" All of these rise in white matter without a reported parallel rise in gray matter.\n\nThus the male-only dataset still contains evidence for:\n- A shared core (5 transcripts rising in both tissues)\n- A white-matter-restricted component (a partly distinct set rising only in white matter)\n\nWhy the other options fail:\n- **B** is too narrow — observing male-only white-matter induction by itself doesn't establish the *shared* core component; you also need gray-matter induction.\n- **C** misreads the source of the \"restricted\" classification. White-matter restriction is defined by the old-vs-young comparison (induction only there), not by the aged cross-sectional white-vs-hippocampus comparison. The latter is just descriptive of baseline differences, not the basis for calling a transcript \"restricted.\"\n- **D** is logically wrong — two sets can absolutely be read off a single comparison; one simply partitions the induced transcripts into \"in both tissues\" vs. \"in white matter only.\"\n\nTherefore **A** is correct.",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "22": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "23": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "24": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "25": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "26": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "27": {
+    "raw": "**B) It would be partially weakened because the overlap in DAM- and senescence-related gene expression between the two independently derived populations would still indicate that a similar profile recurs, whereas the demonstration that this profile remains the top-scoring state under a shared analytical framework would be lost.**\n\nHere's the reasoning:\n\nThe conclusion that a senescence- and DAM-linked microglial profile is conserved across cohorts relies on two pieces of supporting evidence:\n\n1. **Independent observation of a similar profile in each cohort** — Cluster 7 (cohort 1) and cluster 10 (cohort 2) both showed DAM- and senescence-related gene expression, and both were the top-scoring clusters within their respective cohorts. This evidence is preserved without the joint analysis.\n\n2. **Demonstration that the profile is top-ranked in a unified analytical framework** — The joint analysis (where cluster 6 was concordant with clusters 7 and 10 and remained the highest-scoring cluster) shows that the senescence/DAM profile is not a cohort-specific artifact (e.g., driven by sample size, age distribution, or technical batch) but recurs as the leading senescence signature when both datasets are analyzed together.\n\nWithout the joint analysis, evidence (1) remains intact — two independently derived clusters showed overlapping gene programs, which is itself meaningful biological evidence of recurrence. However, evidence (2) is lost. The top-ranking status could reflect cohort-specific properties (e.g., cluster 7 being top-ranked in a smaller/younger cohort, cluster 10 only appearing in aged brains) rather than a shared, conserved biological state.\n\nThus the conclusion is **partially weakened**, not refuted (ruling out C and D) and not fully preserved (ruling out A, because A claims the conclusion is \"unaffected,\" ignoring the loss of the unified-framework evidence).\n\n**The answer is B.**",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "28": {
+    "raw": "D)",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "29": {
+    "raw": "C) The Cdkn2a-positive label covers cells with different gene programs in young and aged brain, because the transcripts separating aged from young positive cells overlap only partly with those separating positive from negative cells, and the positive fraction was itself heterogeneous.",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "30": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "31": {
+    "raw": "C",
+    "letter": "C",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "32": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "33": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "34": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "35": {
+    "raw": "A",
+    "letter": "A",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "36": {
+    "raw": "B) AP20187 attenuated but did not reverse the age-related p16ink4a elevation, because the treated mean fell significantly relative to old vehicle while remaining above the young reference value of 1.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "37": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "38": {
+    "raw": "D) The two agents could not be separated by effector route on those measures, because a smaller GAL3 footprint and fewer IBA1+GAL3+ cells are equally compatible with losing GAL3-bearing cells and with lowering GAL3 per cell, the route distinction having rested on the per-cell intensity that diverged between the agents.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "39": {
+    "raw": "C",
+    "letter": "C",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "40": {
+    "raw": "**B) Only the FN1 finding remains statistically supported, because GEE handles non-normal data and the dextran–Texas Red readout still independently indicates ε4 BBB dysfunction.**\n\nReasoning:\n\n- **FN1 finding (GEE):** Generalized Estiming Equations (GEE) do *not* require the outcome to be normally distributed. GEE uses sandwich variance estimators that are robust to misspecification of the working correlation structure and provide consistent estimates under weak moment conditions (the outcome need not be normal — only the mean model needs to be correctly specified). So a failed QQ plot for *fibrinogen* has no bearing on the validity of the FN1 GEE analysis.\n\n- **Fibrinogen finding (parametric test):** The +79.7% comparison relied on a *parametric* test whose validity depends on the (log-)normal assumption. If the QQ plot falsified log-normality, the reported P-value (1.7×10⁻²) is no longer trustworthy. A non-parametric alternative (e.g., Mann–Whitney/Wilcoxon rank-sum or a permutation test) would be required to rescue the inference for fibrinogen specifically.\n\n- **Colocalization and dextran extravasation:** Colocalization is qualitative/descriptive (no inferential test tied to the parametric assumption). Dextrasolutions were measured by a separate assay and constitute an independent line of BBB dysfunction evidence — it is not contingent on the fibrinogen QQ plot.\n\n- **Why the others fail:**\n  - **A)** Confuses effect magnitude with inferential validity — a large effect size does not excuse an invalid test.\n  - **C)** Misrepresents GEE as normality-dependent — it is not.\n  - **D)** Overgeneralizes — a distributional failure in one readout does not invalidate unrelated readouts.\n  - **E)** No basis for uncertainty given the above.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "41": {
+    "raw": "Looking at the options, I need to evaluate each carefully against the data provided.\n\n**Option D** can be eliminated: FN1 is expressed by multiple populations (excitatory neurons 32.68%, astrocytes 22.7%, endothelial+pericytes 8.9%), not exclusively by astrocytes. Eliminating astrocytes would not eliminate all FN1-producing cells.\n\n**Option A** can be eliminated: This assumes a \"refilling\" mechanism by non-perivascular astrocytes, but there's no evidence presented that astrocytes actively migrate to replace eliminated perivascular astrocytes and recapitulate the same perivascular FN1 localization. This is speculative.\n\n**Option B** can be eliminated: This assumes compensatory upregulation in endothelial/pericytes. However, the data indicates ε4 selectively upregulates *astrocytic* FN1 protein specifically — there's no evidence of compensatory upregulation in other cell types at the vasculature. Moreover, endothelial/pericytes constitute only 2–4% of brain cells with lower per-cell FN1 expression.\n\n**Option C**: The key insight is that perivascular FN1 deposition in AD requires two converging factors shown in the evidence:\n- **Astrocyte abundance at the perivascular location** (perivascular astrocytes being the physical source at the gliovascular interface)\n- **APOE ε4-driven selective upregulation of astrocytic FN1 protein** (the molecular trigger)\n\nIf perivascular astrocytes are selectively eliminated while the molecular ε4-FN1 axis remains intact in the broader astrocyte population, those remaining astrocytes are no longer positioned at the perivascular niche where deposition occurs. Without perivascular astrocyte abundance combined with ε4-driven FN1 upregulation at that specific location, the deposition cannot be sustained. The other FN1-expressing populations (neurons, endothelial, pericytes) either lack the ε4-driven upregulation or lack perivascular positioning with sufficient abundance to replicate the phenomenon.\n\n**The answer is C**.",
+    "letter": "L",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "C",
+    "repair_letter": "C"
+  },
+  "42": {
+    "raw": "D",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "43": {
+    "raw": "# Answer: A\n\n**Reasoning:**\n\nThe key observation is that at any given APOE intensity, ε4/ε4 astrocytes contain more FN1 than ε3/ε3 cells. This means the FN1 elevation in ε4/ε4 is not simply a consequence of higher APOE levels — rather, ε4 astrocytes have an intrinsic, APOE-level-independent program that drives higher FN1 expression/deposition.\n\nThis is reinforced by several supporting observations:\n- **FN1 co-IP recovers no APOE** — there is no direct biochemical interaction, so APOE is not required to scaffold or stabilize FN1.\n- **FN1–AQP4 endfoot colocalization is genotype-independent** — but this reflects perivascular localization, not the intracellular/extracellular-matrix FN1 pool, so option C conflates two different measurements.\n- **Postmortem vs. in vitro R² discrepancy** — the modest in vivo shift (0.108→0.154) actually argues against APOE dominating FN1 deposition in vivo, undermining option D.\n- **Option B confuses correlation with mechanism**: high colocalization R² does not establish a mechanistic dependency, especially when direct interaction is absent.\n\nTherefore, if APOE synthesis were completely blocked, the ε4-specific FN1-driving program would persist, leaving FN1 elevated above ε3/ε3 levels.\n\n**Best answer: A**",
+    "letter": "#",
+    "score": 1.0,
+    "reason": "Correct",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "A",
+    "repair_letter": "A"
+  },
+  "44": {
+    "raw": "B",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "45": {
+    "raw": "Looking at this problem, I need to reason through the molecular interactions described:\n\n**Key mechanistic steps:**\n1. VEGFRi reduces endothelial HB-EGF by 28.3%\n2. HB-EGF induces astrocytic IGF-1 (without altering vegfa)\n3. HB-EGF effect is *stronger* in ε3 (+73.4%) than ε4 (+39.0%) cells\n4. FN1 coating *suppresses* IGF-1 in ε3 cells (-19.9%) but not in ε4\n5. ATN-161 (β-integrin blocker) *raises* IGF-1 in ε4 cells (+15.9%)\n\n**Analyzing the ε4/ε4 + VEGFRi + active FN1-integrin suppression scenario:**\n\n- The HB-EGF→IGF-1 drive is *weaker* in ε4 cells (39.0% vs 73.4% response)\n- In ε4 cells, FN1-integrin signaling does NOT suppress IGF-1 (it actually raises it when blocked)\n- Therefore, the FN1-integrin \"brake\" is essentially non-functional in ε4 cells\n- When VEGFRi removes ligand, ε4 cells have less to lose because:\n  - They respond less to HB-EGF to begin with\n  - The FN1-integrin brake doesn't meaningfully suppress their IGF-1\n- So removing ligand in ε4 produces a *smaller* relative reduction\n\n**Evaluating options:**\n- A: Fabricated (no data on HB-EGF receptor density in ε4) ✗\n- B: Incorrect because genotype clearly modifies ligand response magnitude ✗\n- C: Incorrect because FN1-integrin does NOT suppress IGF-1 in ε4 cells ✗\n- **D: Correct** — ε4 cells are less ligand-dependent (FN1-integrin brake is non-functional in ε4), so removing the HB-EGF ligand causes less relative IGF-1 reduction ✓\n\n**Answer: D**",
+    "letter": "L",
+    "score": 0.0,
+    "reason": "Incorrect",
+    "score_strict": 0.0,
+    "reason_strict": "Incorrect",
+    "repair_raw": "D",
+    "repair_letter": "D"
+  },
+  "46": {
+    "raw": "D) No, because leakage in the empty plasmid group would demonstrate that foreign DNA delivery alone is sufficient to compromise BBB integrity, so astroglial FN1 overexpression could no longer be isolated as the sole causal variable behind the construct group's phenotype.",
+    "letter": "D",
+    "score": 1.0,
+    "reason": "Correct"
+  },
+  "47": {
+    "raw": "**D) The full VEGFA/HB-EGF/IGF-1 axis is the demonstrated driver because the rescue restores tight junction integrity through axis-level signaling, with all three ligands contributing across species.**\n\n**Reasoning:**\n\nThe key evidence supports option D:\n\n1. **Rescue composition**: VEGFR inhibition (which blocks VEGFA signaling) caused tight junction compromise, but this was **rescued by co-treatment with HB-EGF + IGF-1 (without VEGFA)**. This demonstrates that the three ligands function as an integrated axis — loss of VEGFA signaling can be compensated by HB-EGF/IGF-1, indicating they act on a common downstream pathway maintaining ZO-1 tight junctions.\n\n2. **Cross-species convergence**: All three ligands are significantly reduced in both APP knock-in mice and human Braak V-VI brains:\n   - VEGFA (mouse P=0.016; human P=9.7×10⁻⁸)\n   - HB-EGF (mouse P=6.8×10⁻⁷; human P<1.0×10⁻¹⁵)\n   - IGF-1 (mouse P=0.0099; human P<1.0×10⁻¹⁵)\n\n**Why not the others:**\n- **A** overstates the case for HB-EGF/IGF-1 alone — VEGFR inhibition (VEGFA blockade) was the *initiating* insult.\n- **B** is incorrect because VEGFR inhibition alone was sufficient to cause compromise, with VEGFA as the proximal trigger.\n- **C** only addresses statistical conservation without integrating the functional rescue data — it misidentifies correlation for causation regarding mechanism.\n- **D** integrates both the mechanistic rescue data and the cross-species ligand reductions, correctly concluding that the entire axis contributes to tight junction maintenance, and its dysregulation compromises junction integrity in AD.",
+    "letter": "D",
+    "score": 0.0,
+    "reason": "Incorrect"
+  },
+  "48": {
+    "raw": "**Answer: B) Both statistics would weaken substantially, because the non-ε4 AD compensatory VEGFA response drives both the average FN1-VEGFA slope and the ε4-by-disease heterogeneity.**\n\n**Reasoning:**\n\n1. **Main effect (F=26.39)**: This represents the average FN1→VEGFA slope across all groups. The elevated VEGFA in non-ε4 AD carriers (where FN1 is high and VEGFA rises accordingly) is a major contributor to this strong positive slope. Removing non-ε4 AD cases eliminates the group driving the steep FN1-VEGFA association, weakening the main effect.\n\n2. **Three-way interaction (F=14.02)**: By construction, an FN1 × APOE × disease interaction is identified because non-ε4 AD shows a strong FN1-VEGFA relationship while ε4 AD does not. Without the non-ε4 AD group, there is no internal AD contrast to test — the interaction term loses its primary contrast and weakens substantially.\n\nBoth effects are anchored in the non-ε4 AD compensatory response, so removing that group undermines both statistics.",
+    "letter": "B",
+    "score": 1.0,
+    "reason": "Correct"
+  }
+}

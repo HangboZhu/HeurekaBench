@@ -1,0 +1,102 @@
+[
+  {
+    "id": "abc73d93-731f-4155-852b-3ae75c307ec6",
+    "options": {
+      "A": "Amorphous fibronectin deposits in APOE ε4/ε4 astrocytes and fibrillar, thread-like deposits in APOE ε3/ε3 astrocytes",
+      "B": "Amorphous fibronectin deposits in APOE ε3/ε3 astrocytes and fibrillar, thread-like deposits in APOE ε4/ε4 astrocytes",
+      "C": "Fibrillar, thread-like deposits in both APOE ε4/ε4 and APOE ε3/ε3 astrocytes",
+      "D": "Amorphous deposits in both APOE ε4/ε4 and APOE ε3/ε3 astrocytes"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "723e3105-8d04-42dc-b861-f0f69f29be54",
+    "options": {
+      "A": "+21.4%",
+      "B": "+98.9%",
+      "C": "+147.6%",
+      "D": "+63.2%"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "dd203979-f883-409c-a65b-07d8321c37a3",
+    "options": {
+      "A": "8.9% of FN1-expressing cells",
+      "B": "14.3% of FN1-expressing cells",
+      "C": "22.7% of FN1-expressing cells",
+      "D": "32.68% of FN1-expressing cells"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "1b433d1e-8073-4a98-a56c-7301355cfb47",
+    "options": {
+      "A": "β ≈ 0.18, P = 3.1 × 10⁻⁶",
+      "B": "β ≈ 0.27, P = 4.8 × 10⁻¹²",
+      "C": "β ≈ 0.35, P = 9.2 × 10⁻¹⁷",
+      "D": "β ≈ 0.44, P = 2.4 × 10⁻²¹"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "9da272c3-f5ce-4e4c-ba16-5b141eae9c6b",
+    "options": {
+      "A": "R² = 0.396",
+      "B": "R² = 0.049",
+      "C": "R² = 0.154",
+      "D": "R² = 0.108"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "3a8cd085-3d2d-4516-9439-5d6f9de52589",
+    "options": {
+      "A": "1.92",
+      "B": "2.87",
+      "C": "3.41",
+      "D": "35.78"
+    },
+    "answer": "B"
+  },
+  {
+    "id": "b93475c6-597c-4696-99c8-a7a6653f0f41",
+    "options": {
+      "A": "+39.0%",
+      "B": "+19.9%",
+      "C": "+73.4%",
+      "D": "+15.9%"
+    },
+    "answer": "C"
+  },
+  {
+    "id": "9fd6ac0b-2fcf-49c0-afdc-b17855d62c72",
+    "options": {
+      "A": "gfap promoter",
+      "B": "mbp promoter",
+      "C": "vglut promoter",
+      "D": "her4.1 promoter"
+    },
+    "answer": "D"
+  },
+  {
+    "id": "4280ecc0-1b40-40c7-a8a9-3ce3341406c6",
+    "options": {
+      "A": "HB-EGF and IGF-1",
+      "B": "VEGFA and FGF-2",
+      "C": "EGF and PDGF-BB",
+      "D": "HB-EGF and VEGFA"
+    },
+    "answer": "A"
+  },
+  {
+    "id": "208c92a8-f82b-410b-84a6-100f17e599c8",
+    "options": {
+      "A": "r = 0.02",
+      "B": "r = 0.13",
+      "C": "r = 0.41",
+      "D": "r = 0.67"
+    },
+    "answer": "B"
+  }
+]
