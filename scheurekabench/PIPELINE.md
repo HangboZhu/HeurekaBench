@@ -473,21 +473,38 @@ python benchmark_creation/difficulty_loop.py --qtype oe \
 ### 5.5 LAB-Bench 兼容导出与官方评测（`export_labbench.py` / `solve_labbench.py`）
 
 ```bash
-# 导出：canonical mcq_questions.json → LAB-Bench 官方格式（平铺数组，逐字段一致）
+# 导出：canonical mcq_questions.json → LAB-Bench 官方格式（平铺数组）
 python export_labbench.py --type litqa2 --base_dir <dir1> <dir2> \
-    [--source-map "Dir=https://doi.org/10.1038/..."] --check
+    [--source-map "Dir=https://doi.org/10.1038/..."] --check --check-style
+
+# 校验已产出的文件（不重新导出）
+python export_labbench.py --type litqa2 --in data/labbench/litqa2_pool.json --check-style
 
 # 官方评测打分 + 剔除全对简单题
 python solve_labbench.py data/labbench/litqa2_bench.json \
     --solver MiniMax-M3,deepseek-v4-flash --drop-all-correct
 ```
 
-- `--type {litqa2,protocolqa}` 是统一入口超参数；**protocolqa 为预留接口**（调用即报未实现，
-  待 Nature Protocols 文章到位后补：Step-N 引用题风 + `protocol` 字段导出）。
+- **保真度是两层，别混为一谈**：
+  - **信封（envelope）**：键集/键序/值类型 + JSON 文本布局。官方文件是
+    `json.dump(..., indent=1, ensure_ascii=False)`、无尾随换行，且没有任何字符串字段含换行或
+    双空格；导出器逐项复刻（`dump_official` / `clean_text`），因此产出的文件与上游**逐字节可比**。
+    `--check` 校验这一层。
+  - **条目形态（item shape）**：单条读起来像不像官方题。官方 199 题实测：题干 52–299 字符、
+    最多 4 个句读符、`ideal` 1–86 字符（≤14 词）、干扰项 1–9 个、`key-passage` 单句引用。
+    `--check-style` 按这些范围校验。
+- **自包含风格（默认 `--style self_contained`）必然过不了 `--check-style`**：题干自带全部前提
+  （中位 557 字符、`ideal` 中位 230 字符），是把另一种任务装进了 LitQA2 的信封里——这是设计
+  选择，不是 bug。要让条目形态也对齐官方，出题时用 `--style litqa_recall`（§5.6）；实测该风格
+  能过 `--check-style`（10 题里仅 1 题 `ideal` 116 字符略微超界）。
+- `--type {litqa2,protocolqa}` 是统一入口超参数；protocolqa 链路见 §5.8
+  （Step-N 引用题风 + `protocol` 字段导出，已实现）。
 - **字段映射**（canonical MCQ → LAB-Bench LitQA2）：`options[answer]` → `ideal`，其余选项 →
   `distractors`；insight 的 `relevant`（论文逐字引用）→ `key-passage`；DOI 由 paper.pdf 与
   目录内 `s43587-*.pdf` **哈希比对**自动推导（Aging 目录里有别人的参考副本，按文件名会认错），
   推不出时用 `--source-map` 指定；`canary` 每次导出生成新 GUID（格式同官方，不复用其 uuid）。
+  两个**故意与官方不同**的字段值：`subtask` 用自有值（`litqa-v2-heureka*`，官方是
+  `litqa-v2-public`，冒用会让自产题被当成官方公开题）、`canary` 用自有 GUID。
 - 多选题（answer 含逗号）、非 ABCD 选项、答案字母缺失 → 跳过并计数。sidecar
   `<out>_eval.json` 与 bench 同下标对齐，存每题字母顺序+答案字母——LAB-Bench 格式本身不带
   字母，官方评测的字母由呈现顺序决定，solver 靠 sidecar 复现。
@@ -499,9 +516,22 @@ python solve_labbench.py data/labbench/litqa2_bench.json \
   取首字符 `*` 判 0（形式缺陷，非知识缺陷）。解析不出合法选项字母时，脚本携带原答案追问一次
   "只回一个字母"，再用**同一个官方解析器/判分**复核。两条分数都留档：`score_strict`
   （原始回复，等于官方 CI 会得到的分数）与 `score`（修复后，用于简单题判定）。
+- **网关故障绝不算作答**：`llm_gateway.chat` 在所有路由失败时返回 `""`，若直接判分就会把一次
+  超时记成"模型答错"——那会在筛选时**凭空造出难题**。`ask()` 对空回复重试一轮，仍为空则把该题
+  **留在缓存外**（打印 `GATEWAY FAILED`），重跑同一条命令即可补上；`write_subset` 对"并非所有
+  solver 都有答案"的题**拒绝判定**（单独列为 UNJUDGED，不进子集）。用 `GATEWAY_TIMEOUT`（秒）
+  控制单次读超时，默认 600 对挂起调用太久：批量跑建议 60–90。
 - **简单题剔除**：所有 solver 都得 1.0 的题即官方口径下的简单题，`--drop-all-correct` 从 bench
   与 sidecar 中剔除，产出 `<bench>_filtered.json`；每 solver 结果缓存于
-  `labbench_solved_<model>.json`（按题下标断点续跑，保留 raw 便于核查解析失败）。
+  `labbench_solved_<bench>_<model>.json`（按题下标断点续跑，保留 raw 便于核查解析失败）。
+  **多模型面板**（`--solver A,B,C`）= "任一模型没答对就保留"，比单模型宽松；要"所有模型都答错"
+  的严格硬核集，用 `--keep-band 0.0 0.0`（面板均分必须是 0）。
+- **并发跑大批量**：缓存按 bench 文件名分文件，因此把题目切片成多个 `shard/litqa2_pool_s<i>.json`
+  再各起一个进程，互不覆盖；跑完把各 shard 的 `labbench_solved_<shard>_<model>.json` 按全局下标
+  合并回主缓存即可（切片前后索引映射要对齐）。网关对单题偶发挂起（实测 deepseek 单次可达 160 s），
+  6 路并发能把毛刺摊掉。
+- **缓存与子集必须同版本**：子集文件改内容（题目增减/换规则）后，`labbench_solved_<子集>_<model>.json`
+  的下标就与新题包错位，**必须先移走旧缓存再复测**（缓存只按下标命中，不校验题干）。
 
 ### 5.6 文献回忆风出题（`--style litqa_recall`）
 
@@ -533,16 +563,33 @@ for r in 1 2 3; do python insights_to_questions.py --insight_json_path pool/<Pap
 # 2) 答案位置重排（池模式不做 prompt 内位置指令，靠脚本确定性重排）
 python rebalance_mcq_positions.py pool/<Paper>-r1/mcq_questions.json
 # 3) 合并导出（--base_dir 传全部运行目录）
-python export_labbench.py --type litqa2 --base_dir pool/*/ --out data/labbench/litqa2_pool.json --check
-# 4) 官方评测 + 剔除简单题（--keep-band 保留面板均分落在区间内的题，即"官方档位"子集）
-python solve_labbench.py data/labbench/litqa2_pool.json --solver MiniMax-M3 --drop-all-correct
-python solve_labbench.py data/labbench/litqa2_pool.json --solver A,B --keep-band 0.45 0.55 --band-suffix official
+python export_labbench.py --type litqa2 --base_dir pool/*/ --out data/labbench/litqa2_pool.json --check --check-style
+# 4) 官方评测（多模型面板；题多或网关抽风时切片并发，见 §5.5）
+python solve_labbench.py data/labbench/litqa2_pool.json --solver MiniMax-M3,deepseek-v4-flash
+# 5) 按口径出子集
+python solve_labbench.py data/labbench/litqa2_pool.json --solver MiniMax-M3,deepseek-v4-flash \
+    --drop-all-correct --judge-only            # _filtered：任一模型没答对（宽松，题多）
+python solve_labbench.py data/labbench/litqa2_pool.json \
+    --solver MiniMax-M3,deepseek-v4-flash,qwen3.7-max --keep-hard --cascade --judge-only  # _hard：全都答错
 ```
 
-实测数据（3 篇论文 × 10 条 insight × 3 轮 = 180 候选）：池上 MiniMax-M3 官方均分 **0.906**；
-剔除它答对的题后剩 **17 题**（存活率 9.4%），这 17 题的官方复核得分 **0.235–0.300**（两次重测），
-与 M3 在官方 LitQA2 原题上的 **0.294** 重合——即该子集已处于官方档位。两次重测逐题一致率
-82.4%，说明单次采样的对/错有噪声，"剔除全对"会天然保留一部分中等难度题（正是想要的效果）。
+实测数据（3 篇论文 × 10 条 insight × 3 轮 = 180 候选，2026-09-23 三模型面板重跑）：
+
+| 口径 | 规则 | 题数 | MiniMax-M3 官方分 | 定位 |
+|---|---|---|---|---|
+| `_filtered` | M3 或 deepseek 任一没答对 | 32 | 0.562 | 比池子难、比官方档位易 |
+| `_m3only` | 仅 M3 答错（旧口径） | 17 | 0.235–0.300 | **与官方 0.294 重合**（官方档位） |
+| `_hard` | 三个模型全都没答对 | 7 | 0.000（复测三家均 0） | 比官方档位更硬 |
+
+三个结论值得记住：
+
+- **筛选用"最强模型"还是"面板"决定落在哪一档**：按 M3 单个模型筛出的 17 题正好落在官方档位；
+  改成"任一模型没答对"会把 M3 答对、只有弱模型答错的题一起带进来，分数被拉高（0.562）；
+  再收紧到"全都答错"则掉到 0.000，**不再是官方难度**。要什么档位先定口径，再选面板。
+- **面板 = 级联**：`--keep-hard` 下某个模型答对即出局，所以第三、四个模型只需判前面都答错的题
+  （把那些题切片成小 bench 单独评，再 `--cascade` 判定）。本轮 180 题里只有 8 题需要 qwen 出场。
+- **单次采样的噪声**：旧 17 题重测逐题一致率 82.4%（3 题翻转）；而 `_hard` 的 7 题三家复测
+  0 翻转——越硬的题越稳。
 
 注意事项：
 - `--per-insight` 允许 3..8（候选池 prompt，一次调用出 N 题并要求难度跨度），**但单次输出超过
@@ -550,6 +597,158 @@ python solve_labbench.py data/labbench/litqa2_pool.json --solver A,B --keep-band
 - `generate_checked` 现对解析失败的调用**自动重试**（默认 3 次），单次截断不再中止整篇。
 - 池模式不做 prompt 内答案位置指令（一次调用多题时单一位置会冲突），统一由
   `rebalance_mcq_positions.py` 重排。
+- 判定口径的两条护栏（§5.5）：网关失败的题留作未判定、`UNJUDGED` 不进子集；markdown 形式的
+  正确答案先经格式修复再判——否则筛选会把"基础设施故障"和"输出格式问题"当成难题。
+- 产量换算：180 候选 → 32（面板口径 18%）/ 7（严格口径 3.9%）。按 4% 规划严格硬题的扩产。
+
+### 5.8 LAB-Bench ProtocolQA 出题与评测（`extract_protocol.py` / `protocol_to_questions.py`）
+
+```bash
+# 0) 取论文 PDF（Nature Protocols 是订阅刊：只复用你自己浏览器登录态的 cookies，
+#    不绕过付费墙；限速 2.5s/请求，连续失败即停）
+python download_nprot.py --out ../../molintbench/nprot-2025-2026 \
+    --cookies ~/Downloads/nature_cookies.txt --check-auth   # 先探一次，5 秒确认会话可用
+python download_nprot.py --out ../../molintbench/nprot-2025-2026 \
+    --cookies ~/Downloads/nature_cookies.txt               # 全量：枚举→筛 Protocol→下载→报表
+
+# 1) 从 Nature Protocols 论文抽出 Procedure → protocol.json（按论文小节切块）
+python extract_protocol.py --pdf <dir>/paper.pdf --out <dir> --paper-id <slug> \
+    --doi https://doi.org/10.1038/s41596-026-01434-x
+
+# 2) 出题（生成单元是"步骤块"，不是 insight）
+python protocol_to_questions.py --protocol_json_path <dir>/protocol.json \
+    --model_call gateway --per-block 2
+
+# 3) 导出为官方 ProtocolQA 信封 + 两层自检
+python export_labbench.py --type protocolqa --base_dir pool/<Paper>-r1 pool/<Paper>-r2 \
+    --out data/labbench/protocolqa_pool.json --check --check-style
+
+# 4) 官方评测（protocol 自动前置到题干）+ 筛选
+python solve_labbench.py data/labbench/ProtocolQA_pool.json \
+    --solver MiniMax-M3,deepseek-v4-flash --drop-all-correct --dedupe-similarity 0.75
+```
+
+`download_nprot.py` 产出 `<out>/pdf/<DOI 尾段>.pdf` 与 `manifest.jsonl` / `manifest.csv`
+（DOI、标题、上线日期、文章类型、状态、字节数、sha256）。文件名即 DOI 尾段，
+`--doi` 可由它直接推出；注意末位校验字符是 `0-9` 与 `w/x/y/z` 共 14 种，
+只认 `[\dx]` 会漏掉约 1/7 的论文。另一个反直觉处：`citation_pdf_url` 里那个
+`.pdf` 链接现在对所有客户端都 303 回落地页（开放获取刊也一样），真正能下的是
+落地页「Download PDF」按钮指向的 `<尾段>_reference.pdf`。
+
+**与 LitQA2 的三处本质差异**：
+
+1. **开卷**：ProtocolQA 把协议原文交给答题者——官方 harness 里就是
+   `input.question = self.protocol + input.question`（`labbench/ProtocolQA/task.py`），
+   `solve_labbench.build_prompt` 复刻这一拼接。所以它比 LitQA2 容易得多（见下表基线）。
+2. **答案自由文本**：`ideal` 与 3~6 个 `distractors` 都是一句话的补救措施，没有 A–D 字母；
+   官方实测 96/108 的 `ideal` 点名了步骤号（`Use 0.85g of NaCl in step 2 to avoid PBMC lysis.`）。
+   出题的"OE 味"在这里：从原文取证 + 硬负例，而不是构造四个同质选项。
+3. **生成单元是步骤块**：每题配一段协议文本（官方：一题一协议、108 题 108 个互不相同的
+   protocol、569–14188 字符、中位 29 步）。`extract_protocol.py` 按论文自己的小节标题切块
+   （VINE-seq 的 5 个 Stage、organoid 的 10 个小节、Cu 的 Procedure 1–4 + Tier/Section），
+   块内保留论文原番号——**不重新编号**，因为论文正文会交叉引用步骤号。
+
+**信封与形态**（两层保真，口径同 §5.5）：
+
+- 信封：8 键 `id/question/ideal/distractors/canary/source/protocol/subtask`，键序、值类型与
+  `json.dump(indent=1, ensure_ascii=False)`、无尾随换行均与官方一致；`source` 恒为 null
+  （DOI 只进 sidecar 的 `sources`，官方信封没地方放）。**`protocol` 是唯一允许多行的字段**
+  （官方 108/108 含换行），所以导出时只归一化 tab/行尾空格，不做 `clean_text`。
+- 形态：题干 95–479 字符、ideal 16–220 字符、干扰项 3–6 个、协议 569–14188 字符。
+  `--check-style` 会额外报"点名步骤率"（官方 ideal 93/108、干扰项 305/366）。
+
+**必须知道的坑（逐批累积，均已踩到并修掉/记录在案）**：
+
+- **步骤号必须在块内可见**：切块后正文里可能引用留在块外的步骤（"as prepared in step 14"），
+  模型据此写 "in step 14 ..." 时，答题者看不到该步 → 题目不可答而非难。导出器逐题校验
+  "cited step 是否在本块定义"，命中即跳过并计数（本轮 133 题里剔掉 5 题）。
+- **未编号的 procedure 不能出题**：Nature Protocols 里有整段用选项 A/B/C 写的 procedure
+  （Cu 的 Procedure 3），没有步骤号可引用；`extract_protocol.py` 标 `numbered=false`，
+  出题端跳过并在日志说明，不静默丢弃。
+- **BOX 插在主流程中间会串块**：Nature Protocols 的 BOX（自带 1..N 重新编号）会浮动在小节
+  中间——0926 批次 ipsc 那篇的 BOX 1 夹在主流程 Step 32 与 33 之间，主流程随后无标题地续写。
+  不处理时"BOX 步骤 + 主流程尾段"并进一个块（协议文本从 12 直接跳到 33，不可读），且排障表
+  里 `Box 1` 那行因取首个整数被错挂到主流程第一块。`extract_protocol.py` 现已把 BOX 的 item
+  段整体后移（`lift_box_inserts`，按"盒子后首个续号步骤"定位续写点）、排障表按块标题匹配
+  `Box N`。
+- **表格与图注会污染协议文本**：Nature Protocols 的图注、表格列（7.0pt）、图内标签
+  （"cThin layer"）与步骤正文在 PDF 里交错，靠块级过滤（图注块、图标签块、小于正文 1.5pt
+  的块）+ 行级过滤（`Fig./Table N |`、面板字母、裸数字）分开；标题识别用"字号大于正文"
+  或"正文同号的 semibold"两条规则，且把 callout（▲ CRITICAL STEP / ● TIMING）与
+  `Option A:` 这类块内标签排除在外。
+- **多段 Procedure 各自从 1 重新编号**（0926b 多巴胺篇 `Procedure 1` 的 1–108 + `Procedure 2`
+  的 1–75；TEMI 篇 1–70 + 1–8 + 1–35）：裸 `Procedure N` 标题（**无冒号**，11.25 pt）在 Outline /
+  Materials 列表里以正文尺寸重复，原正则只认 `Procedure N:` → 报 `no Procedure section found`；
+  现按"标题后第一条步骤行必须是 `1.`"筛掉全部仿冒者。块 `step_range` 重复是**合法**的，原番号
+  按原文保留、绝不重编号。
+- **纯文字 BOX 也要后移**（0926b TEMI 篇 BOX 2，盒内编号为 0）：只搬"含步骤的 BOX"时，后续主流程
+  步骤 22–31 会被归到 `BOX 2` 标题下、正文以表格碎片开头。现按同一判据后移，并修正"紧邻恢复步骤
+  之前的标题属于恢复后的章节"。
+- **排障表 `Procedure N` 分隔行**（0926b 多巴胺篇）：表用单独一行 `Procedure N` 分段、行内只有裸步号，
+  标签必须向下延续才能落到正确的 Procedure（否则 "BMDCs die after incubation" 会挂到 TEM 成像块）。
+- **材料化学合成协议零改动通过**（0927b：PCL 二维血小板 / 盐辅助 1T′-TMDC / 剪切流纳米片复合膜）：
+  多段 Procedure、BOX 后移等结构均被既有实现覆盖，`extract_protocol.py` 未改一行。两个正常现象记在
+  案：BOX **自身的小标题**会把盒子切成碎块（PCL 篇 `BOX 2` + `Platelet dispersions`，两块都
+  `numbered=false`、不出题）；排障表的**复合步号标签**（`25 or Box 1, Step 4`）不映射，只是让该条
+  补救注释对出题模型不可见。块 `title` 在小块并入邻块时堆叠（`_join_titles`），只进内部溯源、
+  **不进导出信封**。
+- **切片清单是全目录共享的**（0927b 踩到、已修，`shard_labbench.py`）：`shard/manifest.json` 不带
+  bench 名，同一目录里并发跑第二批会覆盖它，`--merge` 于是按别人的 bounds 回填、**每片错位**——实测
+  108 题的基线清单把 102 题池子（每片 17 题 vs 18 题）的 75 条答案写到了别的题上，且原一致性检查
+  （`0 <= local < b-a`）因只差 1 格而不触发，属静默污染。`resolve_bounds` 现在只认归属本 bench 的
+  manifest，否则按本 bench 的切片文件重建 bounds 并告警；切片缓存本身是正确的（每个 solve 进程只读
+  自己那片），按正确 bounds 重建主缓存即可精确还原。
+
+**难度基线（2026-09-23 实测，闭卷以外的口径与 litqa2 完全一致）**：
+
+| 题集 | 题数 | MiniMax-M3 | deepseek-v4-flash |
+|---|---|---|---|
+| 官方 ProtocolQA 原题 | 108 | **0.425**（strict 0.340） | **0.850**（strict 0.841，107/108 已答） |
+| 参照：官方 LitQA2 原题采样 50 题（§5.5） | 50 | 0.294 | 0.460 |
+
+读法：**ProtocolQA 对模型整体比 LitQA2 容易得多**（协议在上下文里，考的是读+推理），且两个
+solver 的分差被放大（M3 0.425 vs deepseek 0.850）——校准自产题时要按 solver 分别对比，
+面板均分口径会让"对 M3 难、对 deepseek 易"的题混进来。
+
+**自产题包的实测（2026-09-23，三篇 Nature Protocols × 3 轮 = 136 题）与一个必须知道的坑**：
+
+| 题集 | 题数 | MiniMax-M3 | deepseek-v4-flash |
+|---|---|---|---|
+| 候选池全集 | 136 | 0.907 | 0.926 |
+| `_filtered`（任一没答对） | 18 | 0.294 → **重跑 0.728** | 0.450 → **重跑 0.611** |
+| `_official`（面板均分 ∈ [0.4,0.6]） | 13 | 0.392 → **重跑 0.769** | 0.623 → 重跑 0.692 |
+| `_hard`（都答错） | 5 | 0.040 | 0.000 |
+
+- **池子比官方题容易**（0.907/0.926 vs 0.425/0.850）：两个结构性原因——我们的协议块更短
+  （850–5803 字符，官方中位 4157/29 步），且**要求补救措施由块内原文支撑**（防编造），
+  而官方题的 `ideal` 常常依赖协议外的领域判断。这是为公平性付的难度代价。
+- **MiniMax-M3 不能用来"选题"**：官方原题的对照实测——M3 同一题两遍只有 **35%** 字母一致率
+  （108 题 0.425 → 0.449），自产题上 38–39%（`_official` 5/13、`_filtered` 7/18）；deepseek
+  稳定（官方 92%、自产题 83–92%）。即 **M3 的聚合分数可复现，但单题判定是噪声**：用它单遍失败
+  去筛等于抽噪声尾巴，子集重测必然向池子均值回归（13 题 0.392 → 0.769 就是这个效应）。
+  **难度声明用 deepseek 口径；要用 M3 就重复多遍取共识（如"3 遍里 ≥2 遍答错"）。**
+- 两个已知提难度杠杆（未做）：把小块合并成 4k+ 字符的长协议、在保公平前提下允许部分题目
+  依赖领域公认判断。
+
+**后续三批的实测（与上表同口径；详情见各自报告）**：
+
+| 批次 | 论文 / 出题块 | 候选 → 导出 | 池分 M3 / deepseek | 同日官方基线 M3 / deepseek | 子集（重跑遍 deepseek） |
+|---|---|---|---|---|---|
+| 0926 | 3 / 24 | 144 → 144 | 0.854 / 0.910 | 0.447 / 0.852 | `_filtered` 28 题 0.607、`_dsonly` 13 题 0.231 |
+| 0926b | 3 / 33 | 196 → 186 | 0.734 / 0.794 | 0.359 / 0.830 | `_official` 35 题 0.722、`_dsonly` 37 题 0.063 |
+| 0927b | 3 / 17（材料化学） | 102 → 102 | 0.866 / 0.892 | 0.342 / 0.868 | `_official` 9 题 0.778、`_dsonly` 11 题 0.300 |
+
+- **池分与同日官方基线的差（deepseek 口径）在单向收窄**：0923 +0.076、0926 +0.058、0926b −0.036、
+  0927b +0.024 —— 后两批**不筛就落在官方档位附近**，越靠后的批次（更长 Procedure、材料化学合成）
+  出题越硬。
+- M3 的官方基线四次重测 0.425 / 0.447 / 0.359 / 0.342（漂移 ~0.09，其单题字母一致率只有 35–39%），
+  **难度声明一律以 deepseek 为锚**，M3 只看聚合、不用于选题。
+
+**官方准入标准的对应**（LAB-Bench 论文 2407.10362v2，§6.1 已记录 LitQA2 口径）：ProtocolQA
+同样没有数字阈值，四条定性标准是"论文 36 个月内 / 答案需要正文而非摘要 / 必须涉及推理 /
+干扰项可信"；本链路把后两条落成出题 prompt 的硬规则（ideal 必须由块内细节支撑、干扰项必须
+三种不同失败模式且不得同样解决问题）与 `validate_question_pack.py --qtype protocolqa` 的
+字段检查 + `--bench` 步骤引用检查。
 
 ---
 

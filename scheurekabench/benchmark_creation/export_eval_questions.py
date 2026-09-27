@@ -33,13 +33,20 @@ def export_eval(questions_json_path, q_type):
     lengths = []
     for paper in data.values():
         for insight in paper.values():
-            for q in insight.get(f"{q_type}_questions", []) or []:
-                item = {"question": q["question"]}
-                if q_type == "mcq":
-                    item["options"] = q["options"]
-                item["answer"] = q["answer"]
-                item["rubric"] = q.get("rubric", {})
-                items.append(item)
+            key = f"{q_type}_questions" if q_type != "protocolqa" \
+                else "protocolqa_questions"
+            for q in insight.get(key, []) or []:
+                if q_type == "protocolqa":
+                    items.append({"question": q["question"], "ideal": q["ideal"],
+                                  "distractors": q["distractors"],
+                                  "rubric": q.get("rubric", {})})
+                else:
+                    item = {"question": q["question"]}
+                    if q_type == "mcq":
+                        item["options"] = q["options"]
+                    item["answer"] = q["answer"]
+                    item["rubric"] = q.get("rubric", {})
+                    items.append(item)
                 mix[str(q.get("question_type") or "untagged")] += 1
                 lengths.append(len(q["question"]))
     out_path = os.path.splitext(questions_json_path)[0] + "_eval.json"
@@ -65,7 +72,17 @@ def export_prompts_only(questions_json_path, q_type):
     items = []
     for paper in data.values():
         for insight in paper.values():
-            for q in insight.get(f"{q_type}_questions", []) or []:
+            key = f"{q_type}_questions" if q_type != "protocolqa" \
+                else "protocolqa_questions"
+            for q in insight.get(key, []) or []:
+                if q_type == "protocolqa":
+                    # The protocol is not optional context for these items: the
+                    # official harness prepends it to the question, so a
+                    # solver fed the question alone would be answering a
+                    # different task.
+                    items.append({"protocol": insight.get("protocol", ""),
+                                  "question": q["question"]})
+                    continue
                 item = {"question": q["question"]}
                 if q_type == "mcq":
                     item["options"] = q["options"]
@@ -80,7 +97,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("questions_json", type=str,
                         help="Canonical <qtype>_questions.json to flatten")
-    parser.add_argument("--qtype", type=str, required=True, choices=["mcq", "oe"])
+    parser.add_argument("--qtype", type=str, required=True,
+                        choices=["mcq", "oe", "protocolqa"])
     parser.add_argument("--questions-only", action="store_true",
                         help="Also write <qtype>_questions_prompts.json holding question "
                              "(+ options) only — the file to feed the model under test")

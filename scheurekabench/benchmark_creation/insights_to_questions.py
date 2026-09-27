@@ -90,9 +90,21 @@ def render_rubric_block(rubric, q_type):
             lines.append(f"**Scoring guide:** {rubric['scoring_guide']}")
     return "\n".join(lines)
 
-def validate_structured(parsed, q_type):
+def validate_structured(parsed, q_type, allow_empty=False):
     """Normalize the LLM JSON into [{"insight_index": int|None, "questions": [...]}],
-    dropping malformed entries. Returns None if nothing usable."""
+    dropping malformed entries. Returns None if nothing usable.
+
+    The index tag is the position of the SOURCE UNIT — an insight for the
+    insight-derived types, a protocol block for protocolqa, which labels it
+    "block_index"; both land in the same slot so downstream reporting works
+    for either.
+
+    `allow_empty` controls what an all-empty response means. For the
+    insight-derived types it means the model answered nothing, which is a
+    failure: every insight must yield questions. For protocolqa an empty
+    `questions` list is a LEGITIMATE answer — the prompt offers it as the
+    honest outcome for a block with no defensible problem-remedy pair — so that
+    pipeline asks for the parsed-but-empty result instead of a parse error."""
     if not isinstance(parsed, list):
         return None
     cleaned = []
@@ -100,7 +112,7 @@ def validate_structured(parsed, q_type):
         if not isinstance(item, dict) or not isinstance(item.get("questions"), list):
             continue
         try:
-            idx = int(item.get("insight_index"))
+            idx = int(item.get("insight_index", item.get("block_index")))
         except (TypeError, ValueError):
             idx = None
         questions = []
@@ -119,9 +131,19 @@ def validate_structured(parsed, q_type):
                 if not isinstance(options, dict) or not options:
                     continue
                 entry["options"] = {str(k).strip(): str(v).strip() for k, v in options.items()}
+            if q_type == "protocolqa":
+                # LAB-Bench ProtocolQA carries the key as `ideal` and the other
+                # options as free-text `distractors`; there is no letter key.
+                ideal = str(q.get("ideal") or q.get("answer") or "").strip()
+                distractors = [str(d).strip() for d in (q.get("distractors") or [])
+                               if str(d).strip()]
+                if not ideal or len(distractors) < 2:
+                    continue
+                entry["ideal"] = ideal
+                entry["distractors"] = distractors
             entry["rubric"] = q.get("rubric") if isinstance(q.get("rubric"), dict) else {}
             questions.append(entry)
-        if questions:
+        if questions or allow_empty:
             cleaned.append({"insight_index": idx, "questions": questions})
     return cleaned or None
 
@@ -183,7 +205,7 @@ def insight_prompt_block(entries, start_index=1):
 
 
 def generate_checked(prompt_template, block, model_call, q_type, output_dir, context,
-                     parse_attempts=3):
+                     parse_attempts=3, placeholder="{insights}", allow_empty=False):
     """One generation pass + source-leak guard (one corrective regeneration,
     keeping whichever draft leaks less). Returns the structured items, or
     exits with the raw response saved when nothing parses.
@@ -191,12 +213,18 @@ def generate_checked(prompt_template, block, model_call, q_type, output_dir, con
     Parse failures are retried up to `parse_attempts` times: the transport
     occasionally drops the tail of long responses, and the same request
     usually comes back intact on a retry — aborting the whole paper because
-    one stochastic call got truncated wastes the calls already spent."""
-    full_prompt = prompt_template.replace("{insights}", block)
+    one stochastic call got truncated wastes the calls already spent.
+
+    `placeholder` is the template slot the source material (or protocol block)
+    is substituted into; protocol_to_questions.py uses its own token so the
+    prompt text reads correctly for that pipeline. `allow_empty` is forwarded
+    to validate_structured — see there for why protocolqa needs it."""
+    full_prompt = prompt_template.replace(placeholder, block)
     raw = ""
+    items = None
     for attempt in range(1, parse_attempts + 1):
         raw = generate_raw(full_prompt, model_call)
-        items = validate_structured(extract_json(raw), q_type)
+        items = validate_structured(extract_json(raw), q_type, allow_empty=allow_empty)
         if items is not None:
             break
         print(f"{context}: unparseable structured output "

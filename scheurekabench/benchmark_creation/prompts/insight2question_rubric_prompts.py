@@ -487,3 +487,168 @@ def mcq_recall_prompt(per_insight=1):
 
 MCQ_RUBRIC_PROMPT = mcq_rubric_prompt(2)
 OE_RUBRIC_PROMPT = oe_rubric_prompt(2)
+
+
+# LAB-Bench ProtocolQA: a troubleshooting question about a protocol the
+# respondent is given. Unlike every other template here the source material is
+# not an insight but a block of procedure steps, and the answer is a short
+# remedy naming a step — the format futurehouse/lab-bench stores as
+# question / ideal / distractors / protocol.
+#
+# The shape constraints are read off the official release rather than invented:
+# question 95-479 chars, ideal 16-220 chars with a step reference in 96/108
+# items, 3-6 distractors (mode 3) with a step reference in 293/366, one question
+# per protocol. The grounding block is generator-side only — the official
+# envelope has no field for it and the respondent must never see it.
+_PROTOCOLQA_TEMPLATE = """
+I am building a troubleshooting benchmark for laboratory protocols — the same item format as the LAB-Bench ProtocolQA subset.
+
+**What the respondent receives (HARD framing):**
+
+* The protocol text below, verbatim, and ONE question. Nothing else — no paper, no figures, no tables, no troubleshooting table, no answer key.
+* The question reports a problem observed while following that protocol and asks what to do about it. The official items read like: "After completing the listed protocol you notice low PBMC counts. Which of the following may address this issue?"
+* The answer options are the reference remedy plus three wrong remedies. Only ONE remedy actually resolves the stated problem.
+
+**Task:** for the protocol block below, write {task_lead}. Each item is one observed problem plus the single best remedy and three plausible but wrong remedies.
+
+**Rules for the question (HARD REQUIREMENTS):**
+
+* Troubleshooting framing: state what was observed ("After <doing the stated procedure> you notice <symptom>") and then ask what to change ("What could you do to improve <the outcome>?" / "Which of the following may address this issue?"). The symptom is a result a bench scientist would notice — a low yield, no pellet, a noisy trace, poor separation, degraded sample — never a diagnosis.
+* At most ~480 characters, one paragraph, no line breaks, and it must end with "?".
+* Name only the minimal setting needed to make the symptom intelligible. Do NOT name the remedy, do NOT name the step that is at fault, and do NOT hint at the direction of the fix.
+* FORBIDDEN in the question: "the paper", "the article", "the authors", "the study", "the supplementary", "Figure X", "Table X", "Box X", and any reference to material outside this protocol block.
+* Do not copy a step's wording into the question. The symptom must be linkable to the faulty step only by reasoning about what that step is for.
+* The question must be answerable from THIS protocol block: at least one specific detail in it (a quantity, temperature, timing, order, or an omitted action) has to decide which option is right.
+
+**Rules for the reference remedy ("ideal", HARD REQUIREMENTS):**
+
+* Imperative and concrete: "Use 0.85 g of NaCl in step 2 to avoid PBMC lysis."
+  **Length (HARD LIMIT): at most 220 characters, and aim for 40-140.** The
+  official remedies have a median length of 50 characters — one action, one
+  step, a short reason. A remedy that needs three clauses is a paragraph, not a
+  remedy, and it tells the respondent too much about how the item is keyed.
+* It MUST name the step number(s) it changes, the specific change, and the reason it works. 96 of the 108 official items do exactly this; an answer like "be more careful" is worthless and is not acceptable.
+* Keep the stated reason short ("to avoid PBMC lysis", "so the gradient is not disturbed"). The full reasoning chain belongs in "ideal_justification", not in the remedy itself.
+* Prefer a concrete change to a value, an order, or an omitted action inside a step. A remedy that only asks for the same step to be done more emphatically ("more slowly", "more forcefully", "with more care") is acceptable ONLY when a CRITICAL STEP or CAUTION note in the block states exactly that warning — otherwise it is a restatement of the protocol, not a remedy.
+* Use square brackets [ ] for your own clarifying insertions, and keep them short.
+* It must be consistent with the protocol text: change a value, order or action that the protocol actually contains. Never introduce a reagent, a piece of equipment or a step that does not appear in the block.
+
+**Rules for the wrong remedies ("distractors", HARD REQUIREMENTS):**
+
+* Exactly three, each at most 220 characters, each within roughly 0.4x-2.5x of the ideal's length so length never reveals the answer.
+* Each one also names a step (the official set does this in 293 of 366 distractors) and reads like advice a competent scientist might give after one reading.
+* The three must fail in three DIFFERENT ways, one each:
+  (1) **opposite direction** — change the same quantity the wrong way;
+  (2) **wrong magnitude or unit** — right idea, wrong number or scale;
+  (3) **wrong step or wrong target** — a real problem and a real fix, but for a different step or addressing the symptom instead of its cause.
+* No distractor may also solve the stated problem, and none may be nonsense, self-contradictory, or a step that does not exist in the block.
+* Do NOT make the wrong options obviously absurd: a respondent who does not reason about the protocol should find at least two of them credible.
+
+**Grounding and honesty (HARD REQUIREMENTS):**
+
+* Every reagent, volume, concentration, temperature, duration and step number you write must come from the protocol block — either verbatim or as the explicit modification your remedy proposes.
+* Each ideal must be the remedy a domain expert would endorse as the FIRST thing to fix, and it must be justified by the block itself: a step whose stated purpose is defeated by the observed symptom, a quantity that cannot produce the stated result, a critical step that was described but not followed, or a value that conflicts with another step's requirement.
+* **If the block offers no defensible problem-remedy pair, return an empty "questions" array for it.** An empty array is the correct answer in that case; a fabricated remedy, a symptom no step can explain, or a question whose answer needs knowledge from outside the block is a defective item. Do not manufacture one.
+
+**Self-check before answering** (report nothing, just apply it): for each item ask — is the symptom explained by a specific step in the block? Does the ideal name that step and the exact change? Could a respondent who never read this protocol pick the right option from general knowledge alone? If yes, harden the item or drop it.
+
+**Rules for the rubric:**
+
+* "ideal_justification": why the remedy follows from THIS block — name the step detail (quantity, temperature, order, stated purpose) that decides it.
+* "distractor_analysis": for each wrong remedy, which of the three failure modes it is and why it does not resolve the problem.
+* "source_evidence": the step number(s) plus a short quote or close paraphrase of the text the answer rests on. Quote the block, never the wider literature.
+* A grader must be able to check the key from the rubric alone, without the protocol.
+
+**question_type** — record exactly one per item, from this list:
+  - "inconsistency" — a value or instruction in the block cannot produce the stated result
+  - "critical_step" — the block marks a step as critical and the symptom shows it was not respected
+  - "parameter" — the wrong magnitude, unit, temperature or duration was used
+  - "order" — a sequence or dependency was violated
+  - "handling" — sample, reagent or equipment handling defeats the step's purpose
+  - "complete_step" — an action the protocol requires was omitted
+
+---
+
+**Output format:** return ONLY a strict JSON array — no prose before or after, no markdown fences. One object per protocol block below, in the same order, each with "block_index" matching the block numbering:
+
+[
+  {
+    "block_index": 1,
+    "questions": [
+      {
+        "question": "…",
+        "question_type": "critical_step",
+        "ideal": "… in step 12 …",
+        "distractors": ["… in step 8 …", "… in step 12 …", "… in step 4 …"],
+        "rubric": {
+          "ideal_justification": "…",
+          "distractor_analysis": {"1": "…", "2": "…", "3": "…"},
+          "source_evidence": "Step 12: …"
+        }
+      }
+    ]
+  }
+]
+
+Two worked examples of the target shape (invented protocol — copy the FORM, not the content):
+
+[
+  {
+    "block_index": 1,
+    "questions": [
+      {
+        "question": "After completing the column cleanup you notice that the final eluate volume is much larger than the 50 ul the protocol expects. What could you do to improve the concentration of the eluted sample?",
+        "question_type": "parameter",
+        "ideal": "Centrifuge at 4,000g for 2 min in step 7 to compact the resin bed before elution; the slow spin in step 9 leaves residual buffer in the column dead volume.",
+        "distractors": [
+          "Centrifuge at 400g for 2 min in step 7 so the resin bed stays loose and the eluate passes through faster.",
+          "Elute with 500 ul of buffer in step 9 to dilute the residual buffer and collect a cleaner fraction.",
+          "Wash the column with an extra 700 ul of wash buffer in step 5 to remove the residual buffer before elution."
+        ],
+        "rubric": {
+          "ideal_justification": "Step 7 is the only compaction step and the protocol's CRITICAL STEP note requires a firm resin bed before elution; a loose bed leaves dead volume that the 50 ul elution volume mixes with.",
+          "distractor_analysis": {"1": "opposite direction — weakening the spin is what causes the dead volume, not what removes it.", "2": "wrong magnitude — the remedy dilutes the sample further and cannot improve concentration.", "3": "wrong target — the residual buffer is below the bed after step 8, so an extra wash does not address it."},
+          "source_evidence": "Step 7: 'Centrifuge at 4,000g for 2 min to compact the resin.' CRITICAL STEP: 'A firm bed is required before elution.'"
+        }
+      }
+    ]
+  }
+]
+
+## Protocol blocks (the respondent will receive this text verbatim):
+
+{insights}
+
+{final_request}
+"""
+
+
+def protocolqa_prompt(n=1):
+    """ProtocolQA troubleshooting prompt for `n` items per protocol block."""
+    if not 1 <= n <= 4:
+        raise SystemExit(f"ERROR: unsupported per-block question count: {n} "
+                         f"(expected 1..4).")
+    if n == 1:
+        task_lead = "one (1) troubleshooting question with a reference remedy, " \
+                    "three wrong remedies and a grading rubric"
+        final_request = ("**Please generate one (1) troubleshooting question with a "
+                         "reference remedy, three wrong remedies and a grading rubric "
+                         "for the protocol block below, following the above "
+                         "instructions, and return it as the strict JSON array "
+                         "specified above.**")
+    else:
+        task_lead = (f"{n} troubleshooting questions, each with a reference remedy, "
+                     f"three wrong remedies and a grading rubric, failing on "
+                     f"DIFFERENT steps and symptoms")
+        final_request = (f"**Please generate {n} troubleshooting questions, each with a "
+                         f"reference remedy, three wrong remedies and a grading rubric, "
+                         f"for the protocol block below — the questions must target "
+                         f"different steps and different symptoms, not restate one "
+                         f"another — following the above instructions, and return them "
+                         f"as the strict JSON array specified above.**")
+    return (_PROTOCOLQA_TEMPLATE
+            .replace("{task_lead}", task_lead)
+            .replace("{final_request}", final_request))
+
+
+PROTOCOLQA_PROMPT = protocolqa_prompt(1)

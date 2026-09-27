@@ -149,6 +149,9 @@ def _chat_anthropic(prompt, model, temperature, max_tokens):
     return text
 
 
+_anthropic_dead = set()  # models whose anthropic route failed a whole round
+
+
 def chat(prompt, model, temperature=0.3, max_tokens=16384, json_output=False, attempts=3):
     """Call `model` on the gateway, trying keys in fallback order.
 
@@ -160,15 +163,23 @@ def chat(prompt, model, temperature=0.3, max_tokens=16384, json_output=False, at
     not serve them. GPT-style models go straight to the OpenAI-compatible
     loop (OPENAI_KEY first) as before.
 
+    A model that misses on a whole anthropic round is remembered as not served
+    by that endpoint for the rest of the process (qwen3.8-max answers 429
+    "upstream rate limit" there but works on the OpenAI-compatible loop;
+    deepseek-v4-flash times out). The flag is not cleared when the other routes
+    fail too: retrying the anthropic route costs a full round of read timeouts
+    per question, and a rerun is a new process that starts with a clean slate.
+
     Returns the response text, or "" if every route failed.
     """
-    if not _is_openai_family(model):
+    if not _is_openai_family(model) and model not in _anthropic_dead:
         for attempt in range(1, attempts + 1):
             try:
                 return _chat_anthropic(prompt, model, temperature, max_tokens)
             except Exception as error:  # noqa: BLE001 - report and retry
                 print(f"Gateway anthropic-route call to '{model}' failed (attempt {attempt}/{attempts}): {error}")
                 time.sleep(5)
+        _anthropic_dead.add(model)
         print(f"Falling back from the anthropic endpoint to the OpenAI-compatible loop for '{model}'.")
 
     sources = _api_keys()
